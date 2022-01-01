@@ -26,7 +26,6 @@ function Header() {
         line.current.style.left = moveLeft + 'px';
         line.current.style.top = moveTop+30 + 'px';
 
-        //짝대기 넓이를 마우스 올릴때 해당 요소의 크기만큼 변경하자.
         //마우스 올린 해당 요소의 넓이 구하기.
         let elwidth = e.target.getBoundingClientRect().width;
 
