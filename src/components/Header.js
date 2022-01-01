@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 function Header() {
 
     const clickStyle = { color: "#2bae29" };
+    const gnb = useRef(null);
     const line = useRef(null);
 
     function lineMove(e) {
@@ -34,12 +35,11 @@ function Header() {
 
     }
 
-
     return (
         <header>
             <div className="inner">
                 <h1 className="logo"><NavLink exact to="/">Amerimnos</NavLink><span>.</span></h1>
-                <ul className="gnb">
+                <ul ref={gnb} onMouseLeave={()=>{line.current.classList.remove('on')}} className="gnb">
                     <li ref={line} className="line"></li>
                     <li><NavLink exact activeStyle={clickStyle} onMouseEnter={lineMove} to="/department">Department</NavLink></li>
                     <li><NavLink exact activeStyle={clickStyle} onMouseEnter={lineMove} to="/community">Community</NavLink></li>
