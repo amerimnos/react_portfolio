@@ -50,17 +50,54 @@ header {
       overflow: hidden;
       transition: all 0.5s; }
   header .join {
+    position: relative;
     display: flex;
+    justify-content: center;
     width: 13%;
+    overflow: hidden;
     margin-left: auto;
     padding: 16px 42px;
     text-align: center;
     font-size: 22px;
-    color: #4a6869;
     font-weight: 500;
     border: solid 1px #e0e7e1;
     border-radius: 100px;
-    justify-content: center; }
+    color: #4a6869;
+    transition: all 0.5s; }
+    header .join span {
+      opacity: 0;
+      color: inherit;
+      transform: translate3d(0, -10px, 0);
+      transition: transform 0.3s, opacity 0.3s;
+      transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1); }
+    header .join::before {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 14px 0;
+      color: inherit;
+      transition: transform 0.3s, opacity 0.3s;
+      transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1); }
+    header .join:hover {
+      border: solid 1px #4a6869; }
+    header .join:hover::before {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0); }
+    header .join:hover span {
+      opacity: 1;
+      transform: translate3d(0, 0, 0); }
+      header .join:hover span:nth-child(1) {
+        transition-delay: 0.045s; }
+      header .join:hover span:nth-child(2) {
+        transition-delay: 0.105s; }
+      header .join:hover span:nth-child(3) {
+        transition-delay: 0.165s; }
+      header .join:hover span:nth-child(4) {
+        transition-delay: 0.225s; }
+      header .join:hover span:nth-child(5) {
+        transition-delay: 0.285s; }
   header .totalMenuBtn {
     display: none;
     position: relative;
@@ -123,7 +160,9 @@ header {
   header .gnb {
     display: none; }
   header .join {
-    display: none; } }
+    display: none; }
+  header .totalMenuBtn {
+    display: block; } }
 footer {
   width: 100%;
   margin-top: 30px;

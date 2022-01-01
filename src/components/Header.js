@@ -4,8 +4,13 @@ import { NavLink } from 'react-router-dom';
 function Header() {
 
     const clickStyle = { color: "#2bae29" };
+    const clickStyle1 = { color: "#2bae29", border: "solid 1px #2bae29" };
     const gnb = useRef(null);
     const line = useRef(null);
+
+    function active (e) {
+        e.target.classList.toggle("on");
+    }
 
     function lineMove(e) {
 
@@ -25,21 +30,20 @@ function Header() {
 
         // 짝대기에 위치값 대입
         line.current.style.left = moveLeft + 'px';
-        line.current.style.top = moveTop+30 + 'px';
+        line.current.style.top = moveTop + 30 + 'px';
 
         //마우스 올린 해당 요소의 넓이 구하기.
         let elwidth = e.target.getBoundingClientRect().width;
 
         //짝대기 넓이에 대입하기.
-        line.current.style.width = elwidth+'px';
-
+        line.current.style.width = elwidth + 'px';
     }
 
     return (
         <header>
             <div className="inner">
                 <h1 className="logo"><NavLink exact to="/">Amerimnos</NavLink><span>.</span></h1>
-                <ul ref={gnb} onMouseLeave={()=>{line.current.classList.remove('on')}} className="gnb">
+                <ul ref={gnb} onMouseLeave={() => { line.current.classList.remove('on') }} className="gnb">
                     <li ref={line} className="line"></li>
                     <li><NavLink exact activeStyle={clickStyle} onMouseEnter={lineMove} to="/department">Department</NavLink></li>
                     <li><NavLink exact activeStyle={clickStyle} onMouseEnter={lineMove} to="/community">Community</NavLink></li>
@@ -47,10 +51,14 @@ function Header() {
                     <li><NavLink exact activeStyle={clickStyle} onMouseEnter={lineMove} to="/youtube">Youtube</NavLink></li>
                     <li><NavLink exact activeStyle={clickStyle} onMouseEnter={lineMove} to="/location">Location</NavLink></li>
                 </ul>
-                <NavLink className="join" exact activeStyle={clickStyle} to="/Join">
-                    Join <span class="material-icons-round">arrow_forward_ios</span>
+                <NavLink className="join" exact activeStyle={clickStyle1} to="/Join" data-text="Join">
+                    <span>J</span>
+                    <span>o</span>
+                    <span>i</span>
+                    <span>n</span>
+                    <span className="material-icons-round">arrow_forward_ios</span>
                 </NavLink>
-                <div className="totalMenuBtn"></div>
+                <div onClick={active} className="totalMenuBtn"></div>
                 <ul className="totalMenuConts">
                     <li><NavLink exact activeStyle={clickStyle} to="/department">Department</NavLink></li>
                     <li><NavLink exact activeStyle={clickStyle} to="/community">Community</NavLink></li>

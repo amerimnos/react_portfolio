@@ -17,44 +17,92 @@ header {
 		}
 	}
 	.gnb {
-		position:relative;
+		position: relative;
 		width: 46%;
 		display: flex;
 		justify-content: space-between;
-        .line{
-            position: absolute;
-            left:0;
-            bottom:-5px;
-            width: 100px;
-            height: 0px;
-            background: #4a6869;
-            transition: all 0.5s;
-            transition-timing-function: cubic-bezier(ease-in-out);
-            &.on{
-                height:5px;
-            }
-        }
+		.line {
+			position: absolute;
+			left: 0;
+			bottom: -5px;
+			width: 100px;
+			height: 0px;
+			background: #4a6869;
+			transition: all 0.5s;
+			transition-timing-function: cubic-bezier(ease-in-out);
+			&.on {
+				height: 5px;
+			}
+		}
 		li {
 			position: relative;
 			font-size: 19px;
 			color: #4a6869;
 			font-weight: 500;
 			overflow: hidden;
-            transition: all 0.5s;
+			transition: all 0.5s;
 		}
 	}
 	.join {
+		position: relative;
 		display: flex;
+		justify-content: center;
 		width: 13%;
+		overflow: hidden;
 		margin-left: auto;
 		padding: 16px 42px;
 		text-align: center;
 		font-size: 22px;
-		color: #4a6869;
 		font-weight: 500;
 		border: solid 1px #e0e7e1;
 		border-radius: 100px;
-		justify-content: center;
+		color: #4a6869;
+		transition: all 0.5s;
+
+		& span {
+			opacity: 0;
+			color: inherit;
+			transform: translate3d(0, -10px, 0);
+			transition: transform 0.3s, opacity 0.3s;
+			transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+		}
+		&::before {
+			content: attr(data-text);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			padding: 14px 0;
+			color: inherit;
+			transition: transform 0.3s, opacity 0.3s;
+			transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+		}
+		&:hover {
+			border: solid 1px #4a6869;
+		}
+		&:hover::before {
+			opacity: 0;
+			transform: translate3d(0, 100%, 0);
+		}
+		&:hover span {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+			&:nth-child(1) {
+				transition-delay: 0.045s;
+			}
+			&:nth-child(2) {
+				transition-delay: 0.105s;
+			}
+			&:nth-child(3) {
+				transition-delay: 0.165s;
+			}
+			&:nth-child(4) {
+				transition-delay: 0.225s;
+			}
+			&:nth-child(5) {
+				transition-delay: 0.285s;
+			}
+		}
 	}
 	.totalMenuBtn {
 		display: none;
@@ -147,5 +195,8 @@ header {
 		.join {
 			display: none;
 		}
+        .totalMenuBtn{
+            display: block;
+        }
 	}
 }

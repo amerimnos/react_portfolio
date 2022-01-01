@@ -8,9 +8,9 @@ function Footer() {
                     <h1 className="logo"><NavLink exact to="/">Amerimnos</NavLink><span>.</span></h1>
                     <p>We are a digital agency based on California.</p>
                     <div className="sns">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-connectdevelop"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i className="fab fa-facebook-f"></i></a>
+                        <a href="#"><i className="fab fa-connectdevelop"></i></a>
+                        <a href="#"><i className="fab fa-instagram"></i></a>
                     </div>
                 </li>
                 <li className="nav">
