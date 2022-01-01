@@ -1,5 +1,6 @@
 import {Route} from 'react-router-dom';
-import Header from './common/Header';
+import './css/style.css';
+import Header from './components/Header';
 import Main from './components/Main';
 import Community from './components/Community';
 import Department from './components/Department';
@@ -7,7 +8,7 @@ import Youtube from './components/Youtube';
 import Gallery from './components/Gallery';
 import Location from './components/Location';
 import Join from './components/Join';
-import Footer from './common/Footer';
+import Footer from './components/Footer';
 
 
 function App() {

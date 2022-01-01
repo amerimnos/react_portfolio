@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+// 반응형 셋팅
+$xl: 1439px;
+$lg: 1199px;
+$md: 991px;
+$sm: 767px;
+$xs: 575px; 
+
+@import "reset";
+@import "header";
+@import "footer";
+@import "department";
+@import "community";
+@import "gallery";
+@import "youtube";
+@import "location";
+@import "join";
