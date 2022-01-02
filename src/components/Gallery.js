@@ -7,6 +7,7 @@ function Gallery() {
 
     const [item1, setItem1] = useState([]);
     const [item2, setItem2] = useState([]);
+    const galleryConts2 = useRef(null);
     const right = useRef(null);
     const left = useRef(null);
     const leftMasonry = useRef(null);
@@ -24,10 +25,12 @@ function Gallery() {
     const masonryOptions1 = {
         transitionDuration: '0.5s',
         itemSelector: '.gridItem1',
+        gutter:0,
     };
     const masonryOptions2 = {
         transitionDuration: '0.5s',
         itemSelector: '.gridItem2',
+        gutter:0,
     };
 
     useEffect(() => {
@@ -39,7 +42,6 @@ function Gallery() {
         axios.get(url).then(
             (json) => {
                 console.log(json.data.photos.photo);
-                //불러온 배열객체를 state값으로 처리해서 전역적으로 관리하기
                 setItem1(json.data.photos.photo);
             }
         );
@@ -49,32 +51,25 @@ function Gallery() {
         axios.get(url).then(
             (json) => {
                 console.log(json.data.photos.photo);
-                //불러온 배열객체를 state값으로 처리해서 전역적으로 관리하기
                 setItem2(json.data.photos.photo);
             }
         );
     }
 
     function mouseInRight() {
+        galleryConts2.current.classList.add('dark');
         right.current.classList.add('on');
         right.current.classList.remove('off');
         left.current.classList.remove('on');
         left.current.classList.add('off');
-        setTimeout(() => {
-            leftMasonry.layout();
-            rightMasonry.layout();
-        }, 1000)
 
     }
     function mouseInLeft() {
+        galleryConts2.current.classList.remove('dark');
         left.current.classList.add('on');
         left.current.classList.remove('off');
         right.current.classList.remove('on');
         right.current.classList.add('off');
-        setTimeout(() => {
-            leftMasonry.layout();
-            rightMasonry.layout();
-        }, 1000)
     }
 
     return (
@@ -116,9 +111,9 @@ function Gallery() {
                 </ul>
                 <div className="outLine"></div>
             </div>
-            <div className="galleryConts2">
+            <div ref={galleryConts2} className="galleryConts2">
                 <ul className="inner">
-                    <li ref={left} className="left" onMouseEnter={mouseInLeft}>
+                    <li ref={left} className="left on" onMouseEnter={mouseInLeft}>
                         <div className="tit">
                             <h1>MODERN</h1>
                             <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas.
@@ -135,6 +130,7 @@ function Gallery() {
                             options={masonryOptions1} // default {}
                             disableImagesLoaded={false} // default false
                             updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+                            enableResizableChildren={true} //부모 가로 사이즈에 반응함.
                         >
                             {
                                 item1.map((el, index) => {
@@ -159,7 +155,7 @@ function Gallery() {
                     <li className="line">
                         <img src={url + "/img/line.svg"} alt="" />
                     </li>
-                    <li ref={right} className="right" onMouseEnter={mouseInRight}>
+                    <li ref={right} className="right off" onMouseEnter={mouseInRight}>
                         <div className="tit">
                             <h1>lANDSCAPE</h1>
                             <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas.
@@ -177,6 +173,7 @@ function Gallery() {
                             options={masonryOptions2} // default {}
                             disableImagesLoaded={false} // default false
                             updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+                            enableResizableChildren={true} //부모 가로 사이즈에 반응함.
                         >
                             {
                                 item2.map((el, index) => {
