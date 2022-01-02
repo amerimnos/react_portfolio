@@ -1,6 +1,81 @@
+import axios from "axios";
+import Masonry from 'react-masonry-component';
+import { useEffect, useRef, useState } from "react";
+
+
 function Gallery() {
 
+    const [item1, setItem1] = useState([]);
+    const [item2, setItem2] = useState([]);
+    const right = useRef(null);
+    const left = useRef(null);
+    const leftMasonry = useRef(null);
+    const rightMasonry = useRef(null);
+
     const url = process.env.PUBLIC_URL;
+    const key = "685857eeaf8d03e0fb14b241dc08754c";
+    const method = "flickr.photos.search";
+    const per_page = "20";
+    const tag1 = "modern";
+    const tag2 = "landscape";
+    const flickrUrl1 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag1}&nojsoncallback=1&privacy_filter=1`;
+    const flickrUrl2 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag2}&nojsoncallback=1&privacy_filter=1`;
+
+    const masonryOptions1 = {
+        transitionDuration: '0.5s',
+        itemSelector: '.gridItem1',
+    };
+    const masonryOptions2 = {
+        transitionDuration: '0.5s',
+        itemSelector: '.gridItem2',
+    };
+
+    useEffect(() => {
+        getFlickr1(flickrUrl1);
+        getFlickr2(flickrUrl2);
+    }, [])
+
+    function getFlickr1(url) {
+        axios.get(url).then(
+            (json) => {
+                console.log(json.data.photos.photo);
+                //불러온 배열객체를 state값으로 처리해서 전역적으로 관리하기
+                setItem1(json.data.photos.photo);
+            }
+        );
+    }
+
+    function getFlickr2(url) {
+        axios.get(url).then(
+            (json) => {
+                console.log(json.data.photos.photo);
+                //불러온 배열객체를 state값으로 처리해서 전역적으로 관리하기
+                setItem2(json.data.photos.photo);
+            }
+        );
+    }
+
+    function mouseInRight() {
+        right.current.classList.add('on');
+        right.current.classList.remove('off');
+        left.current.classList.remove('on');
+        left.current.classList.add('off');
+        setTimeout(() => {
+            leftMasonry.layout();
+            rightMasonry.layout();
+        }, 1000)
+
+    }
+    function mouseInLeft() {
+        left.current.classList.add('on');
+        left.current.classList.remove('off');
+        right.current.classList.remove('on');
+        right.current.classList.add('off');
+        setTimeout(() => {
+            leftMasonry.layout();
+            rightMasonry.layout();
+        }, 1000)
+    }
 
     return (
         <>
@@ -18,7 +93,7 @@ function Gallery() {
                         <h2>THE CLIENT GOALS //</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In magni, corporis labore ab vero fugit delectus, dolor veniam architecto veritatis ducimus, quisquam molestiae aliquid laboriosam nihil. non labore doloribus, illum nobis enim possimus.</p>
                         <div className="viewBtn">
-                            VIEW DETAILS <span class="material-icons-outlined">east</span>
+                            VIEW DETAILS <span className="material-icons-outlined">east</span>
                         </div>
                     </li>
                     <li className="itemWrap">
@@ -33,7 +108,7 @@ function Gallery() {
                             </li>
                             <li className="imgTxt">
                                 <div>2021 of the Year // <em>Lejardin</em></div>
-                                <span class="material-icons-outlined">east</span>
+                                <span className="material-icons-outlined">east</span>
                             </li>
                         </ul>
                     </li>
@@ -43,63 +118,91 @@ function Gallery() {
             </div>
             <div className="galleryConts2">
                 <ul className="inner">
-                    <li className="left">
+                    <li ref={left} className="left" onMouseEnter={mouseInLeft}>
                         <div className="tit">
                             <h1>MODERN</h1>
-                            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas?
+                            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas.
                                 <div className="inputWrap">
-                                    <input type="text" placeholder="Search..." />
-                                    <input type="button" />
+                                    <input type="text" placeholder="Enter the tag." />
+                                    <input type="button" value="Search" />
                                 </div>
                             </div>
                         </div>
-                        <ul className="masonry">
-                            <li>
-                                <div className="imgWrar">
-                                    <img src="" alt="" />
-                                </div>
-                                <div className="tit">windows 11</div>
-                                <p className="profile">Miscrosoft</p>
-                            </li>
-                            <li>
-                                <div className="imgWrar">
-                                    <img src="" alt="" />
-                                </div>
-                                <div className="tit">windows 11</div>
-                                <p className="profile">Miscrosoft</p>
-                            </li>
-                        </ul>
+                        <Masonry
+                            ref={leftMasonry}
+                            className={'masonry'} // default ''
+                            elementType={'ul'} // default 'div'
+                            options={masonryOptions1} // default {}
+                            disableImagesLoaded={false} // default false
+                            updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+                        >
+                            {
+                                item1.map((el, index) => {
+                                    let photoUrl = `https://live.staticflickr.com/${el.server}/${el.id}_${el.secret}_z.jpg`;
+                                    let buddyIcon = `http://farm66.staticflickr.com/${el.server}/buddyicons/${el.owner}.jpg`;
+                                    let titLeng = el.title.length;
+                                    return (
+                                        <li className="gridItem1" key={index}>
+                                            <div className="imgWrap">
+                                                <img src={photoUrl} alt="" />
+                                            </div>
+                                            <div className="tit">
+                                                <img src={buddyIcon} alt="" />
+                                                {(titLeng > 20) ? el.title.slice(0, 40) + "..." : el.title}
+                                            </div>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </Masonry>
                     </li>
                     <li className="line">
                         <img src={url + "/img/line.svg"} alt="" />
                     </li>
-                    <li className="right">
-                        <h1>MODERN</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas?</p>
-                        <div className="inputWrap">
-                            <input type="text" placeholder="Search..." />
-                            <input type="button" />
+                    <li ref={right} className="right" onMouseEnter={mouseInRight}>
+                        <div className="tit">
+                            <h1>lANDSCAPE</h1>
+                            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas.
+                                <div className="inputWrap">
+                                    <input type="text" placeholder="Enter the tag." />
+                                    <input type="button" value="Search" />
+                                </div>
+                            </div>
                         </div>
-                        <ul className="masonry">
-                            <li>
-                                <div className="imgWrar">
-                                    <img src="" alt="" />
-                                </div>
-                                <div className="tit">windows 11</div>
-                                <p className="profile">Miscrosoft</p>
-                            </li>
-                            <li>
-                                <div className="imgWrar">
-                                    <img src="" alt="" />
-                                </div>
-                                <div className="tit">windows 11</div>
-                                <p className="profile">Miscrosoft</p>
-                            </li>
-                        </ul>
+
+                        <Masonry
+                            ref={rightMasonry}
+                            className={'masonry'} // default ''
+                            elementType={'ul'} // default 'div'
+                            options={masonryOptions2} // default {}
+                            disableImagesLoaded={false} // default false
+                            updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+                        >
+                            {
+                                item2.map((el, index) => {
+                                    let photoUrl = `https://live.staticflickr.com/${el.server}/${el.id}_${el.secret}_z.jpg`;
+                                    let buddyIcon = `http://farm66.staticflickr.com/${el.server}/buddyicons/${el.owner}.jpg`;
+                                    let titLeng = el.title.length;
+                                    return (
+                                        <li className="gridItem2" key={index}>
+                                            <div className="imgWrap">
+                                                <img src={photoUrl} alt="" />
+                                            </div>
+                                            <div className="tit">
+                                                <img src={buddyIcon} alt="" />
+                                                {(titLeng > 20) ? el.title.slice(0, 40) + "..." : el.title}
+                                            </div>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </Masonry>
+
                     </li>
                 </ul>
             </div>
         </>
     )
 }
+
 export default Gallery;
