@@ -1,0 +1,254 @@
+.galleryConts1 {
+	position: relative;
+	width: 100%;
+	padding: 58px 0;
+	background: #eff4ef;
+	.outLine {
+		height: 7px;
+		border-top: solid 1px #6b6b6b;
+		border-bottom: solid 1px #6b6b6b;
+	}
+	.inner {
+		display: flex;
+		flex-direction: row;
+		width: 1140px;
+		margin: 39px auto 0;
+	}
+	.item1 {
+		width: 63%;
+		margin-bottom: 42px;
+		padding: 32px 63px 0px 0px;
+		border-right: solid 1px #6b6b6b;
+		.gallerySwiper {
+			position: relative;
+			.slide {
+				width: 650px;
+				height: 640px;
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+		h2 {
+			margin: 45px 0 26px;
+			font-size: 13px;
+			font-weight: 500;
+			letter-spacing: 1.5px;
+			color: #2b2b2b;
+		}
+		p {
+			padding-bottom: 27px;
+			line-height: 1.8;
+			color: #3e3e3d;
+			font-weight: 600;
+			letter-spacing: 1px;
+			font-family: "Cormorant", serif;
+		}
+		.viewBtn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 13.5px;
+    letter-spacing: 2.2px;
+    font-weight: 500;
+    cursor: pointer;
+			span {
+				padding-left: 10px;
+			}
+		}
+	}
+	.itemWrap {
+		width: 37%;
+	}
+
+	.item2 {
+		padding: 24px 60px 58px;
+		border-bottom: 1px solid #6b6b6b;
+		h1 {
+			font-size: 37px;
+			font-family: "Cormorant", serif;
+			padding-bottom: 25px;
+		}
+		p {
+			padding-bottom: 20px;
+			line-height: 1.7;
+			font-size: 18px;
+			font-weight: 500;
+			font-family: "Cormorant", serif;
+		}
+		.viewBtn {
+			font-size: 14px;
+			letter-spacing: 2px;
+			span {
+				padding-left: 10px;
+			}
+		}
+	}
+
+	.item3 {
+		display: flex;
+		padding: 67px 60px;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		.imgWrap {
+			width: 295px;
+			height: 295px;
+			margin-bottom: 27px;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		.imgTxt {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    letter-spacing: 2px;
+    align-items: center;
+    cursor: pointer;
+			div {
+				letter-spacing: 1px;
+				font-weight: 500;
+			}
+			em {
+				padding-left: 8px;
+				font-family: "Cormorant", serif;
+				font-size: 18px;
+				font-weight: 900;
+			}
+		}
+	}
+}
+.galleryConts2 {
+	width: 100%;
+	padding: 80px 0;
+	background: #f8f8f8;
+	.inner {
+		display: flex;
+		width: 1200px;
+		margin: 0 auto;
+	}
+	.left {
+		width: 75%;
+		padding-right: 1%;
+		.tit {
+    display: flex;
+    margin-bottom: 30px;
+    align-items: center;
+			h1 {
+    font-size: 110px;
+    font-weight: 400;
+    font-family: "Cormorant", serif;
+			}
+			> div {
+    display: flex;
+    width: 35%;
+    margin-left: auto;
+    font-size: 17px;
+    flex-direction: column;
+    align-items: flex-end;
+				.inputWrap {
+					padding-top: 20px;
+				}
+				input[type="text"] {
+					padding: 5px 10px;
+					border: solid 1px #eee;
+					border-radius: 10px;
+				}
+				input[type="button"] {
+					font-size: 13px;
+				}
+			}
+		}
+		.masonry {
+			> li {
+				width: 45%;
+				margin-right: 5%;
+				margin-bottom: 4vw;
+			}
+			.imgWrar {
+				margin-bottom: 20px;
+				img {
+					object-fit: cover;
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.tit {
+				margin-bottom: 7px;
+				font-size: 18px;
+				font-weight: 600;
+			}
+			.profile {
+				font-family: "Cormorant", serif;
+			}
+		}
+	}
+	.line {
+		width: 3px;
+		img {
+			object-fit: cover;
+		}
+	}
+	.right {
+		width: 25%;
+		padding-left: 2%;
+		.tit {
+    display: flex;
+    margin-bottom: 30px;
+    align-items: center;
+			h1 {
+    font-size: 110px;
+    font-weight: 400;
+    font-family: "Cormorant", serif;
+			}
+			> div {
+    display: flex;
+    width: 35%;
+    margin-left: auto;
+    font-size: 17px;
+    flex-direction: column;
+    align-items: flex-end;
+				.inputWrap {
+					padding-top: 20px;
+				}
+				input[type="text"] {
+					padding: 5px 10px;
+					border: solid 1px #eee;
+					border-radius: 10px;
+				}
+				input[type="button"] {
+					font-size: 13px;
+				}
+			}
+		}
+		.masonry {
+			> li {
+				width: 45%;
+				margin-right: 5%;
+				margin-bottom: 4vw;
+			}
+			.imgWrar {
+				margin-bottom: 20px;
+				img {
+					object-fit: cover;
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.tit {
+				margin-bottom: 7px;
+				font-size: 18px;
+				font-weight: 600;
+			}
+			.profile {
+				font-family: "Cormorant", serif;
+			}
+		}
+	}
+}

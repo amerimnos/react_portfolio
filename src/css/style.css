@@ -165,7 +165,6 @@ header {
     display: block; } }
 footer {
   width: 100%;
-  margin-top: 30px;
   padding: 126px 0;
   border-top: solid 1px #4a6869; }
   footer .inner {
@@ -287,5 +286,203 @@ footer {
       margin-bottom: 22px; }
     footer .copy {
       margin-top: 15px; } }
+.galleryConts1 {
+  position: relative;
+  width: 100%;
+  padding: 58px 0;
+  background: #eff4ef; }
+  .galleryConts1 .outLine {
+    height: 7px;
+    border-top: solid 1px #6b6b6b;
+    border-bottom: solid 1px #6b6b6b; }
+  .galleryConts1 .inner {
+    display: flex;
+    flex-direction: row;
+    width: 1140px;
+    margin: 39px auto 0; }
+  .galleryConts1 .item1 {
+    width: 63%;
+    margin-bottom: 42px;
+    padding: 32px 63px 0px 0px;
+    border-right: solid 1px #6b6b6b; }
+    .galleryConts1 .item1 .gallerySwiper {
+      position: relative; }
+      .galleryConts1 .item1 .gallerySwiper .slide {
+        width: 650px;
+        height: 640px; }
+        .galleryConts1 .item1 .gallerySwiper .slide img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+    .galleryConts1 .item1 h2 {
+      margin: 45px 0 26px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      color: #2b2b2b; }
+    .galleryConts1 .item1 p {
+      padding-bottom: 27px;
+      line-height: 1.8;
+      color: #3e3e3d;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-family: "Cormorant", serif; }
+    .galleryConts1 .item1 .viewBtn {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      font-size: 13.5px;
+      letter-spacing: 2.2px;
+      font-weight: 500;
+      cursor: pointer; }
+      .galleryConts1 .item1 .viewBtn span {
+        padding-left: 10px; }
+  .galleryConts1 .itemWrap {
+    width: 37%; }
+  .galleryConts1 .item2 {
+    padding: 24px 60px 58px;
+    border-bottom: 1px solid #6b6b6b; }
+    .galleryConts1 .item2 h1 {
+      font-size: 37px;
+      font-family: "Cormorant", serif;
+      padding-bottom: 25px; }
+    .galleryConts1 .item2 p {
+      padding-bottom: 20px;
+      line-height: 1.7;
+      font-size: 18px;
+      font-weight: 500;
+      font-family: "Cormorant", serif; }
+    .galleryConts1 .item2 .viewBtn {
+      font-size: 14px;
+      letter-spacing: 2px; }
+      .galleryConts1 .item2 .viewBtn span {
+        padding-left: 10px; }
+  .galleryConts1 .item3 {
+    display: flex;
+    padding: 67px 60px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; }
+    .galleryConts1 .item3 .imgWrap {
+      width: 295px;
+      height: 295px;
+      margin-bottom: 27px; }
+      .galleryConts1 .item3 .imgWrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+    .galleryConts1 .item3 .imgTxt {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      letter-spacing: 2px;
+      align-items: center;
+      cursor: pointer; }
+      .galleryConts1 .item3 .imgTxt div {
+        letter-spacing: 1px;
+        font-weight: 500; }
+      .galleryConts1 .item3 .imgTxt em {
+        padding-left: 8px;
+        font-family: "Cormorant", serif;
+        font-size: 18px;
+        font-weight: 900; }
+
+.galleryConts2 {
+  width: 100%;
+  padding: 80px 0;
+  background: #f8f8f8; }
+  .galleryConts2 .inner {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto; }
+  .galleryConts2 .left {
+    width: 75%;
+    padding-right: 1%; }
+    .galleryConts2 .left .tit {
+      display: flex;
+      margin-bottom: 30px;
+      align-items: center; }
+      .galleryConts2 .left .tit h1 {
+        font-size: 110px;
+        font-weight: 400;
+        font-family: "Cormorant", serif; }
+      .galleryConts2 .left .tit > div {
+        display: flex;
+        width: 35%;
+        margin-left: auto;
+        font-size: 17px;
+        flex-direction: column;
+        align-items: flex-end; }
+        .galleryConts2 .left .tit > div .inputWrap {
+          padding-top: 20px; }
+        .galleryConts2 .left .tit > div input[type="text"] {
+          padding: 5px 10px;
+          border: solid 1px #eee;
+          border-radius: 10px; }
+        .galleryConts2 .left .tit > div input[type="button"] {
+          font-size: 13px; }
+    .galleryConts2 .left .masonry > li {
+      width: 45%;
+      margin-right: 5%;
+      margin-bottom: 4vw; }
+    .galleryConts2 .left .masonry .imgWrar {
+      margin-bottom: 20px; }
+      .galleryConts2 .left .masonry .imgWrar img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%; }
+    .galleryConts2 .left .masonry .tit {
+      margin-bottom: 7px;
+      font-size: 18px;
+      font-weight: 600; }
+    .galleryConts2 .left .masonry .profile {
+      font-family: "Cormorant", serif; }
+  .galleryConts2 .line {
+    width: 3px; }
+    .galleryConts2 .line img {
+      object-fit: cover; }
+  .galleryConts2 .right {
+    width: 25%;
+    padding-left: 2%; }
+    .galleryConts2 .right .tit {
+      display: flex;
+      margin-bottom: 30px;
+      align-items: center; }
+      .galleryConts2 .right .tit h1 {
+        font-size: 110px;
+        font-weight: 400;
+        font-family: "Cormorant", serif; }
+      .galleryConts2 .right .tit > div {
+        display: flex;
+        width: 35%;
+        margin-left: auto;
+        font-size: 17px;
+        flex-direction: column;
+        align-items: flex-end; }
+        .galleryConts2 .right .tit > div .inputWrap {
+          padding-top: 20px; }
+        .galleryConts2 .right .tit > div input[type="text"] {
+          padding: 5px 10px;
+          border: solid 1px #eee;
+          border-radius: 10px; }
+        .galleryConts2 .right .tit > div input[type="button"] {
+          font-size: 13px; }
+    .galleryConts2 .right .masonry > li {
+      width: 45%;
+      margin-right: 5%;
+      margin-bottom: 4vw; }
+    .galleryConts2 .right .masonry .imgWrar {
+      margin-bottom: 20px; }
+      .galleryConts2 .right .masonry .imgWrar img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%; }
+    .galleryConts2 .right .masonry .tit {
+      margin-bottom: 7px;
+      font-size: 18px;
+      font-weight: 600; }
+    .galleryConts2 .right .masonry .profile {
+      font-family: "Cormorant", serif; }
 
 /*# sourceMappingURL=style.css.map */
