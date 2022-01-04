@@ -10,7 +10,7 @@ function Gallery() {
     const [popOpen, setPopOpen] = useState(false);
     const [masonryResize, setMasonryResize] = useState(false);
     const [popSrc, setPopSrc] = useState(null);
-    
+
     const galleryConts2 = useRef(null);
     const right = useRef(null);
     const left = useRef(null);
@@ -45,7 +45,7 @@ function Gallery() {
         getFlickr2(flickrUrl2);
     }, [])
 
-    
+
     function loadingOn() {
         loadingElm.current.classList.add("on");
     }
@@ -54,12 +54,16 @@ function Gallery() {
     }
 
     function getFlickr1(url) {
-        
+
         loadingOn();
         axios.get(url).then(
             (json) => {
                 loadingOff();
                 console.log(json.data.photos.photo);
+                if (json.data.photos.photo.length === 0) {
+                    alert('Unfortunately, there are no results.')
+                    return;
+                }
                 setItem1(json.data.photos.photo);
             }
         );
@@ -71,6 +75,10 @@ function Gallery() {
             (json) => {
                 loadingOff();
                 console.log(json.data.photos.photo);
+                if (json.data.photos.photo.length === 0) {
+                    alert('Unfortunately, there are no results.')
+                    return;
+                }
                 setItem2(json.data.photos.photo);
             }
         );
@@ -271,11 +279,11 @@ function Gallery() {
 
                     </li>
                 </ul>
-                
-               <div ref={loadingElm} className="loadingWrap">
+
+                <div ref={loadingElm} className="loadingWrap">
                     <div className="loading"></div>
-               </div>
-            
+                </div>
+
             </div>
 
             {popOpen ? <Pop></Pop> : null}
