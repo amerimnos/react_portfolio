@@ -520,7 +520,8 @@ footer {
       .galleryConts2 .right .tit h1 {
         font-size: 7.2vw;
         font-weight: 400;
-        font-family: "Cormorant", serif; }
+        font-family: "Cormorant", serif;
+        text-align: left; }
       .galleryConts2 .right .tit > div {
         display: flex;
         width: 35%;

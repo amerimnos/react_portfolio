@@ -19,6 +19,8 @@ function Gallery() {
     const btn1 = useRef(null);
     const btn2 = useRef(null);
     const loadingElm = useRef(null);
+    const leftMasonryTit = useRef(null);
+    const rightMasonryTit = useRef(null);
 
     const url = process.env.PUBLIC_URL;
     const key = "685857eeaf8d03e0fb14b241dc08754c";
@@ -115,6 +117,9 @@ function Gallery() {
 
             if (e.code === 'Enter') {
                 tag1 = e.currentTarget.value;
+                console.log(leftMasonryTit.current.innerText, 'leftMasonryTit.current.innerText');
+                leftMasonryTit.current.innerText = tag1;
+
                 let flickrUrl1 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag1}&nojsoncallback=1&privacy_filter=1`;
                 getFlickr1(flickrUrl1);
             }
@@ -122,6 +127,7 @@ function Gallery() {
 
             if (e.code === 'Enter') {
                 tag2 = e.currentTarget.value;
+                rightMasonryTit.current.innerText = tag2;
                 let flickrUrl2 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag2}&nojsoncallback=1&privacy_filter=1`;
                 getFlickr2(flickrUrl2);
             }
@@ -199,7 +205,7 @@ function Gallery() {
                 <ul className="inner">
                     <li ref={left} className="left on" onMouseEnter={mouseInLeft}>
                         <div className="tit">
-                            <h1>MODERN</h1>
+                            <h1 ref={leftMasonryTit}>MODERN</h1>
                             <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas.
                                 <div className="inputWrap">
                                     <input ref={inputTxt1} onKeyDown={search} type="text" placeholder="Enter the tag." name="search" val="" />
@@ -240,7 +246,7 @@ function Gallery() {
                     </li>
                     <li ref={right} className="right off" onMouseEnter={mouseInRight}>
                         <div className="tit">
-                            <h1>lANDSCAPE</h1>
+                            <h1 ref={rightMasonryTit}>lANDSCAPE</h1>
                             <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas.
                                 <div className="inputWrap">
                                     <input ref={inputTxt2} onKeyDown={search} type="text" placeholder="Enter the tag." name="search2" val="" />
