@@ -7,6 +7,7 @@ function Gallery() {
 
     const [item1, setItem1] = useState([]);
     const [item2, setItem2] = useState([]);
+    const [masonryResize, setMasonryResize] = useState(false);
     const galleryConts2 = useRef(null);
     const right = useRef(null);
     const left = useRef(null);
@@ -17,20 +18,20 @@ function Gallery() {
     const key = "685857eeaf8d03e0fb14b241dc08754c";
     const method = "flickr.photos.search";
     const per_page = "20";
-    const tag1 = "modern";
-    const tag2 = "landscape";
+    let tag1 = "modern";
+    let tag2 = "landscape";
     const flickrUrl1 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag1}&nojsoncallback=1&privacy_filter=1`;
     const flickrUrl2 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag2}&nojsoncallback=1&privacy_filter=1`;
 
     const masonryOptions1 = {
-        transitionDuration: '0.5s',
+        transitionDuration: '0.4s',
         itemSelector: '.gridItem1',
-        gutter:0,
+        gutter: 0,
     };
     const masonryOptions2 = {
-        transitionDuration: '0.5s',
+        transitionDuration: '0.4s',
         itemSelector: '.gridItem2',
-        gutter:0,
+        gutter: 0,
     };
 
     useEffect(() => {
@@ -57,19 +58,38 @@ function Gallery() {
     }
 
     function mouseInRight() {
+        setMasonryResize(false);
         galleryConts2.current.classList.add('dark');
         right.current.classList.add('on');
         right.current.classList.remove('off');
         left.current.classList.remove('on');
         left.current.classList.add('off');
 
+        setTimeout(function () {
+            setMasonryResize(true);
+        }, 1000)
+
     }
     function mouseInLeft() {
+        setMasonryResize(false);
         galleryConts2.current.classList.remove('dark');
         left.current.classList.add('on');
         left.current.classList.remove('off');
         right.current.classList.remove('on');
         right.current.classList.add('off');
+        setTimeout(function () {
+            setMasonryResize(true);
+        }, 1000)
+    }
+
+    function search(e) {
+        console.log(e.code);
+
+        if (e.code === 'Enter') {
+            tag1 = this.val;
+            getFlickr1(flickrUrl1);
+        }
+
     }
 
     return (
@@ -118,8 +138,8 @@ function Gallery() {
                             <h1>MODERN</h1>
                             <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas.
                                 <div className="inputWrap">
-                                    <input type="text" placeholder="Enter the tag." />
-                                    <input type="button" value="Search" />
+                                    <input onKeyDown={search} type="text" placeholder="Enter the tag." name="search" val="" />
+                                    <input type="button" value="Search" name="searchBtn" />
                                 </div>
                             </div>
                         </div>
@@ -130,7 +150,7 @@ function Gallery() {
                             options={masonryOptions1} // default {}
                             disableImagesLoaded={false} // default false
                             updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
-                            enableResizableChildren={true} //부모 가로 사이즈에 반응함.
+                            enableResizableChildren={masonryResize} //부모 가로 사이즈에 반응함.
                         >
                             {
                                 item1.map((el, index) => {
@@ -173,7 +193,7 @@ function Gallery() {
                             options={masonryOptions2} // default {}
                             disableImagesLoaded={false} // default false
                             updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
-                            enableResizableChildren={true} //부모 가로 사이즈에 반응함.
+                            enableResizableChildren={masonryResize} //부모 가로 사이즈에 반응함.
                         >
                             {
                                 item2.map((el, index) => {

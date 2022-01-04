@@ -130,16 +130,12 @@
 	background: #f8f8f8;
 	transition: all 1s;
 
-	> * {
-		transition: all 1.4s;
-	}
-
 	.inner {
 		display: flex;
 	}
 	.left {
 		width: 70%;
-
+        transition: width 1s;
 		.tit {
 			display: flex;
 			margin-bottom: 30px;
@@ -285,6 +281,7 @@
 	.right {
 		width: 30%;
 		padding-left: 30px;
+        transition: width 1s;
 
 		.tit {
 			display: flex;

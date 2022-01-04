@@ -41,6 +41,9 @@ header {
 			font-weight: 500;
 			overflow: hidden;
 			transition: all 0.5s;
+			a{
+				transition: all 0.5s;
+			}
 		}
 	}
 	.join {

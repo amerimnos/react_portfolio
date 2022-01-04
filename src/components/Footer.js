@@ -16,21 +16,21 @@ function Footer() {
                 <li className="nav">
                     <h2>Links</h2>
                     <ul className="list">
-                        <li><NavLink exact to="/department">Department</NavLink></li>
-                        <li><NavLink exact to="/community">Community</NavLink></li>
-                        <li><NavLink exact to="/gallery">Gallery</NavLink></li>
-                        <li><NavLink exact to="/youtube">Youtube</NavLink></li>
-                        <li><NavLink exact to="/location">Location</NavLink></li>
-                        <li><NavLink exact to="/join">Join</NavLink></li>
+                        <li><NavLink to="/department">Department</NavLink></li>
+                        <li><NavLink to="/community">Community</NavLink></li>
+                        <li><NavLink to="/gallery">Gallery</NavLink></li>
+                        <li><NavLink to="/youtube">Youtube</NavLink></li>
+                        <li><NavLink to="/location">Location</NavLink></li>
+                        <li><NavLink to="/join">Join</NavLink></li>
                     </ul>
                 </li>
                 <li className="nav">
                     <h2>Legal</h2>
                     <ul className="list">
-                        <li><NavLink exact to="/privacy">Privacy Policy</NavLink></li>
-                        <li><NavLink exact to="/terms">Terms of Conditions</NavLink></li>
-                        <li><NavLink exact to="/faq">Faq</NavLink></li>
-                        <li><NavLink exact to="/help">Help Center</NavLink></li>
+                        <li><NavLink to="/privacy">Privacy Policy</NavLink></li>
+                        <li><NavLink to="/terms">Terms of Conditions</NavLink></li>
+                        <li><NavLink to="/faq">Faq</NavLink></li>
+                        <li><NavLink to="/help">Help Center</NavLink></li>
                     </ul>
                 </li>
                 <li className="contactUs">

@@ -45,10 +45,10 @@ function Header() {
                 <h1 className="logo"><NavLink exact to="/">Amerimnos</NavLink><span>.</span></h1>
                 <ul ref={gnb} onMouseLeave={() => { line.current.classList.remove('on') }} className="gnb">
                     <li ref={line} className="line"></li>
-                    <li><NavLink exact activeStyle={clickStyle} onMouseEnter={lineMove} to="/department">Department</NavLink></li>
-                    <li><NavLink exact activeStyle={clickStyle} onMouseEnter={lineMove} to="/community">Community</NavLink></li>
-                    <li><NavLink exact activeStyle={clickStyle} onMouseEnter={lineMove} to="/gallery">Gallery</NavLink></li>
-                    <li><NavLink exact activeStyle={clickStyle} onMouseEnter={lineMove} to="/youtube">Youtube</NavLink></li>
+                    <li><NavLink activeStyle={clickStyle} onMouseEnter={lineMove} to="/department">Department</NavLink></li>
+                    <li><NavLink activeStyle={clickStyle} onMouseEnter={lineMove} to="/community">Community</NavLink></li>
+                    <li><NavLink activeStyle={clickStyle} onMouseEnter={lineMove} to="/gallery">Gallery</NavLink></li>
+                    <li><NavLink activeStyle={clickStyle} onMouseEnter={lineMove} to="/youtube">Youtube</NavLink></li>
                     <li><NavLink exact activeStyle={clickStyle} onMouseEnter={lineMove} to="/location">Location</NavLink></li>
                 </ul>
                 <NavLink className="join" exact activeStyle={clickStyle1} to="/Join" data-text="Join">
@@ -60,12 +60,12 @@ function Header() {
                 </NavLink>
                 <div onClick={active} className="totalMenuBtn"></div>
                 <ul className="totalMenuConts">
-                    <li><NavLink exact activeStyle={clickStyle} to="/department">Department</NavLink></li>
-                    <li><NavLink exact activeStyle={clickStyle} to="/community">Community</NavLink></li>
-                    <li><NavLink exact activeStyle={clickStyle} to="/gallery">Gallery</NavLink></li>
-                    <li><NavLink exact activeStyle={clickStyle} to="/youtube">Youtube</NavLink></li>
-                    <li><NavLink exact activeStyle={clickStyle} to="/location">Location</NavLink></li>
-                    <li><NavLink exact activeStyle={clickStyle} to="/join">Join</NavLink></li>
+                    <li><NavLink activeStyle={clickStyle} to="/department">Department</NavLink></li>
+                    <li><NavLink activeStyle={clickStyle} to="/community">Community</NavLink></li>
+                    <li><NavLink activeStyle={clickStyle} to="/gallery">Gallery</NavLink></li>
+                    <li><NavLink activeStyle={clickStyle} to="/youtube">Youtube</NavLink></li>
+                    <li><NavLink activeStyle={clickStyle} to="/location">Location</NavLink></li>
+                    <li><NavLink activeStyle={clickStyle} to="/join">Join</NavLink></li>
                 </ul>
             </div>
         </header>
