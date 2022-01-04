@@ -170,7 +170,9 @@ function Gallery() {
                     <li className="item1">
                         <div className="gallerySwiper">
                             <div className="slide">
-                                <img src={url + "/img/gallery_pic01.jpg"} alt="pic1" />
+                                <a rel="noreferrer" href="https://www.flickr.com/photos/skymatthews/" target="_blank" title="Sky Matthews">
+                                    <img src={url + "/img/gallery_pic01.jpg"} alt="pic1" />
+                                </a>
                             </div>
                             {/* <img src={url+"/img/gallery_pic02.jpg"} alt="pic2" />
                             <img src={url+"/img/gallery_pic03.jpg"} alt="pic3" /> */}
@@ -178,7 +180,9 @@ function Gallery() {
                         <h2>THE CLIENT GOALS //</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In magni, corporis labore ab vero fugit delectus, dolor veniam architecto veritatis ducimus, quisquam molestiae aliquid laboriosam nihil. non labore doloribus, illum nobis enim possimus.</p>
                         <div className="viewBtn">
-                            VIEW DETAILS <span className="material-icons-outlined">east</span>
+                            <a rel="noreferrer" href="https://www.flickr.com/photos/skymatthews/" target="_blank" title="Sky Matthews">
+                                VIEW DETAILS <span className="material-icons-outlined">east</span>
+                            </a>
                         </div>
                     </li>
                     <li className="itemWrap">
@@ -192,7 +196,11 @@ function Gallery() {
                                 <img src={url + "/img/gallery_pic04.jpg"} alt="pic4" />
                             </li>
                             <li className="imgTxt">
-                                <div>2021 of the Year // <em>Lejardin</em></div>
+                                <div>
+                                    <a href="https://www.flickr.com/explore" rel="noreferrer" target="_blank">
+                                        2021 of the Year // <em>Lejardin</em>
+                                    </a>
+                                </div>
                                 <span className="material-icons-outlined">east</span>
                             </li>
                         </ul>

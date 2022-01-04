@@ -43,6 +43,9 @@ header {
 			transition: all 0.5s;
 			a{
 				transition: all 0.5s;
+				&:hover{
+					color:rgb(43, 174, 41);
+				}
 			}
 		}
 	}

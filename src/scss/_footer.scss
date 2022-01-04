@@ -57,6 +57,10 @@ footer {
 				margin-bottom: 23px;
 				font-size: 18px;
 				color: #56565c;
+				transition:all 0.5s;
+				&:hover{
+					color:rgb(43, 174, 41);
+				}
 			}
 		}
 	}
@@ -72,6 +76,10 @@ footer {
 				padding-top: 4px;
 				font-size: 20px;
 				color: #56565c;
+				transition:all 0.5s;
+				&:hover{
+					color:rgb(43, 174, 41);
+				}
 			}
 		}
 	}

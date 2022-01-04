@@ -28,6 +28,13 @@
 					width: 100%;
 					height: 100%;
 					object-fit: cover;
+					transition: all 0.5s;
+					transition-timing-function: ease-in-out;
+					&:hover {
+						margin: -10px 0 0 -15px;
+						transform: scale(1.015);
+						box-shadow: 13px 14px 20px #bcc8bc;
+					}
 				}
 			}
 		}
@@ -47,13 +54,49 @@
 			font-family: "Cormorant", serif;
 		}
 		.viewBtn {
-			display: flex;
-			justify-content: flex-end;
-			align-items: center;
+			position: relative;
+			z-index: 1;
+			display: inline-flex;
+			float: right;
 			font-size: 13.5px;
 			letter-spacing: 2.2px;
 			font-weight: 500;
 			cursor: pointer;
+			transition: color 0.5s 0.25s;
+			overflow: hidden;
+
+			a {
+				display: flex;
+				align-items: center;
+			}
+
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				z-index: -1;
+				left: 0;
+				top: 0;
+				height: 100%;
+				width: 100%;
+				background-color: #000;
+				transform: scaleX(0);
+				transform-origin: right bottom;
+				transition: transform 0.5s 0.1s;
+				transition-timing-function: cubic-bezier(
+					0.76,
+					0.35,
+					0.05,
+					0.85
+				);
+			}
+			&:hover {
+				color: #fff;
+			}
+			&:hover::before {
+				transform: scaleX(1);
+				transform-origin: left bottom;
+			}
 			span {
 				padding-left: 10px;
 			}
@@ -104,6 +147,9 @@
 			}
 		}
 		.imgTxt {
+			overflow: hidden;
+			z-index: 1;
+			position: relative;
 			width: 100%;
 			display: flex;
 			justify-content: space-between;
@@ -111,6 +157,34 @@
 			letter-spacing: 2px;
 			align-items: center;
 			cursor: pointer;
+			transition: all 0.5s 0.2s;
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				z-index: -1;
+				left: 0;
+				top: 0;
+				height: 100%;
+				width: 100%;
+				background-color: #000;
+				transform: scaleX(0);
+				transform-origin: right bottom;
+				transition: transform 0.5s 0.1s;
+				transition-timing-function: cubic-bezier(
+					0.76,
+					0.35,
+					0.05,
+					0.85
+				);
+			}
+			&:hover {
+				color: #fff;
+			}
+			&:hover::before {
+				transform: scaleX(1);
+				transform-origin: left bottom;
+			}
 			div {
 				letter-spacing: 1px;
 				font-weight: 500;
@@ -421,7 +495,11 @@
 						background-color: #e5e5e5;
 						border: none;
 						border-radius: 0 8px 8px 0;
-						font-size: 13px;
+						transition: all 0.5s;
+						&:hover {
+							background-color: #8fcb91;
+							color: #fff;
+						}
 					}
 				}
 			}

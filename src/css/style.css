@@ -51,6 +51,8 @@ header {
       transition: all 0.5s; }
       header .gnb li a {
         transition: all 0.5s; }
+        header .gnb li a:hover {
+          color: #2bae29; }
   header .join {
     position: relative;
     display: flex;
@@ -213,7 +215,10 @@ footer {
     footer .nav .list li {
       margin-bottom: 23px;
       font-size: 18px;
-      color: #56565c; }
+      color: #56565c;
+      transition: all 0.5s; }
+      footer .nav .list li:hover {
+        color: #2bae29; }
   footer .contactUs {
     width: 22.1%;
     margin-left: auto; }
@@ -225,7 +230,10 @@ footer {
         display: block;
         padding-top: 4px;
         font-size: 20px;
-        color: #56565c; }
+        color: #56565c;
+        transition: all 0.5s; }
+        footer .contactUs li span:hover {
+          color: #2bae29; }
   footer .copy {
     width: 100%;
     margin-top: 55px;
@@ -315,7 +323,13 @@ footer {
         .galleryConts1 .item1 .gallerySwiper .slide img {
           width: 100%;
           height: 100%;
-          object-fit: cover; }
+          object-fit: cover;
+          transition: all 0.5s;
+          transition-timing-function: ease-in-out; }
+          .galleryConts1 .item1 .gallerySwiper .slide img:hover {
+            margin: -10px 0 0 -15px;
+            transform: scale(1.015);
+            box-shadow: 13px 14px 20px #bcc8bc; }
     .galleryConts1 .item1 h2 {
       margin: 45px 0 26px;
       font-size: 13px;
@@ -330,13 +344,38 @@ footer {
       letter-spacing: 1px;
       font-family: "Cormorant", serif; }
     .galleryConts1 .item1 .viewBtn {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      float: right;
       font-size: 13.5px;
       letter-spacing: 2.2px;
       font-weight: 500;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: color 0.5s 0.25s;
+      overflow: hidden; }
+      .galleryConts1 .item1 .viewBtn a {
+        display: flex;
+        align-items: center; }
+      .galleryConts1 .item1 .viewBtn::before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #000;
+        transform: scaleX(0);
+        transform-origin: right bottom;
+        transition: transform 0.5s 0.1s;
+        transition-timing-function: cubic-bezier(0.76, 0.35, 0.05, 0.85); }
+      .galleryConts1 .item1 .viewBtn:hover {
+        color: #fff; }
+      .galleryConts1 .item1 .viewBtn:hover::before {
+        transform: scaleX(1);
+        transform-origin: left bottom; }
       .galleryConts1 .item1 .viewBtn span {
         padding-left: 10px; }
   .galleryConts1 .itemWrap {
@@ -374,13 +413,36 @@ footer {
         height: 100%;
         object-fit: cover; }
     .galleryConts1 .item3 .imgTxt {
+      overflow: hidden;
+      z-index: 1;
+      position: relative;
       width: 100%;
       display: flex;
       justify-content: space-between;
       font-size: 14px;
       letter-spacing: 2px;
       align-items: center;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: all 0.5s 0.2s; }
+      .galleryConts1 .item3 .imgTxt::before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #000;
+        transform: scaleX(0);
+        transform-origin: right bottom;
+        transition: transform 0.5s 0.1s;
+        transition-timing-function: cubic-bezier(0.76, 0.35, 0.05, 0.85); }
+      .galleryConts1 .item3 .imgTxt:hover {
+        color: #fff; }
+      .galleryConts1 .item3 .imgTxt:hover::before {
+        transform: scaleX(1);
+        transform-origin: left bottom; }
       .galleryConts1 .item3 .imgTxt div {
         letter-spacing: 1px;
         font-weight: 500; }
@@ -609,7 +671,10 @@ footer {
         background-color: #e5e5e5;
         border: none;
         border-radius: 0 8px 8px 0;
-        font-size: 13px; }
+        transition: all 0.5s; }
+        .galleryConts2 .right.on .tit > div input[type="button"]:hover {
+          background-color: #8fcb91;
+          color: #fff; }
       .galleryConts2 .right.on .masonry > li {
         margin-right: 30px; }
     .galleryConts2 .right.off {
