@@ -318,80 +318,253 @@ footer {
     height: 100%;
     background: #cfe2e7; }
   .commuConts .inner {
+    overflow: hidden;
     position: static;
     z-index: 1;
     width: 1200px;
     height: 100%;
-    margin: 200px auto 90px;
+    margin: 60px auto;
     background-color: #fff; }
   .commuConts .topConts {
+    overflow: hidden;
+    position: relative;
     display: flex;
     justify-content: center;
-    margin-bottom: 200px;
-    background: #f1f6fa; }
+    padding: 174px 0 0 0;
+    background: #f1f6fa;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s; }
+    .commuConts .topConts.on {
+      padding-top: 50px; }
     .commuConts .topConts h1 {
-      margin-bottom: 15px;
-      font-size: 30px;
+      margin-bottom: 10px;
+      font-size: 25px;
       font-weight: 500;
       color: #475362; }
     .commuConts .topConts p {
-      margin-bottom: 60px;
+      margin-bottom: 44px;
       font-size: 18px;
       color: #757d8b; }
     .commuConts .topConts .searchWrap {
       position: relative;
-      margin-bottom: 90px; }
-  .commuConts .saerch {
-    border: solid 1px #ddd;
-    padding: 15px 40px;
-    border-radius: 50px; }
-    .commuConts .saerch .searchBtnLabel {
-      position: absolute;
-      right: 30px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: url(); }
-    .commuConts .saerch .searchBtn {
-      position: absolute;
-      left: -9999px;
-      top: -9999pxc; }
+      margin-bottom: 150px; }
+      .commuConts .topConts .searchWrap .search {
+        width: 410px;
+        border: solid 1px #eff1f6;
+        box-shadow: 2px 2px 3px #e0e0e0;
+        padding: 15px 56px 15px 24px;
+        border-radius: 52px;
+        transition: all 0.5s; }
+        .commuConts .topConts .searchWrap .search::placeholder {
+          color: #cbcbcb; }
+        .commuConts .topConts .searchWrap .search:hover {
+          border-color: #2bae29; }
+      .commuConts .topConts .searchWrap label {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 12px;
+        color: #c3c3c3;
+        cursor: pointer;
+        transition: all 0.5s; }
+        .commuConts .topConts .searchWrap label:hover {
+          color: #2bae29; }
+      .commuConts .topConts .searchWrap .searchBtn {
+        position: absolute;
+        left: -9999px;
+        top: -9999pxc; }
+    .commuConts .topConts .bgIcon1 {
+      position: relative;
+      bottom: 0;
+      height: 0; }
+      .commuConts .topConts .bgIcon1 .binCircle {
+        position: absolute;
+        top: -216px;
+        left: -351px;
+        width: 18px;
+        height: 18px;
+        border: solid 3px #fcdbb6;
+        border-radius: 100px; }
+      .commuConts .topConts .bgIcon1 .circle {
+        position: absolute;
+        top: -140px;
+        left: -357px;
+        width: 20px;
+        height: 20px;
+        border-radius: 40px;
+        background: #c3ebfe; }
+      .commuConts .topConts .bgIcon1 .dividCircle {
+        position: absolute;
+        top: -194px;
+        left: -307px;
+        width: 40px;
+        height: 20px;
+        border-radius: 0 0 40px 40px;
+        background: #7fd8ff;
+        transform: rotate(18deg); }
+      .commuConts .topConts .bgIcon1 .sRectangle {
+        position: absolute;
+        top: -141px;
+        left: -265px;
+        width: 13px;
+        height: 13px;
+        transform: rotate(23deg);
+        background: #ffa6dc; }
+      .commuConts .topConts .bgIcon1 .bRectangle {
+        position: absolute;
+        top: -88px;
+        left: -360px;
+        width: 116px;
+        height: 116px;
+        background: #fed3a6;
+        transform: rotate(68deg); }
+    .commuConts .topConts .bgIcon2 {
+      position: relative;
+      bottom: 0;
+      height: 0; }
+      .commuConts .topConts .bgIcon2 .bCircle {
+        position: absolute;
+        top: -204px;
+        left: 311px;
+        width: 77px;
+        height: 77px;
+        background-color: #fea5db;
+        border-radius: 100px; }
+      .commuConts .topConts .bgIcon2 .sCircle {
+        position: absolute;
+        top: -262px;
+        left: 279px;
+        width: 25px;
+        height: 25px;
+        border-radius: 40px;
+        background: #fed3a6; }
+      .commuConts .topConts .bgIcon2 .dividCircle {
+        position: absolute;
+        top: -258px;
+        left: 329px;
+        width: 40px;
+        height: 20px;
+        border-radius: 0 0 40px 40px;
+        background: #c3eafd;
+        transform: rotate(203deg); }
+      .commuConts .topConts .bgIcon2 .rectangle {
+        position: absolute;
+        top: -188px;
+        left: 267px;
+        width: 13px;
+        height: 13px;
+        transform: rotate(23deg);
+        background: #7dd9ff; }
   .commuConts .tab {
-    width: 70%;
+    position: relative;
+    z-index: 1;
+    width: 52%;
     display: flex;
-    margin: -200px auto 500px;
-    justify-content: space-around; }
+    margin: -85px auto 52px;
+    justify-content: space-between; }
     .commuConts .tab a {
-      display: block;
       display: flex;
+      width: 194px;
+      height: 185px;
       align-items: center;
+      flex-direction: column;
       justify-content: center;
-      padding: 40px;
-      color: #5e6876;
+      background-color: #fff;
+      color: #79818c;
       font-weight: 500;
-      font-size: 17px; }
-      .commuConts .tab a i {
+      font-size: 17px;
+      box-shadow: 0px 0px 7px #e4e4e4;
+      transition: all 0.5s; }
+      .commuConts .tab a:hover {
+        background-color: #f8f8f8; }
+      .commuConts .tab a img,
+      .commuConts .tab a span {
+        width: 50px;
         display: block;
         margin-bottom: 20px;
-        font-size: 70px; }
-  .commuConts .bottomConts a {
-    display: block;
-    display: flex;
-    align-items: center;
-    margin-bottom: 40px;
-    padding: 30px;
-    box-shadow: 5px 5px 0 #999; }
-    .commuConts .bottomConts a span {
-      font-size: 45px; }
-    .commuConts .bottomConts a .txt li:first-child {
-      margin-bottom: 20px;
-      font-size: 20px;
-      font-weight: 700;
-      color: #81d8fb; }
-    .commuConts .bottomConts a .txt li:last-child {
-      font-size: 17px;
-      color: #eee; }
-    .commuConts .bottomConts a .viewcon {
-      font-size: 20px; }
+        font-size: 50px;
+        color: #7fd8ff; }
+  .commuConts .bottomConts {
+    width: 52%;
+    margin: 0 auto; }
+    .commuConts .bottomConts .firstConts {
+      transition: all 0.5s; }
+      .commuConts .bottomConts .firstConts.off {
+        visibility: hidden;
+        opacity: 0; }
+    .commuConts .bottomConts a {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      padding: 22px;
+      box-shadow: 0px 2px 7px 0px #dedede;
+      overflow: hidden;
+      justify-content: space-between;
+      transition: all 0.5s; }
+      .commuConts .bottomConts a .leftIcon {
+        margin-right: 30px;
+        font-size: 41px;
+        color: #7dd8fe; }
+      .commuConts .bottomConts a .txt li:first-child {
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.4px;
+        color: #81d8fb; }
+      .commuConts .bottomConts a .txt li:last-child {
+        font-size: 14px;
+        color: #999; }
+      .commuConts .bottomConts a .viewIcon {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        margin-left: auto; }
+        .commuConts .bottomConts a .viewIcon::before {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 70%;
+          height: 3px;
+          background-color: #bcbcbc;
+          transform: rotateZ(45deg);
+          transform-origin: left top;
+          transition: all 0.5s; }
+        .commuConts .bottomConts a .viewIcon::after {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 70%;
+          height: 3px;
+          background-color: #989898;
+          transform: rotateZ(-45deg);
+          transform-origin: left bottom;
+          transition: all 0.5s; }
+      .commuConts .bottomConts a:hover {
+        margin: -5px 0 45px -5px;
+        transform: scale(1.02);
+        box-shadow: 0px 2px 7px 0px #dedede, 4px 7px 8px #cbcbcb; }
+      .commuConts .bottomConts a:hover .viewIcon::before {
+        top: -750%;
+        left: 530%;
+        width: 110%;
+        height: 1040%;
+        border-radius: 500px;
+        background-color: #fea5db;
+        z-index: 1; }
+      .commuConts .bottomConts a:hover .viewIcon::after {
+        bottom: -190%;
+        left: 0%;
+        width: 650%;
+        height: 280%;
+        border-radius: 500px;
+        border-radius: 500px;
+        background-color: #fed3a6; }
 
 .galleryConts1 {
   position: relative;

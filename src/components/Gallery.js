@@ -48,120 +48,6 @@ function Gallery() {
     }, [])
 
 
-    function loadingOn() {
-        loadingElm.current.classList.add("on");
-    }
-    function loadingOff() {
-        loadingElm.current.classList.remove("on");
-    }
-
-    function getFlickr1(url) {
-
-        loadingOn();
-        axios.get(url).then(
-            (json) => {
-                loadingOff();
-                console.log(json.data.photos.photo);
-                if (json.data.photos.photo.length === 0) {
-                    alert('Unfortunately, there are no results.')
-                    return;
-                }
-                setItem1(json.data.photos.photo);
-            }
-        );
-    }
-
-    function getFlickr2(url) {
-        loadingOn();
-        axios.get(url).then(
-            (json) => {
-                loadingOff();
-                console.log(json.data.photos.photo);
-                if (json.data.photos.photo.length === 0) {
-                    alert('Unfortunately, there are no results.')
-                    return;
-                }
-                setItem2(json.data.photos.photo);
-            }
-        );
-    }
-
-    function mouseInRight() {
-        setMasonryResize(false);
-        galleryConts2.current.classList.add('dark');
-        right.current.classList.add('on');
-        right.current.classList.remove('off');
-        left.current.classList.remove('on');
-        left.current.classList.add('off');
-
-        setTimeout(function () {
-            setMasonryResize(true);
-        }, 1000)
-
-    }
-    function mouseInLeft() {
-        setMasonryResize(false);
-        galleryConts2.current.classList.remove('dark');
-        left.current.classList.add('on');
-        left.current.classList.remove('off');
-        right.current.classList.remove('on');
-        right.current.classList.add('off');
-        setTimeout(function () {
-            setMasonryResize(true);
-        }, 1000)
-    }
-
-    function search(e) {
-
-        if (e.target === inputTxt1.current) {
-
-            if (e.code === 'Enter') {
-                tag1 = e.currentTarget.value;
-                console.log(leftMasonryTit.current.innerText, 'leftMasonryTit.current.innerText');
-                leftMasonryTit.current.innerText = tag1;
-
-                let flickrUrl1 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag1}&nojsoncallback=1&privacy_filter=1`;
-                getFlickr1(flickrUrl1);
-            }
-        } else if (e.target === inputTxt2.current) {
-
-            if (e.code === 'Enter') {
-                tag2 = e.currentTarget.value;
-                rightMasonryTit.current.innerText = tag2;
-                let flickrUrl2 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag2}&nojsoncallback=1&privacy_filter=1`;
-                getFlickr2(flickrUrl2);
-            }
-
-        }
-    }
-
-    function searchBtn(e) {
-
-        if (e.target === btn1.current) {
-
-            let tag1 = inputTxt1.current.value;
-            let flickrUrl1 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag1}&nojsoncallback=1&privacy_filter=1`;
-            getFlickr1(flickrUrl1);
-        } else {
-
-            let tag2 = inputTxt2.current.value;
-            let flickrUrl2 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag2}&nojsoncallback=1&privacy_filter=1`;
-            getFlickr2(flickrUrl2);
-
-        }
-    }
-
-    function popupOpen(e) {
-        setPopOpen(true);
-        let popSrc = e.currentTarget.firstElementChild.firstElementChild.getAttribute('src');
-        popSrc = popSrc.replace('z.jpg', 'b.jpg');
-        setPopSrc(popSrc);
-    }
-
-    function popClose(e) {
-        setPopOpen(false);
-    }
-
     return (
         <>
             <div className="galleryConts1">
@@ -304,7 +190,6 @@ function Gallery() {
         </>
     )
 
-
     function Pop() {
         return (
             <aside className="galleryPop">
@@ -313,6 +198,122 @@ function Gallery() {
             </aside>
         )
     }
+
+
+    function loadingOn() {
+        loadingElm.current.classList.add("on");
+    }
+    function loadingOff() {
+        loadingElm.current.classList.remove("on");
+    }
+
+    function getFlickr1(url) {
+
+        loadingOn();
+        axios.get(url).then(
+            (json) => {
+                loadingOff();
+                console.log(json.data.photos.photo);
+                if (json.data.photos.photo.length === 0) {
+                    alert('Unfortunately, there are no results.')
+                    return;
+                }
+                setItem1(json.data.photos.photo);
+            }
+        );
+    }
+
+    function getFlickr2(url) {
+        loadingOn();
+        axios.get(url).then(
+            (json) => {
+                loadingOff();
+                console.log(json.data.photos.photo);
+                if (json.data.photos.photo.length === 0) {
+                    alert('Unfortunately, there are no results.')
+                    return;
+                }
+                setItem2(json.data.photos.photo);
+            }
+        );
+    }
+
+    function mouseInRight() {
+        setMasonryResize(false);
+        galleryConts2.current.classList.add('dark');
+        right.current.classList.add('on');
+        right.current.classList.remove('off');
+        left.current.classList.remove('on');
+        left.current.classList.add('off');
+
+        setTimeout(function () {
+            setMasonryResize(true);
+        }, 1000)
+
+    }
+    function mouseInLeft() {
+        setMasonryResize(false);
+        galleryConts2.current.classList.remove('dark');
+        left.current.classList.add('on');
+        left.current.classList.remove('off');
+        right.current.classList.remove('on');
+        right.current.classList.add('off');
+        setTimeout(function () {
+            setMasonryResize(true);
+        }, 1000)
+    }
+
+    function search(e) {
+
+        if (e.target === inputTxt1.current) {
+
+            if (e.code === 'Enter') {
+                tag1 = e.currentTarget.value;
+                console.log(leftMasonryTit.current.innerText, 'leftMasonryTit.current.innerText');
+                leftMasonryTit.current.innerText = tag1;
+
+                let flickrUrl1 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag1}&nojsoncallback=1&privacy_filter=1`;
+                getFlickr1(flickrUrl1);
+            }
+        } else if (e.target === inputTxt2.current) {
+
+            if (e.code === 'Enter') {
+                tag2 = e.currentTarget.value;
+                rightMasonryTit.current.innerText = tag2;
+                let flickrUrl2 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag2}&nojsoncallback=1&privacy_filter=1`;
+                getFlickr2(flickrUrl2);
+            }
+
+        }
+    }
+
+    function searchBtn(e) {
+
+        if (e.target === btn1.current) {
+
+            let tag1 = inputTxt1.current.value;
+            let flickrUrl1 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag1}&nojsoncallback=1&privacy_filter=1`;
+            getFlickr1(flickrUrl1);
+        } else {
+
+            let tag2 = inputTxt2.current.value;
+            let flickrUrl2 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag2}&nojsoncallback=1&privacy_filter=1`;
+            getFlickr2(flickrUrl2);
+
+        }
+    }
+
+    function popupOpen(e) {
+        setPopOpen(true);
+        let popSrc = e.currentTarget.firstElementChild.firstElementChild.getAttribute('src');
+        popSrc = popSrc.replace('z.jpg', 'b.jpg');
+        setPopSrc(popSrc);
+    }
+
+    function popClose(e) {
+        setPopOpen(false);
+    }
+
 }
 
 export default Gallery;

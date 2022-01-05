@@ -22,99 +22,302 @@
 		background: rgb(207, 226, 231);
 	}
 	.inner {
+		overflow: hidden;
 		position: static;
 		z-index: 1;
 		width: 1200px;
 		height: 100%;
-		margin: 200px auto 90px;
+		margin: 60px auto;
 		background-color: #fff;
 	}
 
 	.topConts {
+		overflow: hidden;
+		position: relative;
 		display: flex;
 		justify-content: center;
-		margin-bottom: 200px;
+		padding: 174px 0 0 0;
 		background: #f1f6fa;
+		flex-direction: column;
+		align-items: center;
+		transition: all 0.5s;
+		&.on {
+			padding-top: 50px;
+		}
 		h1 {
-			margin-bottom: 15px;
-			font-size: 30px;
+			margin-bottom: 10px;
+			font-size: 25px;
 			font-weight: 500;
 			color: #475362;
 		}
 		p {
-			margin-bottom: 60px;
+			margin-bottom: 44px;
 			font-size: 18px;
 			color: #757d8b;
 		}
 		.searchWrap {
 			position: relative;
-			margin-bottom: 90px;
+			margin-bottom: 150px;
+			.search {
+				width: 410px;
+				border: solid 1px #eff1f6;
+				box-shadow: 2px 2px 3px #e0e0e0;
+				padding: 15px 56px 15px 24px;
+				border-radius: 52px;
+				transition: all 0.5s;
+				&::placeholder {
+					color: #cbcbcb;
+				}
+				&:hover {
+					border-color: #2bae29;
+				}
+			}
+			label {
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				transform: translateY(-50%);
+				padding: 12px;
+				color: #c3c3c3;
+				cursor: pointer;
+				transition: all 0.5s;
+				&:hover {
+					color: #2bae29;
+				}
+			}
+			.searchBtn {
+				position: absolute;
+				left: -9999px;
+				top: -9999pxc;
+			}
+		}
+
+		.bgIcon1 {
+			position: relative;
+			bottom: 0;
+			height: 0;
+			.binCircle {
+				position: absolute;
+				top: -216px;
+				left: -351px;
+				width: 18px;
+				height: 18px;
+				border: solid 3px #fcdbb6;
+				border-radius: 100px;
+			}
+			.circle {
+				position: absolute;
+				top: -140px;
+				left: -357px;
+				width: 20px;
+				height: 20px;
+				border-radius: 40px;
+				background: #c3ebfe;
+			}
+			.dividCircle {
+				position: absolute;
+				top: -194px;
+				left: -307px;
+				width: 40px;
+				height: 20px;
+				border-radius: 0 0 40px 40px;
+				background: #7fd8ff;
+				transform: rotate(18deg);
+			}
+			.sRectangle {
+				position: absolute;
+				top: -141px;
+				left: -265px;
+				width: 13px;
+				height: 13px;
+				transform: rotate(23deg);
+				background: #ffa6dc;
+			}
+			.bRectangle {
+				position: absolute;
+				top: -88px;
+				left: -360px;
+				width: 116px;
+				height: 116px;
+				background: #fed3a6;
+				transform: rotate(68deg);
+			}
+		}
+		.bgIcon2 {
+			position: relative;
+			bottom: 0;
+			height: 0;
+			.bCircle {
+				position: absolute;
+				top: -204px;
+				left: 311px;
+				width: 77px;
+				height: 77px;
+				background-color: #fea5db;
+				border-radius: 100px;
+			}
+			.sCircle {
+				position: absolute;
+				top: -262px;
+				left: 279px;
+				width: 25px;
+				height: 25px;
+				border-radius: 40px;
+				background: #fed3a6;
+			}
+			.dividCircle {
+				position: absolute;
+				top: -258px;
+				left: 329px;
+				width: 40px;
+				height: 20px;
+				border-radius: 0 0 40px 40px;
+				background: #c3eafd;
+				transform: rotate(203deg);
+			}
+			.rectangle {
+				position: absolute;
+				top: -188px;
+				left: 267px;
+				width: 13px;
+				height: 13px;
+				transform: rotate(23deg);
+				background: #7dd9ff;
+			}
 		}
 	}
-	.saerch {
-		border: solid 1px #ddd;
-		padding: 15px 40px;
-		border-radius: 50px;
-		.searchBtnLabel {
-			position: absolute;
-			right: 30px;
-			top: 50%;
-			transform: translateY(-50%);
-			background: url();
-		}
-		.searchBtn {
-			position: absolute;
-			left: -9999px;
-			top: -9999pxc;
-		}
-	}
+
 	.tab {
-		width: 70%;
+		position: relative;
+		z-index: 1;
+		width: 52%;
 		display: flex;
-		margin: -200px auto 500px;
-		justify-content: space-around;
+		margin: -85px auto 52px;
+		justify-content: space-between;
 		a {
-			display: block;
 			display: flex;
+			width: 194px;
+			height: 185px;
 			align-items: center;
+			flex-direction: column;
 			justify-content: center;
-			padding: 40px;
-			color: #5e6876;
+			background-color: #fff;
+			color: #79818c;
 			font-weight: 500;
 			font-size: 17px;
+			box-shadow: 0px 0px 7px #e4e4e4;
+			transition: all 0.5s;
+			&:hover {
+				background-color: #f8f8f8;
+			}
 
-			i {
+			img,
+			span {
+				width: 50px;
 				display: block;
 				margin-bottom: 20px;
-				font-size: 70px;
+				font-size: 50px;
+				color: #7fd8ff;
 			}
 		}
 	}
 	.bottomConts {
+		width: 52%;
+		margin: 0 auto;
+
+		.firstConts{
+			transition:all 0.5s;
+			&.off {
+			visibility: hidden;
+			opacity:0;
+		    }
+		}
+        
 		a {
-			display: block;
 			display: flex;
 			align-items: center;
 			margin-bottom: 40px;
-			padding: 30px;
-			box-shadow: 5px 5px 0 #999;
-			span {
-				font-size: 45px;
+			padding: 22px;
+			box-shadow: 0px 2px 7px 0px #dedede;
+			overflow: hidden;
+			justify-content: space-between;
+			transition: all 0.5s;
+			.leftIcon {
+				margin-right: 30px;
+				font-size: 41px;
+				color: #7dd8fe;
 			}
 			.txt {
 				li:first-child {
-					margin-bottom: 20px;
-					font-size: 20px;
+					margin-bottom: 10px;
+					font-size: 18px;
 					font-weight: 700;
+					letter-spacing: -0.4px;
 					color: #81d8fb;
 				}
 				li:last-child {
-					font-size: 17px;
-					color: #eee;
+					font-size: 14px;
+					color: #999;
 				}
 			}
-			.viewcon {
-				font-size: 20px;
+			.viewIcon {
+				position: relative;
+				width: 20px;
+				height: 20px;
+				margin-left: auto;
+				&::before {
+					content: "";
+					display: block;
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 70%;
+					height: 3px;
+					background-color: #bcbcbc;
+					transform: rotateZ(45deg);
+					transform-origin: left top;
+					transition: all 0.5s;
+				}
+				&::after {
+					content: "";
+					display: block;
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					width: 70%;
+					height: 3px;
+					background-color: #989898;
+					transform: rotateZ(-45deg);
+					transform-origin: left bottom;
+					transition: all 0.5s;
+				}
+			}
+
+			&:hover {
+				margin: -5px 0 45px -5px;
+				transform: scale(1.02);
+				box-shadow: 0px 2px 7px 0px #dedede, 4px 7px 8px #cbcbcb;
+			}
+
+			&:hover {
+				.viewIcon::before {
+					top: -750%;
+					left: 530%;
+					width: 110%;
+					height: 1040%;
+					border-radius: 500px;
+					background-color: #fea5db;
+					z-index: 1;
+				}
+				.viewIcon::after {
+					bottom: -190%;
+					left: 0%;
+					width: 650%;
+					height: 280%;
+					border-radius: 500px;
+					border-radius: 500px;
+					background-color: #fed3a6;
+				}
 			}
 		}
 	}

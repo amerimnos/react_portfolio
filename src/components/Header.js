@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 
-function Header() {
+function Header(props) {
 
     const clickStyle = { color: "#2bae29" };
     const clickStyle1 = { color: "#2bae29", border: "solid 1px #2bae29" };
@@ -39,6 +39,11 @@ function Header() {
         line.current.style.width = elwidth + 'px';
     }
 
+    function firstLoading() {
+        props.setCommuFirstConts('on');
+    }
+    
+
     return (
         <header>
             <div className="inner">
@@ -46,7 +51,7 @@ function Header() {
                 <ul ref={gnb} onMouseLeave={() => { line.current.classList.remove('on') }} className="gnb">
                     <li ref={line} className="line"></li>
                     <li><NavLink activeStyle={clickStyle} onMouseEnter={lineMove} to="/department">Department</NavLink></li>
-                    <li><NavLink activeStyle={clickStyle} onMouseEnter={lineMove} to="/community">Community</NavLink></li>
+                    <li><NavLink activeStyle={clickStyle} onClick={firstLoading} onMouseEnter={lineMove} to="/community">Community</NavLink></li>
                     <li><NavLink activeStyle={clickStyle} onMouseEnter={lineMove} to="/gallery">Gallery</NavLink></li>
                     <li><NavLink activeStyle={clickStyle} onMouseEnter={lineMove} to="/youtube">Youtube</NavLink></li>
                     <li><NavLink exact activeStyle={clickStyle} onMouseEnter={lineMove} to="/location">Location</NavLink></li>
@@ -61,7 +66,7 @@ function Header() {
                 <div onClick={active} className="totalMenuBtn"></div>
                 <ul className="totalMenuConts">
                     <li><NavLink activeStyle={clickStyle} to="/department">Department</NavLink></li>
-                    <li><NavLink activeStyle={clickStyle} to="/community">Community</NavLink></li>
+                    <li><NavLink activeStyle={clickStyle} onClick={firstLoading} to="/community">Community</NavLink></li>
                     <li><NavLink activeStyle={clickStyle} to="/gallery">Gallery</NavLink></li>
                     <li><NavLink activeStyle={clickStyle} to="/youtube">Youtube</NavLink></li>
                     <li><NavLink activeStyle={clickStyle} to="/location">Location</NavLink></li>
