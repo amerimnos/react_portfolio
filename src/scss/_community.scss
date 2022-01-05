@@ -1,0 +1,121 @@
+.commuConts {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0%;
+		width: 39%;
+		height: 100%;
+		background: rgb(220, 238, 220);
+	}
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		right: 0;
+		width: 61%;
+		height: 100%;
+		background: rgb(207, 226, 231);
+	}
+	.inner {
+		position: static;
+		z-index: 1;
+		width: 1200px;
+		height: 100%;
+		margin: 200px auto 90px;
+		background-color: #fff;
+	}
+
+	.topConts {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 200px;
+		background: #f1f6fa;
+		h1 {
+			margin-bottom: 15px;
+			font-size: 30px;
+			font-weight: 500;
+			color: #475362;
+		}
+		p {
+			margin-bottom: 60px;
+			font-size: 18px;
+			color: #757d8b;
+		}
+		.searchWrap {
+			position: relative;
+			margin-bottom: 90px;
+		}
+	}
+	.saerch {
+		border: solid 1px #ddd;
+		padding: 15px 40px;
+		border-radius: 50px;
+		.searchBtnLabel {
+			position: absolute;
+			right: 30px;
+			top: 50%;
+			transform: translateY(-50%);
+			background: url();
+		}
+		.searchBtn {
+			position: absolute;
+			left: -9999px;
+			top: -9999pxc;
+		}
+	}
+	.tab {
+		width: 70%;
+		display: flex;
+		margin: -200px auto 500px;
+		justify-content: space-around;
+		a {
+			display: block;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 40px;
+			color: #5e6876;
+			font-weight: 500;
+			font-size: 17px;
+
+			i {
+				display: block;
+				margin-bottom: 20px;
+				font-size: 70px;
+			}
+		}
+	}
+	.bottomConts {
+		a {
+			display: block;
+			display: flex;
+			align-items: center;
+			margin-bottom: 40px;
+			padding: 30px;
+			box-shadow: 5px 5px 0 #999;
+			span {
+				font-size: 45px;
+			}
+			.txt {
+				li:first-child {
+					margin-bottom: 20px;
+					font-size: 20px;
+					font-weight: 700;
+					color: #81d8fb;
+				}
+				li:last-child {
+					font-size: 17px;
+					color: #eee;
+				}
+			}
+			.viewcon {
+				font-size: 20px;
+			}
+		}
+	}
+}

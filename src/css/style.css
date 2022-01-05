@@ -296,6 +296,103 @@ footer {
       margin-bottom: 22px; }
     footer .copy {
       margin-top: 15px; } }
+.commuConts {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%; }
+  .commuConts::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0%;
+    width: 39%;
+    height: 100%;
+    background: #dceedc; }
+  .commuConts::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 61%;
+    height: 100%;
+    background: #cfe2e7; }
+  .commuConts .inner {
+    position: static;
+    z-index: 1;
+    width: 1200px;
+    height: 100%;
+    margin: 200px auto 90px;
+    background-color: #fff; }
+  .commuConts .topConts {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 200px;
+    background: #f1f6fa; }
+    .commuConts .topConts h1 {
+      margin-bottom: 15px;
+      font-size: 30px;
+      font-weight: 500;
+      color: #475362; }
+    .commuConts .topConts p {
+      margin-bottom: 60px;
+      font-size: 18px;
+      color: #757d8b; }
+    .commuConts .topConts .searchWrap {
+      position: relative;
+      margin-bottom: 90px; }
+  .commuConts .saerch {
+    border: solid 1px #ddd;
+    padding: 15px 40px;
+    border-radius: 50px; }
+    .commuConts .saerch .searchBtnLabel {
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url(); }
+    .commuConts .saerch .searchBtn {
+      position: absolute;
+      left: -9999px;
+      top: -9999pxc; }
+  .commuConts .tab {
+    width: 70%;
+    display: flex;
+    margin: -200px auto 500px;
+    justify-content: space-around; }
+    .commuConts .tab a {
+      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      color: #5e6876;
+      font-weight: 500;
+      font-size: 17px; }
+      .commuConts .tab a i {
+        display: block;
+        margin-bottom: 20px;
+        font-size: 70px; }
+  .commuConts .bottomConts a {
+    display: block;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    box-shadow: 5px 5px 0 #999; }
+    .commuConts .bottomConts a span {
+      font-size: 45px; }
+    .commuConts .bottomConts a .txt li:first-child {
+      margin-bottom: 20px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #81d8fb; }
+    .commuConts .bottomConts a .txt li:last-child {
+      font-size: 17px;
+      color: #eee; }
+    .commuConts .bottomConts a .viewcon {
+      font-size: 20px; }
+
 .galleryConts1 {
   position: relative;
   width: 100%;
