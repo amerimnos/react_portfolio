@@ -1,3 +1,8 @@
+
+/* 
+/react_portfolio#/community 에서 새로고침시 스테이트 값 유지를 못하므로, 추후에 로콜스토리지나 리덕스 라이브러리 배우면 그때 적용 하자!
+*/
+
 import { Route, NavLink } from 'react-router-dom';
 import Faq from './Faq';
 import NoticeBoard from './NoticeBoard';
@@ -9,7 +14,6 @@ function Community(props) {
     const topConts = useRef(null);
     const commuFirstConts = useRef(null);
 
-
     const imgUrl = process.env.PUBLIC_URL;
     const commuTabStyle = {
         backgroundColor: "#234c22",
@@ -17,17 +21,17 @@ function Community(props) {
     }
 
     useEffect(() => {
-        console.log(props.commuFirstConts, 'test1');
-        let test1 = props.commuFirstConts;
+        if (props.commuFirstContsIsActive === 'on') {
+            topConts.current.classList.remove("on");
+            commuFirstConts.current.classList.add('on');
+        }
+    }, [props.commuFirstContsIsActive])
 
-        commuFirstConts.current.classList.add(test1);
-    },[])
 
     function tabActive(e) {
-
-        props.setCommuFirstConts('off');
         topConts.current.classList.add("on");
-        commuFirstConts.current.classList.add(props.commuFirstConts);
+        commuFirstConts.current.classList.remove("on");
+        props.setCommuFirstContsIsActive(null);
     }
 
     return (
@@ -38,7 +42,7 @@ function Community(props) {
                     <p>Search our help center quick answers</p>
 
                     <div className="searchWrap">
-                        <input className="search" type="text" placeholder="Start typing your search..." />
+                        <input onClick={() => { alert('준비중 입니다.') }} className="search" type="text" placeholder="Start typing your search..." />
                         <label htmlFor="searchBtnLabel"><i className="fas fa-search"></i></label>
                         <input className="searchBtn" id="searchBtn" type="button" value="" name="commuTotalSearch" />
                     </div>
@@ -73,36 +77,36 @@ function Community(props) {
                 </article>
                 <article className="bottomConts">
 
-
                     <Route path="/community/faq" component={Faq}></Route>
                     <Route path="/community/notice" component={NoticeBoard}></Route>
                     <Route path="/community/free" component={FreeBoard}></Route>
 
                     <div className="firstConts" ref={commuFirstConts}>
-                        <a href="#n">
+                        <NavLink onClick={tabActive} activeStyle={commuTabStyle} to="/community/faq">
                             <span className="leftIcon material-icons">announcement</span>
                             <ul className="txt">
                                 <li>purchasing Questions</li>
                                 <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, nulla.</li>
                             </ul>
                             <span className="viewIcon"></span>
-                        </a>
-                        <a href="#n">
-                            <span className="leftIcon material-icons">check_circle</span>
-                            <ul className="txt">
-                                <li>purchasing Questions</li>
-                                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, nulla.</li>
-                            </ul>
-                            <span className="viewIcon"></span>
-                        </a>
-                        <a href="#n">
+                        </NavLink>
+                        <NavLink onClick={tabActive} activeStyle={commuTabStyle} to="/community/notice">
                             <span className="leftIcon material-icons">article</span>
                             <ul className="txt">
                                 <li>purchasing Questions</li>
                                 <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, nulla.</li>
                             </ul>
                             <span className="viewIcon"></span>
-                        </a>
+                        </NavLink>
+                        <NavLink onClick={tabActive} activeStyle={commuTabStyle} to="/community/free">
+                            <span className="leftIcon material-icons">check_circle</span>
+                            <ul className="txt">
+                                <li>purchasing Questions</li>
+                                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, nulla.</li>
+                            </ul>
+                            <span className="viewIcon"></span>
+                        </NavLink>
+
                     </div>
                 </article>
 

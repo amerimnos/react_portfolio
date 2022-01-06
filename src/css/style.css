@@ -487,13 +487,16 @@ footer {
         font-size: 50px;
         color: #7fd8ff; }
   .commuConts .bottomConts {
-    width: 52%;
-    margin: 0 auto; }
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center; }
     .commuConts .bottomConts .firstConts {
+      display: none;
+      width: 52%;
       transition: all 0.5s; }
-      .commuConts .bottomConts .firstConts.off {
-        visibility: hidden;
-        opacity: 0; }
+      .commuConts .bottomConts .firstConts.on {
+        display: block; }
     .commuConts .bottomConts a {
       display: flex;
       align-items: center;
@@ -565,6 +568,72 @@ footer {
         border-radius: 500px;
         border-radius: 500px;
         background-color: #fed3a6; }
+
+.faqConts {
+  width: 60%;
+  margin: 0 0 50px; }
+  .faqConts .topTxt {
+    padding: 0px 0 40px;
+    line-height: 1.5;
+    color: #737373; }
+  .faqConts h1 {
+    margin-bottom: 14px;
+    font-size: 21px;
+    font-weight: 600;
+    color: #234c22; }
+  .faqConts li {
+    padding: 20px;
+    background-color: #f2f2f2;
+    display: flex;
+    color: #5b5b5b; }
+  .faqConts li:nth-child(2n) {
+    margin-bottom: 10px; }
+  .faqConts .quest {
+    border-radius: 8px 8px 0 0;
+    justify-content: space-between; }
+    .faqConts .quest span {
+      padding: 0 20px;
+      font-weight: 800;
+      font-size: 20px;
+      border-right: 1px solid #78a5ab;
+      color: #4b747a; }
+    .faqConts .quest div {
+      margin-right: auto;
+      padding-left: 20px; }
+    .faqConts .quest p {
+      display: flex;
+      align-items: center; }
+      .faqConts .quest p::before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 1px;
+        background: #000;
+        transition: 0.5s; }
+      .faqConts .quest p::after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 1px;
+        margin-left: -20px;
+        background: #000000;
+        transition: 0.5s;
+        transform: rotateZ(90deg); }
+    .faqConts .quest.on p::after {
+      transform: rotateZ(0deg); }
+  .faqConts .answer {
+    justify-content: space-between;
+    border-top: dotted 2px #c4c4c4;
+    border-radius: 0 0 8px 8px; }
+    .faqConts .answer span {
+      padding: 0 20px;
+      font-weight: 800;
+      font-size: 20px;
+      border-right: 1px solid #78a5ab;
+      color: #4b747a; }
+    .faqConts .answer div {
+      margin-right: auto;
+      padding-left: 20px; }
 
 .galleryConts1 {
   position: relative;

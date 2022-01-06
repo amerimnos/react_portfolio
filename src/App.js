@@ -14,15 +14,15 @@ import Footer from './components/Footer';
 
 function App() {
 
-    const [commuFirstConts, setCommuFirstConts] = useState(null);
-    console.log(commuFirstConts, "setCommuFirstConts");
+    const [commuFirstContsIsActive, setCommuFirstContsIsActive] = useState(null);
+    console.log(commuFirstContsIsActive, "app_commuFirstContsIsActive");
 
     return (
         <div className="App">
-            <Header setCommuFirstConts={setCommuFirstConts}></Header>
+            <Header setCommuFirstContsIsActive={setCommuFirstContsIsActive}></Header>
 
             <Route exact path="/" component={Main}></Route>
-            <Route path="/community" render={() => <Community setCommuFirstConts={setCommuFirstConts} commuFirstConts={commuFirstConts} />}></Route>
+            <Route path="/community" render={() => <Community setCommuFirstContsIsActive={setCommuFirstContsIsActive} commuFirstContsIsActive={commuFirstContsIsActive} />}></Route>
             <Route path="/department" component={Department}></Route>
             <Route path="/youtube" component={Youtube}></Route>
             <Route path="/gallery" component={Gallery}></Route>

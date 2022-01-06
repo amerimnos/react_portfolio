@@ -10,6 +10,7 @@ function Gallery() {
     const [popOpen, setPopOpen] = useState(false);
     const [masonryResize, setMasonryResize] = useState(false);
     const [popSrc, setPopSrc] = useState(null);
+    const [loadingtime, setLoadingtime] = useState(null);
 
     const galleryConts2 = useRef(null);
     const right = useRef(null);
@@ -47,6 +48,23 @@ function Gallery() {
         getFlickr2(flickrUrl2);
     }, [])
 
+
+    useEffect(() => {
+
+        if (loadingtime === 'a') {
+
+            console.log('aaa');
+            loadingOn();
+            setLoadingtime(null);
+        }
+
+        if (loadingtime === 'b') {
+
+            console.log('bbb');
+            loadingOff();
+            setLoadingtime(null);
+        }
+    }, [loadingtime])
 
     return (
         <>
@@ -190,6 +208,7 @@ function Gallery() {
         </>
     )
 
+
     function Pop() {
         return (
             <aside className="galleryPop">
@@ -199,21 +218,23 @@ function Gallery() {
         )
     }
 
-
     function loadingOn() {
         loadingElm.current.classList.add("on");
     }
+
     function loadingOff() {
         loadingElm.current.classList.remove("on");
     }
 
+
     function getFlickr1(url) {
 
-        loadingOn();
+        //loadingOn();
+        setLoadingtime('a');
         axios.get(url).then(
             (json) => {
-                loadingOff();
-                console.log(json.data.photos.photo);
+                //loadingOff();
+                setLoadingtime('b');
                 if (json.data.photos.photo.length === 0) {
                     alert('Unfortunately, there are no results.')
                     return;
@@ -224,11 +245,12 @@ function Gallery() {
     }
 
     function getFlickr2(url) {
-        loadingOn();
+        //loadingOn();
+        setLoadingtime('a');
         axios.get(url).then(
             (json) => {
-                loadingOff();
-                console.log(json.data.photos.photo);
+                //loadingOff();
+                setLoadingtime('b');
                 if (json.data.photos.photo.length === 0) {
                     alert('Unfortunately, there are no results.')
                     return;
@@ -269,7 +291,6 @@ function Gallery() {
 
             if (e.code === 'Enter') {
                 tag1 = e.currentTarget.value;
-                console.log(leftMasonryTit.current.innerText, 'leftMasonryTit.current.innerText');
                 leftMasonryTit.current.innerText = tag1;
 
                 let flickrUrl1 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag1}&nojsoncallback=1&privacy_filter=1`;

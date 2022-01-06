@@ -40,7 +40,7 @@ function Header(props) {
     }
 
     function firstLoading() {
-        props.setCommuFirstConts('on');
+        props.setCommuFirstContsIsActive('on');
     }
     
 
