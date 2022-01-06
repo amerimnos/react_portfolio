@@ -2,30 +2,31 @@
 	width: 60%;
 	margin: 0 0 50px;
 	.topTxt {
-    padding: 0px 0 55px;
-    line-height: 1.5;
-    color: #737373;
-    word-break: break-all;
+		padding: 0px 0 55px;
+		line-height: 1.5;
+		color: #737373;
+		word-break: break-all;
 	}
 	.mainTit {
-    margin-bottom: 21px;
-    font-size: 21px;
-    font-weight: 600;
-    color: #557454;
+		margin-bottom: 21px;
+		font-size: 21px;
+		font-weight: 600;
+		color: #557454;
 	}
 
 	li {
-    padding: 20px;
-    background-color: #f4f4f4;
-    display: flex;
-    color: #5b5b5b;
+		padding: 20px;
+		background-color: #f4f4f4;
+		display: flex;
+		color: #5b5b5b;
 	}
 	li:nth-child(2n) {
-    margin-bottom: 20px;
+		margin-bottom: 20px;
 	}
 	.quest {
 		border-radius: 8px 8px 0 0;
 		justify-content: space-between;
+		cursor: pointer;
 
 		span {
 			padding: 0 20px;
@@ -41,13 +42,14 @@
 		p {
 			display: flex;
 			align-items: center;
+			transition: all 0.5s;
 			&::before {
 				content: "";
 				display: block;
 				width: 20px;
 				height: 1px;
 				background: #000;
-				transition: 0.5s;
+				transition: all 0.5s;
 			}
 			&::after {
 				content: "";
@@ -59,16 +61,25 @@
 				transition: 0.5s;
 				transform: rotateZ(90deg);
 			}
-		}
 
-		&.on p::after {
-			transform: rotateZ(0deg);
+			&.on {
+				transform: rotateZ(45deg);
+			}
 		}
 	}
 	.answer {
+		height: 0px;
+		padding: 0 20px;
+		overflow: hidden;
 		justify-content: space-between;
 		border-top: dotted 2px #c4c4c4;
 		border-radius: 0 0 8px 8px;
+		transition: all 0.8s;
+
+		&.on {
+			height: auto;
+			padding: 20px;
+		}
 		span {
 			padding: 0 20px;
 			font-weight: 800;

@@ -591,7 +591,8 @@ footer {
     margin-bottom: 20px; }
   .faqConts .quest {
     border-radius: 8px 8px 0 0;
-    justify-content: space-between; }
+    justify-content: space-between;
+    cursor: pointer; }
     .faqConts .quest span {
       padding: 0 20px;
       font-weight: 800;
@@ -603,14 +604,15 @@ footer {
       padding-left: 20px; }
     .faqConts .quest p {
       display: flex;
-      align-items: center; }
+      align-items: center;
+      transition: all 0.5s; }
       .faqConts .quest p::before {
         content: "";
         display: block;
         width: 20px;
         height: 1px;
         background: #000;
-        transition: 0.5s; }
+        transition: all 0.5s; }
       .faqConts .quest p::after {
         content: "";
         display: block;
@@ -620,12 +622,19 @@ footer {
         background: #000000;
         transition: 0.5s;
         transform: rotateZ(90deg); }
-    .faqConts .quest.on p::after {
-      transform: rotateZ(0deg); }
+      .faqConts .quest p.on {
+        transform: rotateZ(45deg); }
   .faqConts .answer {
+    height: 0px;
+    padding: 0 20px;
+    overflow: hidden;
     justify-content: space-between;
     border-top: dotted 2px #c4c4c4;
-    border-radius: 0 0 8px 8px; }
+    border-radius: 0 0 8px 8px;
+    transition: all 0.8s; }
+    .faqConts .answer.on {
+      height: auto;
+      padding: 20px; }
     .faqConts .answer span {
       padding: 0 20px;
       font-weight: 800;
@@ -700,7 +709,7 @@ footer {
           color: #515151; }
       .noticeConts .notice .txt li:last-child {
         font-size: 18px;
-        color: #494949;
+        color: #707070;
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden; }
@@ -776,95 +785,106 @@ footer {
     word-break: break-all; }
   .freeBoardConts .freeBoard {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     margin-bottom: 50px; }
     .freeBoardConts .freeBoard .item {
+      overflow: hidden;
+      position: relative;
       display: flex;
-      justify-content: space-between;
-      padding: 20px 0;
-      border-bottom: solid 1px #ddd;
-      align-items: center;
+      width: 30%;
+      margin-bottom: 40px;
+      flex-direction: column;
+      padding: 30px 20px;
+      border: solid 1px #c6c6c6;
       cursor: pointer;
       transition: all 0.5s; }
       .freeBoardConts .freeBoard .item:hover {
-        border-bottom: solid 1px #234c22; }
+        transform: scale(1.04) translate(-8px, -7px);
+        border: solid 1px #234c22;
+        box-shadow: 8px 8px 0 #eee; }
         .freeBoardConts .freeBoard .item:hover .date {
           color: #234c22; }
-          .freeBoardConts .freeBoard .item:hover .date span {
-            color: #234c22; }
         .freeBoardConts .freeBoard .item:hover .viewBtn {
-          border: 1px solid #234c22; }
+          right: -1px;
+          bottom: -1px;
+          background: #234c22; }
           .freeBoardConts .freeBoard .item:hover .viewBtn::before, .freeBoardConts .freeBoard .item:hover .viewBtn::after {
-            background-color: #234c22; }
-    .freeBoardConts .freeBoard .date {
-      width: 14%;
-      margin-left: 10px;
-      text-align: center;
-      color: #dddddd;
-      transition: all 0.5s; }
-      .freeBoardConts .freeBoard .date span {
-        font-size: 49px;
-        line-height: 1.1; }
-      .freeBoardConts .freeBoard .date div {
-        font-size: 18px;
-        letter-spacing: 2px; }
-    .freeBoardConts .freeBoard .txt {
-      width: 70%; }
-      .freeBoardConts .freeBoard .txt li:first-child {
-        display: flex;
-        margin-top: 9px;
-        margin-bottom: 11px; }
-        .freeBoardConts .freeBoard .txt li:first-child span {
-          margin-right: 20px;
-          padding: 5px 13px;
-          border: 1px solid #297e27;
-          color: #297e27; }
-        .freeBoardConts .freeBoard .txt li:first-child h2 {
-          font-size: 22px;
-          font-weight: 500;
-          color: #515151; }
-      .freeBoardConts .freeBoard .txt li:last-child {
-        font-size: 18px;
-        color: #494949;
-        white-space: nowrap;
+            background-color: #fff; }
+      .freeBoardConts .freeBoard .item .date {
+        margin-bottom: 8px;
+        color: #1b9318;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.5s; }
+      .freeBoardConts .freeBoard .item .txt h2 {
+        margin-bottom: 16px;
+        font-size: 22px;
+        line-height: 1.1;
+        font-weight: 600; }
+      .freeBoardConts .freeBoard .item .txt p {
+        height: 58px;
+        margin-bottom: 29px;
+        display: -webkit-box;
+        line-break: anywhere;
+        overflow: hidden;
         text-overflow: ellipsis;
-        overflow: hidden; }
-    .freeBoardConts .freeBoard .viewBtn {
-      display: block;
-      position: relative;
-      width: 45px;
-      height: 45px;
-      border-radius: 45px;
-      border: 1px solid #bebebe;
-      text-indent: -9999px;
-      font-size: 0; }
-      .freeBoardConts .freeBoard .viewBtn::before {
-        content: "";
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        font-size: 15px;
+        color: #6e6e6e; }
+      .freeBoardConts .freeBoard .item .txt .status {
+        display: flex;
+        margin-bottom: 16px;
+        color: #b1b1b1;
+        font-size: 13.5px;
+        justify-content: space-between; }
+        .freeBoardConts .freeBoard .item .txt .status span {
+          margin-right: 3px;
+          font-size: 17px; }
+          .freeBoardConts .freeBoard .item .txt .status span:last-child {
+            margin-left: auto; }
+      .freeBoardConts .freeBoard .item .viewBtn {
         display: block;
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(45deg);
-        transform-origin: right;
-        width: 7px;
-        height: 1px;
-        background: #a9a9a9;
+        right: -50px;
+        bottom: -50px;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #fff;
+        background-color: red;
+        text-indent: -9999px;
+        font-size: 0;
         transition: all 0.5s; }
-      .freeBoardConts .freeBoard .viewBtn::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(-45deg);
-        transform-origin: right;
-        width: 7px;
-        height: 1px;
-        background: #bababa;
-        transition: all 0.5s; }
+        .freeBoardConts .freeBoard .item .viewBtn::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(0deg);
+          transform-origin: center;
+          width: 10px;
+          height: 2px;
+          background: #fff;
+          transition: all 0.5s; }
+        .freeBoardConts .freeBoard .item .viewBtn::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(90deg);
+          transform-origin: center;
+          width: 10px;
+          height: 2px;
+          background: #fff;
+          transition: all 0.5s; }
   .freeBoardConts .freeBoardPagiNation {
     display: flex;
-    justify-content: space-around;
-    width: 53%;
+    justify-content: space-between;
+    width: 100%;
     margin: 0 auto;
     align-items: center;
     cursor: pointer; }
@@ -880,9 +900,21 @@ footer {
       padding: 10px 14px;
       border: solid 1px #a1a1a1;
       color: #717c5b; }
+    .freeBoardConts .freeBoardPagiNation .first,
+    .freeBoardConts .freeBoardPagiNation .last {
+      padding: 10px 30px; }
+    .freeBoardConts .freeBoardPagiNation .first {
+      margin-right: 10px; }
+    .freeBoardConts .freeBoardPagiNation .last {
+      margin-left: 10px; }
+    .freeBoardConts .freeBoardPagiNation .prev {
+      margin-right: auto; }
+    .freeBoardConts .freeBoardPagiNation .next {
+      margin-left: auto; }
     .freeBoardConts .freeBoardPagiNation .num {
-      padding: 10px 14px;
-      border-radius: 8px; }
+      border: solid 1px #a1a1a1;
+      margin: 0 10px;
+      padding: 10px 14px; }
 
 .galleryConts1 {
   position: relative;

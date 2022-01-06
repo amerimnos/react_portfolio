@@ -16,119 +16,127 @@
 	}
 	.freeBoard {
 		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
 		margin-bottom: 50px;
-
 		.item {
+			overflow: hidden;
+			position: relative;
 			display: flex;
-			justify-content: space-between;
-			padding: 20px 0;
-			border-bottom: solid 1px #ddd;
-			align-items: center;
+			width: 30%;
+			margin-bottom: 40px;
+			flex-direction: column;
+			padding: 30px 20px;
+			border: solid 1px #c6c6c6;
 			cursor: pointer;
 			transition: all 0.5s;
-
 			&:hover {
-				border-bottom: solid 1px #234c22;
+				transform: scale(1.04) translate(-8px, -7px);
+				border: solid 1px #234c22;
+				box-shadow: 8px 8px 0 #eee;
 				.date {
 					color: #234c22;
-					span {
-						color: #234c22;
-					}
 				}
-
 				.viewBtn {
-					border: 1px solid #234c22;
+					right: -1px;
+					bottom: -1px;
+					background: #234c22;
 					&::before,
 					&::after {
-						background-color: #234c22;
+						background-color: #fff;
 					}
 				}
 			}
-		}
 
-		.date {
-			width: 14%;
-			margin-left: 10px;
-			text-align: center;
-			color: #dddddd;
-			transition: all 0.5s;
-			span {
-				font-size: 49px;
-				line-height: 1.1;
+			.date {
+				margin-bottom: 8px;
+				color: #1b9318;
+				font-size: 14px;
+				font-weight: 500;
+				transition: all 0.5s;
 			}
-			div {
-				font-size: 18px;
-				letter-spacing: 2px;
-			}
-		}
 
-		.txt {
-			width: 70%;
-			li:first-child {
-				display: flex;
-				margin-top: 9px;
-				margin-bottom: 11px;
-				span {
-					margin-right: 20px;
-					padding: 5px 13px;
-					border: 1px solid #297e27;
-					color: #297e27;
-				}
+			.txt {
 				h2 {
+					margin-bottom: 16px;
 					font-size: 22px;
-					font-weight: 500;
-					color: #515151;
+					line-height: 1.1;
+					font-weight: 600;
+				}
+				p {
+					height: 58px;
+					margin-bottom: 29px;
+					display: -webkit-box;
+					line-break: anywhere;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					-webkit-line-clamp: 3;
+					-webkit-box-orient: vertical;
+					font-size: 15px;
+					color: #6e6e6e;
+				}
+				.status {
+					display: flex;
+					margin-bottom: 16px;
+					color: #b1b1b1;
+					font-size: 13.5px;
+					justify-content: space-between;
+					span {
+						margin-right: 3px;
+						font-size: 17px;
+						&:last-child {
+							margin-left: auto;
+						}
+					}
 				}
 			}
-			li:last-child {
-				font-size: 18px;
-				color: #494949;
-				white-space: nowrap;
-				text-overflow: ellipsis;
-				overflow: hidden;
-			}
-		}
-		.viewBtn {
-			display: block;
-			position: relative;
-			width: 45px;
-			height: 45px;
-			border-radius: 45px;
-			border: 1px solid #bebebe;
-			text-indent: -9999px;
-			font-size: 0;
-			&::before {
-				content: "";
+
+			.viewBtn {
 				display: block;
 				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%) rotate(45deg);
-				transform-origin: right;
-				width: 7px;
-				height: 1px;
-				background: #a9a9a9;
+				right: -50px;
+				bottom: -50px;
+				width: 40px;
+				height: 40px;
+				border: 1px solid #fff;
+				background-color: red;
+				text-indent: -9999px;
+				font-size: 0;
 				transition: all 0.5s;
-			}
-			&::after {
-				content: "";
-				display: block;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%) rotate(-45deg);
-				transform-origin: right;
-				width: 7px;
-				height: 1px;
-				background: #bababa;
-				transition: all 0.5s;
+				&::before {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%) rotate(0deg);
+					transform-origin: center;
+					width: 10px;
+					height: 2px;
+					background: #fff;
+					transition: all 0.5s;
+				}
+				&::after {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%) rotate(90deg);
+					transform-origin: center;
+					width: 10px;
+					height: 2px;
+					background: #fff;
+					transition: all 0.5s;
+				}
 			}
 		}
 	}
 	.freeBoardPagiNation {
 		display: flex;
-		justify-content: space-around;
-		width: 53%;
+		justify-content: space-between;
+		width: 100%;
 		margin: 0 auto;
 		align-items: center;
 		cursor: pointer;
@@ -147,9 +155,26 @@
 			border: solid 1px #a1a1a1;
 			color: #717c5b;
 		}
+		.first,
+		.last {
+			padding: 10px 30px;
+		}
+		.first {
+			margin-right: 10px;
+		}
+		.last {
+			margin-left: 10px;
+		}
+		.prev {
+			margin-right: auto;
+		}
+		.next {
+			margin-left: auto;
+		}
 		.num {
+			border: solid 1px #a1a1a1;
+			margin: 0 10px;
 			padding: 10px 14px;
-			border-radius: 8px;
 		}
 	}
 }

@@ -8,113 +8,193 @@ function FreeBoard() {
             <ul className="freeBoard">
                 <li className="item">
                     <div className="date">
-                        <span>07</span>
-                        <div>2022.01</div>
+                        January 1. 2022
                     </div>
                     <ul className="txt">
                         <li>
-                            <span>Notice</span>
                             <h2>Lorem, ipsum dolor.</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque error quo!</p>
                         </li>
-                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ad rerum cupiditate repudiandae porro fuga.</li>
+                        <li className="status">
+                            <span class="material-icons">perm_identity</span> Albert
+                            <span class="material-icons-outlined">textsms</span> 3 Comments
+                        </li>
+                        <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                     </ul>
-                    <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                 </li>
                 <li className="item">
                     <div className="date">
-                        <span>01</span>
-                        <div>2022.01</div>
+                        January 1. 2022
                     </div>
                     <ul className="txt">
                         <li>
-                            <span>Notice</span>
                             <h2>Lorem, ipsum dolor.</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque error quo!</p>
                         </li>
-                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ad rerum cupiditate repudiandae porro fuga.</li>
+                        <li className="status">
+                            <span class="material-icons">perm_identity</span> Albert
+                            <span class="material-icons-outlined">textsms</span> 3 Comments
+                        </li>
+                        <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                     </ul>
-                    <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                 </li>
                 <li className="item">
                     <div className="date">
-                        <span>11</span>
-                        <div>2022.01</div>
+                        January 1. 2022
                     </div>
                     <ul className="txt">
                         <li>
-                            <span>Notice</span>
                             <h2>Lorem, ipsum dolor.</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque error quo!</p>
                         </li>
-                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ad rerum cupiditate repudiandae porro fuga.</li>
+                        <li className="status">
+                            <span class="material-icons">perm_identity</span> Albert
+                            <span class="material-icons-outlined">textsms</span> 3 Comments
+                        </li>
+                        <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                     </ul>
-                    <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                 </li>
                 <li className="item">
                     <div className="date">
-                        <span>15</span>
-                        <div>2022.01</div>
+                        January 1. 2022
                     </div>
                     <ul className="txt">
                         <li>
-                            <span>Notice</span>
                             <h2>Lorem, ipsum dolor.</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque error quo!</p>
                         </li>
-                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ad rerum cupiditate repudiandae porro fuga.</li>
+                        <li className="status">
+                            <span class="material-icons">perm_identity</span> Albert
+                            <span class="material-icons-outlined">textsms</span> 3 Comments
+                        </li>
+                        <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                     </ul>
-                    <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                 </li>
                 <li className="item">
                     <div className="date">
-                        <span>21</span>
-                        <div>2022.01</div>
+                        January 1. 2022
                     </div>
                     <ul className="txt">
                         <li>
-                            <span>Notice</span>
                             <h2>Lorem, ipsum dolor.</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque error quo!</p>
                         </li>
-                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ad rerum cupiditate repudiandae porro fuga.</li>
+                        <li className="status">
+                            <span class="material-icons">perm_identity</span> Albert
+                            <span class="material-icons-outlined">textsms</span> 3 Comments
+                        </li>
+                        <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                     </ul>
-                    <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                 </li>
                 <li className="item">
                     <div className="date">
-                        <span>25</span>
-                        <div>2022.01</div>
+                        January 1. 2022
                     </div>
                     <ul className="txt">
                         <li>
-                            <span>Notice</span>
                             <h2>Lorem, ipsum dolor.</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque error quo!</p>
                         </li>
-                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ad rerum cupiditate repudiandae porro fuga.</li>
+                        <li className="status">
+                            <span class="material-icons">perm_identity</span> Albert
+                            <span class="material-icons-outlined">textsms</span> 3 Comments
+                        </li>
+                        <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                     </ul>
-                    <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                 </li>
                 <li className="item">
                     <div className="date">
-                        <span>31</span>
-                        <div>2022.01</div>
+                        January 1. 2022
                     </div>
                     <ul className="txt">
                         <li>
-                            <span>Notice</span>
                             <h2>Lorem, ipsum dolor.</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque error quo!</p>
                         </li>
-                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ad rerum cupiditate repudiandae porro fuga.</li>
+                        <li className="status">
+                            <span class="material-icons">perm_identity</span> Albert
+                            <span class="material-icons-outlined">textsms</span> 3 Comments
+                        </li>
+                        <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                     </ul>
-                    <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                 </li>
                 <li className="item">
                     <div className="date">
-                        <span>02</span>
-                        <div>2022.02</div>
+                        January 1. 2022
                     </div>
                     <ul className="txt">
                         <li>
-                            <span>Notice</span>
                             <h2>Lorem, ipsum dolor.</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque error quo!</p>
                         </li>
-                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ad rerum cupiditate repudiandae porro fuga.</li>
+                        <li className="status">
+                            <span class="material-icons">perm_identity</span> Albert
+                            <span class="material-icons-outlined">textsms</span> 3 Comments
+                        </li>
+                        <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
+                    </ul>
+                </li>
+                <li className="item">
+                    <div className="date">
+                        January 1. 2022
+                    </div>
+                    <ul className="txt">
+                        <li>
+                            <h2>Lorem, ipsum dolor.</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque error quo!</p>
+                        </li>
+                        <li className="status">
+                            <span class="material-icons">perm_identity</span> Albert
+                            <span class="material-icons-outlined">textsms</span> 3 Comments
+                        </li>
+                        <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
+                    </ul>
+                </li>
+                <li className="item">
+                    <div className="date">
+                        January 1. 2022
+                    </div>
+                    <ul className="txt">
+                        <li>
+                            <h2>Lorem, ipsum dolor.</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque error quo!</p>
+                        </li>
+                        <li className="status">
+                            <span class="material-icons">perm_identity</span> Albert
+                            <span class="material-icons-outlined">textsms</span> 3 Comments
+                        </li>
+                        <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
+                    </ul>
+                </li>
+                <li className="item">
+                    <div className="date">
+                        January 1. 2022
+                    </div>
+                    <ul className="txt">
+                        <li>
+                            <h2>Lorem, ipsum dolor.</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque error quo!</p>
+                        </li>
+                        <li className="status">
+                            <span class="material-icons">perm_identity</span> Albert
+                            <span class="material-icons-outlined">textsms</span> 3 Comments
+                        </li>
+                        <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
+                    </ul>
+                </li>
+                <li className="item">
+                    <div className="date">
+                        January 1. 2022
+                    </div>
+                    <ul className="txt">
+                        <li>
+                            <h2>Lorem, ipsum dolor.</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque error quo!</p>
+                        </li>
+                        <li className="status">
+                            <span class="material-icons">perm_identity</span> Albert
+                            <span class="material-icons-outlined">textsms</span> 3 Comments
+                        </li>
                     </ul>
                     <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                 </li>
