@@ -497,97 +497,98 @@ footer {
       transition: all 0.5s; }
       .commuConts .bottomConts .firstConts.on {
         display: block; }
-    .commuConts .bottomConts a {
-      display: flex;
-      align-items: center;
-      margin-bottom: 40px;
-      padding: 22px;
-      box-shadow: 0px 2px 7px 0px #dedede;
-      overflow: hidden;
-      justify-content: space-between;
-      transition: all 0.5s; }
-      .commuConts .bottomConts a .leftIcon {
-        margin-right: 30px;
-        font-size: 41px;
-        color: #7dd8fe; }
-      .commuConts .bottomConts a .txt li:first-child {
-        margin-bottom: 10px;
-        font-size: 18px;
-        font-weight: 700;
-        letter-spacing: -0.4px;
-        color: #81d8fb; }
-      .commuConts .bottomConts a .txt li:last-child {
-        font-size: 14px;
-        color: #999; }
-      .commuConts .bottomConts a .viewIcon {
-        position: relative;
-        width: 20px;
-        height: 20px;
-        margin-left: auto; }
-        .commuConts .bottomConts a .viewIcon::before {
-          content: "";
-          display: block;
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 70%;
-          height: 3px;
-          background-color: #bcbcbc;
-          transform: rotateZ(45deg);
-          transform-origin: left top;
-          transition: all 0.5s; }
-        .commuConts .bottomConts a .viewIcon::after {
-          content: "";
-          display: block;
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          width: 70%;
-          height: 3px;
-          background-color: #989898;
-          transform: rotateZ(-45deg);
-          transform-origin: left bottom;
-          transition: all 0.5s; }
-      .commuConts .bottomConts a:hover {
-        margin: -5px 0 45px -5px;
-        transform: scale(1.02);
-        box-shadow: 0px 2px 7px 0px #dedede, 4px 7px 8px #cbcbcb; }
-      .commuConts .bottomConts a:hover .viewIcon::before {
-        top: -750%;
-        left: 530%;
-        width: 110%;
-        height: 1040%;
-        border-radius: 500px;
-        background-color: #fea5db;
-        z-index: 1; }
-      .commuConts .bottomConts a:hover .viewIcon::after {
-        bottom: -190%;
-        left: 0%;
-        width: 650%;
-        height: 280%;
-        border-radius: 500px;
-        border-radius: 500px;
-        background-color: #fed3a6; }
+      .commuConts .bottomConts .firstConts a {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        padding: 22px;
+        box-shadow: 0px 2px 7px 0px #dedede;
+        overflow: hidden;
+        justify-content: space-between;
+        transition: all 0.5s; }
+        .commuConts .bottomConts .firstConts a .leftIcon {
+          margin-right: 30px;
+          font-size: 41px;
+          color: #7dd8fe; }
+        .commuConts .bottomConts .firstConts a .txt li:first-child {
+          margin-bottom: 10px;
+          font-size: 18px;
+          font-weight: 700;
+          letter-spacing: -0.4px;
+          color: #81d8fb; }
+        .commuConts .bottomConts .firstConts a .txt li:last-child {
+          font-size: 14px;
+          color: #999; }
+        .commuConts .bottomConts .firstConts a .viewIcon {
+          position: relative;
+          width: 20px;
+          height: 20px;
+          margin-left: auto; }
+          .commuConts .bottomConts .firstConts a .viewIcon::before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 70%;
+            height: 3px;
+            background-color: #bcbcbc;
+            transform: rotateZ(45deg);
+            transform-origin: left top;
+            transition: all 0.5s; }
+          .commuConts .bottomConts .firstConts a .viewIcon::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 70%;
+            height: 3px;
+            background-color: #989898;
+            transform: rotateZ(-45deg);
+            transform-origin: left bottom;
+            transition: all 0.5s; }
+        .commuConts .bottomConts .firstConts a:hover {
+          margin: -5px 0 45px -5px;
+          transform: scale(1.02);
+          box-shadow: 0px 2px 7px 0px #dedede, 4px 7px 8px #cbcbcb; }
+        .commuConts .bottomConts .firstConts a:hover .viewIcon::before {
+          top: -750%;
+          left: 530%;
+          width: 110%;
+          height: 1040%;
+          border-radius: 500px;
+          background-color: #fea5db;
+          z-index: 1; }
+        .commuConts .bottomConts .firstConts a:hover .viewIcon::after {
+          bottom: -190%;
+          left: 0%;
+          width: 650%;
+          height: 280%;
+          border-radius: 500px;
+          border-radius: 500px;
+          background-color: #fed3a6; }
 
 .faqConts {
   width: 60%;
   margin: 0 0 50px; }
   .faqConts .topTxt {
-    padding: 0px 0 40px;
+    padding: 0px 0 55px;
     line-height: 1.5;
-    color: #737373; }
-  .faqConts h1 {
-    margin-bottom: 14px;
+    color: #737373;
+    word-break: break-all; }
+  .faqConts .mainTit {
+    margin-bottom: 21px;
     font-size: 21px;
     font-weight: 600;
-    color: #234c22; }
+    color: #557454; }
   .faqConts li {
     padding: 20px;
-    background-color: #f2f2f2;
+    background-color: #f4f4f4;
     display: flex;
     color: #5b5b5b; }
   .faqConts li:nth-child(2n) {
-    margin-bottom: 10px; }
+    margin-bottom: 20px; }
   .faqConts .quest {
     border-radius: 8px 8px 0 0;
     justify-content: space-between; }
@@ -634,6 +635,254 @@ footer {
     .faqConts .answer div {
       margin-right: auto;
       padding-left: 20px; }
+
+.noticeConts {
+  width: 60%;
+  margin: 0 0 50px; }
+  .noticeConts .mainTit {
+    margin-bottom: 21px;
+    font-size: 21px;
+    font-weight: 600;
+    color: #557454; }
+  .noticeConts .topTxt {
+    padding: 0px 0 40px;
+    line-height: 1.5;
+    color: #737373;
+    text-align: justify;
+    word-break: break-all; }
+  .noticeConts .notice {
+    width: 100%;
+    margin-bottom: 50px; }
+    .noticeConts .notice .item {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-bottom: solid 1px #ddd;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.5s; }
+      .noticeConts .notice .item:hover {
+        border-bottom: solid 1px #234c22; }
+        .noticeConts .notice .item:hover .date {
+          color: #234c22; }
+          .noticeConts .notice .item:hover .date span {
+            color: #234c22; }
+        .noticeConts .notice .item:hover .viewBtn {
+          border: 1px solid #234c22; }
+          .noticeConts .notice .item:hover .viewBtn::before, .noticeConts .notice .item:hover .viewBtn::after {
+            background-color: #234c22; }
+    .noticeConts .notice .date {
+      width: 14%;
+      margin-left: 10px;
+      text-align: center;
+      color: #dddddd;
+      transition: all 0.5s; }
+      .noticeConts .notice .date span {
+        font-size: 49px;
+        line-height: 1.1; }
+      .noticeConts .notice .date div {
+        font-size: 18px;
+        letter-spacing: 2px; }
+    .noticeConts .notice .txt {
+      width: 70%; }
+      .noticeConts .notice .txt li:first-child {
+        display: flex;
+        margin-top: 9px;
+        margin-bottom: 11px; }
+        .noticeConts .notice .txt li:first-child span {
+          margin-right: 20px;
+          padding: 5px 13px;
+          border: 1px solid #297e27;
+          color: #297e27; }
+        .noticeConts .notice .txt li:first-child h2 {
+          font-size: 22px;
+          font-weight: 500;
+          color: #515151; }
+      .noticeConts .notice .txt li:last-child {
+        font-size: 18px;
+        color: #494949;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden; }
+    .noticeConts .notice .viewBtn {
+      display: block;
+      position: relative;
+      width: 45px;
+      height: 45px;
+      border-radius: 45px;
+      border: 1px solid #bebebe;
+      text-indent: -9999px;
+      font-size: 0; }
+      .noticeConts .notice .viewBtn::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        transform-origin: right;
+        width: 7px;
+        height: 1px;
+        background: #a9a9a9;
+        transition: all 0.5s; }
+      .noticeConts .notice .viewBtn::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        transform-origin: right;
+        width: 7px;
+        height: 1px;
+        background: #bababa;
+        transition: all 0.5s; }
+  .noticeConts .pagiNation {
+    display: flex;
+    justify-content: space-around;
+    width: 53%;
+    margin: 0 auto;
+    align-items: center;
+    cursor: pointer; }
+    .noticeConts .pagiNation li {
+      transition: all 0.3s; }
+    .noticeConts .pagiNation li:hover {
+      background-color: #234c22;
+      color: #fff; }
+    .noticeConts .pagiNation .first,
+    .noticeConts .pagiNation .prev,
+    .noticeConts .pagiNation .next,
+    .noticeConts .pagiNation .last {
+      padding: 10px 14px;
+      border: solid 1px #a1a1a1;
+      color: #717c5b; }
+    .noticeConts .pagiNation .num {
+      padding: 10px 14px;
+      border-radius: 8px; }
+
+.freeBoardConts {
+  width: 60%;
+  margin: 0 0 50px; }
+  .freeBoardConts .mainTit {
+    margin-bottom: 21px;
+    font-size: 21px;
+    font-weight: 600;
+    color: #557454; }
+  .freeBoardConts .topTxt {
+    padding: 0px 0 40px;
+    line-height: 1.5;
+    color: #737373;
+    text-align: justify;
+    word-break: break-all; }
+  .freeBoardConts .freeBoard {
+    width: 100%;
+    margin-bottom: 50px; }
+    .freeBoardConts .freeBoard .item {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-bottom: solid 1px #ddd;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.5s; }
+      .freeBoardConts .freeBoard .item:hover {
+        border-bottom: solid 1px #234c22; }
+        .freeBoardConts .freeBoard .item:hover .date {
+          color: #234c22; }
+          .freeBoardConts .freeBoard .item:hover .date span {
+            color: #234c22; }
+        .freeBoardConts .freeBoard .item:hover .viewBtn {
+          border: 1px solid #234c22; }
+          .freeBoardConts .freeBoard .item:hover .viewBtn::before, .freeBoardConts .freeBoard .item:hover .viewBtn::after {
+            background-color: #234c22; }
+    .freeBoardConts .freeBoard .date {
+      width: 14%;
+      margin-left: 10px;
+      text-align: center;
+      color: #dddddd;
+      transition: all 0.5s; }
+      .freeBoardConts .freeBoard .date span {
+        font-size: 49px;
+        line-height: 1.1; }
+      .freeBoardConts .freeBoard .date div {
+        font-size: 18px;
+        letter-spacing: 2px; }
+    .freeBoardConts .freeBoard .txt {
+      width: 70%; }
+      .freeBoardConts .freeBoard .txt li:first-child {
+        display: flex;
+        margin-top: 9px;
+        margin-bottom: 11px; }
+        .freeBoardConts .freeBoard .txt li:first-child span {
+          margin-right: 20px;
+          padding: 5px 13px;
+          border: 1px solid #297e27;
+          color: #297e27; }
+        .freeBoardConts .freeBoard .txt li:first-child h2 {
+          font-size: 22px;
+          font-weight: 500;
+          color: #515151; }
+      .freeBoardConts .freeBoard .txt li:last-child {
+        font-size: 18px;
+        color: #494949;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden; }
+    .freeBoardConts .freeBoard .viewBtn {
+      display: block;
+      position: relative;
+      width: 45px;
+      height: 45px;
+      border-radius: 45px;
+      border: 1px solid #bebebe;
+      text-indent: -9999px;
+      font-size: 0; }
+      .freeBoardConts .freeBoard .viewBtn::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        transform-origin: right;
+        width: 7px;
+        height: 1px;
+        background: #a9a9a9;
+        transition: all 0.5s; }
+      .freeBoardConts .freeBoard .viewBtn::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        transform-origin: right;
+        width: 7px;
+        height: 1px;
+        background: #bababa;
+        transition: all 0.5s; }
+  .freeBoardConts .freeBoardPagiNation {
+    display: flex;
+    justify-content: space-around;
+    width: 53%;
+    margin: 0 auto;
+    align-items: center;
+    cursor: pointer; }
+    .freeBoardConts .freeBoardPagiNation li {
+      transition: all 0.3s; }
+    .freeBoardConts .freeBoardPagiNation li:hover {
+      background-color: #234c22;
+      color: #fff; }
+    .freeBoardConts .freeBoardPagiNation .first,
+    .freeBoardConts .freeBoardPagiNation .prev,
+    .freeBoardConts .freeBoardPagiNation .next,
+    .freeBoardConts .freeBoardPagiNation .last {
+      padding: 10px 14px;
+      border: solid 1px #a1a1a1;
+      color: #717c5b; }
+    .freeBoardConts .freeBoardPagiNation .num {
+      padding: 10px 14px;
+      border-radius: 8px; }
 
 .galleryConts1 {
   position: relative;

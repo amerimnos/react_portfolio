@@ -2,25 +2,26 @@
 	width: 60%;
 	margin: 0 0 50px;
 	.topTxt {
-		padding: 0px 0 40px;
-		line-height: 1.5;
-		color: #737373;
+    padding: 0px 0 55px;
+    line-height: 1.5;
+    color: #737373;
+    word-break: break-all;
 	}
-	h1 {
-		margin-bottom: 14px;
-		font-size: 21px;
-		font-weight: 600;
-		color: #234c22;
+	.mainTit {
+    margin-bottom: 21px;
+    font-size: 21px;
+    font-weight: 600;
+    color: #557454;
 	}
 
 	li {
-		padding: 20px;
-		background-color: #f2f2f2;
-		display: flex;
-		color: #5b5b5b;
+    padding: 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    color: #5b5b5b;
 	}
 	li:nth-child(2n) {
-		margin-bottom: 10px;
+    margin-bottom: 20px;
 	}
 	.quest {
 		border-radius: 8px 8px 0 0;
