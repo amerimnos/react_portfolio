@@ -19,13 +19,13 @@
 		margin-bottom: 50px;
 
 		.item {
-			display: flex;
-			justify-content: space-between;
-			padding: 20px 0;
-			border-bottom: solid 1px #ddd;
-			align-items: center;
-			cursor: pointer;
-			transition: all 0.5s;
+    display: flex;
+    justify-content: space-between;
+    padding: 33px 0;
+    border-bottom: solid 1px #ddd;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s;
 
 			&:hover {
 				border-bottom: solid 1px #234c22;

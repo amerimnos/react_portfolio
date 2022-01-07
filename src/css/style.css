@@ -104,10 +104,14 @@ header {
         transition-delay: 0.285s; }
   header .totalMenuBtn {
     display: none;
+    border: none;
     position: relative;
     width: 35px;
     height: 25px;
-    border-bottom: solid 2px #000; }
+    border-bottom: solid 2px #000;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s; }
     header .totalMenuBtn::before {
       content: "";
       display: block;
@@ -296,6 +300,22 @@ footer {
       margin-bottom: 22px; }
     footer .copy {
       margin-top: 15px; } }
+.departmentConts {
+  height: 100vh;
+  background: #001f33; }
+  .departmentConts .tit {
+    font-size: 50px;
+    color: #f3efc6; }
+    .departmentConts .tit span {
+      font-family: "Cormorant", serif; }
+  .departmentConts .departSwiper .swiperImg {
+    width: 400px;
+    height: 460px; }
+    .departmentConts .departSwiper .swiperImg img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%; }
+
 .commuConts {
   position: relative;
   display: flex;
@@ -489,7 +509,7 @@ footer {
   .commuConts .bottomConts {
     display: flex;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 37px;
     justify-content: center; }
     .commuConts .bottomConts .firstConts {
       display: none;
@@ -665,7 +685,7 @@ footer {
     .noticeConts .notice .item {
       display: flex;
       justify-content: space-between;
-      padding: 20px 0;
+      padding: 33px 0;
       border-bottom: solid 1px #ddd;
       align-items: center;
       cursor: pointer;

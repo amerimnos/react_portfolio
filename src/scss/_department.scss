@@ -1,0 +1,22 @@
+.departmentConts{
+    height: 100vh;
+    background:#001f33;
+    .tit{
+        font-size: 50px;
+        color: #f3efc6;
+        span{
+            font-family: "Cormorant", serif;
+        }
+    }
+    .departSwiper{
+        .swiperImg{
+            width: 400px;
+            height: 460px;
+            img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

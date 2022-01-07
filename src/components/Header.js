@@ -63,7 +63,7 @@ function Header(props) {
                     <span>n</span>
                     <span className="material-icons-round">arrow_forward_ios</span>
                 </NavLink>
-                <div onClick={active} className="totalMenuBtn"></div>
+                <button onClick={active} className="totalMenuBtn"></button>
                 <ul className="totalMenuConts">
                     <li><NavLink activeStyle={clickStyle} to="/department">Department</NavLink></li>
                     <li><NavLink activeStyle={clickStyle} onClick={firstLoading} to="/community">Community</NavLink></li>

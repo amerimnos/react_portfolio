@@ -111,11 +111,15 @@ header {
 		}
 	}
 	.totalMenuBtn {
-		display: none;
-		position: relative;
-		width: 35px;
-		height: 25px;
-		border-bottom: solid 2px #000;
+    display: none;
+    border: none;
+    position: relative;
+    width: 35px;
+    height: 25px;
+    border-bottom: solid 2px #000;
+    background-color: transparent;
+    cursor:pointer;
+    transition:all 0.3s;
 		&::before {
 			content: "";
 			display: block;
