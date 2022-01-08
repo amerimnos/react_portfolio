@@ -1,6 +1,8 @@
 header {
-	width: 100%;
-	background: #f6f8f6;
+    position: relative;
+    width: 100%;
+    background: #f6f8f6;
+    z-index: 1;
 	.inner {
 		display: flex;
 		width: 1328px;

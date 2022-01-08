@@ -2,11 +2,10 @@ import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import "swiper/css/scrollbar"
 import 'swiper/css/pagination';
 
-import SwiperCore, { Autoplay, Navigation, Pagination, Scrollbar, A11y, Keyboard } from 'swiper';
-SwiperCore.use([/* Autoplay, */ Keyboard, Scrollbar, Navigation, Pagination, A11y]);
+import SwiperCore, { Autoplay, Navigation, Pagination, A11y, Keyboard } from 'swiper';
+SwiperCore.use([Autoplay, Keyboard, Navigation, Pagination, A11y]);
 
 function Department() {
 
@@ -30,11 +29,6 @@ function Department() {
     return (
 
         <section className="departmentConts">
-            <h1 className="tit">
-                <span>the</span> AMERIMNOS's
-                <div>TEAM</div>
-            </h1>
-
             <Swiper
                 className="departSwiper"
                 autoplay={{
@@ -52,7 +46,7 @@ function Department() {
                 navigation={true}
                 pagination={{
                     clickable: true,
-                    type: 'fraction',
+                    type: 'progressbar',
                 }}
                 scrollbar={{ draggable: true }}
 
@@ -68,15 +62,21 @@ function Department() {
                         slideItemWrap.classList.add('swiper-wrapper-wrapper');
                         swiper.wrapperEl.before(slideItemWrap);
                         slideItemWrap.append(swiper.wrapperEl);
+
+                        //const mainTit = document.createElement('h2');
+                        swiper.wrapperEl.insertAdjacentHTML('beforebegin', '<h1 class="tit"><span>the</span> AMERIMNOS\'s<div>TEAM</div></h1>');
                     }
                 }
-                onSlideChange={() => console.log('slide change')}
+                onSlideChange={() => console.log('slides change')}
             >
                 {
                     swipwerItem.map((el, index) => {
 
                         return (
-                            <SwiperSlide ref={swiperImg} key={index} className="swiperImg"><img src={`${url}${el.src}`} alt={el.name} /></SwiperSlide>
+                            <SwiperSlide ref={swiperImg} key={index} className="swiperImg">
+                                <img src={`${url}${el.src}`} alt={el.name} />
+                                <span>{el.name}</span>
+                            </SwiperSlide>
                         )
                     })
                 }
