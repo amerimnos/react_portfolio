@@ -43,8 +43,8 @@ function Department() {
                 speed={500}
                 loop={true}
                 loopedSlides={3}
+                initialSlide={3}
                 centeredSlides={true}
-                /* centeredSlidesBounds={true} */
                 slidesPerView={'auto'}
                 keyboard={{
                     "enabled": true
@@ -68,11 +68,6 @@ function Department() {
                         slideItemWrap.classList.add('swiper-wrapper-wrapper');
                         swiper.wrapperEl.before(slideItemWrap);
                         slideItemWrap.append(swiper.wrapperEl);
-                    }
-                }
-                onAfterInit={
-                    () => {
-
                     }
                 }
                 onSlideChange={() => console.log('slide change')}

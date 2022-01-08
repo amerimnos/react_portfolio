@@ -29,8 +29,9 @@
 		position: absolute;
 		.swiper-wrapper-wrapper {
 			position: absolute;
-			top: 0%;
-			transform: translateY(0%) rotate(-20deg);
+			top: 50%;
+			width: 100%;
+			transform: translateY(-140px) rotate(-20deg);
 		}
 		.swiperImg {
 			width: 330px;
