@@ -5,14 +5,16 @@ import 'swiper/css/navigation';
 import "swiper/css/scrollbar"
 import 'swiper/css/pagination';
 
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Keyboard } from 'swiper';
-SwiperCore.use([Keyboard, Scrollbar, Navigation, Pagination, A11y]);
+import SwiperCore, { Autoplay, Navigation, Pagination, Scrollbar, A11y, Keyboard } from 'swiper';
+SwiperCore.use([/* Autoplay, */ Keyboard, Scrollbar, Navigation, Pagination, A11y]);
 
 function Department() {
 
     let url = process.env.PUBLIC_URL;
 
     const [swipwerItem, setSwipwerItem] = useState([]);
+
+    let swiperImg = useRef(null);
 
     useEffect(() => {
         fetch(`${url}/department.json`)
@@ -29,36 +31,57 @@ function Department() {
 
         <section className="departmentConts">
             <h1 className="tit">
-                <span>the</span> AMERIMNOS's<br />TEAM
+                <span>the</span> AMERIMNOS's
+                <div>TEAM</div>
             </h1>
 
             <Swiper
                 className="departSwiper"
-                modules={[Navigation, Pagination, Scrollbar, A11y]}
-                spaceBetween={50}
-                slidesPerView={5}
+                autoplay={{
+                    "delay": 2500,
+                }}
+                speed={500}
+                loop={true}
+                loopedSlides={3}
+                centeredSlides={true}
+                /* centeredSlidesBounds={true} */
+                slidesPerView={'auto'}
                 keyboard={{
                     "enabled": true
                 }}
+                navigation={true}
+                pagination={{
+                    clickable: true,
+                    type: 'fraction',
+                }}
+                scrollbar={{ draggable: true }}
+
                 /* breakpoints={{
                     "769": {
-                        "slidesPerView": 2,
+                        "slidesPerView": auto,
                         "slidesPerGroup": 2
                     }
                 }} */
-                navigation={true}
-                pagination={{ clickable: true }}
-                scrollbar={{ draggable: true }}
-            /* onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')} */
+                onSwiper={
+                    (swiper) => {
+                        const slideItemWrap = document.createElement('div');
+                        slideItemWrap.classList.add('swiper-wrapper-wrapper');
+                        swiper.wrapperEl.before(slideItemWrap);
+                        slideItemWrap.append(swiper.wrapperEl);
+                    }
+                }
+                onAfterInit={
+                    () => {
+
+                    }
+                }
+                onSlideChange={() => console.log('slide change')}
             >
-                {/* <SwiperSlide className="swiperImg"><img src={`${url}/img/department_person01.jpg`} alt="img1" /></SwiperSlide> */}
-
-
                 {
                     swipwerItem.map((el, index) => {
+
                         return (
-                            <SwiperSlide key={index} className="swiperImg"><img src={`${url}${el.src}`} alt={el.name} /></SwiperSlide>
+                            <SwiperSlide ref={swiperImg} key={index} className="swiperImg"><img src={`${url}${el.src}`} alt={el.name} /></SwiperSlide>
                         )
                     })
                 }
