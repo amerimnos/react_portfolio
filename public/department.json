@@ -2,44 +2,59 @@
 {
     "date": [
         {
-            "name": "Rembrandt Harmenszoon van Rijn",
-            "src": "/img/department_person01.jpg"
+            "name": "A Roman Water Carrier",
+            "src": "/img/department_person01.jpg",
+            "creator": "Carl Haag"
         },
         {
-            "name": "Leonardo di ser Piero da Vinci,",
-            "src": "/img/department_person02.jpg"
+            "name": "The Reading Lesson",
+            "src": "/img/department_person02.jpg",
+            "creator": "John Dawson Watson"
         },
         {
-            "name": "Rembrandt Harmenszoon van Rijn",
-            "src": "/img/department_person03.jpg"
+            "name": "Lithuanian Girl with Palm Sunday Fronds",
+            "src": "/img/department_person03.jpg",
+            "creator": "Kanutas Ruseckas"
         },
         {
-            "name": "Rembrandt Harmenszoon van Rijn",
-            "src": "/img/department_person04.jpg"
+            "name": "Jeremiah Lamenting the Destruction of Jerusalem",
+            "src": "/img/department_person04.jpg",
+            "creator": "Rembrandt Harmenszoon van Rijn"
         },
         {
-            "name": "Rembrandt Harmenszoon van Rijn",
-            "src": "/img/department_person05.jpg"
+            "name": "Portrait of William II, King of the Netherlands",
+            "src": "/img/department_person05.jpg",
+            "creator": "Rembrandt Harmenszoon van Rijn"
         },
         {
-            "name": "Rembrandt Harmenszoon van Rijn",
-            "src": "/img/department_person06.jpg"
+            "name": "Old woman reading",
+            "src": "/img/department_person06.jpg",
+            "creator": "Rijksmuseum"
         },
         {
-            "name": "Rembrandt Harmenszoon van Rijn",
-            "src": "/img/department_person07.jpg"
+            "name": "Saying Grace",
+            "src": "/img/department_person07.jpg",
+            "creator":"Rijksmuseum"
         },
         {
-            "name": "Vincent Willem van Gogh",
-            "src": "/img/department_person08.jpg"
+            "name": "Self-Portrait with Grey Felt Hat",
+            "src": "/img/department_person08.jpg",
+            "creator": "Vincent Willem van Gogh"
         },
         {
-            "name": "Rembrandt Harmenszoon van Rijn",
-            "src": "/img/department_person09.jpg"
+            "name": "A Roman Water Carrier",
+            "src": "/img/department_person09.jpg",
+            "creator": "Carl Haag"
         },
         {
-            "name": "Leonardo di ser Piero da Vinci",
-            "src": "/img/department_person10.jpg"
+            "name": "Mona Lisa",
+            "src": "/img/department_person10.jpg",
+            "creator": "Leonardo di ser Piero da Vinci"
+        },
+        {
+            "name": "Woman with a Flower",
+            "src": "/img/department_person11.jpg",
+            "creator": "Paul Gauguin"
         }
     ]
 }

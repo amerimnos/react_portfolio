@@ -13,16 +13,27 @@ function Department() {
 
     const [swipwerItem, setSwipwerItem] = useState([]);
 
+    let departSwiper = useRef(null);
     let swiperImg = useRef(null);
+    let loadingWrap = useRef(null);
 
     useEffect(() => {
-        fetch(`${url}/department.json`)
-            .then(response => {
-                return response.json();
-            })
-            .then(result => {
-                setSwipwerItem(result.date);
-            })
+        loadingWrap.current.classList.add('on');
+
+        setTimeout(() => {
+            fetch(`${url}/department.json`)
+                .then(response => {
+
+                    loadingWrap.current.classList.remove('on');
+                    return response.json();
+                })
+                .then(result => {
+                    console.log(result);
+                    setSwipwerItem(result.date);
+                    departSwiper.current.querySelector('.tit').classList.add('on');
+                })
+        }, 1000)
+
     }, [])
 
 
@@ -30,6 +41,7 @@ function Department() {
 
         <section className="departmentConts">
             <Swiper
+                ref={departSwiper}
                 className="departSwiper"
                 autoplay={{
                     "delay": 2500,
@@ -62,8 +74,6 @@ function Department() {
                         slideItemWrap.classList.add('swiper-wrapper-wrapper');
                         swiper.wrapperEl.before(slideItemWrap);
                         slideItemWrap.append(swiper.wrapperEl);
-
-                        //const mainTit = document.createElement('h2');
                         swiper.wrapperEl.insertAdjacentHTML('beforebegin', '<h1 class="tit"><span>the</span> AMERIMNOS\'s<div>TEAM</div></h1>');
                     }
                 }
@@ -81,8 +91,9 @@ function Department() {
                     })
                 }
             </Swiper>
-
-
+            <div ref={loadingWrap} className="loadingWrap">
+                <div className="loading"></div>
+            </div>
         </section>
     )
 }
