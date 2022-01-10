@@ -367,7 +367,7 @@ footer {
       .departmentConts .departSwiper .swiper-slide-active img {
         opacity: 1; }
     .departmentConts .departSwiper .swiper-pagination-progressbar {
-      top: 129px; }
+      top: 142px; }
     .departmentConts .departSwiper .swiper-pagination-progressbar-fill {
       background-color: #567c94; }
     .departmentConts .departSwiper .swiper-button-next,
@@ -1873,5 +1873,14 @@ footer {
     transform: rotate(0deg); }
   100% {
     transform: rotate(-360deg); } }
+.youtubeConts {
+  background-color: #1f1d2b; }
+  .youtubeConts .inner {
+    display: flex;
+    width: 1440px;
+    margin: 0 auto;
+    color: #fff; }
+  .youtubeConts aside {
+    width: 20%; }
 
 /*# sourceMappingURL=style.css.map */
