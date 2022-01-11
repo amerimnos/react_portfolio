@@ -1,37 +1,73 @@
-function Youtube() {
-    return (
+import axios from "axios";
+import { useEffect, useState } from "react";
 
+function Youtube() {
+
+    console.log(0);
+
+    const [youtubeDate, setYoutubeDate] = useState([]);
+    const [youtubeIndex, setYoutubeIndex] = useState(0);
+    const [iframeUrl, setIframeUrl] = useState('');
+    const [isPop, setIsPop] = useState('');
+
+    const url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDYryAlh_1CQbDxO0qTjpOkUrOnX9m12lY&playlistId=PLZ1bji2Kya5N0QGDU9TL2_L7mrKoDJE7d&maxResults=12';
+
+
+    useEffect(() => {
+        console.log(4);
+
+        axios
+            .get(url)
+            .then(
+                json => {
+                    //console.log(json.data.items);
+                    setYoutubeDate(json.data.items);
+                }
+            )
+        console.log(4.1);
+    }, []);
+
+    console.log(0.1);
+
+    return (
         <section className="youtubeConts">
+
+            {
+                (() => {
+                    console.log(1);
+                })()
+            }
+
             <div className="inner">
                 <aside>
                     <h1>Viedo board</h1>
                     <ul className="menu">
                         <li className="tit">MENU</li>
                         <li className="item">
-                            <span class="material-icons-outlined">home</span>
+                            <span className="material-icons-outlined">home</span>
                             Discover
                         </li>
                         <li className="item">
-                            <span class="material-icons-outlined">trending_up</span>
+                            <span className="material-icons-outlined">trending_up</span>
                             Trending
                         </li>
                         <li className="item">
-                            <span class="material-icons-outlined">bookmark</span>
+                            <span className="material-icons-outlined">bookmark</span>
                             Playlist
                         </li>
                     </ul>
                     <ul className="category">
                         <li className="tit">CATEGORY</li>
                         <li className="item">
-                            <span class="material-icons-outlined">live_tv</span>
+                            <span className="material-icons-outlined">live_tv</span>
                             Live Stream
                         </li>
                         <li className="item">
-                            <span class="material-icons-outlined">park</span>
+                            <span className="material-icons-outlined">park</span>
                             Nature
                         </li>
                         <li className="item">
-                            <span class="material-icons-outlined">library_music</span>
+                            <span className="material-icons-outlined">library_music</span>
                             Music
                         </li>
                     </ul>
@@ -40,7 +76,7 @@ function Youtube() {
                     <div className="topConts">
                         <label htmlFor="youtubeSearch">
                             Youtube Search button
-                            <input type="text" name="youtubeSearch" id="youtubeSearch" placeholder="Search" />
+                            <input onClick={() => { alert('get ready') }} type="text" name="youtubeSearch" id="youtubeSearch" placeholder="Search" />
                             <input type="button" value="youtube search button" />
                         </label>
                         <div className="theme">
@@ -52,70 +88,102 @@ function Youtube() {
                     <h2 className="constTit">Discover</h2>
                     <ul className="videosConts1">
                         <li className="item1">
-                            <iframe src="https://www.youtube.com/embed/KMHgowSN-Cw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <img alt="lorem itsum" />
                             <div className="tit">How to do Basic Jumping and how to lading safely</div>
                             <div className="conts">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, consequuntur!</div>
                         </li>
                         <li className="item2">
-                            <iframe src="https://www.youtube.com/embed/KMHgowSN-Cw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <div className="tit">How to do Basic Jumping and how to lading safely</div>
+                            {
+                                (() => {
+                                    setTimeout(() => {
+                                        let firstUrl = youtubeDate[0].snippet.thumbnails.standard.url;
+                                        console.log(firstUrl, 'firstUrl');
+                                        return (
+                                            <>
+                                                <img src={firstUrl} alt="lorem"></img>
+                                                <div className="tit">How to do Basic Jumping and how to lading safely</div>
+                                            </>
+                                        )
+                                    }, 0);
+
+                                })()
+                            }
                         </li>
                     </ul>
-                    <h2 className="constTit2">Most Watched</h2>
+                    <h2 className="constTit2">Ours Playlist</h2>
                     <ul className="videosConts2">
-                        <li className="item">
-                            <div className="iframeWrap">
-                                <iframe src="https://www.youtube.com/embed/KMHgowSN-Cw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div className="bottomTxt">How to do Basic Jumping and how to lading safely</div>
-                        </li>
-                        <li className="item">
-                            <div className="iframeWrap">
-                                <iframe src="https://www.youtube.com/embed/KMHgowSN-Cw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div className="bottomTxt">How to do Basic Jumping and how to lading safely</div>
-                        </li>
-                        <li className="item">
-                            <div className="iframeWrap">
-                                <iframe src="https://www.youtube.com/embed/KMHgowSN-Cw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div className="bottomTxt">How to do Basic Jumping and how to lading safely</div>
-                        </li>
-                        <li className="item">
-                            <div className="iframeWrap">
-                                <iframe src="https://www.youtube.com/embed/KMHgowSN-Cw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div className="bottomTxt">How to do Basic Jumping and how to lading safely</div>
-                        </li>
-                        <li className="item">
-                            <div className="iframeWrap">
-                                <iframe src="https://www.youtube.com/embed/KMHgowSN-Cw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div className="bottomTxt">How to do Basic Jumping and how to lading safely</div>
-                        </li>
-                        <li className="item">
-                            <div className="iframeWrap">
-                                <iframe src="https://www.youtube.com/embed/KMHgowSN-Cw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div className="bottomTxt">How to do Basic Jumping and how to lading safely</div>
-                        </li>
-                        <li className="item">
-                            <div className="iframeWrap">
-                                <iframe src="https://www.youtube.com/embed/KMHgowSN-Cw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div className="bottomTxt">How to do Basic Jumping and how to lading safely</div>
-                        </li>
-                        <li className="item">
-                            <div className="iframeWrap">
-                                <iframe src="https://www.youtube.com/embed/KMHgowSN-Cw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div className="bottomTxt">How to do Basic Jumping and how to lading safely</div>
-                        </li>
+
+                        {
+                            youtubeDate.map((el, index) => {
+                                // let tit = el.snippet.title
+                                // let titLen = el.snippet.title.length;
+                                // if(titLen > 40) tit = tit.substr(0,35)+'...';
+
+                                return (
+
+                                    <li key={index} onClick={
+                                        () => {
+                                            setYoutubeIndex(index);
+                                            setIsPop('on');
+                                            setIframeUrl(`https://www.youtube.com/embed/${youtubeDate[youtubeIndex].snippet.resourceId.videoId}`)
+                                        }
+                                    } className="item">
+
+                                        {
+                                            (() => {
+                                                console.log(1.5);
+                                            })()
+                                        }
+                                        <div className="imgWrap">
+                                            <img src={el.snippet.thumbnails.standard.url} alt="" />
+                                        </div>
+                                        <div className="bottom">
+                                            <div className="txt">{el.snippet.title}</div>
+                                        </div>
+                                    </li>
+                                )
+                            })
+                        }
+
+                        {
+                            (() => {
+                                console.log(1.6);
+                            })()
+                        }
 
                     </ul>
                 </main>
             </div>
+
+            <Pop></Pop>
+
+            {
+                (() => {
+                    console.log(2.1);
+                })()
+            }
+
         </section>
     )
+
+    function Pop() {
+
+        console.log(3);
+
+        return (
+            <div id="popup" className={isPop}>
+                <div className="iframeWrap">
+                    <iframe src={iframeUrl} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                </div>
+                <div onClick={
+                    () => {
+                        setIsPop('off')
+                    }
+                } className="close">Close</div>
+            </div>
+        )
+    }
+
+
 }
 export default Youtube;

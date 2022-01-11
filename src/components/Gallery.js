@@ -46,6 +46,7 @@ function Gallery() {
     useEffect(() => {
         getFlickr1(flickrUrl1);
         getFlickr2(flickrUrl2);
+
     }, [])
 
 

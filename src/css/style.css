@@ -2083,19 +2083,80 @@ footer {
         width: 23.6%;
         margin-bottom: 25px;
         border-radius: 20px;
-        overflow: hidden; }
-      .youtubeConts main .videosConts2 .iframeWrap {
+        overflow: hidden;
+        cursor: pointer; }
+      .youtubeConts main .videosConts2 .imgWrap {
         width: 100%;
-        height: 162px; }
-      .youtubeConts main .videosConts2 iframe {
+        height: 140px; }
+      .youtubeConts main .videosConts2 img {
         width: 100%;
         height: 100%;
         object-fit: cover; }
-      .youtubeConts main .videosConts2 .bottomTxt {
+      .youtubeConts main .videosConts2 .bottom {
         background: #252836;
         padding: 20px;
         color: #fff;
         font-size: 17px;
         line-height: 1.6; }
+        .youtubeConts main .videosConts2 .bottom .txt {
+          overflow: hidden;
+          height: 51px;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical; }
+  .youtubeConts #popup {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    z-index: -1; }
+    .youtubeConts #popup.on {
+      animation: 0.5s fadeIn both; }
+    .youtubeConts #popup.off {
+      animation: 0.5s fadeOut both; }
+    .youtubeConts #popup .iframeWrap {
+      width: 95%; }
+    .youtubeConts #popup iframe {
+      width: 100%;
+      height: 80vh;
+      object-fit: cover;
+      border: solid 1px #6e6e6e;
+      border-radius: 16px; }
+    .youtubeConts #popup .close {
+      position: absolute;
+      right: 3%;
+      top: 1.5%;
+      color: #00a1ff;
+      font-size: 25px;
+      font-weight: bold;
+      transition: all 0.5s;
+      cursor: pointer; }
+      .youtubeConts #popup .close:hover {
+        color: #bc4eff; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    z-index: 1; }
+  100% {
+    z-index: 1;
+    opacity: 1; } }
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    z-index: 1; }
+  99% {
+    z-index: 1; }
+  100% {
+    z-index: -1;
+    opacity: 0; } }
 
 /*# sourceMappingURL=style.css.map */
