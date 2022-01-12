@@ -4,14 +4,18 @@ import { useEffect, useState } from "react";
 function Youtube() {
 
     console.log(0);
-
     const [youtubeDate, setYoutubeDate] = useState([]);
+    const [youtubeDate2, setYoutubeDate2] = useState([]);
     const [youtubeIndex, setYoutubeIndex] = useState(0);
     const [iframeUrl, setIframeUrl] = useState('');
     const [isPop, setIsPop] = useState('');
+    const [mainContsUrl, setMainContsUrl] = useState('');
+    const [mainContstit, setMainContstit] = useState('');
+    const [mainContstit2, setMainContstit2] = useState('');
+
 
     const url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDYryAlh_1CQbDxO0qTjpOkUrOnX9m12lY&playlistId=PLZ1bji2Kya5N0QGDU9TL2_L7mrKoDJE7d&maxResults=12';
-
+    const url2 = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDYryAlh_1CQbDxO0qTjpOkUrOnX9m12lY&playlistId=PLZ1bji2Kya5NAWrSjX0zKEI_DdF3ndZr3&maxResults=12';
 
     useEffect(() => {
         console.log(4);
@@ -24,8 +28,30 @@ function Youtube() {
                     setYoutubeDate(json.data.items);
                 }
             )
-        console.log(4.1);
+
+        axios
+            .get(url2)
+            .then(
+                json => {
+                    console.log(json.data.items);
+                    setYoutubeDate2(json.data.items);
+                }
+            )
+
+
+        console.log('4.1');
     }, []);
+
+
+    /* setTimeout(() => {
+        console.log('4.2 last!');
+        setMainContsUrl(youtubeDate[0].snippet.thumbnails.standard.url);
+        setMainContstit(youtubeDate[0].snippet.title);
+    }, 0); */
+
+    youtubeDate.map((el, index) => {
+
+    })
 
     console.log(0.1);
 
@@ -87,28 +113,28 @@ function Youtube() {
                     </div>
                     <h2 className="constTit">Discover</h2>
                     <ul className="videosConts1">
-                        <li className="item1">
-                            <img alt="lorem itsum" />
-                            <div className="tit">How to do Basic Jumping and how to lading safely</div>
-                            <div className="conts">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, consequuntur!</div>
-                        </li>
-                        <li className="item2">
-                            {
-                                (() => {
-                                    setTimeout(() => {
-                                        let firstUrl = youtubeDate[0].snippet.thumbnails.standard.url;
-                                        console.log(firstUrl, 'firstUrl');
-                                        return (
-                                            <>
-                                                <img src={firstUrl} alt="lorem"></img>
-                                                <div className="tit">How to do Basic Jumping and how to lading safely</div>
-                                            </>
-                                        )
-                                    }, 0);
 
-                                })()
-                            }
-                        </li>
+                        {
+                            youtubeDate2.map((el, index) => {
+
+                                return (
+                                    <li key={index} onClick={
+                                        () => {
+                                            setYoutubeIndex(index);
+                                            setIsPop('on');
+                                            setIframeUrl(`https://www.youtube.com/embed/${youtubeDate2[youtubeIndex].snippet.resourceId.videoId}`)
+                                        }
+                                    } className="item">
+                                        <img src={el.snippet.thumbnails.standard.url} alt="" />
+                                        <div className="tit">{el.snippet.title}</div>
+                                        {/* <div className="conts">
+                                            <div className="ellipsis">{el.snippet.description}</div>
+                                        </div> */}
+                                    </li>
+                                )
+                            })
+                        }
+
                     </ul>
                     <h2 className="constTit2">Ours Playlist</h2>
                     <ul className="videosConts2">
@@ -131,7 +157,7 @@ function Youtube() {
 
                                         {
                                             (() => {
-                                                console.log(1.5);
+                                                console.log('1.5 map ');
                                             })()
                                         }
                                         <div className="imgWrap">
