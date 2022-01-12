@@ -6,7 +6,6 @@ function Youtube() {
     console.log(0);
     const [youtubeDate, setYoutubeDate] = useState([]);
     const [youtubeDate2, setYoutubeDate2] = useState([]);
-    const [youtubeIndex, setYoutubeIndex] = useState(0);
     const [iframeUrl, setIframeUrl] = useState('');
     const [isPop, setIsPop] = useState('');
     const [mainContsUrl, setMainContsUrl] = useState('');
@@ -120,11 +119,11 @@ function Youtube() {
                                 return (
                                     <li key={index} onClick={
                                         () => {
-                                            setYoutubeIndex(index);
+                                            console.log(index, 'indexxxxxxxx');
                                             setIsPop('on');
-                                            setIframeUrl(`https://www.youtube.com/embed/${youtubeDate2[youtubeIndex].snippet.resourceId.videoId}`)
+                                            setIframeUrl(`https://www.youtube.com/embed/${youtubeDate2[index].snippet.resourceId.videoId}`)
                                         }
-                                    } className="item">
+                                    } className="item" data-index={index}>
                                         <img src={el.snippet.thumbnails.standard.url} alt="" />
                                         <div className="tit">{el.snippet.title}</div>
                                         {/* <div className="conts">
@@ -148,10 +147,9 @@ function Youtube() {
                                 return (
 
                                     <li key={index} onClick={
-                                        () => {
-                                            setYoutubeIndex(index);
+                                        e => {
                                             setIsPop('on');
-                                            setIframeUrl(`https://www.youtube.com/embed/${youtubeDate[youtubeIndex].snippet.resourceId.videoId}`)
+                                            setIframeUrl(`https://www.youtube.com/embed/${youtubeDate[index].snippet.resourceId.videoId}`)
                                         }
                                     } className="item">
 
