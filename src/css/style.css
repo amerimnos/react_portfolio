@@ -2097,6 +2097,24 @@ footer {
           display: -webkit-box;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical; }
+      .youtubeConts main .videosConts1 .item::after {
+        content: "";
+        display: flex;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        height: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #0000008c;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 height=%2740px%27 viewBox=%270 0 25 25%27 width=%2740px%27 fill=%27red%27%3E%3Cpath d=%27M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z%27/%3E%3C/svg%3E");
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 2;
+        opacity: 0;
+        transition: all 0.5s; }
+      .youtubeConts main .videosConts1 .item:hover::after {
+        opacity: 1; }
     .youtubeConts main .constTit2 {
       margin-bottom: 24px;
       font-size: 27px;
@@ -2107,11 +2125,30 @@ footer {
       justify-content: space-between;
       flex-wrap: wrap; }
       .youtubeConts main .videosConts2 .item {
+        position: relative;
         width: 23.6%;
         margin-bottom: 25px;
         border-radius: 20px;
         overflow: hidden;
         cursor: pointer; }
+        .youtubeConts main .videosConts2 .item::after {
+          content: "";
+          display: flex;
+          position: absolute;
+          width: 100%;
+          top: 50%;
+          height: 100%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #0000008c;
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 height=%2740px%27 viewBox=%270 0 25 25%27 width=%2740px%27 fill=%27red%27%3E%3Cpath d=%27M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z%27/%3E%3C/svg%3E");
+          background-position: center;
+          background-repeat: no-repeat;
+          z-index: 2;
+          opacity: 0;
+          transition: all 0.5s; }
+        .youtubeConts main .videosConts2 .item:hover::after {
+          opacity: 1; }
       .youtubeConts main .videosConts2 .imgWrap {
         width: 100%;
         height: 140px; }

@@ -146,12 +146,14 @@ function Youtube() {
 
                                 return (
 
-                                    <li key={index} onClick={
-                                        e => {
-                                            setIsPop('on');
-                                            setIframeUrl(`https://www.youtube.com/embed/${youtubeDate[index].snippet.resourceId.videoId}`)
-                                        }
-                                    } className="item">
+                                    <li
+                                        key={index}
+                                        onClick={
+                                            e => {
+                                                setIsPop('on');
+                                                setIframeUrl(`https://www.youtube.com/embed/${youtubeDate[index].snippet.resourceId.videoId}`)
+                                            }
+                                        } className="item">
 
                                         {
                                             (() => {
