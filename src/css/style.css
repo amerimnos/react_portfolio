@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif; }
+  font-family: "Roboto", sans-serif; }
 
 ol,
 ul {
@@ -11,6 +11,15 @@ ul {
 a {
   text-decoration: none;
   color: inherit; }
+
+fieldset {
+  border: none; }
+
+legend {
+  font-size: 0; }
+
+caption {
+  font-size: 0; }
 
 header {
   position: relative;
@@ -2222,5 +2231,517 @@ footer {
   100% {
     z-index: -1;
     opacity: 0; } }
+.joinConts {
+  --white: #ffffff;
+  --greyLight-1: #e4ebf5;
+  --greyLight-2: #c8d0e7;
+  --greyLight-3: #bec8e4;
+  --greyDark: #9baacf;
+  --poinColor: #2bae29;
+  padding: 100px 0;
+  background-color: var(--greyLight-1); }
+  .joinConts .const1 {
+    width: 1200px;
+    margin: 0 auto 100px; }
+    .joinConts .const1 .info {
+      width: 70%;
+      margin: 0 auto;
+      border-radius: 1rem;
+      box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white); }
+      .joinConts .const1 .info dl {
+        display: flex;
+        border-radius: 1rem;
+        margin-bottom: 10px;
+        padding-right: 10px;
+        overflow: hidden;
+        font-weight: bold;
+        align-items: center; }
+      .joinConts .const1 .info dd {
+        padding: 12px 0;
+        line-height: 22px;
+        color: var(--poinColor); }
+      .joinConts .const1 .info dt {
+        width: 20%;
+        border-radius: 0 1rem 1rem 0;
+        background: var(--poinColor);
+        box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+        color: var(--white);
+        float: left;
+        margin-right: 22px;
+        padding: 12px 15px;
+        line-height: 22px;
+        font-weight: bold;
+        text-align: center; }
+  .joinConts .privacyConts {
+    display: flex;
+    width: 840px;
+    margin: 100px auto;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; }
+    .joinConts .privacyConts .scrollWrap {
+      padding: 20px 0;
+      border-radius: 30px;
+      box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white); }
+    .joinConts .privacyConts .scroll {
+      width: 100%;
+      height: 300px;
+      padding: 0 30px 15px 30px;
+      overflow-y: scroll; }
+    .joinConts .privacyConts h2 {
+      font-size: 19px;
+      font-weight: 600;
+      padding-bottom: 10px;
+      margin-top: 32px;
+      margin-bottom: 20px;
+      color: var(--greyDark);
+      border-bottom: solid 1px #c8c8c8; }
+    .joinConts .privacyConts h2:first-child {
+      margin-top: 13px; }
+    .joinConts .privacyConts p {
+      font-size: 15px;
+      color: #7f8697;
+      line-height: 1.5; }
+    .joinConts .privacyConts .checkWrap {
+      position: relative;
+      width: 100%;
+      margin-top: 21px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--greyDark); }
+      .joinConts .privacyConts .checkWrap input[type="checkbox"] {
+        position: absolute;
+        width: 0;
+        height: 0; }
+        .joinConts .privacyConts .checkWrap input[type="checkbox"]:checked + .support-check-box {
+          border-color: var(--poinColor); }
+        .joinConts .privacyConts .checkWrap input[type="checkbox"]:checked + .support-check-box::after {
+          height: 14px;
+          animation: dothaBottomCheck 0.2s ease 0s forwards; }
+        .joinConts .privacyConts .checkWrap input[type="checkbox"]:checked + .support-check-box::before {
+          height: 56px;
+          animation: dothaTopCheck 0.4s ease 0s forwards; }
+      .joinConts .privacyConts .checkWrap .support-check-box {
+        display: inline-block;
+        height: 22px;
+        width: 22px;
+        background-color: transparent;
+        border: 2px solid var(--greyDark);
+        border-radius: 3px;
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+        transition: border-color ease 0.2s;
+        cursor: pointer;
+        margin: 0 13px 0 4px; }
+        .joinConts .privacyConts .checkWrap .support-check-box::before, .joinConts .privacyConts .checkWrap .support-check-box::after {
+          box-sizing: border-box;
+          position: absolute;
+          height: 0;
+          width: 3px;
+          background-color: var(--poinColor);
+          display: inline-block;
+          transform-origin: left top;
+          border-radius: 3px;
+          content: " ";
+          transition: opacity ease 0.5; }
+        .joinConts .privacyConts .checkWrap .support-check-box::before {
+          top: 14px;
+          left: 11px;
+          box-shadow: 0 0 0 2px var(--greyLight-1);
+          transform: rotate(-135deg); }
+        .joinConts .privacyConts .checkWrap .support-check-box::after {
+          top: 3px;
+          left: 0px;
+          transform: rotate(-45deg); }
+  .joinConts .const2 {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+    justify-content: center; }
+    .joinConts .const2 #form {
+      width: 70%;
+      padding: 0 40px 40px 40px;
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 14px;
+      border-radius: 30px;
+      box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white); }
+      .joinConts .const2 #form input[type="submit"],
+      .joinConts .const2 #form input[type="reset"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        font-size: 0; }
+      .joinConts .const2 #form > div:first-child {
+        padding-top: 20px; }
+      .joinConts .const2 #form .tit {
+        font-size: 18px;
+        font-weight: 520;
+        padding: 50px 0 10px 0;
+        color: var(--poinColor); }
+        .joinConts .const2 #form .tit .material-icons {
+          vertical-align: bottom; }
+      .joinConts .const2 #form .form-table {
+        border-collapse: collapse;
+        width: 100%;
+        border-top: solid 2px var(--poinColor); }
+        .joinConts .const2 #form .form-table ::placeholder {
+          color: #b9b9b9; }
+        .joinConts .const2 #form .form-table td,
+        .joinConts .const2 #form .form-table th {
+          padding: 13px 8px;
+          border-bottom: solid 1px #cccccc;
+          color: var(--greyDark); }
+        .joinConts .const2 #form .form-table th:nth-child(1) {
+          color: var(--greyDark);
+          text-align: center;
+          font-weight: bold; }
+        .joinConts .const2 #form .form-table th:nth-child(1) {
+          width: 25%;
+          vertical-align: top; }
+        .joinConts .const2 #form .form-table td:nth-child(2) {
+          width: 75%; }
+        .joinConts .const2 #form .form-table .necessary {
+          color: red; }
+        .joinConts .const2 #form .form-table .sponsorSubContents {
+          display: inline-block;
+          padding-left: 20px;
+          color: var(--poinColor); }
+        .joinConts .const2 #form .form-table .support-btn {
+          vertical-align: top;
+          padding: 5px 11px;
+          margin: 0 0 0 10px;
+          font-size: 14px;
+          text-align: center;
+          cursor: pointer;
+          color: #ffffff;
+          background-color: var(--poinColor);
+          border: none;
+          border-radius: 8px;
+          box-shadow: 0 6px #bebebe;
+          transition: all 0.2s; }
+          .joinConts .const2 #form .form-table .support-btn:active {
+            background-color: #3e8e41;
+            box-shadow: 0 3px #666666;
+            transform: translateY(3px); }
+          .joinConts .const2 #form .form-table .support-btn:hover {
+            background-color: #3e8e41; }
+        .joinConts .const2 #form .form-table .inputWrap {
+          display: inline-block;
+          position: relative;
+          border-radius: 5px; }
+        .joinConts .const2 #form .form-table input {
+          font-size: 15px;
+          color: #9baad1;
+          padding: 10px 14px 10px 14px;
+          outline: none;
+          border: none;
+          border-radius: 5px;
+          width: 100%;
+          box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+          background: none; }
+        .joinConts .const2 #form .form-table .mt10 {
+          margin-top: 10px; }
+        .joinConts .const2 #form .form-table .width-full {
+          width: 100%; }
+          .joinConts .const2 #form .form-table .width-full input[type="text"] {
+            width: 100%;
+            box-sizing: border-box; }
+        .joinConts .const2 #form .form-table .inputFocus {
+          position: absolute;
+          display: block;
+          width: calc(100% + 0px);
+          height: calc(100% + 0px);
+          top: 0px;
+          left: 0px;
+          pointer-events: none;
+          border: 1px solid;
+          border-radius: 4px;
+          border-color: var(--poinColor);
+          visibility: hidden;
+          opacity: 0;
+          transition: all 0.4s;
+          transform: scaleX(1.1) scaleY(1.3); }
+        .joinConts .const2 #form .form-table input:focus + .inputFocus,
+        .joinConts .const2 #form .form-table textarea:focus + .inputFocus {
+          visibility: visible;
+          opacity: 1;
+          transform: scale(1); }
+        .joinConts .const2 #form .form-table .textareaBox {
+          width: 100%;
+          display: block;
+          font-size: 15px;
+          color: #333333;
+          padding: 10px 14px 10px 14px;
+          border-radius: 5px;
+          box-sizing: border-box;
+          resize: vertical;
+          border: none;
+          outline: none;
+          box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+          background: none; }
+        .joinConts .const2 #form .form-table .customSelectWrap {
+          display: flex;
+          position: relative;
+          width: 36%;
+          align-content: center; }
+          .joinConts .const2 #form .form-table .customSelectWrap select {
+            background-color: #d2e3d2;
+            color: var(--poinColor);
+            padding: 8px;
+            width: 100%;
+            border: none;
+            font-size: 14px;
+            -webkit-appearance: button;
+            appearance: button;
+            outline: none; }
+          .joinConts .const2 #form .form-table .customSelectWrap i {
+            margin-left: -40px;
+            width: 40px;
+            text-align: center;
+            font-size: 23px;
+            line-height: 40px;
+            color: white;
+            background-color: var(--poinColor);
+            pointer-events: none;
+            transition: all 0.4s; }
+          .joinConts .const2 #form .form-table .customSelectWrap:hover i {
+            color: var(--white);
+            background-color: #3e8e41; }
+        .joinConts .const2 #form .form-table input[type="checkbox"] {
+          position: absolute;
+          width: 0;
+          height: 0; }
+          .joinConts .const2 #form .form-table input[type="checkbox"]:checked + .support-check-box {
+            border-color: var(--poinColor); }
+          .joinConts .const2 #form .form-table input[type="checkbox"]:checked + .support-check-box::after {
+            height: 14px;
+            animation: dothaBottomCheck 0.2s ease 0s forwards; }
+          .joinConts .const2 #form .form-table input[type="checkbox"]:checked + .support-check-box::before {
+            height: 56px;
+            animation: dothaTopCheck 0.4s ease 0s forwards; }
+        .joinConts .const2 #form .form-table .support-check-box {
+          height: 22px;
+          width: 22px;
+          background-color: transparent;
+          border: 2px solid var(--greyDark);
+          border-radius: 3px;
+          position: relative;
+          display: inline-block;
+          box-sizing: border-box;
+          transition: border-color ease 0.2s;
+          cursor: pointer;
+          vertical-align: sub;
+          margin: 0 4px 0 4px;
+          vertical-align: middle; }
+          .joinConts .const2 #form .form-table .support-check-box::before, .joinConts .const2 #form .form-table .support-check-box::after {
+            box-sizing: border-box;
+            position: absolute;
+            height: 0;
+            width: 3px;
+            background-color: var(--poinColor);
+            display: inline-block;
+            transform-origin: left top;
+            border-radius: 3px;
+            content: " ";
+            transition: opacity ease 0.5; }
+          .joinConts .const2 #form .form-table .support-check-box::before {
+            top: 14px;
+            left: 11px;
+            box-shadow: 0 0 0 2px var(--greyLight-1);
+            transform: rotate(-135deg); }
+          .joinConts .const2 #form .form-table .support-check-box::after {
+            top: 3px;
+            left: 0px;
+            transform: rotate(-45deg); }
+        .joinConts .const2 #form .form-table .radio-wrap {
+          cursor: pointer; }
+        .joinConts .const2 #form .form-table .radio-box {
+          position: absolute;
+          width: 0;
+          height: 0; }
+          .joinConts .const2 #form .form-table .radio-box:checked ~ .radio-button::before {
+            border-color: var(--poinColor); }
+          .joinConts .const2 #form .form-table .radio-box:checked ~ .radio-button::after {
+            transform: scale(0.5); }
+          .joinConts .const2 #form .form-table .radio-box:checked + i + span {
+            color: var(--poinColor); }
+        .joinConts .const2 #form .form-table .radio-button {
+          position: relative;
+          vertical-align: middle;
+          display: inline-block;
+          height: 24px;
+          width: 25px; }
+          .joinConts .const2 #form .form-table .radio-button + span {
+            transition: all 0.3s;
+            color: var(--greyDark); }
+          .joinConts .const2 #form .form-table .radio-button::before, .joinConts .const2 #form .form-table .radio-button::after {
+            content: "";
+            box-sizing: border-box;
+            position: absolute;
+            left: 0;
+            margin: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            transition: all 0.3s;
+            border-radius: 50%;
+            border: 0.125rem solid var(--greyDark);
+            will-change: transform; }
+          .joinConts .const2 #form .form-table .radio-button::after {
+            transform: scale(0);
+            background-color: var(--poinColor);
+            border-color: var(--poinColor); }
+        .joinConts .const2 #form .form-table .interval {
+          margin-right: 29px; }
+      .joinConts .const2 #form .payinfo {
+        margin: 61px 37px 49px;
+        padding: 15px;
+        color: var(--poinColor);
+        border-radius: 1rem;
+        line-height: 1.8;
+        letter-spacing: 0.7px;
+        box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white); }
+      .joinConts .const2 #form .btn-wrap {
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+        justify-content: space-evenly; }
+      .joinConts .const2 #form .commonBtn1 {
+        position: relative;
+        overflow: hidden;
+        width: 30%;
+        margin: 36px 0 50px;
+        padding: 15px 20px 14px;
+        text-align: center;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--greyDark);
+        text-decoration: none;
+        border-radius: 1rem;
+        box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+        transition: color 0.3s ease-in-out;
+        text-decoration: none; }
+        .joinConts .const2 #form .commonBtn1 span:first-child {
+          position: relative;
+          transition: color 0.5s cubic-bezier(0.48, 0, 0.12, 1);
+          z-index: 5; }
+        .joinConts .const2 #form .commonBtn1 span:last-child {
+          color: var(--white);
+          display: block;
+          position: absolute;
+          bottom: 0;
+          transition: all 0.4s cubic-bezier(0.48, 0, 0.12, 1);
+          z-index: 10;
+          opacity: 0;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, 225%);
+          height: 14px;
+          line-height: 13px; }
+        .joinConts .const2 #form .commonBtn1::after {
+          content: "";
+          position: absolute;
+          bottom: -50%;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: var(--poinColor);
+          transform-origin: bottom center;
+          transition: transform 0.5s cubic-bezier(0.48, 0, 0.12, 1);
+          transform: skewY(9.3deg) scaleY(0);
+          z-index: 9; }
+        .joinConts .const2 #form .commonBtn1:hover:after {
+          transform-origin: bottom center;
+          transform: skewY(9.3deg) scaleY(2); }
+        .joinConts .const2 #form .commonBtn1:hover span:last-child {
+          transform: translate(-50%, -50%);
+          opacity: 1;
+          transition: all 0.8s cubic-bezier(0.48, 0, 0.12, 1); }
+
+@keyframes dothaBottomCheck {
+  0% {
+    height: 0; }
+  100% {
+    height: 13px; } }
+@keyframes dothaTopCheck {
+  0% {
+    height: 0; }
+  50% {
+    height: 0; }
+  100% {
+    height: 25px; } }
+@media screen and (max-width: 1199px) {
+  .joinConts {
+    padding: 70px 0; }
+    .joinConts .const1 {
+      width: 100%;
+      margin: 0; }
+      .joinConts .const1 .info {
+        width: 85%; }
+    .joinConts .privacyConts {
+      width: 90%;
+      margin: 63px auto; }
+    .joinConts .const2 {
+      width: 100%; }
+      .joinConts .const2 #form {
+        width: 85%; } }
+@media screen and (max-width: 991px) {
+  .joinConts .const1 .info {
+    width: 90%; }
+  .joinConts .const2 #form {
+    width: 90%;
+    border-radius: 20px; }
+    .joinConts .const2 #form .form-table .sponsorSubContents {
+      margin-top: 7px;
+      padding-left: 0; } }
+@media screen and (max-width: 575px) {
+  .joinConts .const1 {
+    margin: 0px auto; }
+    .joinConts .const1 .info {
+      width: 90%;
+      font-size: 14px; }
+      .joinConts .const1 .info dd {
+        border-radius: 0.3rem; }
+      .joinConts .const1 .info dt {
+        width: 35%;
+        height: 68px;
+        border-radius: 0.3rem; }
+  .joinConts .const2 #form {
+    width: 90%;
+    padding: 20px; }
+    .joinConts .const2 #form .form-table ::placeholder {
+      font-size: 13px; }
+    .joinConts .const2 #form .form-table td.smTrans {
+      position: relative; }
+    .joinConts .const2 #form .form-table label.smTrans {
+      position: relative;
+      top: 0px; }
+    .joinConts .const2 #form .form-table div.smTrans {
+      width: 100%; }
+    .joinConts .const2 #form .form-table .support-btn {
+      position: absolute;
+      top: 48px;
+      left: -68px;
+      margin: 0; }
+    .joinConts .const2 #form .form-table .textareaBox {
+      min-height: 90px; }
+    .joinConts .const2 #form .form-table .customSelectWrap {
+      width: 100%; }
+    .joinConts .const2 #form .form-table input[type="date"] {
+      width: 145px;
+      padding: 5px; }
+    .joinConts .const2 #form .payinfo {
+      margin: 51px 0px 20px 0px; }
+    .joinConts .const2 #form .btn-wrap {
+      justify-content: space-between; }
+    .joinConts .const2 #form .commonBtn1 {
+      width: 40%;
+      padding: 10px; } }
 
 /*# sourceMappingURL=style.css.map */

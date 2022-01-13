@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+	font-family: "Roboto", sans-serif;
 }
 ol,
 ul {
@@ -10,5 +10,14 @@ ul {
 }
 a {
 	text-decoration: none;
-	color:inherit;
+	color: inherit;
+}
+fieldset {
+	border: none;
+}
+legend {
+	font-size: 0;
+}
+caption {
+	font-size: 0;
 }
