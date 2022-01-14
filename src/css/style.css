@@ -2306,9 +2306,7 @@ footer {
       position: relative;
       width: 100%;
       margin-top: 21px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      text-align: center;
       color: var(--greyDark); }
       .joinConts .privacyConts .checkWrap input[type="checkbox"] {
         position: absolute;
@@ -2324,17 +2322,18 @@ footer {
           animation: dothaTopCheck 0.4s ease 0s forwards; }
       .joinConts .privacyConts .checkWrap .support-check-box {
         display: inline-block;
-        height: 22px;
-        width: 22px;
-        background-color: transparent;
-        border: 2px solid var(--greyDark);
-        border-radius: 3px;
         position: relative;
         display: inline-block;
         box-sizing: border-box;
+        height: 22px;
+        width: 22px;
+        margin: 0 13px 0 4px;
+        background-color: transparent;
+        border: 2px solid var(--greyDark);
+        border-radius: 3px;
+        vertical-align: middle;
         transition: border-color ease 0.2s;
-        cursor: pointer;
-        margin: 0 13px 0 4px; }
+        cursor: pointer; }
         .joinConts .privacyConts .checkWrap .support-check-box::before, .joinConts .privacyConts .checkWrap .support-check-box::after {
           box-sizing: border-box;
           position: absolute;
@@ -2663,6 +2662,9 @@ footer {
           transform: translate(-50%, -50%);
           opacity: 1;
           transition: all 0.8s cubic-bezier(0.48, 0, 0.12, 1); }
+  .joinConts .error {
+    margin-top: 10px;
+    color: #da3434; }
 
 @keyframes dothaBottomCheck {
   0% {
@@ -2712,6 +2714,8 @@ footer {
         width: 35%;
         height: 68px;
         border-radius: 0.3rem; }
+  .joinConts .privacyConts h2 {
+    font-size: 17px; }
   .joinConts .const2 #form {
     width: 90%;
     padding: 20px; }
@@ -2727,8 +2731,8 @@ footer {
     .joinConts .const2 #form .form-table .support-btn {
       position: absolute;
       top: 48px;
-      left: -68px;
-      margin: 0; }
+      left: 0;
+      margin: 0 0 0 -78px; }
     .joinConts .const2 #form .form-table .textareaBox {
       min-height: 90px; }
     .joinConts .const2 #form .form-table .customSelectWrap {

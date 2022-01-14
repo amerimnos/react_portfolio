@@ -88,13 +88,11 @@
 			line-height: 1.5;
 		}
 		.checkWrap {
-			position: relative;
-			width: 100%;
-			margin-top: 21px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			color: var(--greyDark);
+    position: relative;
+    width: 100%;
+    margin-top: 21px;
+    text-align: center;
+    color: var(--greyDark);
 
 			input[type="checkbox"] {
 				position: absolute;
@@ -117,17 +115,19 @@
 			}
 			.support-check-box {
 				display: inline-block;
-				height: 22px;
-				width: 22px;
-				background-color: transparent;
-				border: 2px solid var(--greyDark);
-				border-radius: 3px;
 				position: relative;
 				display: inline-block;
 				box-sizing: border-box;
+				height: 22px;
+				width: 22px;
+				margin: 0 13px 0 4px;
+				background-color: transparent;
+				border: 2px solid var(--greyDark);
+				border-radius: 3px;
+                vertical-align:middle;
 				transition: border-color ease 0.2s;
 				cursor: pointer;
-				margin: 0 13px 0 4px;
+				
 
 				&::before,
 				&::after {
@@ -549,6 +549,11 @@
 			}
 		}
 	}
+
+    .error{
+    	margin-top:10px;
+        color: #da3434;
+    }
 }
 
 @keyframes dothaBottomCheck {
@@ -928,6 +933,45 @@
 				}
 			}
 		}
+
+
+		.privacyConts {
+			.scrollWrap {
+			}
+			.scroll {
+			}
+			h2 {
+			    font-size:17px;
+			}
+			h2:first-child {
+			}
+			p {
+			}
+			.checkWrap {
+				input[type="checkbox"] {
+					&:checked + .support-check-box {
+					}
+
+					&:checked + .support-check-box::after {
+					}
+
+					&:checked + .support-check-box::before {
+					}
+				}
+				.support-check-box {
+					&::before,
+					&::after {
+					}
+
+					&::before {
+					}
+
+					&::after {
+					}
+				}
+			}
+		}
+
 		.const2 {
 			#form {
 				width: 90%;
@@ -968,10 +1012,10 @@
 						width: 100%;
 					}
 					.support-btn {
-						position: absolute;
-						top: 48px;
-						left: -68px;
-						margin: 0;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    margin: 0 0 0 -78px;
 						&:active {
 						}
 						&:hover {
