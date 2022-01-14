@@ -266,10 +266,10 @@ function Join() {
                                     </th>
                                     <td className="smTrans">
                                         <div className="inputWrap smTrans">
-                                            <input readOnly ref={postCode} type="text" name="companyAddress" id="companyAddress" placeholder="Enter Post code" onChange={handleValue}></input>
+                                            <input readOnly ref={postCode} type="text" name="companyAddress" id="companyAddress" placeholder="Enter Post code"></input>
                                             <span className="inputFocus"></span>
                                         </div>
-                                        <button onClick={() => sample4_execDaumPostcode()} className="support-btn">주소찾기</button>
+                                        <button onClick={e => {e.preventDefault(); sample4_execDaumPostcode()}} className="support-btn">주소찾기</button>
                                         <div className="inputWrap mt10 width-full">
                                             <input readOnly ref={address1} type="text" name="companyAddressDetail1" placeholder="Enter address"></input>
                                             <span className="inputFocus"></span>
