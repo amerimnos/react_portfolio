@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif; }
+  font-family: 'Roboto', 'Noto Sans KR'; }
 
 ol,
 ul {
@@ -2231,6 +2231,108 @@ footer {
   100% {
     z-index: -1;
     opacity: 0; } }
+.locationConts {
+  position: relative;
+  width: 100%; }
+  .locationConts #map {
+    width: 100%;
+    height: 100vh; }
+  .locationConts .mapSelectBtn {
+    display: flex;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    padding: 7px;
+    z-index: 1;
+    border-radius: 10px;
+    background-color: #37b235; }
+    .locationConts .mapSelectBtn button {
+      position: relative;
+      padding: 5px 10px;
+      background: transparent;
+      font-size: 17px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.5s;
+      color: #fff; }
+      .locationConts .mapSelectBtn button.on {
+        color: #37b235; }
+    .locationConts .mapSelectBtn .highLight {
+      display: block;
+      position: absolute;
+      background-color: #fff;
+      left: 7px;
+      width: 52px;
+      height: 35px;
+      transition: all 0.5s;
+      transition-timing-function: ease-in-out;
+      border-radius: 8px; }
+  .locationConts .conts {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    width: 30vw;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1; }
+    .locationConts .conts ::before {
+      content: "";
+      display: block; }
+  .locationConts .contsBtn {
+    border: none;
+    position: absolute;
+    z-index: 1;
+    left: -35px;
+    width: 30px;
+    height: 30px;
+    padding-bottom: 13px;
+    border-bottom: solid 2px #000;
+    background-color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s; }
+    .locationConts .contsBtn::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 2px;
+      background: #000;
+      transition: all 0.5s; }
+    .locationConts .contsBtn::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 65%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 2px;
+      background: #000;
+      transition: all 0.5s; }
+    .locationConts .contsBtn.on {
+      width: 30px;
+      height: 30px;
+      border: none; }
+      .locationConts .contsBtn.on::before {
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%) rotateZ(45deg);
+        transform-origin: center; }
+      .locationConts .contsBtn.on::after {
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotateZ(-45deg);
+        transform-origin: center; }
+  .locationConts .item {
+    padding: 20px;
+    background-color: #4caf5021;
+    backdrop-filter: blur(3px); }
+
 .joinConts {
   --white: #ffffff;
   --greyLight-1: #e4ebf5;
