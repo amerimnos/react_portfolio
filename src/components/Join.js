@@ -44,6 +44,7 @@ function Join() {
     }
 
     function handleSubmit(e) {
+
         e.preventDefault();
 
         //다음API로 불러온 데이터는 onChange에 영향을 안받아서 강제로 추가함.
@@ -53,8 +54,6 @@ function Join() {
             companyAddressDetail2: address2.current.value,
         }
         setVal({ ...val, ...postCodeOb });
-        console.log(val);
-
         setErr(errorCheck(val));
     }
 
@@ -118,7 +117,6 @@ function Join() {
         }).open();
     }
 
-
     return (
         <section className="joinConts">
             <article className="const1">
@@ -143,14 +141,16 @@ function Join() {
                 </div>
                 <div className="checkWrap">
                     <input type="checkbox" name="privacy" id="privacy" onChange={handleCheck}></input>
-                    <label className="support-check-box" htmlFor="privacy"></label> I agree with the above.<br></br>
+                    <label className="support-check-box" htmlFor="privacy" tabIndex="0" onKeyDown={
+                        e => { if (e.key === "Enter") e.target.click(); }
+                    }></label> I agree with the above.<br></br>
                     <div className="error">{err.privacy}</div>
                 </div>
             </article>
 
 
             <article className="const2">
-                <form id="form" action="" method="" onSubmit={handleSubmit}>
+                <form id="form" action="" method="">
                     <fieldset>
                         <legend>Enter your membership information.</legend>
 
@@ -269,7 +269,7 @@ function Join() {
                                             <input readOnly ref={postCode} type="text" name="companyAddress" id="companyAddress" placeholder="Enter Post code"></input>
                                             <span className="inputFocus"></span>
                                         </div>
-                                        <button onClick={e => {e.preventDefault(); sample4_execDaumPostcode()}} className="support-btn">주소찾기</button>
+                                        <button type="button" onClick={e => { e.preventDefault(); sample4_execDaumPostcode() }} className="support-btn">주소찾기</button>
                                         <div className="inputWrap mt10 width-full">
                                             <input readOnly ref={address1} type="text" name="companyAddressDetail1" placeholder="Enter address"></input>
                                             <span className="inputFocus"></span>
@@ -297,9 +297,9 @@ function Join() {
                                     <th>Symposium <span className="necessary">*</span></th>
                                     <td>
                                         <input type="checkbox" name="sympoDate" id="sympo_sat" onChange={handleCheck}></input>Sat
-                                        <label htmlFor="sympo_sat" className="support-check-box interval"></label>
+                                        <label htmlFor="sympo_sat" className="support-check-box interval" tabIndex="0" ></label>
                                         <input type="checkbox" name="sympoDate" id="sympo_sun" onChange={handleCheck}></input>Sun
-                                        <label htmlFor="sympo_sun" className="support-check-box"></label>
+                                        <label htmlFor="sympo_sun" className="support-check-box" tabIndex="0" ></label>
 
                                         <div className="sponsorSubContents">
                                             Lorem ipsum dolor, sit amet consectetur adipisicing.
@@ -359,7 +359,7 @@ function Join() {
 
                         <div className="btn-wrap">
                             <label htmlFor="submit" className="commonBtn1 border-btn-hover">
-                                <input type="submit" id="submit"></input>
+                                <input type="submit" id="submit" onClick={e => { handleSubmit(e) }}></input>
                                 <span>Register</span>
                                 <span>Register</span>
                             </label>
