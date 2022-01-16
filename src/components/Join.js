@@ -297,9 +297,13 @@ function Join() {
                                     <th>Symposium <span className="necessary">*</span></th>
                                     <td>
                                         <input type="checkbox" name="sympoDate" id="sympo_sat" onChange={handleCheck}></input>Sat
-                                        <label htmlFor="sympo_sat" className="support-check-box interval" tabIndex="0" ></label>
+                                        <label htmlFor="sympo_sat" className="support-check-box interval" tabIndex="0" onKeyDown={
+                                            e => { if (e.key === "Enter") e.target.click(); }
+                                        }></label>
                                         <input type="checkbox" name="sympoDate" id="sympo_sun" onChange={handleCheck}></input>Sun
-                                        <label htmlFor="sympo_sun" className="support-check-box" tabIndex="0" ></label>
+                                        <label htmlFor="sympo_sun" className="support-check-box" tabIndex="0" onKeyDown={
+                                            e => { if (e.key === "Enter") e.target.click(); }
+                                        }></label>
 
                                         <div className="sponsorSubContents">
                                             Lorem ipsum dolor, sit amet consectetur adipisicing.
@@ -313,11 +317,15 @@ function Join() {
                                     <td>
                                         <label className="radio-wrap interval">
                                             <input type="radio" name="bannerApply" value="yes" className="radio-box" onChange={handleCheck}></input>
-                                            <i className="radio-button"></i> <span>yes</span>
+                                            <i className="radio-button" tabIndex="0" onKeyDown={
+                                                e => { if (e.key === "Enter") e.target.click(); }
+                                            }></i> <span>yes</span>
                                         </label>
                                         <label className="radio-wrap interval">
                                             <input type="radio" name="bannerApply" value="no" className="radio-box" onChange={handleCheck}></input>
-                                            <i className="radio-button"></i> <span>no</span>
+                                            <i className="radio-button" tabIndex="0" onKeyDown={
+                                                e => { if (e.key === "Enter") e.target.click(); }
+                                            }></i> <span>no</span>
                                         </label>
                                         <div className="error">{err.bannerApply}</div>
                                     </td>
