@@ -4,6 +4,7 @@ function Location() {
 
     //위도, 경도 파악하는 하기 : https://apis.map.kakao.com/web/sample/addMapClickEvent/
 
+    const url = process.env.PUBLIC_URL;
     const { kakao } = window;
     let mapElem = useRef(null);
     let commonMapBtn = useRef(null);
@@ -11,6 +12,9 @@ function Location() {
     let trafficMapBtn = useRef(null);
     let line = useRef(null);
     let conts = useRef(null);
+    let rightItem1 = useRef(null);
+    let rightItem2 = useRef(null);
+    let rightItem3 = useRef(null);
 
     let options = {
         center: new kakao.maps.LatLng(37.48584570712801, 126.97399429532769), //지도의 중심좌표.
@@ -46,8 +50,23 @@ function Location() {
             moreBtn.className = 'moreBtn';
             node.appendChild(moreBtn);
 
-            node.addEventListener("click", () =>{
-                conts.current.classList.toggle('on');
+            node.addEventListener("click", e => {
+                conts.current.classList.add('on');
+                if (e.currentTarget.children[1].textContent === '본사') {
+                    rightItem1.current.classList.add('on');
+                    rightItem2.current.classList.remove('on');
+                    rightItem3.current.classList.remove('on');
+                }
+                if (e.currentTarget.children[1].textContent === '지점1') {
+                    rightItem1.current.classList.remove('on');
+                    rightItem2.current.classList.add('on');
+                    rightItem3.current.classList.remove('on');
+                }
+                if (e.currentTarget.children[1].textContent === '지점2') {
+                    rightItem1.current.classList.remove('on');
+                    rightItem2.current.classList.remove('on');
+                    rightItem3.current.classList.add('on');
+                }
             })
 
         }
@@ -383,6 +402,7 @@ function Location() {
     https://apis.map.kakao.com/web/sample/removableCustomOverlay/
     */
 
+
     return (
         <section className="locationConts">
 
@@ -396,14 +416,110 @@ function Location() {
             </div>
 
             <article ref={conts} className="conts">
-                <button className="contsBtn"></button>
-                <div className="item">
-                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, ullam.</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium placeat aliquam laudantium, similique libero delectus ad neque in officiis eius unde at temporibus cupiditate accusamus blanditiis velit dignissimos eum officia, earum consectetur? Nihil officiis aut sit excepturi voluptate obcaecati aspernatur!</p>
+                <button onClick={e => { contsOnOff(e); }} className="contsBtn"></button>
+                <div ref={rightItem1} className="item">
+                    <ul className="topConts">
+                        <li className="img">
+                            <img src={`${url}/img/location01.jpg`} alt="company landscape" />
+                        </li>
+                        <li className="num">10</li>
+                        <li className="txt">The number of employees</li>
+                        <li className="line"></li>
+                        <li className="num">2</li>
+                        <li className="txt">The number of contract workers</li>
+                    </ul>
+                    <div className="tit">TOP USERS AROUND</div>
+                    <ul className="nameList">
+                        <li className="elem">
+                            <h2>Ev Williams</h2>
+                            <span>Broadway</span>
+                        </li>
+                        <li className="elem">
+                            <h2>Carl Ikhan</h2>
+                            <span>Empire State</span>
+                        </li>
+                        <li className="elem">
+                            <h2>Biz Stone</h2>
+                            <span>Times Square</span>
+                        </li>
+                        <li className="elem">
+                            <h2>Peter Thiel</h2>
+                            <span>Plaza Hotel</span>
+                        </li>
+                    </ul>
                 </div>
+                <div ref={rightItem2} className="item">
+                    <ul className="topConts">
+                        <li className="img">
+                            <img src={`${url}/img/location02.jpg`} alt="company landscape2" />
+                        </li>
+                        <li className="num">15</li>
+                        <li className="txt">The number of employees</li>
+                        <li className="line"></li>
+                        <li className="num">7</li>
+                        <li className="txt">The number of contract workers</li>
+                    </ul>
+                    <div className="tit">TOP USERS AROUND</div>
+                    <ul className="nameList">
+                        <li className="elem">
+                            <h2>Hong Gil-Dong</h2>
+                            <span>Seoul</span>
+                        </li>
+                        <li className="elem">
+                            <h2>Yang Gi-Tak</h2>
+                            <span>In-Cheon</span>
+                        </li>
+                        <li className="elem">
+                            <h2>Ga Na Da</h2>
+                            <span>Won Ju</span>
+                        </li>
+                        <li className="elem">
+                            <h2>Peter Thiel</h2>
+                            <span>Plaza Hotel</span>
+                        </li>
+                    </ul>
+                </div>
+                <div ref={rightItem3} className="item">
+                    <ul className="topConts">
+                        <li className="img">
+                            <img src={`${url}/img/location03.jpg`} alt="company landscape2" />
+                        </li>
+                        <li className="num">37</li>
+                        <li className="txt">The number of employees</li>
+                        <li className="line"></li>
+                        <li className="num">2</li>
+                        <li className="txt">The number of contract workers</li>
+                    </ul>
+                    <div className="tit">TOP USERS AROUND</div>
+                    <ul className="nameList">
+                        <li className="elem">
+                            <h2>Helen</h2>
+                            <span>USA</span>
+                        </li>
+                        <li className="elem">
+                            <h2>Issabel</h2>
+                            <span>EU</span>
+                        </li>
+                        <li className="elem">
+                            <h2>Sophia </h2>
+                            <span>Canada</span>
+                        </li>
+                        <li className="elem">
+                            <h2>Martha</h2>
+                            <span>Japan</span>
+                        </li>
+                    </ul>
+                </div>
+
             </article>
 
         </section>
     )
+
+    function contsOnOff(e) {
+        e.target.classList.toggle('on');
+        e.target.closest('.conts').classList.toggle('on');
+    }
+
 }
 export default Location;
