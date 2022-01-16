@@ -312,7 +312,7 @@ footer {
     footer .copy {
       margin-top: 15px; } }
 .departmentConts {
-  position: fixed;
+  position: relative;
   width: 100%;
   height: 100vh;
   top: 0;
@@ -320,18 +320,19 @@ footer {
   background: #001f33; }
   .departmentConts .departSwiper {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     top: 0;
     position: absolute; }
     .departmentConts .departSwiper .swiper-wrapper-wrapper {
       position: absolute;
-      bottom: 3%;
+      top: 50%;
       width: 100%;
-      transform: translateY(-140px) rotate(-20deg); }
+      transform: translateY(-50%) rotate(-20deg); }
     .departmentConts .departSwiper .tit {
       position: absolute;
-      top: -93%;
-      left: 22%;
+      top: 50%;
+      left: 50%;
+      margin: -524px 0 0 -561px;
       z-index: 2;
       font-size: 60px;
       font-weight: 400;
@@ -355,12 +356,17 @@ footer {
       margin: 0 32px;
       transform: rotate(20deg);
       filter: blur(3px) grayscale(0.8);
-      transition: all 0.5s; }
+      transition: all 0.5s;
+      opacity: 0.6; }
+      .departmentConts .departSwiper .swiperImg .creator {
+        padding-bottom: 5px;
+        color: #ccd5db;
+        text-align: right;
+        font-family: "Cormorant"; }
       .departmentConts .departSwiper .swiperImg img {
         object-fit: cover;
         width: 100%;
         height: 100%;
-        opacity: 0.6;
         transition: all 0.5s; }
       .departmentConts .departSwiper .swiperImg span {
         display: flex;
@@ -372,11 +378,12 @@ footer {
     .departmentConts .departSwiper .swiper-slide-active {
       z-index: 1;
       transform: rotate(20deg) scale(1.4);
-      filter: blur(0px) grayscale(0); }
+      filter: blur(0px) grayscale(0);
+      opacity: 1; }
       .departmentConts .departSwiper .swiper-slide-active img {
         opacity: 1; }
     .departmentConts .departSwiper .swiper-pagination-progressbar {
-      top: 142px; }
+      top: 0px; }
     .departmentConts .departSwiper .swiper-pagination-progressbar-fill {
       background-color: #567c94; }
     .departmentConts .departSwiper .swiper-button-next,
@@ -427,6 +434,65 @@ footer {
       z-index: 10;
       opacity: 1; }
 
+@media screen and (max-width: 1439px) {
+  .departmentConts .departSwiper .tit {
+    margin: -462px 0 0 -288px;
+    font-size: 55px; }
+  .departmentConts .departSwiper .swiperImg {
+    width: 250px;
+    height: 350px; } }
+@media screen and (max-width: 1199px) {
+  .departmentConts {
+    height: calc(100vh - 128px); }
+    .departmentConts .departSwiper .tit {
+      margin: -412px 0 0 -238px;
+      font-size: 40px; }
+      .departmentConts .departSwiper .tit div {
+        margin-left: 270px; }
+    .departmentConts .departSwiper .swiperImg {
+      width: 250px;
+      height: 350px; } }
+@media screen and (max-width: 991px) {
+  .departmentConts {
+    height: calc(100vh - 74px); }
+    .departmentConts .departSwiper .swiper-wrapper-wrapper {
+      top: 50%; }
+    .departmentConts .departSwiper .tit {
+      width: 100%;
+      margin: 0;
+      font-size: 40px;
+      top: -36%;
+      left: 50%;
+      transform: translateX(-25%) rotate(20deg); }
+      .departmentConts .departSwiper .tit div {
+        display: inline-block;
+        margin: 0 0 0 18px; }
+    .departmentConts .departSwiper .swiperImg {
+      width: 200px;
+      height: 300px; } }
+@media screen and (max-width: 767px) {
+  .departmentConts {
+    height: calc(100vh - 74px); }
+    .departmentConts .departSwiper .swiper-wrapper-wrapper {
+      top: 50%; }
+    .departmentConts .departSwiper .tit {
+      font-size: 7vw;
+      padding: 0 20px;
+      text-align: center;
+      top: -47%;
+      left: 39%; }
+      .departmentConts .departSwiper .tit span {
+        font-size: 7vw; } }
+@media screen and (max-width: 575px) {
+  .departmentConts {
+    height: calc(100vh - 74px); }
+    .departmentConts .departSwiper .swiper-wrapper-wrapper {
+      top: 50%; }
+    .departmentConts .departSwiper .tit {
+      top: 50%;
+      left: 50%;
+      margin: -260px 0 0 100px;
+      transform: translate(-50%, -50%) rotate(20deg); } }
 .commuConts {
   position: relative;
   display: flex;

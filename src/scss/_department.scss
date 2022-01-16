@@ -1,5 +1,5 @@
 .departmentConts {
-	position: fixed;
+	position: relative;
 	width: 100%;
 	height: 100vh;
 	top: 0;
@@ -8,45 +8,45 @@
 
 	.departSwiper {
 		width: 100%;
-		height: 100vh;
+		height: 100%;
 		top: 0;
 		position: absolute;
 
-
 		.swiper-wrapper-wrapper {
 			position: absolute;
-			bottom: 3%;
+			top: 50%;
 			width: 100%;
-			transform: translateY(-140px) rotate(-20deg);
+			transform: translateY(-50%) rotate(-20deg);
 		}
 
-			.tit {
-				position: absolute;
-				top: -93%;
-				left: 22%;
-				z-index: 2;
-				font-size: 60px;
-				font-weight: 400;
-				color: #f3efc6;
-				opacity:0;
-				transition:all 0.5s;
-				transition-delay:0.5s;
-				transform: rotate(20deg);
+		.tit {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -524px 0 0 -561px;
+			z-index: 2;
+			font-size: 60px;
+			font-weight: 400;
+			color: #f3efc6;
+			opacity: 0;
+			transition: all 0.5s;
+			transition-delay: 0.5s;
+			transform: rotate(20deg);
 
-				&.on{
-					opacity:1;
-				}
-				span {
-					font-family: "Cormorant", serif;
-					font-size: 40px;
-					font-style: italic;
-					font-weight: 300;
-				}
-				div {
-					margin: 4px 0 0 341px;
-				}
+			&.on {
+				opacity: 1;
 			}
-		
+			span {
+				font-family: "Cormorant", serif;
+				font-size: 40px;
+				font-style: italic;
+				font-weight: 300;
+			}
+			div {
+				margin: 4px 0 0 341px;
+			}
+		}
+
 		.swiperImg {
 			width: 330px;
 			height: 400px;
@@ -54,12 +54,17 @@
 			transform: rotate(20deg);
 			filter: blur(3px) grayscale(0.8);
 			transition: all 0.5s;
+			opacity: 0.6;
+			.creator {
+				padding-bottom: 5px;
+				color: #ccd5db;
+				text-align: right;
+				font-family: "Cormorant";
+			}
 			img {
 				object-fit: cover;
 				width: 100%;
 				height: 100%;
-
-				opacity: 0.6;
 				transition: all 0.5s;
 			}
 			span {
@@ -75,12 +80,13 @@
 			z-index: 1;
 			transform: rotate(20deg) scale(1.4);
 			filter: blur(0px) grayscale(0);
+			opacity: 1;
 			img {
 				opacity: 1;
 			}
 		}
 		.swiper-pagination-progressbar {
-			top: 142px;
+			top: 0px;
 		}
 		.swiper-pagination-progressbar-fill {
 			background-color: #567c94;
@@ -98,7 +104,7 @@
 		right: 0;
 		bottom: 0;
 		display: flex;
-		justify-content: center; 
+		justify-content: center;
 		align-items: center;
 		background: rgba(0, 0, 0, 0.9);
 		z-index: -1;
@@ -140,6 +146,282 @@
 		&.on {
 			z-index: 10;
 			opacity: 1;
+		}
+	}
+}
+
+@media screen and (max-width: $xl) {
+	.departmentConts {
+		.departSwiper {
+			.swiper-wrapper-wrapper {
+			}
+
+			.tit {
+				margin: -462px 0 0 -288px;
+				font-size: 55px;
+				&.on {
+				}
+				span {
+				}
+				div {
+				}
+			}
+
+			.swiperImg {
+				width: 250px;
+				height: 350px;
+				img {
+				}
+				span {
+				}
+			}
+			.swiper-slide-active {
+				img {
+				}
+			}
+			.swiper-pagination-progressbar {
+			}
+			.swiper-pagination-progressbar-fill {
+			}
+			.swiper-button-next,
+			.swiper-button-prev {
+			}
+		}
+
+		.loadingWrap {
+			.loading {
+				&::before,
+				&::after {
+				}
+				&::before {
+				}
+			}
+			&.on {
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $lg) {
+	.departmentConts {
+		height: calc(100vh - 128px);
+		.departSwiper {
+			.swiper-wrapper-wrapper {
+			}
+
+			.tit {
+				margin: -412px 0 0 -238px;
+				font-size: 40px;
+				&.on {
+				}
+				span {
+				}
+				div {
+					margin-left: 270px;
+				}
+			}
+
+			.swiperImg {
+				width: 250px;
+				height: 350px;
+				img {
+				}
+				span {
+				}
+			}
+			.swiper-slide-active {
+				img {
+				}
+			}
+			.swiper-pagination-progressbar {
+			}
+			.swiper-pagination-progressbar-fill {
+			}
+			.swiper-button-next,
+			.swiper-button-prev {
+			}
+		}
+
+		.loadingWrap {
+			.loading {
+				&::before,
+				&::after {
+				}
+				&::before {
+				}
+			}
+			&.on {
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $md) {
+	.departmentConts {
+		height: calc(100vh - 74px);
+		.departSwiper {
+			.swiper-wrapper-wrapper {
+				top: 50%;
+			}
+
+			.tit {
+				width: 100%;
+				margin: 0;
+				font-size: 40px;
+				top: -36%;
+				left: 50%;
+				transform: translateX(-25%) rotate(20deg);
+				&.on {
+				}
+				span {
+				}
+				div {
+					display: inline-block;
+					margin: 0 0 0 18px;
+				}
+			}
+
+			.swiperImg {
+				width: 200px;
+				height: 300px;
+				img {
+				}
+				span {
+				}
+			}
+			.swiper-slide-active {
+				img {
+				}
+			}
+			.swiper-pagination-progressbar {
+			}
+			.swiper-pagination-progressbar-fill {
+			}
+			.swiper-button-next,
+			.swiper-button-prev {
+			}
+		}
+
+		.loadingWrap {
+			.loading {
+				&::before,
+				&::after {
+				}
+				&::before {
+				}
+			}
+			&.on {
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $sm) {
+	.departmentConts {
+		height: calc(100vh - 74px);
+		.departSwiper {
+			.swiper-wrapper-wrapper {
+				top: 50%;
+			}
+
+			.tit {
+				font-size: 7vw;
+				padding: 0 20px;
+				text-align: center;
+				top: -47%;
+				left: 39%;
+				&.on {
+				}
+				span {
+					font-size: 7vw;
+				}
+				div {
+				}
+			}
+
+			.swiperImg {
+				img {
+				}
+				span {
+				}
+			}
+			.swiper-slide-active {
+				img {
+				}
+			}
+			.swiper-pagination-progressbar {
+			}
+			.swiper-pagination-progressbar-fill {
+			}
+			.swiper-button-next,
+			.swiper-button-prev {
+			}
+		}
+
+		.loadingWrap {
+			.loading {
+				&::before,
+				&::after {
+				}
+				&::before {
+				}
+			}
+			&.on {
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $xs) {
+	.departmentConts {
+		height: calc(100vh - 74px);
+		.departSwiper {
+			.swiper-wrapper-wrapper {
+				top: 50%;
+			}
+
+			.tit {
+				top: 50%;
+				left: 50%;
+				margin: -260px 0 0 100px;
+				transform: translate(-50%, -50%) rotate(20deg);
+				&.on {
+				}
+				span {
+				}
+				div {
+				}
+			}
+
+			.swiperImg {
+				img {
+				}
+				span {
+				}
+			}
+			.swiper-slide-active {
+				img {
+				}
+			}
+			.swiper-pagination-progressbar {
+			}
+			.swiper-pagination-progressbar-fill {
+			}
+			.swiper-button-next,
+			.swiper-button-prev {
+			}
+		}
+
+		.loadingWrap {
+			.loading {
+				&::before,
+				&::after {
+				}
+				&::before {
+				}
+			}
+			&.on {
+			}
 		}
 	}
 }

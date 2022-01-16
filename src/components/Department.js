@@ -78,12 +78,14 @@ function Department() {
                     }
                 }
                 onSlideChange={() => console.log('slides change')}
+                onClick={e => alert('상세페이지 추가 예정입니다!')}
             >
                 {
                     swipwerItem.map((el, index) => {
 
                         return (
                             <SwiperSlide ref={swiperImg} key={index} className="swiperImg">
+                                <div className="creator">{el.creator}</div>
                                 <img src={`${url}${el.src}`} alt={el.name} />
                                 <span>{el.name}</span>
                             </SwiperSlide>
