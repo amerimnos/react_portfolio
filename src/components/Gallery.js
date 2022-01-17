@@ -54,14 +54,12 @@ function Gallery() {
 
         if (loadingtime === 'a') {
 
-            console.log('aaa');
             loadingOn();
             setLoadingtime(null);
         }
 
         if (loadingtime === 'b') {
 
-            console.log('bbb');
             loadingOff();
             setLoadingtime(null);
         }
@@ -230,11 +228,9 @@ function Gallery() {
 
     function getFlickr1(url) {
 
-        //loadingOn();
         setLoadingtime('a');
         axios.get(url).then(
             (json) => {
-                //loadingOff();
                 setLoadingtime('b');
                 if (json.data.photos.photo.length === 0) {
                     alert('Unfortunately, there are no results.')
@@ -246,11 +242,9 @@ function Gallery() {
     }
 
     function getFlickr2(url) {
-        //loadingOn();
         setLoadingtime('a');
         axios.get(url).then(
             (json) => {
-                //loadingOff();
                 setLoadingtime('b');
                 if (json.data.photos.photo.length === 0) {
                     alert('Unfortunately, there are no results.')

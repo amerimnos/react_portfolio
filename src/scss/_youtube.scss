@@ -1,3 +1,5 @@
+@use "sass:math" as math;
+
 .youtubeConts {
 	--youtubeAccentColor: #4caf50;
 	--youtubeWhiteColor: #656565;
@@ -26,15 +28,14 @@
 		--youtubeTertiaryColor: #252836;
 	}
 
-    &.fast{
-        transition: none;
-        *,
-        *::after,
-        *::before {
-            transition: none;
-        }
-
-    }
+	&.fast {
+		transition: none;
+		*,
+		*::after,
+		*::before {
+			transition: none;
+		}
+	}
 
 	.inner {
 		display: flex;
@@ -53,7 +54,7 @@
 		.menu {
 			margin-top: 30px;
 			padding-bottom: 14px;
-			border-bottom: solid 1px #34373c;
+			border-bottom: solid 1px var(--youtubeMenuTxtColor);
 			.tit {
 				margin-bottom: 18px;
 				color: #4f4e5d;
@@ -80,7 +81,7 @@
 				&:hover {
 					color: var(--youtubeWhiteColor);
 					span {
-						color: var(--youtubeWhiteColor);
+						color: var(--youtubebgColor);
 						background-color: #ff7551;
 					}
 				}
@@ -115,7 +116,7 @@
 				&:hover {
 					color: var(--youtubeWhiteColor);
 					span {
-						color: var(--youtubeWhiteColor);
+						color: var(--youtubebgColor);
 						background-color: #ff7551;
 					}
 				}
@@ -165,37 +166,6 @@
 				margin-left: auto;
 				display: flex;
 				align-items: center;
-				/* input[type="checkbox"] {
-					position: absolute;
-					width: 0;
-					height: 0;
-					opacity: 0;
-					font-size: 0;
-					&:checked + label::after {
-						right: 28px;
-					}
-				}
-				label {
-					display: flex;
-					align-items: center;
-					position: relative;
-					width: 60px;
-					height: 35px;
-					margin-right: 20px;
-					border-radius: 100px;
-					background-color: var(--youtubeAccentColor);
-					cursor: pointer;
-
-					&::after {
-						content: "";
-						position: absolute;
-						right: 4px;
-						width: 28px;
-						height: 28px;
-						border-radius: 100px;
-						background: var(--youtubebgColor);
-					}
-				} */
 
 				button {
 					display: flex;
@@ -242,7 +212,7 @@
 			height: 367px;
 			margin-bottom: 57px;
 			cursor: pointer;
-			.item:first-child {
+			.vidItem:first-child {
 				position: relative;
 				width: 66%;
 				margin-right: 20px;
@@ -275,7 +245,7 @@
 					-webkit-box-orient: vertical;
 				}
 			}
-			.item:last-child {
+			.vidItem:last-child {
 				position: relative;
 				width: calc(34% - 20px);
 				border-radius: 8px;
@@ -314,7 +284,7 @@
 					-webkit-box-orient: vertical;
 				}
 			}
-			.item::after {
+			.vidItem::after {
 				content: "";
 				display: flex;
 				position: absolute;
@@ -331,7 +301,7 @@
 				z-index: 2;
 				opacity: 0;
 			}
-			.item:hover::after {
+			.vidItem:hover::after {
 				opacity: 1;
 			}
 		}
@@ -345,7 +315,7 @@
 			display: flex;
 			justify-content: space-between;
 			flex-wrap: wrap;
-			.item {
+			.vidItem {
 				position: relative;
 				width: 23.6%;
 				margin-bottom: 25px;
@@ -446,27 +416,51 @@
 			}
 		}
 	}
+
+	@for $i from 1 through 12 {
+		.vidItem:nth-child(#{$i}) {
+            opacity: 0;
+			animation: upAnime
+				#{2.3 *
+				math.random($limit: null)}s
+				ease-in-out
+				0.2s
+				1
+				forwards;
+		}
+	}
 }
 
+@keyframes upAnime {
+	0% {
+		transform: translateY(50px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
 @keyframes fadeIn {
 	0% {
 		opacity: 0;
-		z-index: 3;
+		z-index: 20;
 	}
 
 	100% {
 		opacity: 1;
-		z-index: 3;
+		z-index: 20;
 	}
 }
 @keyframes fadeOut {
 	0% {
 		opacity: 1;
-		z-index: 3;
+		z-index: 20;
 	}
 
 	99% {
-		z-index: 3;
+		z-index: 20;
 	}
 
 	100% {

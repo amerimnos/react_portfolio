@@ -15,6 +15,7 @@ function Youtube() {
     let youtubeConts = useRef(null);
     let modeBtn = useRef(null);
     let modeText = useRef(null);
+    let loadingWrap = useRef(null);
 
     function handleCheck() {
 
@@ -31,26 +32,27 @@ function Youtube() {
     }
 
     useEffect(() => {
+        loadingWrap.current.classList.add('on');
+
         if (mode === 'dark') {
             modeBtn.current.classList.add('dark');
             modeText.current.innerText = 'Dark Mode';
 
             //dark 모드로 변경시 모든 요소에 transition을 걸었기 때문에 
-            //첫 렌더링시 0.8간 화이트 모드에서 다크 모드로 변환시 트렌지션이 발생함.
-            //바로 다크모드로 볼 수 있도록 fast 추가하고 바로 제거하여 css에서 인지할 수 있도록 함.
+            //처음 이 페이지 들어 올때 0.8간 화이트 모드에서 다크 모드로 변환시 트렌지션이 발생하여 보기 이상함.
+            //따라서, 처음 이 페이지 들어 올때 다크모드로 볼 수 있도록 fast 클래스를 추가해서 css에서 인지할 수 있하고
+            //인지할 수 있는 시간(0.1초)이 끝나면 바로 제거함.
             youtubeConts.current.className = 'youtubeConts dark fast';
             setTimeout(() => {
                 youtubeConts.current.className = 'youtubeConts dark';
             }, 100);
         }
-    }, [])
-
-    useEffect(() => {
 
         axios
             .get(url)
             .then(
                 json => {
+                    loadingWrap.current.classList.remove('on');
                     setYoutubeDate(json.data.items);
                 }
             )
@@ -59,6 +61,7 @@ function Youtube() {
             .get(url2)
             .then(
                 json => {
+                    loadingWrap.current.classList.remove('on');
                     setYoutubeDate2(json.data.items);
                 }
             )
@@ -70,6 +73,21 @@ function Youtube() {
         setMainContsUrl(youtubeDate[0].snippet.thumbnails.standard.url);
         setMainContstit(youtubeDate[0].snippet.title);
     }, 0); */
+
+    async function handelUrl(playList) {
+        loadingWrap.current.classList.add('on');
+        let url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDYryAlh_1CQbDxO0qTjpOkUrOnX9m12lY&playlistId=${playList}&maxResults=12`;
+        await axios
+            .get(url)
+            .then(
+                json => {
+                    setYoutubeDate(json.data.items);
+                }
+            )
+        setTimeout(() => {
+            loadingWrap.current.classList.remove('on');
+        }, 1000);
+    }
 
     return (
         <section ref={youtubeConts} className="youtubeConts">
@@ -83,7 +101,7 @@ function Youtube() {
             <div className="inner">
                 <aside>
                     <h1>Viedo board</h1>
-                    <ul className="menu">
+                    {/* <ul className="menu">
                         <li className="tit">MENU</li>
                         <li className="item">
                             <span className="material-icons-outlined">home</span>
@@ -97,18 +115,18 @@ function Youtube() {
                             <span className="material-icons-outlined">bookmark</span>
                             Playlist
                         </li>
-                    </ul>
+                    </ul> */}
                     <ul className="category">
                         <li className="tit">CATEGORY</li>
-                        <li className="item">
+                        <li className="item" onClick={() => { handelUrl('PLZ1bji2Kya5PE0mfTGlIULHFyl24Xcnt_'); }}>
                             <span className="material-icons-outlined">live_tv</span>
                             Live Stream
                         </li>
-                        <li className="item">
+                        <li className="item" onClick={() => { handelUrl('PLZ1bji2Kya5N0QGDU9TL2_L7mrKoDJE7d'); }}>
                             <span className="material-icons-outlined">park</span>
                             Nature
                         </li>
-                        <li className="item">
+                        <li className="item" onClick={() => { handelUrl('PLZ1bji2Kya5PE0mfTGlIULHFyl24Xcnt_'); }}>
                             <span className="material-icons-outlined">library_music</span>
                             Music
                         </li>
@@ -142,7 +160,7 @@ function Youtube() {
                                             setIsPop('on');
                                             setIframeUrl(`https://www.youtube.com/embed/${youtubeDate2[index].snippet.resourceId.videoId}`)
                                         }
-                                    } className="item" data-index={index}>
+                                    } className="vidItem" data-index={index}>
                                         <img src={el.snippet.thumbnails.standard.url} alt="" />
                                         <div className="tit">{el.snippet.title}</div>
                                         {/* <div className="conts">
@@ -172,7 +190,7 @@ function Youtube() {
                                                 setIsPop('on');
                                                 setIframeUrl(`https://www.youtube.com/embed/${youtubeDate[index].snippet.resourceId.videoId}`)
                                             }
-                                        } className="item">
+                                        } className="vidItem">
 
                                         <div className="imgWrap">
                                             <img src={el.snippet.thumbnails.standard.url} alt="" />
@@ -189,6 +207,10 @@ function Youtube() {
             </div>
 
             <Pop></Pop>
+
+            <div ref={loadingWrap} className="loadingWrap">
+                <div className="loading"></div>
+            </div>
 
         </section>
     )
