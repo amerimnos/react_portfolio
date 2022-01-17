@@ -1949,13 +1949,39 @@ footer {
   100% {
     transform: rotate(-360deg); } }
 .youtubeConts {
+  --youtubeAccentColor: #4caf50;
+  --youtubeWhiteColor: #656565;
+  --youtubebgColor: #ffffff;
+  --youtubeMenuTxtColor: #8a8a8a;
+  --youtubeMenuIconBgColor: #ededed;
+  --youtubeTertiaryColor: #f1f1f1;
   padding: 60px 0 60px;
-  background-color: #1f1d2b; }
+  background-color: var(--youtubebgColor);
+  transition: all 0.6s;
+  transition-timing-function: ease-in-out; }
+  .youtubeConts *,
+  .youtubeConts *::after,
+  .youtubeConts *::before {
+    transition: all 0.6s;
+    transition-timing-function: ease-in-out; }
+  .youtubeConts.dark {
+    --youtubeAccentColor: blueviolet;
+    --youtubeWhiteColor: #ffffff;
+    --youtubebgColor: #1f1d2b;
+    --youtubeMenuTxtColor: #808191;
+    --youtubeMenuIconBgColor: #353340;
+    --youtubeTertiaryColor: #252836; }
+  .youtubeConts.fast {
+    transition: none; }
+    .youtubeConts.fast *,
+    .youtubeConts.fast *::after,
+    .youtubeConts.fast *::before {
+      transition: none; }
   .youtubeConts .inner {
     display: flex;
     width: 1440px;
     margin: 0 auto;
-    color: #fff; }
+    color: var(--youtubeWhiteColor); }
   .youtubeConts aside {
     width: 15%;
     padding: 0 34px 34px 34px; }
@@ -1976,8 +2002,7 @@ footer {
       .youtubeConts aside .menu .item {
         display: flex;
         margin-bottom: 30px;
-        color: #808191;
-        transition: all 0.5s;
+        color: var(--youtubeMenuTxtColor);
         align-items: center;
         font-size: 15px;
         letter-spacing: 1px;
@@ -1985,15 +2010,14 @@ footer {
         .youtubeConts aside .menu .item span {
           margin-right: 15px;
           padding: 7px;
-          background-color: #353340;
-          color: #808191;
+          background-color: var(--youtubeMenuIconBgColor);
+          color: var(--youtubeMenuTxtColor);
           border-radius: 11px;
-          font-size: 18px;
-          transition: all 0.5s; }
+          font-size: 18px; }
         .youtubeConts aside .menu .item:hover {
-          color: #fff; }
+          color: var(--youtubeWhiteColor); }
           .youtubeConts aside .menu .item:hover span {
-            color: #fff;
+            color: var(--youtubeWhiteColor);
             background-color: #ff7551; }
     .youtubeConts aside .category {
       margin-top: 44px;
@@ -2007,8 +2031,7 @@ footer {
       .youtubeConts aside .category .item {
         display: flex;
         margin-bottom: 30px;
-        color: #808191;
-        transition: all 0.5s;
+        color: var(--youtubeMenuTxtColor);
         align-items: center;
         font-size: 15px;
         letter-spacing: 1px;
@@ -2016,15 +2039,14 @@ footer {
         .youtubeConts aside .category .item span {
           margin-right: 15px;
           padding: 7px;
-          background-color: #353340;
-          color: #808191;
+          background-color: var(--youtubeMenuIconBgColor);
+          color: var(--youtubeMenuTxtColor);
           border-radius: 11px;
-          font-size: 21px;
-          transition: all 0.5s; }
+          font-size: 21px; }
         .youtubeConts aside .category .item:hover {
-          color: #fff; }
+          color: var(--youtubeWhiteColor); }
           .youtubeConts aside .category .item:hover span {
-            color: #fff;
+            color: var(--youtubeWhiteColor);
             background-color: #ff7551; }
   .youtubeConts main {
     width: 85%;
@@ -2043,9 +2065,9 @@ footer {
         width: 100%;
         padding: 13px 47px 11px 17px;
         border: none;
-        background: #353340;
+        background: var(--youtubeMenuIconBgColor);
         border-radius: 8px;
-        color: #fff; }
+        color: var(--youtubeWhiteColor); }
         .youtubeConts main .topConts input[type="text"]::placeholder {
           color: #7c7c8c; }
       .youtubeConts main .topConts input[type="button"] {
@@ -2063,16 +2085,39 @@ footer {
       .youtubeConts main .topConts .theme {
         margin-left: auto;
         display: flex;
-        align-items: center; }
-        .youtubeConts main .topConts .theme input[type="checkbox"] {
-          position: absolute;
-          width: 0;
-          height: 0;
-          opacity: 0;
-          font-size: 0; }
-          .youtubeConts main .topConts .theme input[type="checkbox"]:checked + label::after {
-            right: 28px; }
-        .youtubeConts main .topConts .theme label {
+        align-items: center;
+        				/* input[type="checkbox"] {
+        					position: absolute;
+        					width: 0;
+        					height: 0;
+        					opacity: 0;
+        					font-size: 0;
+        					&:checked + label::after {
+        						right: 28px;
+        					}
+        				}
+        				label {
+        					display: flex;
+        					align-items: center;
+        					position: relative;
+        					width: 60px;
+        					height: 35px;
+        					margin-right: 20px;
+        					border-radius: 100px;
+        					background-color: var(--youtubeAccentColor);
+        					cursor: pointer;
+        
+        					&::after {
+        						content: "";
+        						position: absolute;
+        						right: 4px;
+        						width: 28px;
+        						height: 28px;
+        						border-radius: 100px;
+        						background: var(--youtubebgColor);
+        					}
+        				} */ }
+        .youtubeConts main .topConts .theme button {
           display: flex;
           align-items: center;
           position: relative;
@@ -2080,20 +2125,23 @@ footer {
           height: 35px;
           margin-right: 20px;
           border-radius: 100px;
-          background-color: blueviolet;
+          border: none;
+          background-color: var(--youtubeAccentColor);
           cursor: pointer; }
-          .youtubeConts main .topConts .theme label::after {
+          .youtubeConts main .topConts .theme button::after {
             content: "";
             position: absolute;
             right: 4px;
             width: 28px;
             height: 28px;
             border-radius: 100px;
-            background: #fff;
-            transition: all 0.5s;
-            transition-timing-function: ease-in-out; }
+            background: var(--youtubebgColor); }
+          .youtubeConts main .topConts .theme button.dark::after {
+            right: 28px; }
         .youtubeConts main .topConts .theme span {
-          color: #808191; }
+          display: inline-block;
+          width: 46px;
+          color: var(--youtubeMenuTxtColor); }
     .youtubeConts main .constTit {
       margin-bottom: 24px;
       font-size: 40px;
@@ -2108,31 +2156,23 @@ footer {
         position: relative;
         width: 66%;
         margin-right: 20px;
-        border-radius: 20px;
+        border-radius: 8px;
         overflow: hidden; }
         .youtubeConts main .videosConts1 .item:first-child img {
           width: 100%;
           height: 100%;
           object-fit: cover; }
         .youtubeConts main .videosConts1 .item:first-child .tit {
+          width: 100%;
           position: absolute;
           bottom: 0;
           padding: 14px;
-          font-size: 15px;
+          font-size: 13px;
+          font-weight: 300;
           line-height: 1.6;
-          color: #fff;
-          background-color: #0000005c;
+          color: var(--youtubeWhiteColor);
+          background-color: var(--youtubeTertiaryColor);
           backdrop-filter: blur(7px); }
-        .youtubeConts main .videosConts1 .item:first-child .conts {
-          position: absolute;
-          bottom: 0px;
-          padding: 20px;
-          color: #fff;
-          font-size: 14px;
-          background-color: #00000066;
-          backdrop-filter: blur(5px); }
-          .youtubeConts main .videosConts1 .item:first-child .conts.on {
-            height: 100%; }
         .youtubeConts main .videosConts1 .item:first-child .ellipsis {
           overflow: hidden;
           height: 340px;
@@ -2143,7 +2183,7 @@ footer {
       .youtubeConts main .videosConts1 .item:last-child {
         position: relative;
         width: calc(34% - 20px);
-        border-radius: 20px;
+        border-radius: 8px;
         overflow: hidden;
         cursor: pointer; }
         .youtubeConts main .videosConts1 .item:last-child img {
@@ -2151,19 +2191,21 @@ footer {
           height: 100%;
           object-fit: cover; }
         .youtubeConts main .videosConts1 .item:last-child .tit {
+          width: 100%;
           position: absolute;
           bottom: 0;
           padding: 14px;
-          font-size: 15px;
+          font-size: 13px;
+          font-weight: 300;
           line-height: 1.6;
-          color: #fff;
-          background-color: #0000005c;
+          color: var(--youtubeWhiteColor);
+          background-color: var(--youtubeTertiaryColor);
           backdrop-filter: blur(7px); }
         .youtubeConts main .videosConts1 .item:last-child .conts {
           position: absolute;
           bottom: 0px;
           margin: 20px;
-          color: #fff;
+          color: var(--youtubeWhiteColor);
           font-size: 17px; }
         .youtubeConts main .videosConts1 .item:last-child .ellipsis {
           overflow: hidden;
@@ -2182,12 +2224,12 @@ footer {
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: #0000008c;
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 height=%2740px%27 viewBox=%270 0 25 25%27 width=%2740px%27 fill=%27red%27%3E%3Cpath d=%27M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z%27/%3E%3C/svg%3E");
+        background-size: 68px 48px;
+        background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8' standalone='no'?%3E%3Csvg height='100%25' version='1.1' viewBox='0 0 68 48' width='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath class='ytp-large-play-button-bg' d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='%23f00'%3E%3C/path%3E%3Cpath d='M 45,24 27,14 27,34' fill='%23fff'%3E%3C/path%3E%3C/svg%3E");
         background-position: center;
         background-repeat: no-repeat;
         z-index: 2;
-        opacity: 0;
-        transition: all 0.5s; }
+        opacity: 0; }
       .youtubeConts main .videosConts1 .item:hover::after {
         opacity: 1; }
     .youtubeConts main .constTit2 {
@@ -2203,7 +2245,7 @@ footer {
         position: relative;
         width: 23.6%;
         margin-bottom: 25px;
-        border-radius: 20px;
+        border-radius: 5px;
         overflow: hidden;
         cursor: pointer; }
         .youtubeConts main .videosConts2 .item::after {
@@ -2216,12 +2258,12 @@ footer {
           left: 50%;
           transform: translate(-50%, -50%);
           background-color: #0000008c;
-          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 height=%2740px%27 viewBox=%270 0 25 25%27 width=%2740px%27 fill=%27red%27%3E%3Cpath d=%27M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z%27/%3E%3C/svg%3E");
+          background-size: 68px 48px;
+          background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8' standalone='no'?%3E%3Csvg height='100%25' version='1.1' viewBox='0 0 68 48' width='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath class='ytp-large-play-button-bg' d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='%23f00'%3E%3C/path%3E%3Cpath d='M 45,24 27,14 27,34' fill='%23fff'%3E%3C/path%3E%3C/svg%3E");
           background-position: center;
           background-repeat: no-repeat;
           z-index: 2;
-          opacity: 0;
-          transition: all 0.5s; }
+          opacity: 0; }
         .youtubeConts main .videosConts2 .item:hover::after {
           opacity: 1; }
       .youtubeConts main .videosConts2 .imgWrap {
@@ -2232,14 +2274,15 @@ footer {
         height: 100%;
         object-fit: cover; }
       .youtubeConts main .videosConts2 .bottom {
-        background: #252836;
+        background: var(--youtubeTertiaryColor);
         padding: 20px;
-        color: #fff;
-        font-size: 17px;
+        color: var(--youtubeWhiteColor);
+        font-size: 13px;
+        font-weight: 300;
         line-height: 1.6; }
         .youtubeConts main .videosConts2 .bottom .txt {
           overflow: hidden;
-          height: 51px;
+          height: 45px;
           text-overflow: ellipsis;
           display: -webkit-box;
           -webkit-line-clamp: 2;
@@ -2262,13 +2305,13 @@ footer {
     .youtubeConts #popup.off {
       animation: 0.5s fadeOut both; }
     .youtubeConts #popup .iframeWrap {
-      width: 95%; }
+      width: 95%;
+      border-radius: 7px;
+      overflow: hidden; }
     .youtubeConts #popup iframe {
       width: 100%;
-      height: 80vh;
-      object-fit: cover;
-      border: solid 1px #6e6e6e;
-      border-radius: 16px; }
+      height: 59vh;
+      object-fit: cover; }
     .youtubeConts #popup .close {
       position: absolute;
       right: 3%;
@@ -2276,7 +2319,6 @@ footer {
       color: #00a1ff;
       font-size: 25px;
       font-weight: bold;
-      transition: all 0.5s;
       cursor: pointer; }
       .youtubeConts #popup .close:hover {
         color: #bc4eff; }

@@ -1,29 +1,56 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 function Youtube() {
 
-    console.log(0);
     const [youtubeDate, setYoutubeDate] = useState([]);
     const [youtubeDate2, setYoutubeDate2] = useState([]);
     const [iframeUrl, setIframeUrl] = useState('');
     const [isPop, setIsPop] = useState('');
-    const [mainContsUrl, setMainContsUrl] = useState('');
-    const [mainContstit, setMainContstit] = useState('');
-    const [mainContstit2, setMainContstit2] = useState('');
-
 
     const url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDYryAlh_1CQbDxO0qTjpOkUrOnX9m12lY&playlistId=PLZ1bji2Kya5N0QGDU9TL2_L7mrKoDJE7d&maxResults=12';
     const url2 = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDYryAlh_1CQbDxO0qTjpOkUrOnX9m12lY&playlistId=PLZ1bji2Kya5NAWrSjX0zKEI_DdF3ndZr3&maxResults=12';
+    const mode = localStorage.getItem('mode');
+
+    let youtubeConts = useRef(null);
+    let modeBtn = useRef(null);
+    let modeText = useRef(null);
+
+    function handleCheck() {
+
+        modeBtn.current.classList.toggle('dark');
+        localStorage.setItem('mode', 'dark');
+        youtubeConts.current.classList.add('dark');
+        modeText.current.innerText = 'Dark Mode';
+
+        if (!modeBtn.current.classList.contains('dark')) {
+            localStorage.removeItem('mode');
+            youtubeConts.current.classList.remove('dark');
+            modeText.current.innerText = 'Day Mode';
+        }
+    }
 
     useEffect(() => {
-        console.log(4);
+        if (mode === 'dark') {
+            modeBtn.current.classList.add('dark');
+            modeText.current.innerText = 'Dark Mode';
+
+            //dark 모드로 변경시 모든 요소에 transition을 걸었기 때문에 
+            //첫 렌더링시 0.8간 화이트 모드에서 다크 모드로 변환시 트렌지션이 발생함.
+            //바로 다크모드로 볼 수 있도록 fast 추가하고 바로 제거하여 css에서 인지할 수 있도록 함.
+            youtubeConts.current.className = 'youtubeConts dark fast';
+            setTimeout(() => {
+                youtubeConts.current.className = 'youtubeConts dark';
+            }, 100);
+        }
+    }, [])
+
+    useEffect(() => {
 
         axios
             .get(url)
             .then(
                 json => {
-                    //console.log(json.data.items);
                     setYoutubeDate(json.data.items);
                 }
             )
@@ -32,36 +59,26 @@ function Youtube() {
             .get(url2)
             .then(
                 json => {
-                    console.log(json.data.items);
                     setYoutubeDate2(json.data.items);
                 }
             )
-
-
-        console.log('4.1');
     }, []);
 
-
+    // 랜더링 후 실행 되는 꼼수
     /* setTimeout(() => {
         console.log('4.2 last!');
         setMainContsUrl(youtubeDate[0].snippet.thumbnails.standard.url);
         setMainContstit(youtubeDate[0].snippet.title);
     }, 0); */
 
-    youtubeDate.map((el, index) => {
-
-    })
-
-    console.log(0.1);
-
     return (
-        <section className="youtubeConts">
+        <section ref={youtubeConts} className="youtubeConts">
 
-            {
+            {/* {
                 (() => {
                     console.log(1);
                 })()
-            }
+            } */}
 
             <div className="inner">
                 <aside>
@@ -105,9 +122,12 @@ function Youtube() {
                             <input type="button" value="youtube search button" />
                         </label>
                         <div className="theme">
-                            <input type="checkbox" name="" id="themeCheck" />
-                            <label htmlFor="themeCheck"></label>
-                            <span>Night Mode</span>
+                            {/* <input ref={modeBtn} type="modeBtn" name="" id="themeCheck" onChange={()=>{handleCheck();}}/>
+                            <label htmlFor="themeCheck" tabIndex="0" onKeyDown={
+                                e => { if (e.key === "Enter") e.target.click(); }
+                            }></label> */}
+                            <button ref={modeBtn} type="button" aria-label="dark mode button" onClick={() => { handleCheck(); }}></button>
+                            <span ref={modeText}>Day Mode</span>
                         </div>
                     </div>
                     <h2 className="constTit">Discover</h2>
@@ -119,7 +139,6 @@ function Youtube() {
                                 return (
                                     <li key={index} onClick={
                                         () => {
-                                            console.log(index, 'indexxxxxxxx');
                                             setIsPop('on');
                                             setIframeUrl(`https://www.youtube.com/embed/${youtubeDate2[index].snippet.resourceId.videoId}`)
                                         }
@@ -155,11 +174,6 @@ function Youtube() {
                                             }
                                         } className="item">
 
-                                        {
-                                            (() => {
-                                                console.log('1.5 map ');
-                                            })()
-                                        }
                                         <div className="imgWrap">
                                             <img src={el.snippet.thumbnails.standard.url} alt="" />
                                         </div>
@@ -170,31 +184,16 @@ function Youtube() {
                                 )
                             })
                         }
-
-                        {
-                            (() => {
-                                console.log(1.6);
-                            })()
-                        }
-
                     </ul>
                 </main>
             </div>
 
             <Pop></Pop>
 
-            {
-                (() => {
-                    console.log(2.1);
-                })()
-            }
-
         </section>
     )
 
     function Pop() {
-
-        console.log(3);
 
         return (
             <div id="popup" className={isPop}>

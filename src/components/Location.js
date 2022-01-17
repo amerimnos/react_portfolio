@@ -16,13 +16,11 @@ function Location() {
     let rightItem2 = useRef(null);
     let rightItem3 = useRef(null);
 
-    let options = {
-        center: new kakao.maps.LatLng(37.48584570712801, 126.97399429532769), //지도의 중심좌표.
-        level: 7 //지도의 레벨(확대, 축소 정도)
-    };
-    let [map, setMap] = useState(null);
+    let [map, setKakaoMap] = useState(null);
+
 
     useEffect(() => {
+
 
         // 마커 트랙킹 기능 : https://apis.map.kakao.com/web/sample/markerTracker
         function TooltipMarker(position, titText, constText, bg) {
@@ -317,8 +315,14 @@ function Location() {
 
         }
 
+
+        let options = {
+            center: new kakao.maps.LatLng(37.48584570712801, 126.97399429532769), //지도의 중심좌표.
+            level: 7 //지도의 레벨(확대, 축소 정도)
+        };
         let map = new kakao.maps.Map(mapElem.current, options); //지도 생성 및 객체 리턴
-        setMap(map);
+        setKakaoMap(map);
+    
 
         // 본사
         let dkpos1 = new kakao.maps.LatLng(37.48584570712801, 126.97399429532769);
@@ -345,7 +349,9 @@ function Location() {
         markerTracker2.run();
         markerTracker3.run();
 
-        setMap(map);
+        console.log('end');
+
+
 
     }, [])
 
@@ -515,6 +521,7 @@ function Location() {
 
         </section>
     )
+
 
     function contsOnOff(e) {
         e.target.classList.toggle('on');
