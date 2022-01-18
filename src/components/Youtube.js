@@ -52,7 +52,9 @@ function Youtube() {
             .get(url)
             .then(
                 json => {
-                    loadingWrap.current.classList.remove('on');
+                    setTimeout(() => {
+                        loadingWrap.current.classList.remove('on');
+                    }, 1000);
                     setYoutubeDate(json.data.items);
                 }
             )
@@ -61,7 +63,6 @@ function Youtube() {
             .get(url2)
             .then(
                 json => {
-                    loadingWrap.current.classList.remove('on');
                     setYoutubeDate2(json.data.items);
                 }
             )
@@ -120,7 +121,7 @@ function Youtube() {
                         <li className="tit">CATEGORY</li>
                         <li className="item" onClick={() => { handelUrl('PLZ1bji2Kya5PE0mfTGlIULHFyl24Xcnt_'); }}>
                             <span className="material-icons-outlined">live_tv</span>
-                            Live Stream
+                            Food
                         </li>
                         <li className="item" onClick={() => { handelUrl('PLZ1bji2Kya5N0QGDU9TL2_L7mrKoDJE7d'); }}>
                             <span className="material-icons-outlined">park</span>

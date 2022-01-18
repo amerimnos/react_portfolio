@@ -17,11 +17,9 @@ function Location() {
     let rightItem3 = useRef(null);
 
     let [map, setKakaoMap] = useState(null);
-
+    //let [removeTracking, setRemoveTracking] = useState('tracking');
 
     useEffect(() => {
-
-
         // 마커 트랙킹 기능 : https://apis.map.kakao.com/web/sample/markerTracker
         function TooltipMarker(position, titText, constText, bg) {
             this.position = position;
@@ -304,6 +302,7 @@ function Location() {
                 kakao.maps.event.addListener(map, 'zoom_changed', tracking);
                 kakao.maps.event.addListener(map, 'center_changed', tracking);
                 tracking();
+                console.log(111);
             };
 
             this.stop = function () {
@@ -313,8 +312,8 @@ function Location() {
                 setVisible(false);
             };
 
-        }
 
+        }
 
         let options = {
             center: new kakao.maps.LatLng(37.48584570712801, 126.97399429532769), //지도의 중심좌표.
@@ -322,7 +321,7 @@ function Location() {
         };
         let map = new kakao.maps.Map(mapElem.current, options); //지도 생성 및 객체 리턴
         setKakaoMap(map);
-    
+
 
         // 본사
         let dkpos1 = new kakao.maps.LatLng(37.48584570712801, 126.97399429532769);
@@ -349,10 +348,11 @@ function Location() {
         markerTracker2.run();
         markerTracker3.run();
 
-        console.log('end');
-
-
-
+        return () => {
+            markerTracker1.stop();
+            markerTracker2.stop();
+            markerTracker3.stop();
+        }
     }, [])
 
 

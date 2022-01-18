@@ -2840,51 +2840,51 @@ footer .copy {
 }
 .youtubeConts .vidItem:nth-child(1) {
   opacity: 0;
-  animation: upAnime 1.9919289541s ease-in-out 0.2s 1 forwards;
+  animation: upAnime 0.5414398116s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(2) {
   opacity: 0;
-  animation: upAnime 2.1107841372s ease-in-out 0.2s 1 forwards;
+  animation: upAnime 2.0554511565s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(3) {
   opacity: 0;
-  animation: upAnime 0.8129260732s ease-in-out 0.2s 1 forwards;
+  animation: upAnime 2.1773060933s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(4) {
   opacity: 0;
-  animation: upAnime 1.5971947085s ease-in-out 0.2s 1 forwards;
+  animation: upAnime 1.9017479513s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(5) {
   opacity: 0;
-  animation: upAnime 2.1219073441s ease-in-out 0.2s 1 forwards;
+  animation: upAnime 1.7966692714s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(6) {
   opacity: 0;
-  animation: upAnime 0.7643296363s ease-in-out 0.2s 1 forwards;
+  animation: upAnime 0.5717159197s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(7) {
   opacity: 0;
-  animation: upAnime 1.108175984s ease-in-out 0.2s 1 forwards;
+  animation: upAnime 0.2016321497s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(8) {
   opacity: 0;
-  animation: upAnime 0.1334429681s ease-in-out 0.2s 1 forwards;
+  animation: upAnime 2.0884377427s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(9) {
   opacity: 0;
-  animation: upAnime 0.2883858408s ease-in-out 0.2s 1 forwards;
+  animation: upAnime 2.0935539899s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(10) {
   opacity: 0;
-  animation: upAnime 0.0698764645s ease-in-out 0.2s 1 forwards;
+  animation: upAnime 1.0292184891s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(11) {
   opacity: 0;
-  animation: upAnime 2.2375122268s ease-in-out 0.2s 1 forwards;
+  animation: upAnime 0.2108847035s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(12) {
   opacity: 0;
-  animation: upAnime 2.0295081598s ease-in-out 0.2s 1 forwards;
+  animation: upAnime 0.4036285235s ease-in-out 0.8s 1 forwards;
 }
 
 @keyframes upAnime {
