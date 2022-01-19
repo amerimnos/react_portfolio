@@ -224,6 +224,7 @@
 		right: -500px;
 		box-shadow: -2px 3px 9px #8b8b8b;
 		border-radius: 0 0 0 50px;
+		background-color: rgba(255, 255, 255, 0.48);
 		z-index: 1;
 		transform: translateY(-50%);
 		transition: all 0.5s;
@@ -303,7 +304,6 @@
 	.item {
 		display: none;
 		width: 500px;
-		background-color: rgba(255, 255, 255, 0.48);
 		-webkit-backdrop-filter: blur(6px);
 		backdrop-filter: blur(6px);
 		border-radius: 0 0 0 50px;

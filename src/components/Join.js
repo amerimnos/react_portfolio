@@ -66,11 +66,11 @@ function Join() {
         if (!val.privacy) errors.privacy = '동의해 주세요.';
         if (!val.id || val.id.length < 6) errors.id = '6자 이상의 ID를 입력하세요.';
         if (val.password.length < 5 || !num.test(val.password) || !char.test(val.password) || !eng.test(val.password)) errors.password = '5자 이상, 영문, 숫자, 특수문자를 포함해주세요.';
-        if (val.password !== val.passwordConfirm) errors.passwordConfirm = '비밀번호는 동일해야 합니다.';
+        if (!val.passwordConfirm || val.password !== val.passwordConfirm) errors.passwordConfirm = '비밀번호는 동일해야 합니다.';
         if (!val.name || val.name.length < 6) errors.name = '이름을 6자이상 입력하세요.';
         if (!val.email || !/@/.test(val.email)) errors.email = 'e-mail을 입력하세요.';
         if (!val.phone || !num.test(val.phone) || !/010/.test(val.phone)) errors.phone = '휴대폰 번호를 입력하세요.';
-        if (val.age === 0) errors.age = '나이를 선택하세요.';
+        if (!val.age || val.age === 0) errors.age = '나이를 선택하세요.';
         if (!postCode.current.value) {
             errors.companyAddress = '주소찾기 버튼를 활용하세요.';
         }

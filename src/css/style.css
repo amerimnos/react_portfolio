@@ -2766,51 +2766,51 @@ footer .copy {
 }
 .youtubeConts .vidItem:nth-child(1) {
   opacity: 0;
-  animation: upAnime 0.832005771s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.5674417313s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(2) {
   opacity: 0;
-  animation: upAnime 1.9314205302s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 2.0765079282s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(3) {
   opacity: 0;
-  animation: upAnime 1.4146600955s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.1326302512s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(4) {
   opacity: 0;
-  animation: upAnime 0.2055903028s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.0949850067s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(5) {
   opacity: 0;
-  animation: upAnime 0.7319002557s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.3080496964s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(6) {
   opacity: 0;
-  animation: upAnime 0.2792303941s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.8226242819s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(7) {
   opacity: 0;
-  animation: upAnime 1.6359936865s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.7781351531s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(8) {
   opacity: 0;
-  animation: upAnime 1.7702405448s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.104314725s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(9) {
   opacity: 0;
-  animation: upAnime 0.9249915823s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 2.069275105s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(10) {
   opacity: 0;
-  animation: upAnime 1.049965908s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.3381959862s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(11) {
   opacity: 0;
-  animation: upAnime 0.4877593204s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.1382469908s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts .vidItem:nth-child(12) {
   opacity: 0;
-  animation: upAnime 0.9583383624s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.6767812493s ease-in-out 0.8s 1 forwards;
 }
 
 @keyframes upAnime {
@@ -3053,6 +3053,7 @@ footer .copy {
   right: -500px;
   box-shadow: -2px 3px 9px #8b8b8b;
   border-radius: 0 0 0 50px;
+  background-color: rgba(255, 255, 255, 0.48);
   z-index: 1;
   transform: translateY(-50%);
   transition: all 0.5s;
@@ -3128,7 +3129,6 @@ footer .copy {
 .locationConts .item {
   display: none;
   width: 500px;
-  background-color: rgba(255, 255, 255, 0.48);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   border-radius: 0 0 0 50px;

@@ -383,17 +383,20 @@ function Location() {
         if (maptype === 'roadmap') {
             map.setMapTypeId(kakao.maps.MapTypeId.ROADMAP);
             map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+            conts.current.style.backgroundColor = `rgba(255, 255, 255, 0.48)`;
             roadmapControl.className = 'on';
             skyviewControl.className = '';
             trafficControl.className = '';
         } else if (maptype === 'skyview') {
             map.setMapTypeId(kakao.maps.MapTypeId.HYBRID);
             map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+            conts.current.style.backgroundColor = '#3a495691';
             skyviewControl.className = 'on';
             roadmapControl.className = '';
             trafficControl.className = '';
         } else if (maptype === 'trafficview') {
             map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+            conts.current.style.backgroundColor = '#3a495691';
             skyviewControl.className = '';
             roadmapControl.className = '';
             trafficControl.className = 'on';
