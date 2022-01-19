@@ -2474,6 +2474,13 @@ footer .copy {
   border-radius: 11px;
   font-size: 21px;
 }
+.youtubeConts aside .category .item.on {
+  color: var(--youtubeWhiteColor);
+}
+.youtubeConts aside .category .item.on span {
+  color: var(--youtubebgColor);
+  background-color: #ff7551;
+}
 .youtubeConts aside .category .item:hover {
   color: var(--youtubeWhiteColor);
 }
@@ -2666,12 +2673,61 @@ footer .copy {
 }
 .youtubeConts main .videosConts2 {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
+.youtubeConts main .videosConts2.on .vidItem:nth-child(1) {
+  opacity: 0;
+  animation: upAnime 2.047913341s ease-in-out 0.8s 1 forwards;
+}
+.youtubeConts main .videosConts2.on .vidItem:nth-child(2) {
+  opacity: 0;
+  animation: upAnime 0.0978791433s ease-in-out 0.8s 1 forwards;
+}
+.youtubeConts main .videosConts2.on .vidItem:nth-child(3) {
+  opacity: 0;
+  animation: upAnime 2.1352188607s ease-in-out 0.8s 1 forwards;
+}
+.youtubeConts main .videosConts2.on .vidItem:nth-child(4) {
+  opacity: 0;
+  animation: upAnime 0.4844702208s ease-in-out 0.8s 1 forwards;
+}
+.youtubeConts main .videosConts2.on .vidItem:nth-child(5) {
+  opacity: 0;
+  animation: upAnime 1.3006430193s ease-in-out 0.8s 1 forwards;
+}
+.youtubeConts main .videosConts2.on .vidItem:nth-child(6) {
+  opacity: 0;
+  animation: upAnime 0.7538425668s ease-in-out 0.8s 1 forwards;
+}
+.youtubeConts main .videosConts2.on .vidItem:nth-child(7) {
+  opacity: 0;
+  animation: upAnime 1.0893200937s ease-in-out 0.8s 1 forwards;
+}
+.youtubeConts main .videosConts2.on .vidItem:nth-child(8) {
+  opacity: 0;
+  animation: upAnime 0.1861538151s ease-in-out 0.8s 1 forwards;
+}
+.youtubeConts main .videosConts2.on .vidItem:nth-child(9) {
+  opacity: 0;
+  animation: upAnime 0.0185382307s ease-in-out 0.8s 1 forwards;
+}
+.youtubeConts main .videosConts2.on .vidItem:nth-child(10) {
+  opacity: 0;
+  animation: upAnime 2.2626500527s ease-in-out 0.8s 1 forwards;
+}
+.youtubeConts main .videosConts2.on .vidItem:nth-child(11) {
+  opacity: 0;
+  animation: upAnime 1.8275135152s ease-in-out 0.8s 1 forwards;
+}
+.youtubeConts main .videosConts2.on .vidItem:nth-child(12) {
+  opacity: 0;
+  animation: upAnime 1.8956669904s ease-in-out 0.8s 1 forwards;
+}
 .youtubeConts main .videosConts2 .vidItem {
+  opacity: 0;
   position: relative;
-  width: 23.6%;
+  width: 25%;
+  padding-right: 20px;
   margin-bottom: 25px;
   border-radius: 5px;
   overflow: hidden;
@@ -2705,6 +2761,7 @@ footer .copy {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 0 5px 0 0;
 }
 .youtubeConts main .videosConts2 .bottom {
   background: var(--youtubeTertiaryColor);
@@ -2713,6 +2770,7 @@ footer .copy {
   font-size: 13px;
   font-weight: 300;
   line-height: 1.6;
+  border-radius: 0 0 5px 0;
 }
 .youtubeConts main .videosConts2 .bottom .txt {
   overflow: hidden;
@@ -2763,54 +2821,6 @@ footer .copy {
 }
 .youtubeConts #popup .close:hover {
   color: #bc4eff;
-}
-.youtubeConts .vidItem:nth-child(1) {
-  opacity: 0;
-  animation: upAnime 0.5674417313s ease-in-out 0.8s 1 forwards;
-}
-.youtubeConts .vidItem:nth-child(2) {
-  opacity: 0;
-  animation: upAnime 2.0765079282s ease-in-out 0.8s 1 forwards;
-}
-.youtubeConts .vidItem:nth-child(3) {
-  opacity: 0;
-  animation: upAnime 1.1326302512s ease-in-out 0.8s 1 forwards;
-}
-.youtubeConts .vidItem:nth-child(4) {
-  opacity: 0;
-  animation: upAnime 0.0949850067s ease-in-out 0.8s 1 forwards;
-}
-.youtubeConts .vidItem:nth-child(5) {
-  opacity: 0;
-  animation: upAnime 1.3080496964s ease-in-out 0.8s 1 forwards;
-}
-.youtubeConts .vidItem:nth-child(6) {
-  opacity: 0;
-  animation: upAnime 1.8226242819s ease-in-out 0.8s 1 forwards;
-}
-.youtubeConts .vidItem:nth-child(7) {
-  opacity: 0;
-  animation: upAnime 1.7781351531s ease-in-out 0.8s 1 forwards;
-}
-.youtubeConts .vidItem:nth-child(8) {
-  opacity: 0;
-  animation: upAnime 1.104314725s ease-in-out 0.8s 1 forwards;
-}
-.youtubeConts .vidItem:nth-child(9) {
-  opacity: 0;
-  animation: upAnime 2.069275105s ease-in-out 0.8s 1 forwards;
-}
-.youtubeConts .vidItem:nth-child(10) {
-  opacity: 0;
-  animation: upAnime 1.3381959862s ease-in-out 0.8s 1 forwards;
-}
-.youtubeConts .vidItem:nth-child(11) {
-  opacity: 0;
-  animation: upAnime 1.1382469908s ease-in-out 0.8s 1 forwards;
-}
-.youtubeConts .vidItem:nth-child(12) {
-  opacity: 0;
-  animation: upAnime 0.6767812493s ease-in-out 0.8s 1 forwards;
 }
 
 @keyframes upAnime {

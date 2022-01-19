@@ -246,6 +246,8 @@ function Gallery() {
                     setItem1(json.data.photos.photo);
                 })
             .then(
+
+                
                 setTimeout(() => {
                     if (document.documentElement.clientWidth > 575) {
                         const leftMasonryElem = leftMasonry.current.masonry.element;

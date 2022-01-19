@@ -15,6 +15,7 @@ function Location() {
     let rightItem1 = useRef(null);
     let rightItem2 = useRef(null);
     let rightItem3 = useRef(null);
+    let rightItem4 = useRef(null);
     let [map, setKakaoMap] = useState(null);
 
     useEffect(() => {
@@ -50,16 +51,25 @@ function Location() {
                     rightItem1.current.classList.add('on');
                     rightItem2.current.classList.remove('on');
                     rightItem3.current.classList.remove('on');
+                    rightItem4.current.classList.remove('on');
                 }
                 if (e.currentTarget.children[1].textContent === '지점1') {
                     rightItem1.current.classList.remove('on');
                     rightItem2.current.classList.add('on');
                     rightItem3.current.classList.remove('on');
+                    rightItem4.current.classList.remove('on');
                 }
                 if (e.currentTarget.children[1].textContent === '지점2') {
                     rightItem1.current.classList.remove('on');
                     rightItem2.current.classList.remove('on');
                     rightItem3.current.classList.add('on');
+                    rightItem4.current.classList.remove('on');
+                }
+                if (e.currentTarget.children[1].textContent === '지점3') {
+                    rightItem1.current.classList.remove('on');
+                    rightItem2.current.classList.remove('on');
+                    rightItem3.current.classList.remove('on');
+                    rightItem4.current.classList.add('on');
                 }
             })
 
@@ -327,29 +337,36 @@ function Location() {
         let dkpos2 = new kakao.maps.LatLng(37.50104266305181, 126.70581904247202);
         // 지점2
         let dkpos3 = new kakao.maps.LatLng(35.064862656096444, 128.98195483953694);
+        // 지점3
+        let dkpos4 = new kakao.maps.LatLng(34.88881378104699, 128.69297277369634);
 
         // 툴팁을 노출하는 마커를 생성합니다.
         let marker1 = new TooltipMarker(dkpos1, '본사', 'Ut enim ad minim veniam, commodo consequat.', 'bg1');
         let marker2 = new TooltipMarker(dkpos2, '지점1', 'Excepteur sint occaecat cupidatat non proident.', 'bg2');
         let marker3 = new TooltipMarker(dkpos3, '지점2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'bg2');
+        let marker4 = new TooltipMarker(dkpos4, '지점3', 'Suspendisse ultrices gravida dictum fusce ut.', 'bg2');
         marker1.setMap(map);
         marker2.setMap(map);
         marker3.setMap(map);
+        marker4.setMap(map);
 
         // MarkerTracker를 생성합니다.
         let markerTracker1 = new MarkerTracker(map, marker1, 'trackerBg1');
         let markerTracker2 = new MarkerTracker(map, marker2, 'trackerBg2');
         let markerTracker3 = new MarkerTracker(map, marker3, 'trackerBg2');
+        let markerTracker4 = new MarkerTracker(map, marker4, 'trackerBg2');
 
         // marker의 추적을 시작합니다.
         markerTracker1.run();
         markerTracker2.run();
         markerTracker3.run();
+        markerTracker4.run();
 
         return () => {
             markerTracker1.stop();
             markerTracker2.stop();
             markerTracker3.stop();
+            markerTracker4.stop();
         }
     }, [])
 
@@ -396,7 +413,7 @@ function Location() {
             trafficControl.className = '';
         } else if (maptype === 'trafficview') {
             map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
-            conts.current.style.backgroundColor = '#3a495691';
+            conts.current.style.backgroundColor = `rgba(255, 255, 255, 0.48)`;
             skyviewControl.className = '';
             roadmapControl.className = '';
             trafficControl.className = 'on';
@@ -503,6 +520,37 @@ function Location() {
                         <li className="elem">
                             <h2>Sophia </h2>
                             <span>Canada</span>
+                        </li>
+                        <li className="elem">
+                            <h2>Martha</h2>
+                            <span>Japan</span>
+                        </li>
+                    </ul>
+                </div>
+                <div ref={rightItem4} className="item">
+                    <ul className="topConts">
+                        <li className="img">
+                            <img src={`${url}/img/location04.png`} alt="company landscape4" />
+                        </li>
+                        <li className="num">77</li>
+                        <li className="txt">The number of employees</li>
+                        <li className="line"></li>
+                        <li className="num">3</li>
+                        <li className="txt">The number of contract workers</li>
+                    </ul>
+                    <div className="tit">TOP USERS AROUND</div>
+                    <ul className="nameList">
+                        <li className="elem">
+                            <h2>Adam</h2>
+                            <span>Africa</span>
+                        </li>
+                        <li className="elem">
+                            <h2>Ecllipse</h2>
+                            <span>Japan</span>
+                        </li>
+                        <li className="elem">
+                            <h2>Sophia</h2>
+                            <span>Korea</span>
                         </li>
                         <li className="elem">
                             <h2>Martha</h2>

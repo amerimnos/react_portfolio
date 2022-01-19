@@ -15,10 +15,12 @@ function Youtube() {
     let youtubeConts = useRef(null);
     let modeBtn = useRef(null);
     let modeText = useRef(null);
+    let category = useRef(null);
     let loadingWrap = useRef(null);
+    let videosConts2 = useRef(null);
+
 
     function handleCheck() {
-
         modeBtn.current.classList.toggle('dark');
         localStorage.setItem('mode', 'dark');
         youtubeConts.current.classList.add('dark');
@@ -33,6 +35,7 @@ function Youtube() {
 
     useEffect(() => {
         loadingWrap.current.classList.add('on');
+        videosConts2.current.classList.remove('on');
 
         if (mode === 'dark') {
             modeBtn.current.classList.add('dark');
@@ -54,8 +57,10 @@ function Youtube() {
                 json => {
                     setTimeout(() => {
                         loadingWrap.current.classList.remove('on');
+                        setYoutubeDate(json.data.items);
+                        videosConts2.current.classList.add('on');
                     }, 1000);
-                    setYoutubeDate(json.data.items);
+
                 }
             )
 
@@ -75,18 +80,46 @@ function Youtube() {
         setMainContstit(youtubeDate[0].snippet.title);
     }, 0); */
 
-    async function handelUrl(playList) {
+    function handelUrl(e, playList) {
         loadingWrap.current.classList.add('on');
+        videosConts2.current.classList.remove('on');
+
+        let lists = category.current.children;
+        for (const iterator of lists) {
+            iterator.classList.remove('on');
+        }
+        e.target.classList.add('on');
+
         let url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDYryAlh_1CQbDxO0qTjpOkUrOnX9m12lY&playlistId=${playList}&maxResults=12`;
-        await axios
+        axios
             .get(url)
             .then(
                 json => {
+                    videosConts2.current.classList.add('on');
                     setYoutubeDate(json.data.items);
                 }
-            )
+            ).catch(function (error) {
+                if (error.response) {
+                    // The request was made and the server responded with a status code
+                    // that falls out of the range of 2xx
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
+                } else if (error.request) {
+                    // The request was made but no response was received
+                    // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+                    // http.ClientRequest in node.js
+                    alert('점검중 입니다. 다른 카테고리를 이용해주세요.');
+                    console.log(error.request);
+                } else {
+                    // Something happened in setting up the request that triggered an Error
+                    console.log('Error', error.message);
+                }
+                console.log(error.config);
+            });
         setTimeout(() => {
             loadingWrap.current.classList.remove('on');
+
         }, 1000);
     }
 
@@ -117,17 +150,17 @@ function Youtube() {
                             Playlist
                         </li>
                     </ul> */}
-                    <ul className="category">
+                    <ul ref={category} className="category">
                         <li className="tit">CATEGORY</li>
-                        <li className="item" onClick={() => { handelUrl('PLZ1bji2Kya5PE0mfTGlIULHFyl24Xcnt_'); }}>
-                            <span className="material-icons-outlined">live_tv</span>
-                            Food
+                        <li className="item" onClick={e => { handelUrl(e, 'PLZ1bji2Kya5Nq-8cthrUIVyK2MsqE42K9'); }}>
+                            <span className="material-icons-outlined">pets</span>
+                            Animals
                         </li>
-                        <li className="item" onClick={() => { handelUrl('PLZ1bji2Kya5N0QGDU9TL2_L7mrKoDJE7d'); }}>
+                        <li className="item" onClick={e => { handelUrl(e, 'PLZ1bji2Kya5N0QGDU9TL2_L7mrKoDJE7d'); }}>
                             <span className="material-icons-outlined">park</span>
                             Nature
                         </li>
-                        <li className="item" onClick={() => { handelUrl('PLZ1bji2Kya5PE0mfTGlIULHFyl24Xcnt_'); }}>
+                        <li className="item" onClick={e => { handelUrl(e, 'PLZ1bji2Kya5PE0mfTGlIULHFyl24Xcnt_'); }}>
                             <span className="material-icons-outlined">library_music</span>
                             Music
                         </li>
@@ -137,6 +170,8 @@ function Youtube() {
                     <div className="topConts">
                         <label htmlFor="youtubeSearch">
                             Youtube Search button
+
+                            {/* 검색 기능 구현 예정 : https://thisisspear.tistory.com/40 */}
                             <input onClick={() => { alert('get ready') }} type="text" name="youtubeSearch" id="youtubeSearch" placeholder="Search" />
                             <input type="button" value="youtube search button" />
                         </label>
@@ -174,7 +209,7 @@ function Youtube() {
 
                     </ul>
                     <h2 className="constTit2">Ours Playlist</h2>
-                    <ul className="videosConts2">
+                    <ul ref={videosConts2} className="videosConts2">
 
                         {
                             youtubeDate.map((el, index) => {

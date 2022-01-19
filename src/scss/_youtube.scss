@@ -113,6 +113,13 @@
 					border-radius: 11px;
 					font-size: 21px;
 				}
+				&.on{
+					color: var(--youtubeWhiteColor);
+					span {
+						color: var(--youtubebgColor);
+						background-color: #ff7551;
+					}
+				}
 				&:hover {
 					color: var(--youtubeWhiteColor);
 					span {
@@ -313,11 +320,23 @@
 		}
 		.videosConts2 {
 			display: flex;
-			justify-content: space-between;
 			flex-wrap: wrap;
+			@for $i from 1 through 12 {
+				&.on .vidItem:nth-child(#{$i}) {
+					opacity: 0;
+					animation: upAnime
+						#{2.3 * math.random($limit: null)}s
+						ease-in-out
+						0.8s
+						1
+						forwards;
+				}
+			}
 			.vidItem {
+				opacity:0;
 				position: relative;
-				width: 23.6%;
+				width: 25%;
+				padding-right:20px;
 				margin-bottom: 25px;
 				border-radius: 5px;
 				overflow: hidden;
@@ -347,11 +366,13 @@
 			.imgWrap {
 				width: 100%;
 				height: 140px;
+
 			}
 			img {
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
+				border-radius:0 5px 0 0;
 			}
 			.bottom {
 				background: var(--youtubeTertiaryColor);
@@ -360,6 +381,7 @@
 				font-size: 13px;
 				font-weight: 300;
 				line-height: 1.6;
+				border-radius:0 0 5px 0;
 				.txt {
 					overflow: hidden;
 					height: 45px;
@@ -414,19 +436,6 @@
 			&:hover {
 				color: #bc4eff;
 			}
-		}
-	}
-
-	@for $i from 1 through 12 {
-		.vidItem:nth-child(#{$i}) {
-            opacity: 0;
-			animation: upAnime
-				#{2.3 *
-				math.random($limit: null)}s
-				ease-in-out
-				0.8s
-				1
-				forwards;
 		}
 	}
 }
