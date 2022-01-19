@@ -31,9 +31,9 @@
 					transition: all 0.5s;
 					transition-timing-function: ease-in-out;
 					&:hover {
-						margin: -10px 0 0 -15px;
-						transform: scale(1.015);
-						box-shadow: 13px 14px 20px #bcc8bc;
+						margin: -7px 0 0 -12px;
+						transform: scale(1.02);
+						box-shadow: 10px 10px 20px #bcc8bc;
 					}
 				}
 			}
@@ -207,11 +207,13 @@
 
 	.inner {
 		display: flex;
+		transition: all 0.5s;
 	}
 
 	.left {
 		width: 70%;
-		transition: width 1s;
+		overflow: hidden;
+		transition: all 0.5s;
 		.tit {
 			display: flex;
 			margin-bottom: 30px;
@@ -263,9 +265,7 @@
 			}
 		}
 		.masonry {
-			height: 800px !important;
-			scrollbar-width: thin;
-			overflow-y: scroll;
+			transition: all 0.5s;
 			&::-webkit-scrollbar {
 				width: 3px;
 				background-color: rgba(211, 211, 211, 0.7);
@@ -314,9 +314,8 @@
 		}
 		&.off {
 			width: 30%;
-
 			.tit {
-				margin-bottom: 75px;
+				margin-bottom: 40px;
 				h1 {
 					font-size: 4.6vw;
 				}
@@ -333,9 +332,7 @@
 			}
 
 			.masonry {
-				height: 800px !important;
-				scrollbar-width: thin;
-				overflow-y: scroll;
+				overflow-y: hidden;
 				&::-webkit-scrollbar {
 				}
 				&::-webkit-scrollbar-thumb {
@@ -343,7 +340,6 @@
 				> li {
 					width: 93%;
 					margin-right: 5%;
-					margin-bottom: 50px;
 				}
 				.imgWrap {
 					margin-bottom: 20px;
@@ -363,13 +359,15 @@
 		}
 	}
 	.line {
-		width: 3.266px;
-		height: 100%;
+		width: 2px;
+		height: initial;
+		background: linear-gradient(0deg, transparent, #000000, transparent);
 	}
 	.right {
 		width: 30%;
 		padding-left: 30px;
-		transition: width 1s;
+		overflow: hidden;
+		transition: all 0.5s;
 
 		.tit {
 			display: flex;
@@ -423,9 +421,7 @@
 			}
 		}
 		.masonry {
-			height: 800px !important;
-			scrollbar-width: thin;
-			overflow-y: scroll;
+			transition: all 0.5s;
 			&::-webkit-scrollbar {
 				width: 3px;
 				background-color: rgb(211, 211, 211);
@@ -436,7 +432,6 @@
 			> li {
 				width: calc(50% - 30px);
 				margin-right: 5%;
-				margin-bottom: 4vw;
 				cursor: pointer;
 			}
 			.imgWrap {
@@ -526,9 +521,6 @@
 			}
 
 			.masonry {
-				height: 800px !important;
-				scrollbar-width: thin;
-				overflow-y: scroll;
 				&::-webkit-scrollbar {
 				}
 				&::-webkit-scrollbar-thumb {
@@ -577,7 +569,12 @@
 			}
 		}
 		.line {
-			filter: brightness(100);
+			background: linear-gradient(
+				0deg,
+				transparent,
+				#fff 95%,
+				transparent
+			);
 		}
 		.right {
 			.masonry {
@@ -939,9 +936,6 @@
 				}
 
 				.masonry {
-					height: 800px !important;
-					scrollbar-width: thin;
-					overflow-y: scroll;
 					&::-webkit-scrollbar {
 					}
 					&::-webkit-scrollbar-thumb {
@@ -1104,6 +1098,7 @@
 				}
 
 				.masonry {
+					overflow: auto;
 					&::-webkit-scrollbar {
 					}
 					&::-webkit-scrollbar-thumb {
@@ -1207,7 +1202,7 @@
 				}
 
 				.masonry {
-					height: 800px !important;
+					overflow: hidden;
 					&::-webkit-scrollbar {
 					}
 					&::-webkit-scrollbar-thumb {
@@ -1346,6 +1341,7 @@
 		}
 		.left {
 			width: 100%;
+			overflow: initial;
 			> .tit {
 				flex-wrap: wrap;
 				h1 {
@@ -1447,6 +1443,7 @@
 			}
 		}
 		.right {
+			overflow: initial;
 			> .tit {
 				flex-wrap: wrap;
 				text-align: left;
@@ -1527,14 +1524,14 @@
 				}
 
 				.masonry {
-					height: 800px !important;
 					&::-webkit-scrollbar {
 					}
 					&::-webkit-scrollbar-thumb {
 					}
 					> li {
 						width: fit-content;
-						margin-right: 30px;
+						margin-right: 0;
+						margin-bottom: 0;
 					}
 					.imgWrap {
 						img {
@@ -1577,22 +1574,5 @@
 				}
 			}
 		}
-	}
-}
-
-@keyframes loadingRotation {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-@keyframes loadingRotationBack {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(-360deg);
 	}
 }

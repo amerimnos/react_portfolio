@@ -12,23 +12,22 @@ function Department() {
     let url = process.env.PUBLIC_URL;
 
     const [swipwerItem, setSwipwerItem] = useState([]);
+    const [isPop, setIsPop] = useState('on');
 
     let departSwiper = useRef(null);
     let swiperImg = useRef(null);
     let loadingWrap = useRef(null);
 
     useEffect(() => {
-        loadingWrap.current.classList.add('on');
 
+        //데이터가 금방 불러와서 효과 보이기 위해 차선책으로 setTimeout 씀. 
         setTimeout(() => {
             fetch(`${url}/department.json`)
                 .then(response => {
-
-                    loadingWrap.current.classList.remove('on');
                     return response.json();
                 })
                 .then(result => {
-                    console.log(result);
+                    setIsPop('');
                     setSwipwerItem(result.date);
                     departSwiper.current.querySelector('.tit').classList.add('on');
                 })
@@ -93,9 +92,12 @@ function Department() {
                     })
                 }
             </Swiper>
-            <div ref={loadingWrap} className="loadingWrap">
+
+            <div ref={loadingWrap} className={`loadingWrap ${isPop}`}>
                 <div className="loading"></div>
             </div>
+
+
         </section>
     )
 }

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 function Location() {
 
-    //위도, 경도 파악하는 하기 : https://apis.map.kakao.com/web/sample/addMapClickEvent/
+    //위도, 경도 파악하는 방법 : https://apis.map.kakao.com/web/sample/addMapClickEvent/
 
     const url = process.env.PUBLIC_URL;
     const { kakao } = window;
@@ -15,9 +15,7 @@ function Location() {
     let rightItem1 = useRef(null);
     let rightItem2 = useRef(null);
     let rightItem3 = useRef(null);
-
     let [map, setKakaoMap] = useState(null);
-    //let [removeTracking, setRemoveTracking] = useState('tracking');
 
     useEffect(() => {
         // 마커 트랙킹 기능 : https://apis.map.kakao.com/web/sample/markerTracker
@@ -402,13 +400,6 @@ function Location() {
         }
     }
 
-    /* 
-    기능 추가 할것들.
-    https://apis.map.kakao.com/web/sample/customOverlay2/
-    https://apis.map.kakao.com/web/sample/removableCustomOverlay/
-    */
-
-
     return (
         <section className="locationConts">
 
@@ -521,7 +512,6 @@ function Location() {
 
         </section>
     )
-
 
     function contsOnOff(e) {
         e.target.classList.toggle('on');

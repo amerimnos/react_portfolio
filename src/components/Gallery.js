@@ -2,15 +2,18 @@ import axios from "axios";
 import Masonry from 'react-masonry-component';
 import { useEffect, useRef, useState } from "react";
 
-
 function Gallery() {
+
+    //masonry 출처 : https://github.com/eiriklv/react-masonry-component
+    //내장 onLayoutComplete 이벤트 이상해서 커스텀함..
 
     const [item1, setItem1] = useState([]);
     const [item2, setItem2] = useState([]);
     const [popOpen, setPopOpen] = useState(false);
     const [masonryResize, setMasonryResize] = useState(false);
     const [popSrc, setPopSrc] = useState(null);
-    const [loadingtime, setLoadingtime] = useState(null);
+    const [loadingtime1, setLoadingtime1] = useState(null);
+    const [loadingtime2, setLoadingtime2] = useState(null);
 
     const galleryConts2 = useRef(null);
     const right = useRef(null);
@@ -20,13 +23,19 @@ function Gallery() {
     const btn1 = useRef(null);
     const btn2 = useRef(null);
     const loadingElm = useRef(null);
+    const leftMasonry = useRef(null);
+    const rightMasonry = useRef(null);
+    const leftTit = useRef(null);
+    const rightTit = useRef(null);
     const leftMasonryTit = useRef(null);
     const rightMasonryTit = useRef(null);
+    const buddy = useRef(null);
 
     const url = process.env.PUBLIC_URL;
     const key = "685857eeaf8d03e0fb14b241dc08754c";
     const method = "flickr.photos.search";
-    const per_page = "20";
+    const per_page = "10";
+
     let tag1 = "modern";
     let tag2 = "landscape";
     let flickrUrl1 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag1}&nojsoncallback=1&privacy_filter=1`;
@@ -42,28 +51,23 @@ function Gallery() {
         itemSelector: '.gridItem2',
         gutter: 0,
     };
-
     useEffect(() => {
+
         getFlickr1(flickrUrl1);
         getFlickr2(flickrUrl2);
-
     }, [])
 
 
     useEffect(() => {
 
-        if (loadingtime === 'a') {
-
+        if (loadingtime1 === true || loadingtime2 === true) {
             loadingOn();
-            setLoadingtime(null);
         }
 
-        if (loadingtime === 'b') {
-
+        if (loadingtime1 === false && loadingtime2 === false) {
             loadingOff();
-            setLoadingtime(null);
         }
-    }, [loadingtime])
+    }, [loadingtime1, loadingtime2])
 
     return (
         <>
@@ -108,14 +112,13 @@ function Gallery() {
                             </li>
                         </ul>
                     </li>
-
                 </ul>
                 <div className="outLine"></div>
             </div>
             <div ref={galleryConts2} className="galleryConts2">
                 <ul className="inner">
                     <li ref={left} className="left on" onMouseEnter={mouseInLeft}>
-                        <div className="tit">
+                        <div ref={leftTit} className="tit">
                             <h1 ref={leftMasonryTit}>MODERN</h1>
                             <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas.
                                 <div className="inputWrap">
@@ -125,6 +128,7 @@ function Gallery() {
                             </div>
                         </div>
                         <Masonry
+                            ref={leftMasonry}
                             className={'masonry'} // default ''
                             elementType={'ul'} // default 'div'
                             options={masonryOptions1} // default {}
@@ -137,26 +141,29 @@ function Gallery() {
                                     let photoUrl = `https://live.staticflickr.com/${el.server}/${el.id}_${el.secret}_z.jpg`;
                                     let buddyIcon = `http://farm66.staticflickr.com/${el.server}/buddyicons/${el.owner}.jpg`;
                                     let titLeng = el.title.length;
+
+
                                     return (
                                         <li onClick={popupOpen} className="gridItem1" key={index}>
                                             <div className="imgWrap">
                                                 <img src={photoUrl} alt="" />
                                             </div>
                                             <div className="tit">
-                                                <img src={buddyIcon} alt="" />
+                                                <img ref={buddy} src={buddyIcon} alt="" />
                                                 {(titLeng > 20) ? el.title.slice(0, 40) + "..." : el.title}
                                             </div>
                                         </li>
                                     )
+
                                 })
                             }
                         </Masonry>
                     </li>
                     <li className="line">
-                        <img src={url + "/img/line.svg"} alt="" />
+                        {/* <img src={url + "/img/line.svg"} alt="" /> */}
                     </li>
                     <li ref={right} className="right off" onMouseEnter={mouseInRight}>
-                        <div className="tit">
+                        <div ref={rightTit} className="tit">
                             <h1 ref={rightMasonryTit}>lANDSCAPE</h1>
                             <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas.
                                 <div className="inputWrap">
@@ -167,6 +174,7 @@ function Gallery() {
                         </div>
 
                         <Masonry
+                            ref={rightMasonry}
                             className={'masonry'} // default ''
                             elementType={'ul'} // default 'div'
                             options={masonryOptions2} // default {}
@@ -200,7 +208,6 @@ function Gallery() {
                 <div ref={loadingElm} className="loadingWrap">
                     <div className="loading"></div>
                 </div>
-
             </div>
 
             {popOpen ? <Pop></Pop> : null}
@@ -227,57 +234,114 @@ function Gallery() {
 
 
     function getFlickr1(url) {
-
-        setLoadingtime('a');
-        axios.get(url).then(
-            (json) => {
-                setLoadingtime('b');
-                if (json.data.photos.photo.length === 0) {
-                    alert('Unfortunately, there are no results.')
-                    return;
-                }
-                setItem1(json.data.photos.photo);
-            }
-        );
+        setLoadingtime1(true);
+        axios.get(url)
+            .then(
+                (json) => {
+                    setLoadingtime1(false);
+                    if (json.data.photos.photo.length === 0) {
+                        alert('Unfortunately, there are no results.')
+                        return;
+                    }
+                    setItem1(json.data.photos.photo);
+                })
+            .then(
+                setTimeout(() => {
+                    if (document.documentElement.clientWidth > 575) {
+                        const leftMasonryElem = leftMasonry.current.masonry.element;
+                        const rightMasonryElem = rightMasonry.current.masonry.element;
+                        let elemHeight = leftMasonryElem.getBoundingClientRect().height;
+                        rightMasonryElem.style.height = `${elemHeight}px`;
+                    }
+                }, 2500)
+            );
     }
 
     function getFlickr2(url) {
-        setLoadingtime('a');
-        axios.get(url).then(
-            (json) => {
-                setLoadingtime('b');
-                if (json.data.photos.photo.length === 0) {
-                    alert('Unfortunately, there are no results.')
-                    return;
-                }
-                setItem2(json.data.photos.photo);
-            }
-        );
+        setLoadingtime2(true);
+        axios.get(url)
+            .then(
+                (json) => {
+                    setLoadingtime2(false);
+                    if (json.data.photos.photo.length === 0) {
+                        alert('Unfortunately, there are no results.')
+                        return;
+                    }
+                    setItem2(json.data.photos.photo);
+                })
+            .then(
+                //첫 페이지 로딩시 Masonry 높이값 맞추기
+                setTimeout(() => {
+                    if (document.documentElement.clientWidth > 575) {
+                        const leftMasonryElem = leftMasonry.current.masonry.element;
+                        const rightMasonryElem = rightMasonry.current.masonry.element;
+                        let elemHeight = leftMasonryElem.getBoundingClientRect().height;
+                        right.current.style.height = `${elemHeight}px`;
+                        rightMasonryElem.style.height = `${elemHeight}px`;
+                    }
+                }, 2500)
+
+            );
     }
 
-    function mouseInRight() {
+    async function mouseInRight() {
+        if (document.documentElement.clientWidth < 575) {
+            galleryConts2.current.classList.add('dark');
+            return;
+        }
         setMasonryResize(false);
+
         galleryConts2.current.classList.add('dark');
         right.current.classList.add('on');
         right.current.classList.remove('off');
         left.current.classList.remove('on');
         left.current.classList.add('off');
 
-        setTimeout(function () {
-            setMasonryResize(true);
-        }, 1000)
+        await new Promise((resolve) => {
+            setTimeout(() => resolve(setMasonryResize(true)), 500)
+        });
+        await new Promise((resolve) => {
+            setTimeout(() => resolve(), 1100)
+        });
+        const leftMasonryElem = leftMasonry.current.masonry.element;
+        const rightMasonryElem = rightMasonry.current.masonry.element;
+        let rightTitHeight = rightTit.current.getBoundingClientRect().height;
+        let leftTitHeight = leftTit.current.getBoundingClientRect().height;
+        let elemHeight = rightMasonryElem.getBoundingClientRect().height;
 
+        left.current.closest('.inner').style.height = `auto`;
+        left.current.style.height = (elemHeight + leftTitHeight) + "px";
+        right.current.style.height = (elemHeight + rightTitHeight) + "px";
+        leftMasonryElem.style.height = `${elemHeight}px`;
     }
-    function mouseInLeft() {
+    async function mouseInLeft() {
+        if (document.documentElement.clientWidth < 575) return;
         setMasonryResize(false);
+
         galleryConts2.current.classList.remove('dark');
         left.current.classList.add('on');
         left.current.classList.remove('off');
         right.current.classList.remove('on');
         right.current.classList.add('off');
-        setTimeout(function () {
-            setMasonryResize(true);
-        }, 1000)
+
+        await new Promise((resolve) => {
+            setTimeout(() => resolve(setMasonryResize(true)), 500)
+        });
+        await new Promise((resolve) => {
+            setTimeout(() => resolve(), 1100)
+        });
+
+        const leftMasonryElem = leftMasonry.current.masonry.element;
+        const rightMasonryElem = rightMasonry.current.masonry.element;
+        let rightTitHeight = rightTit.current.getBoundingClientRect().height
+        let leftTitHeight = leftTit.current.getBoundingClientRect().height
+        let elemHeight = leftMasonryElem.getBoundingClientRect().height;
+
+        left.current.closest('.inner').style.height = `auto`;
+        left.current.style.height = (elemHeight + leftTitHeight) + "px"; /* `(${elemHeight}+${leftTitHeight})px`; 왜 이거는 안돼??*/
+        right.current.style.height = (elemHeight + rightTitHeight) + "px";
+        rightMasonryElem.style.height = `${elemHeight}px`;
+
     }
 
     function search(e) {
@@ -308,11 +372,13 @@ function Gallery() {
         if (e.target === btn1.current) {
 
             let tag1 = inputTxt1.current.value;
+            leftMasonryTit.current.innerText = tag1;
             let flickrUrl1 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag1}&nojsoncallback=1&privacy_filter=1`;
             getFlickr1(flickrUrl1);
         } else {
 
             let tag2 = inputTxt2.current.value;
+            rightMasonryTit.current.innerText = tag2;
             let flickrUrl2 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag2}&nojsoncallback=1&privacy_filter=1`;
             getFlickr2(flickrUrl2);
 
