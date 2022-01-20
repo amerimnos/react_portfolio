@@ -36,7 +36,7 @@ function Gallery() {
     const method = "flickr.photos.search";
     const per_page = "10";
 
-    let tag1 = "modern";
+    let tag1 = "architecture";
     let tag2 = "landscape";
     let flickrUrl1 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag1}&nojsoncallback=1&privacy_filter=1`;
     let flickrUrl2 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag2}&nojsoncallback=1&privacy_filter=1`;
@@ -119,7 +119,7 @@ function Gallery() {
                 <ul className="inner">
                     <li ref={left} className="left on" onMouseEnter={mouseInLeft}>
                         <div ref={leftTit} className="tit">
-                            <h1 ref={leftMasonryTit}>MODERN</h1>
+                            <h1 ref={leftMasonryTit}>Architecture</h1>
                             <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas.
                                 <div className="inputWrap">
                                     <input ref={inputTxt1} onKeyDown={search} type="text" placeholder="Enter the tag." name="search" val="" />

@@ -19,6 +19,11 @@ function Location() {
     let [map, setKakaoMap] = useState(null);
 
     useEffect(() => {
+
+
+        conts.current.classList.add('on');
+        rightItem1.current.classList.add('on');
+
         // 마커 트랙킹 기능 : https://apis.map.kakao.com/web/sample/markerTracker
         function TooltipMarker(position, titText, constText, bg) {
             this.position = position;
