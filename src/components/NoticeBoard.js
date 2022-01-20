@@ -11,11 +11,50 @@ function NoticeBoard() {
     const popInputConts = useRef(null);
     const popInputTime = useRef(null);
 
+
+    const firstArticleData = [
+        {
+            title: 'Lorem, ipsum dolor.',
+            contents: 'Bibendum est ultricies integer quis auctor. Consequat id porta nibh venenatis cras. Nulla aliquet porttitor lacus luctus accumsan tortor.',
+            time: '1:10:39',
+            timeEdit: '1:10:43',
+        },
+        {
+            title: 'Labore et dolore magna aliqua?',
+            contents: 'Morbi enim nunc faucibus a pellentesque. Sapien eget mi proin sed libero enim sed. Vulputate ut pharetra sit amet aliquam id diam maecenas.',
+            time: '3:2:29',
+            timeEdit: '4:27:31',
+        },
+        {
+            title: 'Excepteur sint occaecat cupidatat non proident.',
+            contents: 'Risus nec feugiat in fermentum posuere urna nec. Donec ultrices tincidunt arcu non sodales. Viverra suspendisse potenti nullam ac. ',
+            time: '4:13:39',
+            timeEdit: '5:15:43',
+        },
+    ]
+
+    useEffect(() => {
+        let data = localStorage.getItem('article');
+        setArticle(
+            () => {
+                if (!data) {
+                    return firstArticleData;
+                } else {
+                    return JSON.parse(data);
+                }
+            }
+        );
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem('article', JSON.stringify(article));
+    }, [article])
+
+
     function handleCreate() {
         let tit = popInputTitle.current.value;
         let conts = popInputConts.current.value;
         let time = popInputTime.current.value;
-        console.log(new Date().getHours());
 
         setArticle(
             [
@@ -24,7 +63,6 @@ function NoticeBoard() {
             ]
         );
         setIsPop(false);
-
     }
 
     async function handleSync(index) {
@@ -65,8 +103,6 @@ function NoticeBoard() {
         setIsPop(false);
     }
 
-    console.log('article', article);
-
     return (
         <section className="noticeConts">
             <h1 className="mainTit">Lorem ipsum dolor sit amet</h1>
@@ -96,7 +132,13 @@ function NoticeBoard() {
                                     <li className="conts">{el.contents}</li>
                                     <li>
                                         <span className="time">Writing time {el.time}</span>
-                                        <span className="timeEdit">Modified time {el.timeEdit}</span>
+                                        {
+                                            (el.timeEdit)
+                                                ?
+                                                <span className="timeEdit">Modified time {el.timeEdit}</span>
+                                                :
+                                                null
+                                        }
                                     </li>
                                 </ul>
                                 <i className="viewBtn">view details</i>
@@ -119,15 +161,13 @@ function NoticeBoard() {
                 <span>a</span>
                 <span>t</span>
                 <span>e</span>
-                <span class="material-icons-round">arrow_forward_ios</span>
+                <span className="material-icons-round">arrow_forward_ios</span>
             </button>
 
             <ul className="pagiNation">
                 <li className="first"><i className="fas fa-angle-double-left" aria-hidden="true"></i></li>
                 <li className="prev"><i className="fas fa-angle-left" aria-hidden="true"></i></li>
                 <li className="num">1</li>
-                <li className="num">2</li>
-                <li className="num">3</li>
                 <li className="next"><i className="fas fa-angle-right" aria-hidden="true"></i></li>
                 <li className="last"><i className="fas fa-angle-double-right" aria-hidden="true"></i></li>
             </ul>
@@ -182,105 +222,6 @@ function NoticeBoard() {
                         </fieldset>
                     </form>
                 </div>
-
-                {/* <li className="item">
-                    <div className="date">
-                        <span>01</span>
-                        <div>2022.01</div>
-                    </div>
-                    <ul className="txt">
-                        <li>
-                            <span>Notice</span>
-                            <h2>Lorem, ipsum dolor.</h2>
-                        </li>
-                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ad rerum cupiditate repudiandae porro fuga.</li>
-                    </ul>
-                    <a href="#n" onClick={()=>{alert('to be announced')}} className="viewBtn">view details</a>
-                </li>
-                <li className="item">
-                    <div className="date">
-                        <span>11</span>
-                        <div>2022.01</div>
-                    </div>
-                    <ul className="txt">
-                        <li>
-                            <span>Notice</span>
-                            <h2>Lorem, ipsum dolor.</h2>
-                        </li>
-                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ad rerum cupiditate repudiandae porro fuga.</li>
-                    </ul>
-                    <a href="#n" onClick={()=>{alert('to be announced')}} className="viewBtn">view details</a>
-                </li>
-                <li className="item">
-                    <div className="date">
-                        <span>15</span>
-                        <div>2022.01</div>
-                    </div>
-                    <ul className="txt">
-                        <li>
-                            <span>Notice</span>
-                            <h2>Lorem, ipsum dolor.</h2>
-                        </li>
-                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ad rerum cupiditate repudiandae porro fuga.</li>
-                    </ul>
-                    <a href="#n" onClick={()=>{alert('to be announced')}} className="viewBtn">view details</a>
-                </li>
-                <li className="item">
-                    <div className="date">
-                        <span>21</span>
-                        <div>2022.01</div>
-                    </div>
-                    <ul className="txt">
-                        <li>
-                            <span>Notice</span>
-                            <h2>Lorem, ipsum dolor.</h2>
-                        </li>
-                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ad rerum cupiditate repudiandae porro fuga.</li>
-                    </ul>
-                    <a href="#n" onClick={()=>{alert('to be announced')}} className="viewBtn">view details</a>
-                </li>
-                <li className="item">
-                    <div className="date">
-                        <span>25</span>
-                        <div>2022.01</div>
-                    </div>
-                    <ul className="txt">
-                        <li>
-                            <span>Notice</span>
-                            <h2>Lorem, ipsum dolor.</h2>
-                        </li>
-                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ad rerum cupiditate repudiandae porro fuga.</li>
-                    </ul>
-                    <a href="#n" onClick={()=>{alert('to be announced')}} className="viewBtn">view details</a>
-                </li>
-                <li className="item">
-                    <div className="date">
-                        <span>31</span>
-                        <div>2022.01</div>
-                    </div>
-                    <ul className="txt">
-                        <li>
-                            <span>Notice</span>
-                            <h2>Lorem, ipsum dolor.</h2>
-                        </li>
-                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ad rerum cupiditate repudiandae porro fuga.</li>
-                    </ul>
-                    <a href="#n" onClick={()=>{alert('to be announced')}} className="viewBtn">view details</a>
-                </li>
-                <li className="item">
-                    <div className="date">
-                        <span>02</span>
-                        <div>2022.02</div>
-                    </div>
-                    <ul className="txt">
-                        <li>
-                            <span>Notice</span>
-                            <h2>Lorem, ipsum dolor.</h2>
-                        </li>
-                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ad rerum cupiditate repudiandae porro fuga.</li>
-                    </ul>
-                    <a href="#n" onClick={()=>{alert('to be announced')}} className="viewBtn">view details</a>
-                </li> */}
             </div>
         )
     }

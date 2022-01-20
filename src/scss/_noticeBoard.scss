@@ -89,6 +89,9 @@
 					font-size: 22px;
 					font-weight: 500;
 					color: #515151;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
 				}
 			}
 			.conts {
@@ -253,4 +256,211 @@
 			border-radius: 8px;
 		}
 	}
+}
+
+@media screen and (max-width: $lg) {
+
+    .noticeConts {
+        width: 90%;
+        margin: 0 0 40px;
+        .mainTit {
+        }
+        .topTxt {
+        }
+        .notice {
+            .item {
+                &:hover {
+                    .date {
+                        span {
+                        }
+                    }
+                    .time {
+                    }
+                    .timeEdit {
+                    }
+                    .viewBtn {
+                        &::before,
+                        &::after {
+                        }
+                    }
+                }
+            }
+    
+            .date {
+                span {
+                }
+                div {
+                }
+                .time {
+                }
+            }
+    
+            .txt {
+                li:first-child {
+                    span {
+                    }
+                    h2 {
+                    }
+                }
+                .conts {
+                }
+                .time {
+                }
+                .timeEdit {
+                }
+            }
+            .viewBtn {
+                &::before {
+                }
+                &::after {
+                }
+            }
+        }
+        .createBtn {
+    
+            & span {
+                &:last-child {
+                }
+            }
+            &::before {
+            }
+            &:hover {
+                &::before {
+                }
+                span {
+                    &:nth-child(1) {
+                    }
+                    &:nth-child(2) {
+                    }
+                    &:nth-child(3) {
+                    }
+                    &:nth-child(4) {
+                    }
+                    &:nth-child(5) {
+                    }
+                    &:nth-child(6) {
+                    }
+                    &:nth-child(7) {
+                    }
+                }
+            }
+        }
+    
+        .pagiNation {
+            li {
+            }
+            li:hover {
+            }
+            .first,
+            .prev,
+            .next,
+            .last {
+            }
+            .num {
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $md) {
+
+    .noticeConts {
+        width: 95%;
+        .mainTit {
+        }
+        .topTxt {
+        }
+        .notice {
+            .item {
+                &:hover {
+                    .date {
+                        span {
+                        }
+                    }
+                    .time {
+                    }
+                    .timeEdit {
+                    }
+                    .viewBtn {
+                        &::before,
+                        &::after {
+                        }
+                    }
+                }
+            }
+    
+            .date {
+                span {
+                }
+                div {
+                }
+                .time {
+                }
+            }
+    
+            .txt {
+                li:first-child {
+                    span {
+                    }
+                    h2 {
+                    }
+                }
+                .conts {
+                }
+                .time {
+                }
+                .timeEdit {
+                }
+            }
+            .viewBtn {
+                &::before {
+                }
+                &::after {
+                }
+            }
+        }
+        .createBtn {
+    
+            & span {
+                &:last-child {
+                }
+            }
+            &::before {
+            }
+            &:hover {
+                &::before {
+                }
+                span {
+                    &:nth-child(1) {
+                    }
+                    &:nth-child(2) {
+                    }
+                    &:nth-child(3) {
+                    }
+                    &:nth-child(4) {
+                    }
+                    &:nth-child(5) {
+                    }
+                    &:nth-child(6) {
+                    }
+                    &:nth-child(7) {
+                    }
+                }
+            }
+        }
+    
+        .pagiNation {
+            li {
+            }
+            li:hover {
+            }
+            .first,
+            .prev,
+            .next,
+            .last {
+            }
+            .num {
+            }
+        }
+    }
 }
