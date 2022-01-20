@@ -45,7 +45,7 @@ function Header(props) {
     
 
     return (
-        <header>
+        <header className={props.frame}>
             <div className="inner">
                 <h1 className="logo"><NavLink exact to="/">Amerimnos</NavLink><span>.</span></h1>
                 <ul ref={gnb} onMouseLeave={() => { line.current.classList.remove('on') }} className="gnb">

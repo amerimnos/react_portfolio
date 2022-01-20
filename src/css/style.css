@@ -33,6 +33,9 @@ header {
   background: #f6f8f6;
   z-index: 1;
 }
+header.sub .inner {
+  padding: 20px 0;
+}
 header .inner {
   display: flex;
   width: 1328px;
@@ -197,7 +200,8 @@ header .totalMenuConts {
     padding: 40px 20px;
   }
   header .logo {
-    width: 25%;
+    width: 20%;
+    margin-left: 40px;
     font-size: 28px;
   }
   header .gnb {
@@ -205,6 +209,7 @@ header .totalMenuConts {
   }
   header .join {
     width: 10%;
+    margin-right: 20px;
     padding: 11px 0;
     font-size: 18px;
   }
@@ -224,6 +229,7 @@ header .totalMenuConts {
     display: none;
   }
   header .totalMenuBtn {
+    margin-right: 40px;
     display: block;
   }
 }
@@ -3180,51 +3186,51 @@ footer .copy {
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(1) {
   opacity: 0;
-  animation: upAnime 2.0848270495s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.7227479328s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(2) {
   opacity: 0;
-  animation: upAnime 0.2673487386s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.056958206s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(3) {
   opacity: 0;
-  animation: upAnime 0.1611743258s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.8797403841s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(4) {
   opacity: 0;
-  animation: upAnime 0.8993476489s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.2186227953s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(5) {
   opacity: 0;
-  animation: upAnime 1.0079572227s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.1465018345s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(6) {
   opacity: 0;
-  animation: upAnime 2.2819317991s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.0840647817s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(7) {
   opacity: 0;
-  animation: upAnime 2.0156736619s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.9202840656s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(8) {
   opacity: 0;
-  animation: upAnime 0.6491468208s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.4080535895s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(9) {
   opacity: 0;
-  animation: upAnime 1.4886960156s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.0728219811s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(10) {
   opacity: 0;
-  animation: upAnime 1.0397030382s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.9086617201s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(11) {
   opacity: 0;
-  animation: upAnime 0.2828904596s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.0572442697s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(12) {
   opacity: 0;
-  animation: upAnime 0.0307162641s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.2442339434s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2 .vidItem {
   opacity: 0;
