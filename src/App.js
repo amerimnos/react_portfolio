@@ -1,4 +1,4 @@
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { useState } from 'react';
 
 import './css/style.css';
@@ -17,11 +17,19 @@ function App() {
     const [commuFirstContsIsActive, setCommuFirstContsIsActive] = useState(null);
     console.log(commuFirstContsIsActive, "app_commuFirstContsIsActive");
 
+
+
     return (
         <div className="App">
-            <Header setCommuFirstContsIsActive={setCommuFirstContsIsActive}></Header>
-
-            <Route exact path="/" component={Main}></Route>
+            <Switch>
+                <Route exact path="/">
+                    <Header frame="main" setCommuFirstContsIsActive={setCommuFirstContsIsActive}></Header>
+                    <Main></Main>
+                </Route>
+                <Route path="/">
+                    <Header frame="sub" setCommuFirstContsIsActive={setCommuFirstContsIsActive}></Header>
+                </Route>
+            </Switch>
             <Route path="/community" render={() => <Community setCommuFirstContsIsActive={setCommuFirstContsIsActive} commuFirstContsIsActive={commuFirstContsIsActive} />}></Route>
             <Route path="/department" component={Department}></Route>
             <Route path="/youtube" component={Youtube}></Route>
