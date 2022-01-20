@@ -892,6 +892,78 @@ footer .copy {
   border-radius: 500px;
   background-color: #fed3a6;
 }
+.commuConts .popWrap {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  background: repeating-linear-gradient(45deg, #4b4b4bc9, #4b4b4bc9 5px, #4b4b4bd1 5px, #4b4b4bd1 25px);
+  z-index: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.commuConts .popWrap .pop {
+  width: 640px;
+}
+.commuConts .popWrap .tit {
+  display: block;
+  width: 100%;
+  padding-bottom: 7px;
+  font-size: 16px;
+  letter-spacing: 1.3px;
+  font-weight: 500;
+  color: #fff;
+}
+.commuConts .popWrap .inputTit {
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 20px;
+  font-size: 16px;
+  border: none;
+  color: gray;
+  border-radius: 5px;
+}
+.commuConts .popWrap .inputTit::placeholder {
+  color: #b1b1b1;
+}
+.commuConts .popWrap .conts {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 30px;
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: gray;
+  border-radius: 5px;
+  border: none;
+  resize: vertical;
+}
+.commuConts .popWrap .conts::placeholder {
+  color: #b1b1b1;
+}
+.commuConts .popWrap .btnWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.commuConts .popWrap .btnWrap button {
+  margin: 0 15px;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.5s;
+  border: none;
+}
+.commuConts .popWrap .btnWrap button:hover {
+  background-color: #4caf50;
+  color: #fff;
+}
 
 .faqConts {
   width: 60%;
@@ -996,7 +1068,7 @@ footer .copy {
   color: #557454;
 }
 .noticeConts .topTxt {
-  padding: 0px 0 40px;
+  padding: 0px 0 54px;
   line-height: 1.5;
   color: #737373;
   text-align: justify;
@@ -1004,7 +1076,7 @@ footer .copy {
 }
 .noticeConts .notice {
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 16px;
 }
 .noticeConts .notice .item {
   display: flex;
@@ -1013,7 +1085,7 @@ footer .copy {
   border-bottom: solid 1px #ddd;
   align-items: center;
   cursor: pointer;
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 .noticeConts .notice .item:hover {
   border-bottom: solid 1px #234c22;
@@ -1022,6 +1094,12 @@ footer .copy {
   color: #234c22;
 }
 .noticeConts .notice .item:hover .date span {
+  color: #234c22;
+}
+.noticeConts .notice .item:hover .time {
+  color: #234c22;
+}
+.noticeConts .notice .item:hover .timeEdit {
   color: #234c22;
 }
 .noticeConts .notice .item:hover .viewBtn {
@@ -1035,15 +1113,20 @@ footer .copy {
   margin-left: 10px;
   text-align: center;
   color: #dddddd;
-  transition: all 0.5s;
 }
 .noticeConts .notice .date span {
   font-size: 49px;
   line-height: 1.1;
+  transition: all 0.3s;
 }
 .noticeConts .notice .date div {
+  margin-bottom: 5px;
   font-size: 18px;
   letter-spacing: 2px;
+  transition: all 0.3s;
+}
+.noticeConts .notice .date .time {
+  font-size: 15px;
 }
 .noticeConts .notice .txt {
   width: 70%;
@@ -1064,12 +1147,28 @@ footer .copy {
   font-weight: 500;
   color: #515151;
 }
-.noticeConts .notice .txt li:last-child {
+.noticeConts .notice .txt .conts {
+  margin-bottom: 16px;
   font-size: 18px;
   color: #707070;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+.noticeConts .notice .txt .time {
+  display: inline-block;
+  margin: 0 15px 0 0;
+  padding: 3px 8px;
+  border: solid 1px #dddddd;
+  color: #dddddd;
+  transition: all 0.3s;
+}
+.noticeConts .notice .txt .timeEdit {
+  display: inline-block;
+  padding: 3px 8px;
+  border: solid 1px #dddddd;
+  color: #dddddd;
+  transition: all 0.3s;
 }
 .noticeConts .notice .viewBtn {
   display: block;
@@ -1092,7 +1191,7 @@ footer .copy {
   width: 7px;
   height: 1px;
   background: #a9a9a9;
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 .noticeConts .notice .viewBtn::after {
   content: "";
@@ -1105,7 +1204,79 @@ footer .copy {
   width: 7px;
   height: 1px;
   background: #bababa;
+  transition: all 0.3s;
+}
+.noticeConts .createBtn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  align-items: center;
+  margin: 0 0 60px auto;
+  width: 110px;
+  height: 36px;
+  font-size: 18px;
+  font-weight: 500;
+  border: solid 1px #e0e7e1;
+  border-radius: 5px;
+  color: #4a6869;
   transition: all 0.5s;
+  cursor: pointer;
+}
+.noticeConts .createBtn span {
+  opacity: 0;
+  color: inherit;
+  transform: translate3d(0, -10px, 0);
+  transition: transform 0.3s, opacity 0.3s;
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+.noticeConts .createBtn span:last-child {
+  margin-left: 3px;
+  font-size: 15px;
+}
+.noticeConts .createBtn::before {
+  content: attr(data-text);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  transition: transform 0.3s, opacity 0.3s;
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+.noticeConts .createBtn:hover {
+  border: solid 1px #4a6869;
+}
+.noticeConts .createBtn:hover::before {
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+}
+.noticeConts .createBtn:hover span {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.noticeConts .createBtn:hover span:nth-child(1) {
+  transition-delay: 0.045s;
+}
+.noticeConts .createBtn:hover span:nth-child(2) {
+  transition-delay: 0.105s;
+}
+.noticeConts .createBtn:hover span:nth-child(3) {
+  transition-delay: 0.165s;
+}
+.noticeConts .createBtn:hover span:nth-child(4) {
+  transition-delay: 0.225s;
+}
+.noticeConts .createBtn:hover span:nth-child(5) {
+  transition-delay: 0.285s;
+}
+.noticeConts .createBtn:hover span:nth-child(6) {
+  transition-delay: 0.345s;
+}
+.noticeConts .createBtn:hover span:nth-child(7) {
+  transition-delay: 0.405s;
 }
 .noticeConts .pagiNation {
   display: flex;
@@ -2677,51 +2848,51 @@ footer .copy {
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(1) {
   opacity: 0;
-  animation: upAnime 2.047913341s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.6835973581s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(2) {
   opacity: 0;
-  animation: upAnime 0.0978791433s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.4460956244s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(3) {
   opacity: 0;
-  animation: upAnime 2.1352188607s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.8340077423s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(4) {
   opacity: 0;
-  animation: upAnime 0.4844702208s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.0925283662s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(5) {
   opacity: 0;
-  animation: upAnime 1.3006430193s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.6794450457s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(6) {
   opacity: 0;
-  animation: upAnime 0.7538425668s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.1920721571s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(7) {
   opacity: 0;
-  animation: upAnime 1.0893200937s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.0903321244s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(8) {
   opacity: 0;
-  animation: upAnime 0.1861538151s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.013996209s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(9) {
   opacity: 0;
-  animation: upAnime 0.0185382307s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.4694981055s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(10) {
   opacity: 0;
-  animation: upAnime 2.2626500527s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.9255505108s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(11) {
   opacity: 0;
-  animation: upAnime 1.8275135152s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.9251123194s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(12) {
   opacity: 0;
-  animation: upAnime 1.8956669904s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.3996720618s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2 .vidItem {
   opacity: 0;
