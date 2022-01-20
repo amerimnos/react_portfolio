@@ -256,211 +256,588 @@
 			border-radius: 8px;
 		}
 	}
+
+	.popWrap {
+		display: flex;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		padding: 30px;
+		background: repeating-linear-gradient(
+			45deg,
+			#4b4b4bd6,
+			#4b4b4bd6 5px,
+			#4b4b4bde 5px,
+			#4b4b4bde 25px
+		);
+		z-index: 1;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		.pop {
+			width: 640px;
+		}
+
+		.tit {
+			display: block;
+			width: 100%;
+			padding-bottom: 7px;
+			font-size: 16px;
+			letter-spacing: 1.3px;
+			font-weight: 500;
+			color: #fff;
+		}
+		.inputTit {
+			width: 100%;
+			margin-bottom: 30px;
+			padding: 20px;
+			font-size: 16px;
+			border: none;
+			color: gray;
+			border-radius: 5px;
+			&::placeholder {
+				color: #b1b1b1;
+			}
+		}
+		.conts {
+			width: 100%;
+			height: 300px;
+			margin-bottom: 30px;
+			padding: 20px;
+			font-size: 16px;
+			line-height: 1.4;
+			color: gray;
+			border-radius: 5px;
+			border: none;
+			resize: vertical;
+			&::placeholder {
+				color: #b1b1b1;
+			}
+		}
+		.btnWrap {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			button {
+				margin: 0 15px;
+				padding: 8px 20px;
+				border-radius: 5px;
+				font-size: 15px;
+				cursor: pointer;
+				transition: all 0.5s;
+				border: none;
+				&:hover {
+					background-color: #4caf50;
+					color: #fff;
+				}
+			}
+		}
+	}
 }
 
 @media screen and (max-width: $lg) {
+	.noticeConts {
+		width: 90%;
+		margin: 0 0 40px;
+		.mainTit {
+		}
+		.topTxt {
+		}
+		.notice {
+			.item {
+				&:hover {
+					.date {
+						span {
+						}
+					}
+					.time {
+					}
+					.timeEdit {
+					}
+					.viewBtn {
+						&::before,
+						&::after {
+						}
+					}
+				}
+			}
 
-    .noticeConts {
-        width: 90%;
-        margin: 0 0 40px;
-        .mainTit {
-        }
-        .topTxt {
-        }
-        .notice {
-            .item {
-                &:hover {
-                    .date {
-                        span {
-                        }
-                    }
-                    .time {
-                    }
-                    .timeEdit {
-                    }
-                    .viewBtn {
-                        &::before,
-                        &::after {
-                        }
-                    }
-                }
-            }
-    
-            .date {
-                span {
-                }
-                div {
-                }
-                .time {
-                }
-            }
-    
-            .txt {
-                li:first-child {
-                    span {
-                    }
-                    h2 {
-                    }
-                }
-                .conts {
-                }
-                .time {
-                }
-                .timeEdit {
-                }
-            }
-            .viewBtn {
-                &::before {
-                }
-                &::after {
-                }
-            }
-        }
-        .createBtn {
-    
-            & span {
-                &:last-child {
-                }
-            }
-            &::before {
-            }
-            &:hover {
-                &::before {
-                }
-                span {
-                    &:nth-child(1) {
-                    }
-                    &:nth-child(2) {
-                    }
-                    &:nth-child(3) {
-                    }
-                    &:nth-child(4) {
-                    }
-                    &:nth-child(5) {
-                    }
-                    &:nth-child(6) {
-                    }
-                    &:nth-child(7) {
-                    }
-                }
-            }
-        }
-    
-        .pagiNation {
-            li {
-            }
-            li:hover {
-            }
-            .first,
-            .prev,
-            .next,
-            .last {
-            }
-            .num {
-            }
-        }
-    }
+			.date {
+				span {
+				}
+				div {
+				}
+				.time {
+				}
+			}
+
+			.txt {
+				li:first-child {
+					span {
+					}
+					h2 {
+					}
+				}
+				.conts {
+				}
+				.time {
+				}
+				.timeEdit {
+				}
+			}
+			.viewBtn {
+				&::before {
+				}
+				&::after {
+				}
+			}
+		}
+		.createBtn {
+			& span {
+				&:last-child {
+				}
+			}
+			&::before {
+			}
+			&:hover {
+				&::before {
+				}
+				span {
+					&:nth-child(1) {
+					}
+					&:nth-child(2) {
+					}
+					&:nth-child(3) {
+					}
+					&:nth-child(4) {
+					}
+					&:nth-child(5) {
+					}
+					&:nth-child(6) {
+					}
+					&:nth-child(7) {
+					}
+				}
+			}
+		}
+
+		.pagiNation {
+			li {
+			}
+			li:hover {
+			}
+			.first,
+			.prev,
+			.next,
+			.last {
+			}
+			.num {
+			}
+		}
+	}
 }
 
 @media screen and (max-width: $md) {
+	.noticeConts {
+		width: 95%;
+		.mainTit {
+		}
+		.topTxt {
+		}
+		.notice {
+			.item {
+				&:hover {
+					.date {
+						span {
+						}
+					}
+					.time {
+					}
+					.timeEdit {
+					}
+					.viewBtn {
+						&::before,
+						&::after {
+						}
+					}
+				}
+			}
 
-    .noticeConts {
-        width: 95%;
-        .mainTit {
-        }
-        .topTxt {
-        }
-        .notice {
-            .item {
-                &:hover {
-                    .date {
-                        span {
-                        }
-                    }
-                    .time {
-                    }
-                    .timeEdit {
-                    }
-                    .viewBtn {
-                        &::before,
-                        &::after {
-                        }
-                    }
-                }
-            }
-    
-            .date {
-                span {
-                }
-                div {
-                }
-                .time {
-                }
-            }
-    
-            .txt {
-                li:first-child {
-                    span {
-                    }
-                    h2 {
-                    }
-                }
-                .conts {
-                }
-                .time {
-                }
-                .timeEdit {
-                }
-            }
-            .viewBtn {
-                &::before {
-                }
-                &::after {
-                }
-            }
-        }
-        .createBtn {
-    
-            & span {
-                &:last-child {
-                }
-            }
-            &::before {
-            }
-            &:hover {
-                &::before {
-                }
-                span {
-                    &:nth-child(1) {
-                    }
-                    &:nth-child(2) {
-                    }
-                    &:nth-child(3) {
-                    }
-                    &:nth-child(4) {
-                    }
-                    &:nth-child(5) {
-                    }
-                    &:nth-child(6) {
-                    }
-                    &:nth-child(7) {
-                    }
-                }
-            }
-        }
-    
-        .pagiNation {
-            li {
-            }
-            li:hover {
-            }
-            .first,
-            .prev,
-            .next,
-            .last {
-            }
-            .num {
-            }
-        }
-    }
+			.date {
+				span {
+				}
+				div {
+				}
+				.time {
+				}
+			}
+
+			.txt {
+				li:first-child {
+					span {
+					}
+					h2 {
+					}
+				}
+				.conts {
+				}
+				.time {
+				}
+				.timeEdit {
+				}
+			}
+			.viewBtn {
+				&::before {
+				}
+				&::after {
+				}
+			}
+		}
+		.createBtn {
+			& span {
+				&:last-child {
+				}
+			}
+			&::before {
+			}
+			&:hover {
+				&::before {
+				}
+				span {
+					&:nth-child(1) {
+					}
+					&:nth-child(2) {
+					}
+					&:nth-child(3) {
+					}
+					&:nth-child(4) {
+					}
+					&:nth-child(5) {
+					}
+					&:nth-child(6) {
+					}
+					&:nth-child(7) {
+					}
+				}
+			}
+		}
+
+		.pagiNation {
+			li {
+			}
+			li:hover {
+			}
+			.first,
+			.prev,
+			.next,
+			.last {
+			}
+			.num {
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $sm) {
+	.noticeConts {
+		width: 95%;
+		.mainTit {
+		}
+		.topTxt {
+		}
+		.notice {
+			.item {
+				&:hover {
+					.date {
+						span {
+						}
+					}
+					.time {
+					}
+					.timeEdit {
+					}
+					.viewBtn {
+						&::before,
+						&::after {
+						}
+					}
+				}
+			}
+
+			.date {
+				width: 13%;
+				span {
+					font-size: 30px;
+				}
+				div {
+					font-size: 15px;
+				}
+				.time {
+				}
+			}
+
+			.txt {
+				li:first-child {
+					span {
+						padding: 3px 5px;
+						font-size: 14px;
+					}
+					h2 {
+						font-size: 18px;
+					}
+				}
+				.conts {
+					font-size: 15px;
+				}
+				.time {
+					font-size: 15px;
+				}
+				.timeEdit {
+					font-size: 15px;
+				}
+			}
+			.viewBtn {
+				width: 35px;
+				height: 35px;
+				&::before {
+				}
+				&::after {
+				}
+			}
+		}
+		.createBtn {
+			& span {
+				&:last-child {
+				}
+			}
+			&::before {
+			}
+			&:hover {
+				&::before {
+				}
+				span {
+					&:nth-child(1) {
+					}
+					&:nth-child(2) {
+					}
+					&:nth-child(3) {
+					}
+					&:nth-child(4) {
+					}
+					&:nth-child(5) {
+					}
+					&:nth-child(6) {
+					}
+					&:nth-child(7) {
+					}
+				}
+			}
+		}
+
+		.pagiNation {
+			li {
+			}
+			li:hover {
+			}
+			.first,
+			.prev,
+			.next,
+			.last {
+			}
+			.num {
+			}
+		}
+
+		.popWrap {
+			.pop {
+				width: 100%;
+			}
+
+			.tit {
+			}
+			.inputTit {
+				&::placeholder {
+				}
+			}
+			.conts {
+				height: 200px;
+				&::placeholder {
+				}
+			}
+			.btnWrap {
+				button {
+					width: inherit;
+					height: inherit;
+					padding: 10px 20px;
+					&:hover {
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $xs) {
+	.noticeConts {
+		width: 95%;
+		.mainTit {
+		}
+		.topTxt {
+		}
+		.notice {
+			.item {
+				position: relative;
+				flex-direction: column;
+				margin: 30px 0;
+				padding: 0 0 15px 0;
+				&:hover {
+					.date {
+						span {
+						}
+					}
+					.time {
+					}
+					.timeEdit {
+					}
+					.viewBtn {
+						&::before,
+						&::after {
+						}
+					}
+				}
+			}
+
+			.date {
+				display: flex;
+				align-items: center;
+				margin-left: 0;
+				margin-right: auto;
+				span {
+					font-size: 15px;
+					margin-left: 7px;
+					order: 1;
+				}
+				div {
+					font-size: 15px;
+					margin-bottom: 0;
+				}
+				.time {
+				}
+			}
+
+			.txt {
+				width: 100%;
+				li:first-child {
+					span {
+						padding: 3px 5px;
+						font-size: 14px;
+					}
+					h2 {
+						font-size: 18px;
+					}
+				}
+				.conts {
+					font-size: 15px;
+				}
+				li:last-child {
+					display: flex;
+				}
+				.time {
+					font-size: 14px;
+					border: none;
+					line-height: 1.4;
+				}
+				.timeEdit {
+					font-size: 14px;
+					border: none;
+					line-height: 1.4;
+				}
+			}
+			.viewBtn {
+				position: absolute;
+				width: 25px;
+				height: 22px;
+				border-radius: 3px;
+				top: -2px;
+				left: 100px;
+				&::before {
+				}
+				&::after {
+				}
+			}
+		}
+		.createBtn {
+			& span {
+				&:last-child {
+				}
+			}
+			&::before {
+			}
+			&:hover {
+				&::before {
+				}
+				span {
+					&:nth-child(1) {
+					}
+					&:nth-child(2) {
+					}
+					&:nth-child(3) {
+					}
+					&:nth-child(4) {
+					}
+					&:nth-child(5) {
+					}
+					&:nth-child(6) {
+					}
+					&:nth-child(7) {
+					}
+				}
+			}
+		}
+
+		.pagiNation {
+			width: 80%;
+			li {
+			}
+			li:hover {
+			}
+			.first,
+			.prev,
+			.next,
+			.last {
+			}
+			.num {
+			}
+		}
+
+		.popWrap {
+			padding: 10px;
+			.pop {
+				width: 100%;
+			}
+
+			.tit {
+			}
+			.inputTit {
+				&::placeholder {
+				}
+			}
+			.conts {
+				height: 200px;
+				&::placeholder {
+				}
+			}
+			.btnWrap {
+				button {
+					padding: 5px 10px;
+					&:hover {
+					}
+				}
+			}
+		}
+	}
 }

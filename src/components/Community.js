@@ -93,7 +93,7 @@ function Community(props) {
                         <NavLink onClick={tabActive} activeStyle={commuTabStyle} to="/community/notice">
                             <span className="leftIcon material-icons">article</span>
                             <ul className="txt">
-                                <li>purchasing Questions</li>
+                                <li>Important guidance</li>
                                 <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, nulla.</li>
                             </ul>
                             <span className="viewIcon"></span>
@@ -101,7 +101,7 @@ function Community(props) {
                         <NavLink onClick={tabActive} activeStyle={commuTabStyle} to="/community/free">
                             <span className="leftIcon material-icons">check_circle</span>
                             <ul className="txt">
-                                <li>purchasing Questions</li>
+                                <li>Communication with customers</li>
                                 <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, nulla.</li>
                             </ul>
                             <span className="viewIcon"></span>

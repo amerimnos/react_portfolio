@@ -79,6 +79,7 @@
 		&.on {
 			height: auto;
 			padding: 20px;
+			line-height: 1.5;
 		}
 		span {
 			padding: 0 20px;
@@ -90,6 +91,95 @@
 		div {
 			margin-right: auto;
 			padding-left: 20px;
+		}
+	}
+}
+
+@media screen and (max-width: $md) {
+	.faqConts {
+		width: 80%;
+		.topTxt {
+		}
+		.mainTit {
+		}
+
+		li {
+		}
+		li:nth-child(2n) {
+		}
+		.quest {
+			span {
+			}
+			div {
+			}
+			p {
+				&::before {
+				}
+				&::after {
+				}
+
+				&.on {
+				}
+			}
+		}
+		.answer {
+			&.on {
+			}
+			span {
+			}
+			div {
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $xs) {
+	.faqConts {
+		width: 90%;
+		margin-bottom: 0px;
+		.topTxt {
+			font-size: 14px;
+		}
+		.mainTit {
+			font-size: 20px;
+		}
+
+		li {
+			padding: 14px;
+		}
+		li:nth-child(2n) {
+		}
+		.quest {
+			border-radius: 5px;
+			span {
+				padding: 0 15px 0 0;
+			}
+			div {
+				font-size: 14px;
+			}
+			p {
+				&::before {
+					width: 15px;
+				}
+				&::after {
+					width: 15px;
+					margin-left: -15px;
+				}
+
+				&.on {
+				}
+			}
+		}
+		.answer {
+			&.on {
+				padding: 14px;
+			}
+			span {
+				padding: 0 15px 0 0;
+			}
+			div {
+				font-size: 14px;
+			}
 		}
 	}
 }

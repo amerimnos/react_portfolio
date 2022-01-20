@@ -178,3 +178,222 @@
 		}
 	}
 }
+
+@media screen and (max-width: $lg) {
+	.freeBoardConts {
+		width: 90%;
+		.mainTit {
+		}
+		.topTxt {
+		}
+		.freeBoard {
+			.item {
+				&:hover {
+					.date {
+					}
+					.viewBtn {
+						&::before,
+						&::after {
+						}
+					}
+				}
+
+				.date {
+				}
+
+				.txt {
+					h2 {
+					}
+					p {
+					}
+					.status {
+						span {
+							&:last-child {
+							}
+						}
+					}
+				}
+
+				.viewBtn {
+					&::before {
+					}
+					&::after {
+					}
+				}
+			}
+		}
+		.freeBoardPagiNation {
+			li {
+			}
+			li:hover {
+			}
+			.first,
+			.prev,
+			.next,
+			.last {
+			}
+			.first,
+			.last {
+			}
+			.first {
+			}
+			.last {
+			}
+			.prev {
+			}
+			.next {
+			}
+			.num {
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $sm) {
+	.freeBoardConts {
+		width: 95%;
+		.mainTit {
+		}
+		.topTxt {
+		}
+		.freeBoard {
+			.item {
+				width: 48%;
+				&:hover {
+					.date {
+					}
+					.viewBtn {
+						&::before,
+						&::after {
+						}
+					}
+				}
+
+				.date {
+				}
+
+				.txt {
+					h2 {
+					}
+					p {
+					}
+					.status {
+						span {
+							&:last-child {
+							}
+						}
+					}
+				}
+
+				.viewBtn {
+					&::before {
+					}
+					&::after {
+					}
+				}
+			}
+		}
+		.freeBoardPagiNation {
+			li {
+			}
+			li:hover {
+			}
+			.first,
+			.prev,
+			.next,
+			.last {
+			}
+			.first,
+			.last {
+			}
+			.first {
+			}
+			.last {
+			}
+			.prev {
+			}
+			.next {
+			}
+			.num {
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $xs) {
+	.freeBoardConts {
+		width: 95%;
+		margin-bottom: 20px;
+		.mainTit {
+		}
+		.topTxt {
+		}
+		.freeBoard {
+			margin-bottom: 0;
+			.item {
+				width: 100%;
+				&:hover {
+					.date {
+					}
+					.viewBtn {
+						&::before,
+						&::after {
+						}
+					}
+				}
+
+				.date {
+				}
+
+				.txt {
+					h2 {
+					}
+					p {
+						margin-bottom: 0;
+					}
+					.status {
+						margin-bottom: 0;
+						span {
+							&:last-child {
+							}
+						}
+					}
+				}
+
+				.viewBtn {
+					&::before {
+					}
+					&::after {
+					}
+				}
+			}
+		}
+		.freeBoardPagiNation {
+			li {
+			}
+			li:hover {
+			}
+			.first,
+			.prev,
+			.next,
+			.last {
+				padding: 7px 10px;
+			}
+			.first,
+			.last {
+				padding: 7px 10px;
+			}
+			.first {
+			}
+			.last {
+			}
+			.prev {
+			}
+			.next {
+			}
+			.num {
+				padding: 7px 10px;
+			}
+		}
+	}
+}

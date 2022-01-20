@@ -122,7 +122,7 @@ function NoticeBoard() {
                                 }}>
                                 <div className="date">
                                     <span>21</span>
-                                    <div>2022.01</div>
+                                    <div>2022.1.</div>
                                 </div>
                                 <ul className="txt">
                                     <li>

@@ -842,6 +842,7 @@ footer .copy {
   width: 20px;
   height: 20px;
   margin-left: auto;
+  z-index: -1;
 }
 .commuConts .bottomConts .firstConts a .viewIcon::before {
   content: "";
@@ -892,82 +893,13 @@ footer .copy {
   border-radius: 500px;
   background-color: #fed3a6;
 }
-.commuConts .popWrap {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 30px;
-  background: repeating-linear-gradient(45deg, #4b4b4bd6, #4b4b4bd6 5px, #4b4b4bde 5px, #4b4b4bde 25px);
-  z-index: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.commuConts .popWrap .pop {
-  width: 640px;
-}
-.commuConts .popWrap .tit {
-  display: block;
-  width: 100%;
-  padding-bottom: 7px;
-  font-size: 16px;
-  letter-spacing: 1.3px;
-  font-weight: 500;
-  color: #fff;
-}
-.commuConts .popWrap .inputTit {
-  width: 100%;
-  margin-bottom: 30px;
-  padding: 20px;
-  font-size: 16px;
-  border: none;
-  color: gray;
-  border-radius: 5px;
-}
-.commuConts .popWrap .inputTit::placeholder {
-  color: #b1b1b1;
-}
-.commuConts .popWrap .conts {
-  width: 100%;
-  height: 300px;
-  margin-bottom: 30px;
-  padding: 20px;
-  font-size: 16px;
-  line-height: 1.4;
-  color: gray;
-  border-radius: 5px;
-  border: none;
-  resize: vertical;
-}
-.commuConts .popWrap .conts::placeholder {
-  color: #b1b1b1;
-}
-.commuConts .popWrap .btnWrap {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.commuConts .popWrap .btnWrap button {
-  margin: 0 15px;
-  padding: 8px 20px;
-  border-radius: 5px;
-  font-size: 15px;
-  cursor: pointer;
-  transition: all 0.5s;
-  border: none;
-}
-.commuConts .popWrap .btnWrap button:hover {
-  background-color: #4caf50;
-  color: #fff;
-}
 
 @media screen and (max-width: 1199px) {
   .commuConts .inner {
     width: 100%;
+  }
+  .commuConts .topConts {
+    padding-top: 60px;
   }
   .commuConts .topConts .searchWrap .search {
     width: 40vw;
@@ -990,77 +922,83 @@ footer .copy {
     width: 25px;
     height: 25px;
   }
-  .commuConts .popWrap {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
+}
+@media screen and (max-width: 991px) {
+  .commuConts .inner {
     width: 100%;
-    height: 100%;
-    padding: 30px;
-    background: repeating-linear-gradient(45deg, #4b4b4bd6, #4b4b4bd6 5px, #4b4b4bde 5px, #4b4b4bde 25px);
-    z-index: 1;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
-  .commuConts .popWrap .pop {
-    width: 640px;
+  .commuConts .topConts .searchWrap .search {
+    width: 50vw;
   }
-  .commuConts .popWrap .tit {
+  .commuConts .tab {
+    width: 93%;
+    justify-content: space-around;
+  }
+  .commuConts .tab a {
+    width: 25%;
+    height: 130px;
+  }
+  .commuConts .bottomConts .firstConts {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .commuConts .inner {
+    width: 100%;
+  }
+  .commuConts .topConts .searchWrap .search {
+    width: 70vw;
+  }
+  .commuConts .tab {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .commuConts .tab a {
+    width: 27%;
+    height: 85px;
+  }
+  .commuConts .tab a img,
+.commuConts .tab a span {
+    width: 35px;
     display: block;
-    width: 100%;
-    padding-bottom: 7px;
-    font-size: 16px;
-    letter-spacing: 1.3px;
-    font-weight: 500;
-    color: #fff;
+    margin-bottom: 8px;
+    font-size: 35px;
+    color: #7fd8ff;
   }
-  .commuConts .popWrap .inputTit {
-    width: 100%;
-    margin-bottom: 30px;
-    padding: 20px;
-    font-size: 16px;
-    border: none;
-    color: gray;
-    border-radius: 5px;
+  .commuConts .bottomConts .firstConts {
+    width: 93%;
   }
-  .commuConts .popWrap .inputTit::placeholder {
-    color: #b1b1b1;
+  .commuConts .bottomConts .firstConts a .leftIcon {
+    margin-right: 19px;
+    font-size: 31px;
+    color: #7dd8fe;
   }
-  .commuConts .popWrap .conts {
-    width: 100%;
-    height: 300px;
-    margin-bottom: 30px;
-    padding: 20px;
-    font-size: 16px;
-    line-height: 1.4;
-    color: gray;
-    border-radius: 5px;
-    border: none;
-    resize: vertical;
+}
+@media screen and (max-width: 575px) {
+  .commuConts .topConts h1 {
+    padding: 0 10px;
+    text-align: center;
+    font-size: 20px;
   }
-  .commuConts .popWrap .conts::placeholder {
-    color: #b1b1b1;
+  .commuConts .topConts p {
+    padding: 0 10px;
+    text-align: center;
   }
-  .commuConts .popWrap .btnWrap {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .commuConts .topConts .searchWrap .search {
+    width: 90vw;
   }
-  .commuConts .popWrap .btnWrap button {
-    margin: 0 15px;
-    padding: 8px 20px;
-    border-radius: 5px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: all 0.5s;
-    border: none;
+  .commuConts .tab a {
+    width: 31%;
+    font-size: 14px;
   }
-  .commuConts .popWrap .btnWrap button:hover {
-    background-color: #4caf50;
-    color: #fff;
+  .commuConts .bottomConts .firstConts a {
+    margin-bottom: 28px;
+  }
+  .commuConts .bottomConts .firstConts a .leftIcon {
+    display: none;
+  }
+  .commuConts .bottomConts .firstConts a .viewIcon {
+    display: none;
   }
 }
 .faqConts {
@@ -1142,6 +1080,7 @@ footer .copy {
 .faqConts .answer.on {
   height: auto;
   padding: 20px;
+  line-height: 1.5;
 }
 .faqConts .answer span {
   padding: 0 20px;
@@ -1155,6 +1094,51 @@ footer .copy {
   padding-left: 20px;
 }
 
+@media screen and (max-width: 991px) {
+  .faqConts {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 575px) {
+  .faqConts {
+    width: 90%;
+    margin-bottom: 0px;
+  }
+  .faqConts .topTxt {
+    font-size: 14px;
+  }
+  .faqConts .mainTit {
+    font-size: 20px;
+  }
+  .faqConts li {
+    padding: 14px;
+  }
+  .faqConts .quest {
+    border-radius: 5px;
+  }
+  .faqConts .quest span {
+    padding: 0 15px 0 0;
+  }
+  .faqConts .quest div {
+    font-size: 14px;
+  }
+  .faqConts .quest p::before {
+    width: 15px;
+  }
+  .faqConts .quest p::after {
+    width: 15px;
+    margin-left: -15px;
+  }
+  .faqConts .answer.on {
+    padding: 14px;
+  }
+  .faqConts .answer span {
+    padding: 0 15px 0 0;
+  }
+  .faqConts .answer div {
+    font-size: 14px;
+  }
+}
 .noticeConts {
   width: 60%;
   margin: 0 0 50px;
@@ -1406,6 +1390,78 @@ footer .copy {
   padding: 10px 14px;
   border-radius: 8px;
 }
+.noticeConts .popWrap {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  background: repeating-linear-gradient(45deg, #4b4b4bd6, #4b4b4bd6 5px, #4b4b4bde 5px, #4b4b4bde 25px);
+  z-index: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.noticeConts .popWrap .pop {
+  width: 640px;
+}
+.noticeConts .popWrap .tit {
+  display: block;
+  width: 100%;
+  padding-bottom: 7px;
+  font-size: 16px;
+  letter-spacing: 1.3px;
+  font-weight: 500;
+  color: #fff;
+}
+.noticeConts .popWrap .inputTit {
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 20px;
+  font-size: 16px;
+  border: none;
+  color: gray;
+  border-radius: 5px;
+}
+.noticeConts .popWrap .inputTit::placeholder {
+  color: #b1b1b1;
+}
+.noticeConts .popWrap .conts {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 30px;
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: gray;
+  border-radius: 5px;
+  border: none;
+  resize: vertical;
+}
+.noticeConts .popWrap .conts::placeholder {
+  color: #b1b1b1;
+}
+.noticeConts .popWrap .btnWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.noticeConts .popWrap .btnWrap button {
+  margin: 0 15px;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.5s;
+  border: none;
+}
+.noticeConts .popWrap .btnWrap button:hover {
+  background-color: #4caf50;
+  color: #fff;
+}
 
 @media screen and (max-width: 1199px) {
   .noticeConts {
@@ -1416,6 +1472,126 @@ footer .copy {
 @media screen and (max-width: 991px) {
   .noticeConts {
     width: 95%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .noticeConts {
+    width: 95%;
+  }
+  .noticeConts .notice .date {
+    width: 13%;
+  }
+  .noticeConts .notice .date span {
+    font-size: 30px;
+  }
+  .noticeConts .notice .date div {
+    font-size: 15px;
+  }
+  .noticeConts .notice .txt li:first-child span {
+    padding: 3px 5px;
+    font-size: 14px;
+  }
+  .noticeConts .notice .txt li:first-child h2 {
+    font-size: 18px;
+  }
+  .noticeConts .notice .txt .conts {
+    font-size: 15px;
+  }
+  .noticeConts .notice .txt .time {
+    font-size: 15px;
+  }
+  .noticeConts .notice .txt .timeEdit {
+    font-size: 15px;
+  }
+  .noticeConts .notice .viewBtn {
+    width: 35px;
+    height: 35px;
+  }
+  .noticeConts .popWrap .pop {
+    width: 100%;
+  }
+  .noticeConts .popWrap .conts {
+    height: 200px;
+  }
+  .noticeConts .popWrap .btnWrap button {
+    width: inherit;
+    height: inherit;
+    padding: 10px 20px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .noticeConts {
+    width: 95%;
+  }
+  .noticeConts .notice .item {
+    position: relative;
+    flex-direction: column;
+    margin: 30px 0;
+    padding: 0 0 15px 0;
+  }
+  .noticeConts .notice .date {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .noticeConts .notice .date span {
+    font-size: 15px;
+    margin-left: 7px;
+    order: 1;
+  }
+  .noticeConts .notice .date div {
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+  .noticeConts .notice .txt {
+    width: 100%;
+  }
+  .noticeConts .notice .txt li:first-child span {
+    padding: 3px 5px;
+    font-size: 14px;
+  }
+  .noticeConts .notice .txt li:first-child h2 {
+    font-size: 18px;
+  }
+  .noticeConts .notice .txt .conts {
+    font-size: 15px;
+  }
+  .noticeConts .notice .txt li:last-child {
+    display: flex;
+  }
+  .noticeConts .notice .txt .time {
+    font-size: 14px;
+    border: none;
+    line-height: 1.4;
+  }
+  .noticeConts .notice .txt .timeEdit {
+    font-size: 14px;
+    border: none;
+    line-height: 1.4;
+  }
+  .noticeConts .notice .viewBtn {
+    position: absolute;
+    width: 25px;
+    height: 22px;
+    border-radius: 3px;
+    top: -2px;
+    left: 100px;
+  }
+  .noticeConts .pagiNation {
+    width: 80%;
+  }
+  .noticeConts .popWrap {
+    padding: 10px;
+  }
+  .noticeConts .popWrap .pop {
+    width: 100%;
+  }
+  .noticeConts .popWrap .conts {
+    height: 200px;
+  }
+  .noticeConts .popWrap .btnWrap button {
+    padding: 5px 10px;
   }
 }
 .freeBoardConts {
@@ -1593,6 +1769,50 @@ footer .copy {
   padding: 10px 14px;
 }
 
+@media screen and (max-width: 1199px) {
+  .freeBoardConts {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .freeBoardConts {
+    width: 95%;
+  }
+  .freeBoardConts .freeBoard .item {
+    width: 48%;
+  }
+}
+@media screen and (max-width: 575px) {
+  .freeBoardConts {
+    width: 95%;
+    margin-bottom: 20px;
+  }
+  .freeBoardConts .freeBoard {
+    margin-bottom: 0;
+  }
+  .freeBoardConts .freeBoard .item {
+    width: 100%;
+  }
+  .freeBoardConts .freeBoard .item .txt p {
+    margin-bottom: 0;
+  }
+  .freeBoardConts .freeBoard .item .txt .status {
+    margin-bottom: 0;
+  }
+  .freeBoardConts .freeBoardPagiNation .first,
+.freeBoardConts .freeBoardPagiNation .prev,
+.freeBoardConts .freeBoardPagiNation .next,
+.freeBoardConts .freeBoardPagiNation .last {
+    padding: 7px 10px;
+  }
+  .freeBoardConts .freeBoardPagiNation .first,
+.freeBoardConts .freeBoardPagiNation .last {
+    padding: 7px 10px;
+  }
+  .freeBoardConts .freeBoardPagiNation .num {
+    padding: 7px 10px;
+  }
+}
 .galleryConts1 {
   position: relative;
   width: 100%;
@@ -2960,51 +3180,51 @@ footer .copy {
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(1) {
   opacity: 0;
-  animation: upAnime 0.0567927702s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 2.0848270495s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(2) {
   opacity: 0;
-  animation: upAnime 1.8641548968s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.2673487386s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(3) {
   opacity: 0;
-  animation: upAnime 1.5997217019s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.1611743258s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(4) {
   opacity: 0;
-  animation: upAnime 1.7518461892s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.8993476489s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(5) {
   opacity: 0;
-  animation: upAnime 0.919927173s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.0079572227s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(6) {
   opacity: 0;
-  animation: upAnime 0.9622480874s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 2.2819317991s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(7) {
   opacity: 0;
-  animation: upAnime 0.1964405496s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 2.0156736619s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(8) {
   opacity: 0;
-  animation: upAnime 1.4064759653s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.6491468208s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(9) {
   opacity: 0;
-  animation: upAnime 1.00402903s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.4886960156s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(10) {
   opacity: 0;
-  animation: upAnime 1.6705949123s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.0397030382s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(11) {
   opacity: 0;
-  animation: upAnime 2.1623336458s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.2828904596s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(12) {
   opacity: 0;
-  animation: upAnime 2.1633767807s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.0307162641s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2 .vidItem {
   opacity: 0;
