@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import './css/style.css';
 import Header from './components/Header';
-import Main from './components/Main';
+import Main from './components/main/Main';
 import Community from './components/Community';
 import Department from './components/Department';
 import Youtube from './components/Youtube';
