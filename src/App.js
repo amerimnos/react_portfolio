@@ -15,9 +15,6 @@ import Footer from './components/Footer';
 function App() {
 
     const [commuFirstContsIsActive, setCommuFirstContsIsActive] = useState(null);
-    console.log(commuFirstContsIsActive, "app_commuFirstContsIsActive");
-
-
 
     return (
         <div className="App">

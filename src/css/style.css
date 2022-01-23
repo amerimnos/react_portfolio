@@ -406,6 +406,513 @@ footer .copy {
     margin-top: 15px;
   }
 }
+.mainConts1 {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 141px);
+  padding: 75px 0;
+  background: #f2f2f2;
+  align-items: center;
+  justify-content: center;
+}
+.mainConts1 .inner {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 1200px;
+  height: 625px;
+}
+.mainConts1 .topText {
+  width: 58%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: #4a6869;
+  z-index: 1;
+}
+.mainConts1 .topText::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 30px;
+  background: #4a6869;
+}
+.mainConts1 h2 {
+  width: 58%;
+  margin-bottom: 40px;
+  font-size: 66px;
+  font-weight: 500;
+  line-height: 1.2;
+  z-index: 1;
+}
+.mainConts1 .bottomTxt {
+  width: 58%;
+  margin-bottom: 40px;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #4a6869;
+  z-index: 1;
+}
+.mainConts1 .btn {
+  display: flex;
+  width: 250px;
+  height: 67px;
+  margin-right: auto;
+  font-size: 18px;
+  border-radius: 100px;
+  color: #fff;
+  background-color: #4a6869;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+}
+.mainConts1 .btn .arrow {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  z-index: -1;
+}
+.mainConts1 .btn .arrow::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 70%;
+  height: 3px;
+  background-color: #e0e7e1;
+  transform: rotateZ(45deg);
+  transform-origin: left top;
+  transition: all 0.5s;
+}
+.mainConts1 .btn .arrow::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 70%;
+  height: 3px;
+  background-color: #e0e7e1;
+  transform: rotateZ(-45deg);
+  transform-origin: left bottom;
+  transition: all 0.5s;
+}
+.mainConts1 .imgWrap {
+  width: 42%;
+  height: 100%;
+  z-index: 1;
+}
+.mainConts1 .imgWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mainConts1 .bg {
+  position: absolute;
+  width: 22%;
+  bottom: 23%;
+  left: 43%;
+  z-index: 0;
+}
+.mainConts1 .bg path {
+  fill: #e0e7e1;
+}
+
+.mainConts2 {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 75px 0;
+  background: #fbfbfc;
+  align-items: center;
+  justify-content: center;
+}
+.mainConts2 .inner {
+  width: 1200px;
+}
+.mainConts2 .tit {
+  width: 46%;
+  margin-bottom: 50px;
+  font-size: 66px;
+  font-weight: 400;
+}
+.mainConts2 .conts {
+  display: flex;
+  flex-wrap: wrap;
+}
+.mainConts2 .conts .item {
+  position: relative;
+  width: calc(50% - 40px);
+  margin: 0 40px 80px 0;
+  padding: 40px 60px;
+  border: 1px solid #e7e7e7;
+  transition: all 0.5s;
+  cursor: pointer;
+  background-color: #fbfbfc;
+}
+.mainConts2 .conts .item:hover {
+  transform: translate(-5px, -5px) scale(1.04);
+  border-color: #fff;
+  background-color: #fff;
+  box-shadow: 20px 20px 20px #ececec;
+}
+.mainConts2 .conts .top {
+  display: flex;
+  margin-bottom: 30px;
+}
+.mainConts2 .conts .top span[class*=material] {
+  margin-right: auto;
+  font-size: 50px;
+  color: #4a6869;
+}
+.mainConts2 .conts .top .num {
+  font-size: 25px;
+  color: #86878b;
+}
+.mainConts2 .conts h2 {
+  margin-bottom: 16px;
+  font-size: 40px;
+  color: #0d0e16;
+}
+.mainConts2 .conts p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #6e6e75;
+}
+.mainConts2 .conts .btn {
+  display: flex;
+  width: 33%;
+  padding-bottom: 5px;
+  font-size: 20px;
+  color: #4a6869;
+  border-bottom: 1px solid #4a6869;
+  align-items: center;
+}
+.mainConts2 .conts .btn .arrow {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  margin-left: auto;
+}
+.mainConts2 .conts .btn .arrow::before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 70%;
+  height: 2px;
+  background-color: #4a6869;
+  transform: rotateZ(45deg);
+  transform-origin: left top;
+  transition: all 0.5s;
+}
+.mainConts2 .conts .btn .arrow::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 70%;
+  height: 2px;
+  background-color: #4a6869;
+  transform: rotateZ(-45deg);
+  transform-origin: left bottom;
+  transition: all 0.5s;
+}
+.mainConts2 .bg2 {
+  position: absolute;
+  width: 23%;
+  bottom: -15%;
+  left: -11%;
+  z-index: 1;
+  transform: rotateZ(37deg);
+}
+.mainConts2 .bg2 path {
+  fill: #e0e7e1;
+}
+
+.mainConts3 {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 75px 0;
+  background: #f6f8f6;
+  align-items: center;
+  justify-content: center;
+}
+.mainConts3 .inner {
+  width: 1200px;
+}
+.mainConts3 .inner > h1 {
+  margin-bottom: 26px;
+  font-size: 73px;
+  font-weight: 400;
+  letter-spacing: -2px;
+  text-align: center;
+  color: #0d0e16;
+}
+.mainConts3 .inner > p {
+  width: 50%;
+  margin: 0 auto 104px;
+  font-size: 16px;
+  text-align: center;
+  color: #535459;
+}
+.mainConts3 .inner > .conts {
+  display: flex;
+}
+.mainConts3 .process {
+  display: flex;
+  width: 41.7%;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  cursor: pointer;
+}
+.mainConts3 .process .item {
+  display: flex;
+  margin: 31px 0 0 0;
+}
+.mainConts3 .process .item:hover .num {
+  color: #fff;
+  border: 1px solid #000;
+  background: #000;
+}
+.mainConts3 .process .item:hover h2 {
+  color: #000;
+  text-decoration: underline;
+}
+.mainConts3 .process .item:hover p {
+  color: #56565c;
+}
+.mainConts3 .process .left {
+  display: flex;
+  width: 25%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.mainConts3 .process .num {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+  border-radius: 50px;
+  border: solid 1px #c7c9c9;
+  padding: 28px;
+  font-size: 19px;
+  line-height: 0;
+  color: #6a6c70;
+  justify-content: center;
+  transition: all 0.5s;
+}
+.mainConts3 .process .arrow {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 3px;
+  height: 60px;
+  background: repeating-linear-gradient(to top, #c7c9c9, #c7c9c9 8px, #fff0 8px, #fff0 14px);
+}
+.mainConts3 .process .arrow::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  width: 15px;
+  margin: 0 0 6px -9px;
+  height: 3px;
+  border-left: solid 3px #c7c9c9;
+  border-right: solid 3px #c7c9c9;
+  border-radius: 15px;
+}
+.mainConts3 .process .conts {
+  width: 60%;
+}
+.mainConts3 .process .conts h2 {
+  margin-bottom: 8px;
+  font-size: 27px;
+  color: #727578;
+  transition: all 0.5s;
+  font-weight: 400;
+}
+.mainConts3 .process .conts p {
+  font-size: 18px;
+  line-height: 1.4;
+  color: #96979a;
+  transition: all 0.5s;
+}
+.mainConts3 .imgWrap {
+  margin-right: 40px;
+}
+.mainConts3 .imgWrap img {
+  width: 330px;
+  height: 500px;
+  object-fit: cover;
+}
+.mainConts3 .imgWrap:last-child {
+  margin-right: 0;
+}
+.mainConts3 .bg3 {
+  position: absolute;
+  width: 13%;
+  top: 19%;
+  right: -3%;
+  z-index: 0;
+  transform: rotateZ(356deg);
+}
+.mainConts3 .bg3 path {
+  fill: #e0e7e1;
+}
+
+.mainConts4 {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 75px 0;
+  background: #fff;
+  align-items: center;
+  justify-content: center;
+}
+.mainConts4 .inner {
+  display: flex;
+  width: 1200px;
+}
+.mainConts4 .inner > p {
+  font-size: 17px;
+  color: #6e6e75;
+}
+.mainConts4 h1 {
+  width: 40%;
+  font-size: 50px;
+  color: #0d0e16;
+  margin-bottom: 70px;
+}
+.mainConts4 .conts {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.mainConts4 .conts li:nth-child(2n-1) {
+  padding: 20px 40px 50px 0;
+}
+.mainConts4 .conts li:nth-child(2n) {
+  padding: 0 0 0 40px;
+}
+.mainConts4 .conts .item {
+  width: 50%;
+}
+.mainConts4 .conts .imgWrap {
+  width: 100%;
+  height: 420px;
+  margin-bottom: 25px;
+}
+.mainConts4 .conts .imgWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mainConts4 .conts h2 {
+  display: flex;
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+.mainConts4 .conts h2 span {
+  margin-left: auto;
+  color: #eee;
+  font-size: 14px;
+}
+.mainConts4 .conts .btn {
+  display: flex;
+  width: 27%;
+  font-size: 15px;
+  color: #4a6869;
+  border-bottom: 1px solid #4a6869;
+  align-items: center;
+}
+.mainConts4 .conts .btn .arrow {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  margin-left: auto;
+}
+.mainConts4 .conts .btn .arrow::before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 70%;
+  height: 2px;
+  background-color: #4a6869;
+  transform: rotateZ(45deg);
+  transform-origin: left top;
+  transition: all 0.5s;
+}
+.mainConts4 .conts .btn .arrow::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 70%;
+  height: 2px;
+  background-color: #4a6869;
+  transform: rotateZ(-45deg);
+  transform-origin: left bottom;
+  transition: all 0.5s;
+}
+.mainConts4 .seeMoreBtn {
+  width: 20%;
+  height: 65px;
+  margin: 0 auto;
+  font-size: 27px;
+  color: #4a6869;
+  border: solid 1px #4a6869;
+  border-radius: 50px;
+  align-items: center;
+}
+.mainConts4 .seeMoreBtn .arrow {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  margin-left: auto;
+}
+.mainConts4 .seeMoreBtn .arrow::before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 70%;
+  height: 2px;
+  background-color: #4a6869;
+  transform: rotateZ(45deg);
+  transform-origin: left top;
+  transition: all 0.5s;
+}
+.mainConts4 .seeMoreBtn .arrow::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 70%;
+  height: 2px;
+  background-color: #4a6869;
+  transform: rotateZ(-45deg);
+  transform-origin: left bottom;
+  transition: all 0.5s;
+}
+
 .departmentConts {
   position: relative;
   width: 100%;
@@ -3186,51 +3693,51 @@ footer .copy {
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(1) {
   opacity: 0;
-  animation: upAnime 1.7227479328s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.5642307593s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(2) {
   opacity: 0;
-  animation: upAnime 0.056958206s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 2.1255507593s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(3) {
   opacity: 0;
-  animation: upAnime 1.8797403841s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 2.2391166232s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(4) {
   opacity: 0;
-  animation: upAnime 1.2186227953s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.3217679318s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(5) {
   opacity: 0;
-  animation: upAnime 1.1465018345s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.549076033s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(6) {
   opacity: 0;
-  animation: upAnime 1.0840647817s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.3157312222s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(7) {
   opacity: 0;
-  animation: upAnime 0.9202840656s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.4258991847s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(8) {
   opacity: 0;
-  animation: upAnime 1.4080535895s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.4860478859s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(9) {
   opacity: 0;
-  animation: upAnime 1.0728219811s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 2.1177266236s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(10) {
   opacity: 0;
-  animation: upAnime 0.9086617201s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.9263761401s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(11) {
   opacity: 0;
-  animation: upAnime 0.0572442697s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.606753169s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(12) {
   opacity: 0;
-  animation: upAnime 0.2442339434s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.919576402s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2 .vidItem {
   opacity: 0;
