@@ -220,3 +220,26 @@ header {
         }
 	}
 }
+
+@media screen and (max-width: $md) {
+	header {
+		.inner {
+			justify-content: space-between;
+			padding: 20px;
+		}
+
+		.logo {
+			margin-left:0;
+		}
+		.gnb {
+			display: none;
+			li {
+			}
+		}
+		.join {
+		}
+        .totalMenuBtn{
+        	margin-right:0px;
+        }
+	}
+}

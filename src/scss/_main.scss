@@ -111,7 +111,7 @@
 		left: 43%;
 		z-index: 0;
 		path {
-			fill: #e0e7e1;
+			fill: #e0e7e1a3;
 		}
 	}
 }
@@ -223,11 +223,11 @@
 
 	.bg2 {
 		position: absolute;
-		width: 23%;
-		bottom: -15%;
-		left: -11%;
+		width: 300px;
+		left: -57px;
+		bottom: -170px;
 		z-index: 1;
-		transform: rotateZ(37deg);
+		transform: rotateZ(91deg);
 		path {
 			fill: #e0e7e1;
 		}
@@ -358,6 +358,8 @@
 		}
 	}
 	.imgWrap {
+		position: relative;
+		z-index: 1;
 		margin-right: 40px;
 		img {
 			width: 330px;
@@ -370,9 +372,9 @@
 	}
 	.bg3 {
 		position: absolute;
-		width: 13%;
-		top: 19%;
-		right: -3%;
+		width: 200px;
+		top: 300px;
+		right: -67px;
 		z-index: 0;
 		transform: rotateZ(356deg);
 		path {
@@ -410,19 +412,19 @@
 		line-height: 1.3;
 		font-weight: 400;
 		color: #0d0e16;
-		margin-bottom: 100px;
+		margin-bottom: 50px;
 	}
 	.conts {
 		display: flex;
 		flex-wrap: nowrap;
 		width: 100%;
-		margin-bottom: 7vmin;
+		margin-bottom: 7vh;
 		li:nth-child(2n-1) {
 			width: 50%;
 			padding: 28px 101px 0 0;
 			.imgWrap {
 				width: 100%;
-				height: 420px;
+				height: 390px;
 				margin-bottom: 40px;
 				img {
 					width: 100%;
@@ -448,8 +450,8 @@
 
 		h2 {
 			display: flex;
-			margin-bottom: 2.5vmin;
-			font-size: 5vmin;
+			margin-bottom: 17px;
+			font-size: 30px;
 			font-weight: 500;
 			align-items: flex-end;
 			span {
@@ -833,17 +835,23 @@
 	.inner2 {
 		width: 1200px;
 		.tit {
-			margin-bottom: 30px;
+			margin-bottom: 42px;
 			font-size: 18px;
 			font-weight: 500;
 			text-align: center;
 		}
 		.banner {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			width: 77%;
-			margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    
+		}
+		a{
+    width: 25%;
+    margin-bottom: 38px;
+    text-align: center;
 		}
 		svg {
 			width: 130px;
@@ -899,7 +907,7 @@
 		.tit {
 			width: 100%;
 			font-size: 4.5vw;
-			margin-bottom: 4vmin;
+			margin-bottom: 6vmin;
 		}
 		.conts {
 			li:nth-child(2n) {
@@ -941,6 +949,8 @@
 		}
 
 		.bg2 {
+			width: 200px;
+			bottom: -100px;
 			path {
 			}
 		}
@@ -1115,7 +1125,7 @@
 			.bottom {
 				.btn {
 					width: 36.5%;
-					font-size: clamp(13px, 2vw, 15px);
+					font-size: clamp(14px, 2vw, 15px);
 
 					.arrow {
 						&::before {
@@ -1169,7 +1179,7 @@
 				}
 				.moreBtn {
 					width: 150px;
-					height: 53px;
+					height: 42px;
 					font-size: 18px;
 					.arrow {
 						&::before {
@@ -1182,14 +1192,13 @@
 		}
 
 		.inner2 {
-			width: 100%;
-			padding: 0 40px;
+			padding: 0 30px;
 			.tit {
 			}
 			.banner {
 			}
 			svg {
-				width: 11vw;
+				width: 12vw;
 			}
 		}
 	}
@@ -1422,7 +1431,7 @@
 			}
 			.bottom {
 				.btn {
-					width: 49.5%;
+					width: 103px;
 
 					.arrow {
 						&::before {
@@ -1524,7 +1533,7 @@
 			width: 211px;
 			height: 63px;
 			order: 1;
-			margin: 40px auto;
+			margin: 60px auto 0px;
 			font-size: 17px;
 
 			.arrow {
@@ -1542,7 +1551,7 @@
 		}
 		.bg {
 			width: 31%;
-			bottom: -14%;
+			bottom: 86%;
 			left: -4%;
 			path {
 			}
@@ -1573,15 +1582,18 @@
 			}
 			h2 {
 				margin-bottom: 7px;
+				font-size: 17px;
 			}
 			p {
+				font-size: 14.5px;
 				overflow: hidden;
 				white-space: nowrap;
 				text-overflow: ellipsis;
 			}
 			.btn {
 				width: 105px;
-				font-size: 14px;
+				padding-bottom: 2px;
+				font-size: 13px;
 				.arrow {
 					&::before {
 					}
@@ -1592,6 +1604,8 @@
 		}
 
 		.bg2 {
+			width: 150px;
+			bottom: -75px;
 			path {
 			}
 		}
@@ -1600,8 +1614,11 @@
 	.mainConts3 {
 		padding: 0;
 		.inner {
-			padding: 30px;
-			height: 100%;
+    display: flex;
+    padding: 30px;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
 			> h1 {
 			}
 			> p {
@@ -1616,7 +1633,7 @@
 
 		.process {
 			width: 100%;
-			margin: 28px 0 40px 0;
+			margin: 28px 0 63px 0;
 			padding-top: 16px;
 			border-top: solid 1px #ccc;
 			.item {
@@ -1648,13 +1665,13 @@
 				h2 {
 				}
 				p {
-					font-size: 2vw;
+					font-size: 2.4vw;
 				}
 			}
 		}
 		.imgWrap {
 			width: 100%;
-			height: 24vh;
+			height: 30vh;
 			margin-right: 0;
 			img {
 				min-height: initial;
@@ -1664,6 +1681,8 @@
 			display: none;
 		}
 		.bg3 {
+            width: 150px;
+            top:726px;
 			path {
 			}
 		}
@@ -1673,8 +1692,8 @@
 		padding: 30px 0;
 		.inner {
 			> p {
-				padding: 2vmin 30px 0 30px;
-				font-size: 17px;
+				padding: 1vmin 30px 0 30px;
+				font-size: 14px;
 			}
 		}
 		h1 {
@@ -1683,6 +1702,7 @@
 			li:nth-child(2n-1) {
 				padding: 28px 32px 0 0;
 				.imgWrap {
+					margin-bottom: 25px;
 					img {
 					}
 				}
@@ -1696,8 +1716,10 @@
 			}
 
 			h2 {
+				font-size: 2.8vw;
 				span {
-					margin-bottom: 1.1vw;
+					font-size: 12px;
+					margin-bottom: 3px;
 				}
 			}
 			.btn {
@@ -1723,18 +1745,19 @@
 	.mainConts5 {
 		.inner {
 			margin: 30px 0;
+			padding: 0 20px;
 			> h1 {
-				font-size: 6.5vmin;
+				font-size: 6vw;
 			}
 			> p {
-				width: 80%;
-				margin-bottom: 55px;
+				font-size: 15px;
+				margin-bottom: 40px;
 			}
 		}
 		.conts {
 			margin-bottom: clamp(30px, 8vh, 100px);
 			.item {
-				padding-right: 35px;
+				padding-right: 25px;
 				&:hover {
 					.bottom .btn {
 					}
@@ -1743,21 +1766,22 @@
 			.item:last-child {
 			}
 			.imgWrap {
-				width: 100%;
+				margin-bottom: 17px;
 				height: clamp(150px, 27vh, 310px);
 				img {
 				}
 			}
 
 			h2 {
-				margin-bottom: 25px;
-				padding-bottom: 22px;
-				font-size: 2.2vw;
+				font-size: 2.8vw;
+				border: none;
+				margin-bottom: 0;
+				padding-bottom: 10px;
 			}
 			.bottom {
+				flex-wrap: wrap;
 				.btn {
-					width: 49.5%;
-
+					order: 1;
 					.arrow {
 						&::before {
 						}
@@ -1766,7 +1790,12 @@
 					}
 				}
 				.date {
-					font-size: 14.5px;
+					width: 100%;
+					text-align: right;
+					padding-bottom: 15px;
+					margin-bottom: 15px;
+					border-bottom: solid 1px #ccc;
+					font-size: 13px;
 				}
 			}
 		}
@@ -1782,7 +1811,6 @@
 
 	.mainConts6 {
 		.inner1 {
-			margin-bottom: 50px;
 			.bg1 {
 				path {
 				}
@@ -1793,15 +1821,19 @@
 			}
 		}
 		.cont {
-			margin: 80px 0;
+			flex-wrap: wrap;
+			margin: 40px 0;
 			.tit {
-				padding-right: 0px;
-				font-size: 5.6vw;
+				width: 100%;
+				margin-bottom: 20px;
+				font-size: 6.3vw;
 			}
 			.right {
-				padding: 0 50px 0 30px;
+				width: 100%;
+				padding: 0;
 				p {
-					font-size: 18px;
+					width: 100%;
+					font-size: 15px;
 				}
 				.moreBtn {
 					.arrow {
@@ -1818,10 +1850,390 @@
 			.tit {
 			}
 			.banner {
-				width: 87%;
+				width: 100%;
 			}
 			svg {
-				width: 12vw;
+				width: 14vw;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $xs) {
+	.mainConts1 {
+		overflow: hidden;
+		height: 100%;
+		padding: 0;
+		.inner {
+			padding: 50px 20px;
+		}
+		.topText {
+			display: flex;
+			margin-bottom: 10px;
+			font-size: 13px;
+			align-items: flex-start;
+			&::before {
+				width: 17px;
+				margin-top: 6px;
+			}
+		}
+		h2 {
+			font-size: 23px;
+			margin-bottom: 35px;
+		}
+		.bottomTxt {
+			font-size: 15px;
+			margin-bottom: 50px;
+		}
+		.btn {
+			height: 50px;
+			margin: 40px auto 0;
+
+			.arrow {
+				width: 15px;
+				height: 15px;
+				&::before {
+				}
+				&::after {
+				}
+			}
+		}
+		.imgWrap {
+			img {
+			}
+		}
+		.bg {
+			width: 28%;
+			bottom: 5%;
+			left: 72%;
+			transform: rotate(95deg);
+			path {
+			}
+		}
+	}
+
+	.mainConts2 {
+		height: 100%;
+		padding: 0;
+		.inner {
+			padding: 40px 20px;
+		}
+		.tit {
+			letter-spacing: 0.5px;
+			font-size: 25px;
+			margin-bottom: 40px;
+		}
+		.conts {
+			li:nth-child(2n) {
+			}
+			.item {
+				width: 100%;
+				padding: 15px;
+				margin: 0 0 40px 0;
+				&:hover {
+				}
+			}
+			.top {
+				span[class*="material"] {
+				}
+				.num {
+				}
+			}
+			h2 {
+			}
+			p {
+			}
+			.btn {
+				width: 93px;
+				.arrow {
+					width: 12px;
+					height: 12px;
+					&::before {
+					}
+					&::after {
+					}
+				}
+			}
+		}
+
+		.bg2 {
+			width: 110px;
+			bottom: -55px;
+			path {
+			}
+		}
+	}
+
+	.mainConts3 {
+		height: 100%;
+		.inner {
+			padding: 40px 20px;
+			> h1 {
+				letter-spacing: 0.5px;
+				font-size: 25px;
+			}
+			> p {
+				width: 100%;
+				font-size: 14px;
+			}
+			> .conts {
+			}
+		}
+
+		.process {
+			.item {
+				margin-top: 25px;
+				&:hover {
+					.num {
+					}
+					h2 {
+					}
+					p {
+					}
+				}
+			}
+
+			.left {
+				width: 45px;
+				justify-content: inherit;
+			}
+			.num {
+				font-size: 13px;
+				padding: 14px;
+			}
+			.arrow {
+				display: none;
+				&::after {
+				}
+			}
+			.conts {
+				width: calc(100% - 45px);
+				h2 {
+					font-size: 17px;
+				}
+				p {
+					font-size: 13px;
+				}
+			}
+		}
+		.imgWrap {
+			width: 100%;
+			height: 30vh;
+			margin-right: 0;
+			img {
+				min-height: initial;
+			}
+		}
+		.imgWrap:last-child {
+			display: none;
+		}
+		.bg3 {
+			path {
+			}
+		}
+	}
+
+	.mainConts4 {
+		height: 100%;
+		padding: 0;
+		.inner {
+			padding: 40px 20px;
+			> p {
+				width: 100%;
+				margin-bottom: 40px;
+				padding: 0;
+				font-size: 14px;
+			}
+		}
+		h1 {
+			width: 100%;
+			font-size: 27px;
+			margin-bottom: 10px;
+		}
+		.conts {
+			flex-wrap: wrap;
+			li:nth-child(2n-1) {
+				width: 100%;
+				padding: 0;
+				.imgWrap {
+					height: 190px;
+					min-height: inherit;
+					margin-bottom: 7px;
+					img {
+					}
+				}
+			}
+			li:nth-child(2n) {
+				width: 100%;
+				padding: 0;
+				.imgWrap {
+					height: 190px;
+					min-height: inherit;
+					margin-bottom: 7px;
+					img {
+					}
+				}
+			}
+
+			h2 {
+				font-size: 15px;
+				margin-bottom: 15px;
+
+				span {
+					font-size: 12px;
+					margin-bottom: 0;
+				}
+			}
+			.btn {
+				width: 130px;
+				margin-bottom: 45px;
+				.arrow {
+					width: 12px;
+					height: 12px;
+					&::before {
+					}
+					&::after {
+					}
+				}
+			}
+		}
+		.moreBtn {
+			.arrow {
+				&::before {
+				}
+				&::after {
+				}
+			}
+		}
+	}
+
+	.mainConts5 {
+		height: 100%;
+		.inner {
+			margin: 40px 0;
+			> h1 {
+				font-size: 9vw;
+			}
+			> p {
+				width: 100%;
+				margin: 0 0 30px 0;
+				text-align: center;
+				font-size: 14px;
+			}
+		}
+		.conts {
+			flex-wrap: wrap;
+			margin-bottom: 0;
+			.item {
+				width: 100%;
+				margin-bottom: 50px;
+				padding-right: 0;
+				&:hover {
+					.bottom .btn {
+					}
+				}
+			}
+			.item:last-child {
+			}
+			.imgWrap {
+				margin-bottom: 17px;
+				height: clamp(150px, 27vh, 310px);
+				img {
+				}
+			}
+
+			h2 {
+				font-size: 4.9vw;
+				line-height: 1.4;
+			}
+			.bottom {
+				flex-wrap: wrap;
+				.btn {
+					width: 96px;
+					order: initial;
+					.arrow {
+						&::before {
+						}
+						&::after {
+						}
+					}
+				}
+				.date {
+					width: 40%;
+					text-align: right;
+					padding-bottom: 0;
+					margin-bottom: 0;
+					border-bottom: none;
+					font-size: 13px;
+				}
+			}
+		}
+		.moreBtn {
+			width: 180px;
+			height: 50px;
+			margin-bottom: 20px;
+			font-size: 17px;
+			.arrow {
+				&::before {
+				}
+				&::after {
+				}
+			}
+		}
+	}
+
+	.mainConts6 {
+		height: 100%;
+		.inner1 {
+			height: 300px;
+			padding: 0 20px;
+			margin-bottom: 60px;
+			.bg1 {
+				width: 90px;
+				path {
+				}
+			}
+			.bg2 {
+				width: 136px;
+				transform: rotate(174deg);
+				path {
+					fill: #3e5a5b82;
+				}
+			}
+		}
+		.cont {
+			margin: 30px 0;
+			.tit {
+			}
+			.right {
+				p {
+				}
+				.moreBtn {
+					.arrow {
+						&::before {
+						}
+						&::after {
+						}
+					}
+				}
+			}
+		}
+
+		.inner2 {
+			margin-bottom: 60px;
+			.tit {
+			}
+			.banner {
+				flex-wrap: wrap;
+				justify-content: space-around;
+			}
+			a {
+				width: 35%;
+				margin-bottom: 40px;
+			}
+
+			svg {
+				width: 100%;
 			}
 		}
 	}

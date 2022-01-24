@@ -3,6 +3,10 @@ import { ReactComponent as KoreaLogo } from '../KoreaLogo.svg';
 import { ReactComponent as NaverLogo } from '../NaverLogo.svg';
 import { ReactComponent as KakaoLogo } from '../KakaoLogo.svg';
 import { ReactComponent as GoogleLogo } from '../GoogleLogo.svg';
+import { ReactComponent as EmartLogo } from '../EmartLogo.svg';
+import { ReactComponent as LgLogo } from '../LgLogo.svg';
+import { ReactComponent as MicrosoftLogo } from '../MicrosoftLogo.svg';
+import { ReactComponent as SamsungLogo } from '../SamsungLogo.svg';
 
 export function MainConts6() {
     return (
@@ -28,6 +32,10 @@ export function MainConts6() {
                     <a href="https://www.navercorp.com" target={`_blank`}><NaverLogo /></a>
                     <a href="https://www.kakaocorp.com" target={`_blank`}><KakaoLogo /></a>
                     <a href="https://www.google.co.kr" target={`_blank`}><GoogleLogo /></a>
+                    <a href="http://www.emartcompany.com/ko/main.do" target={`_blank`}><EmartLogo /></a>
+                    <a href="https://www.lg.co.kr" target={`_blank`}><LgLogo /></a>
+                    <a href="https://www.microsoft.com/ko-kr" target={`_blank`}><MicrosoftLogo /></a>
+                    <a href="https://www.samsung.com/sec/aboutsamsung/home" target={`_blank`}><SamsungLogo /></a>
                 </div>
             </div>
         </section>
