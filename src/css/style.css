@@ -924,8 +924,8 @@ footer .copy {
 }
 .mainConts4 .conts .tit span {
   width: 100px;
+  margin-top: 10px;
   margin-left: 15px;
-  margin-bottom: 17px;
   color: #6e6e73;
   font-size: 15px;
   font-weight: 400;
@@ -984,6 +984,14 @@ footer .copy {
   border: solid 1px #e0e7e1;
   border-radius: 50px;
   cursor: pointer;
+  transition: all 0.5s;
+}
+.mainConts4 .moreBtn:hover {
+  background-color: #4a6869;
+  color: #fff;
+}
+.mainConts4 .moreBtn:hover .arrow::before, .mainConts4 .moreBtn:hover .arrow::after {
+  background-color: #fff;
 }
 .mainConts4 .moreBtn .arrow {
   position: relative;
@@ -1206,6 +1214,14 @@ footer .copy {
   border: solid 1px #e0e7e1;
   border-radius: 50px;
   cursor: pointer;
+  transition: all 0.5s;
+}
+.mainConts5 .moreBtn:hover {
+  background-color: #4a6869;
+  color: #fff;
+}
+.mainConts5 .moreBtn:hover .arrow::before, .mainConts5 .moreBtn:hover .arrow::after {
+  background-color: #fff;
 }
 .mainConts5 .moreBtn .arrow {
   position: relative;
@@ -1318,6 +1334,14 @@ footer .copy {
   border-radius: 50px;
   background-color: #fff;
   cursor: pointer;
+  transition: all 0.5s;
+}
+.mainConts6 .cont .right .moreBtn:hover {
+  background-color: #62927f;
+  color: #fff;
+}
+.mainConts6 .cont .right .moreBtn:hover .arrow::before, .mainConts6 .cont .right .moreBtn:hover .arrow::after {
+  background-color: #fff;
 }
 .mainConts6 .cont .right .moreBtn .arrow {
   position: relative;
@@ -1370,7 +1394,13 @@ footer .copy {
 .mainConts6 .inner2 a {
   width: 25%;
   margin-bottom: 38px;
+  padding: 10px 0;
   text-align: center;
+  transition: all 0.5s;
+}
+.mainConts6 .inner2 a:hover {
+  transform: scale(1.03) translate(-5px, -5px);
+  box-shadow: 8px 6px 5px #eee, 0px 0px 2px #dfdfdf;
 }
 .mainConts6 .inner2 svg {
   width: 100px;
@@ -1529,9 +1559,6 @@ footer .copy {
   .mainConts5 .conts {
     margin-bottom: clamp(30px, 8vh, 100px);
   }
-  .mainConts5 .conts .item {
-    padding-right: 35px;
-  }
   .mainConts5 .conts .imgWrap {
     width: 100%;
     height: clamp(150px, 27vh, 310px);
@@ -1539,11 +1566,12 @@ footer .copy {
   .mainConts5 .conts h2 {
     margin-bottom: 25px;
     padding-bottom: 22px;
-    font-size: 2.2vw;
+    font-size: 20px;
+    height: 58px;
   }
   .mainConts5 .conts .bottom .btn {
-    width: 36.5%;
-    font-size: clamp(14px, 2vw, 15px);
+    width: 104px;
+    font-size: 15px;
   }
   .mainConts5 .conts .bottom .date {
     font-size: 15px;
@@ -1655,6 +1683,7 @@ footer .copy {
   }
   .mainConts5 .inner {
     margin: 30px 0;
+    padding: 0 30px;
   }
   .mainConts5 .inner > h1 {
     font-size: 6.5vmin;
@@ -1667,7 +1696,9 @@ footer .copy {
     margin-bottom: clamp(30px, 8vh, 100px);
   }
   .mainConts5 .conts .item {
-    padding-right: 35px;
+    width: 32%;
+    padding: 20px;
+    margin-right: 20px;
   }
   .mainConts5 .conts .imgWrap {
     width: 100%;
@@ -1881,10 +1912,9 @@ footer .copy {
     height: clamp(150px, 27vh, 310px);
   }
   .mainConts5 .conts h2 {
-    font-size: 2.8vw;
-    border: none;
-    margin-bottom: 0;
-    padding-bottom: 10px;
+    font-size: 19px;
+    height: 55px;
+    margin-bottom: 14px;
   }
   .mainConts5 .conts .bottom {
     flex-wrap: wrap;
@@ -1895,7 +1925,7 @@ footer .copy {
   .mainConts5 .conts .bottom .date {
     width: 100%;
     text-align: right;
-    padding-bottom: 15px;
+    padding-bottom: 8px;
     margin-bottom: 15px;
     border-bottom: solid 1px #ccc;
     font-size: 13px;
@@ -2098,7 +2128,7 @@ footer .copy {
     margin: 40px 0;
   }
   .mainConts5 .inner > h1 {
-    font-size: 9vw;
+    font-size: 38px;
   }
   .mainConts5 .inner > p {
     width: 100%;
@@ -2113,21 +2143,22 @@ footer .copy {
   .mainConts5 .conts .item {
     width: 100%;
     margin-bottom: 50px;
-    padding-right: 0;
+    margin-right: 0;
   }
   .mainConts5 .conts .imgWrap {
     margin-bottom: 17px;
     height: clamp(150px, 27vh, 310px);
   }
   .mainConts5 .conts h2 {
-    font-size: 4.9vw;
+    font-size: 20px;
+    height: 63px;
     line-height: 1.4;
   }
   .mainConts5 .conts .bottom {
     flex-wrap: wrap;
   }
   .mainConts5 .conts .bottom .btn {
-    width: 96px;
+    width: 107px;
     order: initial;
   }
   .mainConts5 .conts .bottom .date {
@@ -4960,51 +4991,51 @@ footer .copy {
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(1) {
   opacity: 0;
-  animation: upAnime 2.178748227s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.5203934642s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(2) {
   opacity: 0;
-  animation: upAnime 0.0537411248s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.2827999925s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(3) {
   opacity: 0;
-  animation: upAnime 0.8889958448s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.4633196646s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(4) {
   opacity: 0;
-  animation: upAnime 1.2746759824s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.3836054085s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(5) {
   opacity: 0;
-  animation: upAnime 0.5608119477s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 2.200777135s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(6) {
   opacity: 0;
-  animation: upAnime 1.5217445805s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.0649041038s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(7) {
   opacity: 0;
-  animation: upAnime 0.1545822945s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.7984531586s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(8) {
   opacity: 0;
-  animation: upAnime 0.1034544018s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.8184950093s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(9) {
   opacity: 0;
-  animation: upAnime 0.8655993457s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.8590821122s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(10) {
   opacity: 0;
-  animation: upAnime 0.8897770593s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.1725085468s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(11) {
   opacity: 0;
-  animation: upAnime 1.1061270404s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.6826138835s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(12) {
   opacity: 0;
-  animation: upAnime 0.2582586814s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.1126606178s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2 .vidItem {
   opacity: 0;

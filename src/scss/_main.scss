@@ -515,12 +515,12 @@
 				-webkit-box-orient: vertical;
 			}
 			span {
-				width: 100px;
-				margin-left: 15px;
-				margin-bottom: 17px;
-				color: #6e6e73;
-				font-size: 15px;
-				font-weight: 400;
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 15px;
+    color: #6e6e73;
+    font-size: 15px;
+    font-weight: 400;
 			}
 		}
 
@@ -580,6 +580,14 @@
 		border: solid 1px #e0e7e1;
 		border-radius: 50px;
 		cursor: pointer;
+        transition: all 0.5s;
+		&:hover{
+			background-color:#4a6869;
+			color:#fff;
+			.arrow::before, .arrow::after{
+				background-color:#fff;
+			}
+		}
 
 		.arrow {
 			position: relative;
@@ -698,7 +706,7 @@
 			display: flex;
 			margin-right: 45px;
 			padding: 24px;
-			cursor: pointer;
+			cursor: pointer; 
 			border: solid 1px #ccc;
 			flex-direction: column;
 			&:hover {
@@ -811,6 +819,14 @@
 		border: solid 1px #e0e7e1;
 		border-radius: 50px;
 		cursor: pointer;
+		transition:all 0.5s;
+		&:hover{
+			background-color:#4a6869;
+			color:#fff;
+			.arrow::before, .arrow::after{
+				background-color:#fff;
+			}
+		}
 
 		.arrow {
 			position: relative;
@@ -922,6 +938,15 @@
 				border-radius: 50px;
 				background-color: #fff;
 				cursor: pointer;
+				transition:all 0.5s;
+
+				&:hover{
+					background-color:#62927f;
+					color:#fff;
+					.arrow::before, .arrow::after{
+						background-color:#fff;
+					}
+				}
 
 				.arrow {
 					position: relative;
@@ -977,7 +1002,13 @@
 		a {
 			width: 25%;
 			margin-bottom: 38px;
+			padding:10px 0;
 			text-align: center;
+			transition:all 0.5s;
+			&:hover{
+    transform: scale(1.03) translate(-5px, -5px);
+    box-shadow: 8px 6px 5px #eee, 0px 0px 2px #dfdfdf;
+			}
 		}
 		svg {
 			width: 100px;
@@ -1231,7 +1262,6 @@
 		.conts {
 			margin-bottom: clamp(30px, 8vh, 100px);
 			.item {
-				padding-right: 35px;
 				&:hover {
 					.bottom .btn {
 					}
@@ -1247,14 +1277,15 @@
 			}
 
 			h2 {
-				margin-bottom: 25px;
-				padding-bottom: 22px;
-				font-size: 2.2vw;
+    margin-bottom: 25px;
+    padding-bottom: 22px;
+    font-size: 20px;
+    height: 58px;
 			}
 			.bottom {
 				.btn {
-					width: 36.5%;
-					font-size: clamp(14px, 2vw, 15px);
+    width: 104px;
+    font-size: 15px;
 
 					.arrow {
 						&::before {
@@ -1531,6 +1562,7 @@
 	.mainConts5 {
 		.inner {
 			margin: 30px 0;
+			padding:0 30px;
 			> h1 {
 				font-size: 6.5vmin;
 			}
@@ -1542,7 +1574,9 @@
 		.conts {
 			margin-bottom: clamp(30px, 8vh, 100px);
 			.item {
-				padding-right: 35px;
+    width: 32%;
+    padding: 20px;
+    margin-right: 20px;
 				&:hover {
 					.bottom .btn {
 					}
@@ -1908,10 +1942,9 @@
 			}
 
 			h2 {
-				font-size: 2.8vw;
-				border: none;
-				margin-bottom: 0;
-				padding-bottom: 10px;
+    font-size: 19px;
+    height: 55px;
+    margin-bottom: 14px;
 			}
 			.bottom {
 				flex-wrap: wrap;
@@ -1927,7 +1960,7 @@
 				.date {
 					width: 100%;
 					text-align: right;
-					padding-bottom: 15px;
+					padding-bottom: 8px;
 					margin-bottom: 15px;
 					border-bottom: solid 1px #ccc;
 					font-size: 13px;
@@ -2246,7 +2279,7 @@
 		.inner {
 			margin: 40px 0;
 			> h1 {
-				font-size: 9vw;
+				font-size: 38px;
 			}
 			> p {
 				width: 100%;
@@ -2259,9 +2292,9 @@
 			flex-wrap: wrap;
 			margin-bottom: 0;
 			.item {
-				width: 100%;
-				margin-bottom: 50px;
-				padding-right: 0;
+    width: 100%;
+    margin-bottom: 50px;
+    margin-right: 0;
 				&:hover {
 					.bottom .btn {
 					}
@@ -2277,13 +2310,14 @@
 			}
 
 			h2 {
-				font-size: 4.9vw;
-				line-height: 1.4;
+    font-size: 20px;
+    height: 63px;
+    line-height: 1.4;
 			}
 			.bottom {
 				flex-wrap: wrap;
 				.btn {
-					width: 96px;
+					width: 107px;
 					order: initial;
 					.arrow {
 						&::before {

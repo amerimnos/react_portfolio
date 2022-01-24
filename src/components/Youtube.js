@@ -10,8 +10,8 @@ function Youtube() {
     const [isPop, setIsPop] = useState('');
 
     const yourtubeData = useSelector(state => state.youtubeReducer.youtube);
+    const yourtubeData2 = useSelector(state => state.mainvidReducer.youtube);
 
-    const url2 = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDYryAlh_1CQbDxO0qTjpOkUrOnX9m12lY&playlistId=PLZ1bji2Kya5NAWrSjX0zKEI_DdF3ndZr3&maxResults=12';
     const mode = localStorage.getItem('mode');
 
     let youtubeConts = useRef(null);
@@ -56,18 +56,12 @@ function Youtube() {
         setTimeout(() => {
             loadingWrap.current.classList.remove('on');
             setYoutubeDate(yourtubeData);
+            setYoutubeDate2(yourtubeData2);
             videosConts2.current.classList.add('on');
         }, 1000);
-
-
-        axios
-            .get(url2)
-            .then(
-                json => {
-                    setYoutubeDate2(json.data.items);
-                }
-            )
     }, []);
+
+    console.log('yourtubeData', yourtubeData);
 
     // 랜더링 후 실행 되는 꼼수
     /* setTimeout(() => {
@@ -130,7 +124,7 @@ function Youtube() {
 
             <div className="inner">
                 <aside>
-                    <h1>Viedo board</h1>
+                    <h1 id="page_start">Viedo board</h1>
                     {/* <ul className="menu">
                         <li className="tit">MENU</li>
                         <li className="item">
@@ -185,21 +179,24 @@ function Youtube() {
 
                         {
                             youtubeDate2.map((el, index) => {
+                                if (index < 2) {
+                                    return (
 
-                                return (
-                                    <li key={index} onClick={
-                                        () => {
-                                            setIsPop('on');
-                                            setIframeUrl(`https://www.youtube.com/embed/${youtubeDate2[index].snippet.resourceId.videoId}`)
-                                        }
-                                    } className="vidItem" data-index={index}>
-                                        <img src={el.snippet.thumbnails.standard.url} alt="" />
-                                        <div className="tit">{el.snippet.title}</div>
-                                        {/* <div className="conts">
+                                        <li key={index} onClick={
+                                            () => {
+                                                setIsPop('on');
+                                                setIframeUrl(`https://www.youtube.com/embed/${youtubeDate2[index].snippet.resourceId.videoId}`)
+                                            }
+                                        } className="vidItem" data-index={index}>
+                                            <img src={el.snippet.thumbnails.standard.url} alt="" />
+                                            <div className="tit">{el.snippet.title}</div>
+                                            {/* <div className="conts">
                                             <div className="ellipsis">{el.snippet.description}</div>
                                         </div> */}
-                                    </li>
-                                )
+                                        </li>
+
+                                    )
+                                }
                             })
                         }
 

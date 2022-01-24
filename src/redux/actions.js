@@ -4,6 +4,12 @@ export const setYoutube = data => {
         payload: data,
     }
 }
+export const setMainvid = data => {
+    return {
+        type: 'SET_MAINVID',
+        payload: data,
+    }
+}
 
 export const setNotice = data => {
     return {

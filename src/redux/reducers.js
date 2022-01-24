@@ -21,6 +21,17 @@ const firstArticleData = [
     },
 ]
 
+
+const mainvidReducer = (state = { youtube: [] }, action) => {
+    switch (action.type) {
+        case 'SET_MAINVID':
+            return { ...state, youtube: action.payload };
+        default:
+            return state;
+    }
+}
+
+
 const youtubeReducer = (state = { youtube: [] }, action) => {
     switch (action.type) {
         case 'SET_YOUTUBE':
@@ -29,6 +40,7 @@ const youtubeReducer = (state = { youtube: [] }, action) => {
             return state;
     }
 }
+
 
 
 const noticeReducer = (state = { notice: firstArticleData }, action) => {
@@ -41,7 +53,7 @@ const noticeReducer = (state = { notice: firstArticleData }, action) => {
 }
 
 const reducers = combineReducers({
-    youtubeReducer, noticeReducer
+    youtubeReducer, mainvidReducer, noticeReducer
 })
 
 export default reducers;

@@ -2,7 +2,8 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setYoutube } from '../../redux/actions';
+import { HashLink } from 'react-router-hash-link';
+import { setMainvid, setYoutube } from '../../redux/actions';
 
 
 function MainConts4() {
@@ -11,19 +12,30 @@ function MainConts4() {
     const [isPop, setIsPop] = useState('');
 
     const dispatch = useDispatch();
-    const data = useSelector(state => state.youtubeReducer.youtube)
+
+    const fetchYoutubeDataMain = useSelector(state => state.mainvidReducer.youtube)
+
     const fetchYoutube = async () => {
+
+        const response1 = await axios
+            .get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDYryAlh_1CQbDxO0qTjpOkUrOnX9m12lY&playlistId=PLZ1bji2Kya5NAWrSjX0zKEI_DdF3ndZr3&maxResults=5')
+            .catch(err => console.error(err));
+        dispatch(setMainvid(response1.data.items));
         const response = await axios
             .get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDYryAlh_1CQbDxO0qTjpOkUrOnX9m12lY&playlistId=PLZ1bji2Kya5N0QGDU9TL2_L7mrKoDJE7d&maxResults=12')
             .catch(err => console.error(err));
-        dispatch(setYoutube(response.data.items))
+        dispatch(setYoutube(response.data.items));
+
+
     }
 
+    console.log(fetchYoutubeDataMain, 'fetchYoutubeDataMain');
     useEffect(
         () => {
             fetchYoutube();
         }, []
     )
+
 
     return (
         <section className="mainConts4">
@@ -33,14 +45,14 @@ function MainConts4() {
                 <ul className="conts">
 
                     {
-                        data.map(
+                        fetchYoutubeDataMain.map(
                             (el, index) => {
                                 if (index < 2) {
                                     return (
                                         <li className="item" key={index} onClick={
                                             () => {
                                                 setIsPop('on');
-                                                setIframeUrl(`https://www.youtube.com/embed/${data[index].snippet.resourceId.videoId}`)
+                                                setIframeUrl(`https://www.youtube.com/embed/${fetchYoutubeDataMain[index].snippet.resourceId.videoId}`)
                                             }}>
                                             <div className="imgWrap">
                                                 <img src={el.snippet.thumbnails.standard.url} alt="lorem" />
@@ -62,7 +74,9 @@ function MainConts4() {
 
                 </ul>
                 <div className="moreBtn">
-                    SEE MORE WORKS
+                    <HashLink smooth to="/youtube#page_start">
+                        SEE MORE WORKS
+                    </HashLink>
                     <span className="arrow"></span>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 export function MainConts5() {
 
@@ -48,13 +48,9 @@ export function MainConts5() {
                     </li> */}
                 </ul>
                 <div className="moreBtn">
-                    {/* <Link to={{
-                        pathname: "/community/notice",
-                        hash: "#section_start",
-                        state: { fromDashboard: false }
-                    }}>Read All News</Link>
- */}
-                    <Link to="/community/notice">Read All News</Link>
+                    <HashLink smooth to="/community/notice#section_start">
+                        Read All News
+                    </HashLink>
                     <span className="arrow"></span>
                 </div>
             </div>
