@@ -4,8 +4,8 @@ export function MainConts1() {
     return (
         <section className="mainConts1">
             <div className="inner">
-                <div className="topText">We are a digital agency based on California</div>
-                <h2>We build digital products for creative peoplpes</h2>
+                <div className="topText">We are a digital agency based on Korea</div>
+                <h2>We build digital products for creative peoples</h2>
                 <div className="bottomTxt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eos fugit ipsa.</div>
                 <a href="#test" className="btn">SEE OUR WORKS
                     <span className="arrow"></span>

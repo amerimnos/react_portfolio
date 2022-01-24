@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {setNotice} from "../redux/actions";
 
 function NoticeBoard() {
 
@@ -11,34 +13,19 @@ function NoticeBoard() {
     const popInputConts = useRef(null);
     const popInputTime = useRef(null);
 
+    const dispatch = useDispatch();
 
-    const firstArticleData = [
-        {
-            title: 'Lorem, ipsum dolor.',
-            contents: 'Bibendum est ultricies integer quis auctor. Consequat id porta nibh venenatis cras. Nulla aliquet porttitor lacus luctus accumsan tortor.',
-            time: '1:10:39',
-            timeEdit: '1:10:43',
-        },
-        {
-            title: 'Labore et dolore magna aliqua?',
-            contents: 'Morbi enim nunc faucibus a pellentesque. Sapien eget mi proin sed libero enim sed. Vulputate ut pharetra sit amet aliquam id diam maecenas.',
-            time: '3:2:29',
-            timeEdit: '4:27:31',
-        },
-        {
-            title: 'Excepteur sint occaecat cupidatat non proident.',
-            contents: 'Risus nec feugiat in fermentum posuere urna nec. Donec ultrices tincidunt arcu non sodales. Viverra suspendisse potenti nullam ac. ',
-            time: '4:13:39',
-            timeEdit: '5:15:43',
-        },
-    ]
+    const noticeData = useSelector(state => state.noticeReducer.notice);
+    console.log('noticeData', noticeData);
+    console.log('article', article);
 
     useEffect(() => {
+
         let data = localStorage.getItem('article');
         setArticle(
             () => {
                 if (!data) {
-                    return firstArticleData;
+                    return noticeData;
                 } else {
                     return JSON.parse(data);
                 }
@@ -46,9 +33,11 @@ function NoticeBoard() {
         );
     }, [])
 
+
     useEffect(() => {
         localStorage.setItem('article', JSON.stringify(article));
-    }, [article])
+        dispatch(setNotice(article));
+    }, [article, dispatch])
 
 
     function handleCreate() {
@@ -63,6 +52,7 @@ function NoticeBoard() {
             ]
         );
         setIsPop(false);
+        
     }
 
     async function handleSync(index) {
@@ -104,7 +94,7 @@ function NoticeBoard() {
     }
 
     return (
-        <section className="noticeConts">
+        <section id="section_start" className="noticeConts">
             <h1 className="mainTit">Lorem ipsum dolor sit amet</h1>
             <p className="topTxt">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo ipsum dicta recusandae quibusdam iusto accusamus laudantium quod dolor reprehenderit voluptas placeat repellendus exercitationem soluta porro eligendi quae ab eveniet, ducimus blanditiis officiis modi magni a! Fugit ducimus consequuntur debitis magnam.</p>
@@ -121,7 +111,7 @@ function NoticeBoard() {
                                     setIsCreate(false);
                                 }}>
                                 <div className="date">
-                                    <span>21</span>
+                                    <span>25</span>
                                     <div>2022.1.</div>
                                 </div>
                                 <ul className="txt">

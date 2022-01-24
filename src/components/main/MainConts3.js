@@ -1,5 +1,7 @@
 import { ReactComponent as BgIcon2 } from '../main_bg.svg';
-export function MainConts3() {
+
+function MainConts3() {
+
     const url = process.env.PUBLIC_URL;
     return (
         <section className="mainConts3">

@@ -6,7 +6,7 @@ function Footer() {
             <ul className="inner">
                 <li className="info">
                     <h1 className="logo"><NavLink exact to="/">Amerimnos</NavLink><span>.</span></h1>
-                    <p>We are a digital agency based on California.</p>
+                    <p>We are a digital agency based on Korea.</p>
                     <div className="sns">
                         <a href="#"><i className="fab fa-facebook-f"></i></a>
                         <a href="#"><i className="fab fa-connectdevelop"></i></a>

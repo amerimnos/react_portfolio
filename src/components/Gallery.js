@@ -27,6 +27,7 @@ function Gallery() {
     const rightMasonry = useRef(null);
     const leftTit = useRef(null);
     const rightTit = useRef(null);
+    const imgElem = useRef(null);
     const leftMasonryTit = useRef(null);
     const rightMasonryTit = useRef(null);
     const buddy = useRef(null);
@@ -52,7 +53,6 @@ function Gallery() {
         gutter: 0,
     };
     useEffect(() => {
-
         getFlickr1(flickrUrl1);
         getFlickr2(flickrUrl2);
     }, [])
@@ -133,7 +133,19 @@ function Gallery() {
                             elementType={'ul'} // default 'div'
                             options={masonryOptions1} // default {}
                             disableImagesLoaded={false} // default false
-                            updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+                            updateOnEachImageLoad={true} // default false and works only if disableImagesLoaded is false
+                            onImagesLoaded={()=>{
+                                setTimeout(() => {
+                                    if (left.current.classList.contains('on')) {
+                                        console.log(1111);
+                                        const leftMasonryElem = leftMasonry.current.masonry.element;
+                                        const rightMasonryElem = rightMasonry.current.masonry.element;
+                                        let elemHeight = leftMasonryElem.getBoundingClientRect().height;
+                                        right.current.style.height = `${elemHeight}px`;
+                                        rightMasonryElem.style.height = `${elemHeight}px`;
+                                    }
+                                }, 800)
+                            }}
                             enableResizableChildren={masonryResize} //부모 가로 사이즈에 반응함.
                         >
                             {
@@ -142,11 +154,10 @@ function Gallery() {
                                     let buddyIcon = `http://farm66.staticflickr.com/${el.server}/buddyicons/${el.owner}.jpg`;
                                     let titLeng = el.title.length;
 
-
                                     return (
                                         <li onClick={popupOpen} className="gridItem1" key={index}>
                                             <div className="imgWrap">
-                                                <img src={photoUrl} alt="" />
+                                                <img ref={imgElem} src={photoUrl} alt="" />
                                             </div>
                                             <div className="tit">
                                                 <img ref={buddy} src={buddyIcon} alt="" />
@@ -247,7 +258,7 @@ function Gallery() {
                 })
             .then(
 
-                
+
                 setTimeout(() => {
                     if (document.documentElement.clientWidth > 575) {
                         const leftMasonryElem = leftMasonry.current.masonry.element;
@@ -281,8 +292,7 @@ function Gallery() {
                         right.current.style.height = `${elemHeight}px`;
                         rightMasonryElem.style.height = `${elemHeight}px`;
                     }
-                }, 2500)
-
+                }, 1000)
             );
     }
 

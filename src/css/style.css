@@ -426,7 +426,7 @@ footer .copy {
   width: 100%;
   height: calc(100vh - 141px);
   padding: 75px 0;
-  background: #f2f2f2;
+  background: #f6f8f6;
   align-items: center;
   justify-content: center;
 }
@@ -526,6 +526,7 @@ footer .copy {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 8px;
 }
 .mainConts1 .bg {
   position: absolute;
@@ -832,40 +833,98 @@ footer .copy {
 .mainConts4 .conts li:nth-child(2n-1) {
   width: 50%;
   padding: 28px 101px 0 0;
+  cursor: pointer;
 }
 .mainConts4 .conts li:nth-child(2n-1) .imgWrap {
+  position: relative;
   width: 100%;
   height: 390px;
   margin-bottom: 40px;
+}
+.mainConts4 .conts li:nth-child(2n-1) .imgWrap::after {
+  content: "";
+  display: flex;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  height: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0000008c;
+  background-size: 68px 48px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8' standalone='no'?%3E%3Csvg height='100%25' version='1.1' viewBox='0 0 68 48' width='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath class='ytp-large-play-button-bg' d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='%23f00'%3E%3C/path%3E%3Cpath d='M 45,24 27,14 27,34' fill='%23fff'%3E%3C/path%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 2;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.mainConts4 .conts li:nth-child(2n-1) .imgWrap:hover::after {
+  opacity: 1;
 }
 .mainConts4 .conts li:nth-child(2n-1) .imgWrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all 0.5s;
 }
 .mainConts4 .conts li:nth-child(2n) {
   width: 50%;
   padding: 0 30px 0 70px;
+  cursor: pointer;
 }
 .mainConts4 .conts li:nth-child(2n) .imgWrap {
+  position: relative;
   width: 100%;
   height: 370px;
   margin-bottom: 36px;
+}
+.mainConts4 .conts li:nth-child(2n) .imgWrap::after {
+  content: "";
+  display: flex;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  height: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0000008c;
+  background-size: 68px 48px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8' standalone='no'?%3E%3Csvg height='100%25' version='1.1' viewBox='0 0 68 48' width='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath class='ytp-large-play-button-bg' d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='%23f00'%3E%3C/path%3E%3Cpath d='M 45,24 27,14 27,34' fill='%23fff'%3E%3C/path%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 2;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.mainConts4 .conts li:nth-child(2n) .imgWrap:hover::after {
+  opacity: 1;
 }
 .mainConts4 .conts li:nth-child(2n) .imgWrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  trnasition: all 0.5s;
 }
-.mainConts4 .conts h2 {
+.mainConts4 .conts .tit {
   display: flex;
+  align-items: flex-start;
   margin-bottom: 17px;
+}
+.mainConts4 .conts .tit h2 {
+  width: calc(100% - 100px);
   font-size: 30px;
   font-weight: 500;
-  align-items: flex-end;
+  overflow: hidden;
+  height: 76px;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
-.mainConts4 .conts h2 span {
-  margin-left: auto;
+.mainConts4 .conts .tit span {
+  width: 100px;
+  margin-left: 15px;
   margin-bottom: 17px;
   color: #6e6e73;
   font-size: 15px;
@@ -958,6 +1017,48 @@ footer .copy {
   transform-origin: left bottom;
   transition: all 0.5s;
 }
+.mainConts4 #popup {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  z-index: -1;
+}
+.mainConts4 #popup.on {
+  animation: 0.5s fadeIn both;
+}
+.mainConts4 #popup.off {
+  animation: 0.5s fadeOut both;
+}
+.mainConts4 #popup .iframeWrap {
+  width: 95%;
+  border-radius: 7px;
+  overflow: hidden;
+}
+.mainConts4 #popup iframe {
+  width: 100%;
+  height: 59vh;
+  object-fit: cover;
+}
+.mainConts4 #popup .close {
+  position: absolute;
+  right: 3%;
+  top: 1.5%;
+  color: #00a1ff;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.mainConts4 #popup .close:hover {
+  color: #bc4eff;
+}
 
 .mainConts5 {
   display: flex;
@@ -991,18 +1092,32 @@ footer .copy {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 .mainConts5 .conts .item {
-  padding-right: 45px;
+  display: flex;
+  margin-right: 45px;
+  padding: 24px;
   cursor: pointer;
+  border: solid 1px #ccc;
+  flex-direction: column;
 }
 .mainConts5 .conts .item:hover .bottom .btn {
   color: #4a6869;
   border-bottom: 2px solid #a4b3b4;
 }
 .mainConts5 .conts .item:last-child {
-  padding-right: 0;
+  margin-right: 0;
+}
+.mainConts5 .conts .txt {
+  overflow: hidden;
+  height: 100px;
+  margin-bottom: 35px;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 .mainConts5 .conts .imgWrap {
   width: 370px;
@@ -1015,20 +1130,25 @@ footer .copy {
   height: 100%;
 }
 .mainConts5 .conts h2 {
-  margin-bottom: 30px;
-  padding-bottom: 24px;
+  margin-bottom: 20px;
+  height: 77px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   border-bottom: 2px solid #ebefeb;
   font-size: 27px;
-  line-height: 1.1;
+  line-height: 1.3;
   font-weight: 500;
-  align-items: flex-end;
 }
 .mainConts5 .conts .bottom {
   display: flex;
+  margin-top: auto;
 }
 .mainConts5 .conts .bottom .btn {
   display: flex;
-  width: 36.5%;
+  width: 132px;
   font-size: 19.4px;
   font-weight: 500;
   color: #0d0e16;
@@ -1253,7 +1373,7 @@ footer .copy {
   text-align: center;
 }
 .mainConts6 .inner2 svg {
-  width: 130px;
+  width: 100px;
   height: 40px;
 }
 
@@ -1378,10 +1498,10 @@ footer .copy {
     height: 26vmin;
     min-height: 250px;
   }
-  .mainConts4 .conts h2 {
-    font-size: 3vw;
+  .mainConts4 .conts .tit h2 {
+    font-size: 29px;
   }
-  .mainConts4 .conts h2 span {
+  .mainConts4 .conts .tit span {
     margin-bottom: 1.4vw;
   }
   .mainConts4 .conts .btn {
@@ -1524,8 +1644,11 @@ footer .copy {
   .mainConts4 .conts li:nth-child(2n) {
     padding: 0 0 0 30px;
   }
-  .mainConts4 .conts h2 span {
-    margin-bottom: 1.1vw;
+  .mainConts4 .conts .tit h2 {
+    width: 100%;
+  }
+  .mainConts4 .conts .tit span {
+    display: none;
   }
   .mainConts4 .conts .btn {
     width: 130px;
@@ -1729,12 +1852,9 @@ footer .copy {
   .mainConts4 .conts li:nth-child(2n) {
     padding: 0 0 0 30px;
   }
-  .mainConts4 .conts h2 {
-    font-size: 2.8vw;
-  }
-  .mainConts4 .conts h2 span {
-    font-size: 12px;
-    margin-bottom: 3px;
+  .mainConts4 .conts .tit h2 {
+    height: 48px;
+    font-size: 20px;
   }
   .mainConts4 .conts .btn {
     width: 130px;
@@ -1960,13 +2080,8 @@ footer .copy {
     min-height: inherit;
     margin-bottom: 7px;
   }
-  .mainConts4 .conts h2 {
-    font-size: 15px;
-    margin-bottom: 15px;
-  }
-  .mainConts4 .conts h2 span {
-    font-size: 12px;
-    margin-bottom: 0;
+  .mainConts4 .conts .tit h2 {
+    height: 48px;
   }
   .mainConts4 .conts .btn {
     width: 130px;
@@ -4845,51 +4960,51 @@ footer .copy {
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(1) {
   opacity: 0;
-  animation: upAnime 1.6112028678s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 2.178748227s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(2) {
   opacity: 0;
-  animation: upAnime 0.2885558141s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.0537411248s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(3) {
   opacity: 0;
-  animation: upAnime 1.8275437512s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.8889958448s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(4) {
   opacity: 0;
-  animation: upAnime 2.0696539006s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.2746759824s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(5) {
   opacity: 0;
-  animation: upAnime 1.9896548464s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.5608119477s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(6) {
   opacity: 0;
-  animation: upAnime 0.9349128266s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.5217445805s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(7) {
   opacity: 0;
-  animation: upAnime 1.7628607338s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.1545822945s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(8) {
   opacity: 0;
-  animation: upAnime 1.9585294214s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.1034544018s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(9) {
   opacity: 0;
-  animation: upAnime 0.9178040676s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.8655993457s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(10) {
   opacity: 0;
-  animation: upAnime 0.3698347041s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.8897770593s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(11) {
   opacity: 0;
-  animation: upAnime 1.7113307029s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.1061270404s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(12) {
   opacity: 0;
-  animation: upAnime 1.9587224008s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.2582586814s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2 .vidItem {
   opacity: 0;

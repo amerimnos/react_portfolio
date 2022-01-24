@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState, useRef } from "react";
+import { useSelector } from "react-redux";
 
 function Youtube() {
 
@@ -8,7 +9,8 @@ function Youtube() {
     const [iframeUrl, setIframeUrl] = useState('');
     const [isPop, setIsPop] = useState('');
 
-    const url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDYryAlh_1CQbDxO0qTjpOkUrOnX9m12lY&playlistId=PLZ1bji2Kya5N0QGDU9TL2_L7mrKoDJE7d&maxResults=12';
+    const yourtubeData = useSelector(state => state.youtubeReducer.youtube);
+
     const url2 = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDYryAlh_1CQbDxO0qTjpOkUrOnX9m12lY&playlistId=PLZ1bji2Kya5NAWrSjX0zKEI_DdF3ndZr3&maxResults=12';
     const mode = localStorage.getItem('mode');
 
@@ -51,18 +53,12 @@ function Youtube() {
             }, 100);
         }
 
-        axios
-            .get(url)
-            .then(
-                json => {
-                    setTimeout(() => {
-                        loadingWrap.current.classList.remove('on');
-                        setYoutubeDate(json.data.items);
-                        videosConts2.current.classList.add('on');
-                    }, 1000);
+        setTimeout(() => {
+            loadingWrap.current.classList.remove('on');
+            setYoutubeDate(yourtubeData);
+            videosConts2.current.classList.add('on');
+        }, 1000);
 
-                }
-            )
 
         axios
             .get(url2)
