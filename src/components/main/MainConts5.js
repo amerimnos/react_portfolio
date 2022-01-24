@@ -23,7 +23,9 @@ export function MainConts5() {
                                         </div>
                                         <ul className="bottom">
                                             <li className="btn">
-                                                READ MORE
+                                                <HashLink smooth to="/community/notice#section_start">
+                                                    READ MORE
+                                                </HashLink>
                                                 <span className="arrow"></span>
                                             </li>
                                             <li className="date">{el.time}</li>
@@ -33,19 +35,6 @@ export function MainConts5() {
                             }
                         )
                     }
-                    {/* <li className="item">
-                        <div className="imgWrap">
-                            <img src={`${url}/img/mainConts03_01.webp`} alt="lorem" />
-                        </div>
-                        <h2>Why your client needs a responsive website</h2>
-                        <ul className="bottom">
-                            <li className="btn">
-                                READ MORE
-                                <span className="arrow"></span>
-                            </li>
-                            <li className="date">April 30, 2022</li>
-                        </ul>
-                    </li> */}
                 </ul>
                 <div className="moreBtn">
                     <HashLink smooth to="/community/notice#section_start">
