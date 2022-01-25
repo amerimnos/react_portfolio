@@ -37,7 +37,7 @@ function Gallery() {
     const method = "flickr.photos.search";
     const per_page = "10";
 
-    let tag1 = "art";
+    let tag1 = "sky";
     let tag2 = "landscape";
     let flickrUrl1 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag1}&nojsoncallback=1&privacy_filter=1`;
     let flickrUrl2 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag2}&nojsoncallback=1&privacy_filter=1`;
