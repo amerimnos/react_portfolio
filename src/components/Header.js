@@ -16,7 +16,6 @@ function Header(props) {
             document.querySelector('body').classList.toggle("isScroll");
             if (props.menuMobile === 'mobile') return props.setMenuMobile('');
             props.setMenuMobile('mobile');
-            console.log(111);
         }
     }
 

@@ -318,7 +318,7 @@
 				.customSelectWrap {
 					display: flex;
 					position: relative;
-					width: 36%;
+					width: 180px;
 					align-content: center;
 
 					select {
@@ -927,9 +927,12 @@
 					border-radius: 0.3rem;
 				}
 				dt {
-					width: 35%;
-					height: 68px;
-					border-radius: 0.3rem;
+    display: flex;
+    width: 35%;
+    height: 68px;
+    border-radius: 0.3rem;
+    align-items: center;
+    justify-content: center;
 				}
 			}
 		}

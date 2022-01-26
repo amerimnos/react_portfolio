@@ -37,6 +37,27 @@ header {
   background: #f6f8f6;
   z-index: 1;
 }
+header::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(270deg, transparent, #009688, transparent);
+}
+header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(270deg, transparent, #4caf50, transparent);
+  transition: all 1.2s;
+}
 header.sub .inner {
   padding: 20px;
 }
@@ -197,6 +218,64 @@ header .totalMenuBtn.on::after {
   background: #fff;
 }
 
+@keyframes mobileLeftBg {
+  0% {
+    height: 100vh;
+    left: -100%;
+  }
+  99% {
+    height: 100vh;
+    left: 100%;
+  }
+  100% {
+    height: 0;
+    left: -100%;
+  }
+}
+@keyframes mobileRightBg {
+  0% {
+    height: 100vh;
+    right: -100%;
+  }
+  99% {
+    height: 100vh;
+    right: 200%;
+  }
+  100% {
+    height: 0;
+    left: -100%;
+  }
+}
+@keyframes mobileMainBg {
+  0% {
+    opacity: 0;
+    left: 50%;
+    width: 0;
+    filter: blur(28px);
+    transform: translateX(-50%) scale(1.7);
+  }
+  50% {
+    filter: blur(28px);
+    transform: translateX(-50%) scale(1.7);
+  }
+  100% {
+    opacity: 1;
+    left: 50%;
+    filter: blur(0px);
+    transform: translateX(-50%) scale(1);
+    width: 100%;
+  }
+}
+@keyframes menuFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
 @media screen and (max-width: 1439px) {
   header .inner {
     width: 100%;
@@ -244,11 +323,16 @@ header .totalMenuBtn.on::after {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: #1f2c20bf;
-    backdrop-filter: blur(3px);
     z-index: 34;
     align-items: center;
     justify-content: center;
+    background-color: transparent;
+  }
+  header.mobile::before {
+    animation: 1.5s cubic-bezier(0.33, 0, 0.51, 1) 0s 1 normal forwards mobileLeftBg;
+  }
+  header.mobile::after {
+    animation: 1.5s cubic-bezier(0.33, 0, 0.51, 1) 0s 1 normal forwards mobileRightBg;
   }
   header.mobile .totalMenuBtn {
     position: absolute;
@@ -262,19 +346,31 @@ header .totalMenuBtn.on::after {
     color: #fff;
   }
   header.mobile .inner {
+    position: absolute;
     display: flex;
-    width: 100%;
-    margin: 40px;
-    align-items: center;
+    width: 0;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    padding: 0;
+    background: #000000b0;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
     justify-content: center;
+    overflow: hidden;
+    animation: 0.6s cubic-bezier(0.33, 0, 0.51, 1) 0.5s 1 normal both mobileMainBg;
     flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
   }
   header.mobile .logo {
+    opacity: 0;
     width: 100%;
     margin-bottom: 40px;
     font-size: 37px;
     color: #fff;
     text-align: center;
+    animation: 0.8s cubic-bezier(0.33, 0, 0.51, 1) 0.7s 1 normal forwards menuFadeIn;
   }
   header.mobile .logo span {
     padding-left: 5px;
@@ -291,6 +387,8 @@ header .totalMenuBtn.on::after {
     display: none;
   }
   header.mobile .gnb li {
+    opacity: 0;
+    animation: 0.8s cubic-bezier(0.33, 0, 0.51, 1) normal forwards menuFadeIn;
     width: 112px;
     margin: 20px auto;
     padding-bottom: 7px;
@@ -301,7 +399,26 @@ header .totalMenuBtn.on::after {
   header.mobile .gnb li a:hover {
     color: #2bae29;
   }
+  header.mobile .gnb li:nth-child(1) {
+    animation-delay: 0.75s;
+  }
+  header.mobile .gnb li:nth-child(2) {
+    animation-delay: 0.9s;
+  }
+  header.mobile .gnb li:nth-child(3) {
+    animation-delay: 1.05s;
+  }
+  header.mobile .gnb li:nth-child(4) {
+    animation-delay: 1.2s;
+  }
+  header.mobile .gnb li:nth-child(5) {
+    animation-delay: 1.35s;
+  }
+  header.mobile .gnb li:nth-child(6) {
+    animation-delay: 1.5s;
+  }
   header.mobile .join {
+    opacity: 0;
     display: flex;
     justify-content: center;
     width: initial;
@@ -316,6 +433,7 @@ header .totalMenuBtn.on::after {
     color: #c2d9d9;
     transition: all 0.5s;
     align-items: center;
+    animation: 0.8s cubic-bezier(0.33, 0, 0.51, 1) 1.7s 1 normal forwards menuFadeIn;
   }
   header.mobile .join span {
     opacity: 0;
@@ -5119,51 +5237,51 @@ footer .copy {
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(1) {
   opacity: 0;
-  animation: upAnime 0.2992489498s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.5315271549s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(2) {
   opacity: 0;
-  animation: upAnime 1.4214814954s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.051550898s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(3) {
   opacity: 0;
-  animation: upAnime 0.8463871395s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.1904109568s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(4) {
   opacity: 0;
-  animation: upAnime 1.1805501707s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.3758287725s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(5) {
   opacity: 0;
-  animation: upAnime 0.246193966s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.2910037453s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(6) {
   opacity: 0;
-  animation: upAnime 0.5612868039s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.470946923s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(7) {
   opacity: 0;
-  animation: upAnime 2.0277852839s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.7334010895s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(8) {
   opacity: 0;
-  animation: upAnime 0.5741097935s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.3782471316s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(9) {
   opacity: 0;
-  animation: upAnime 1.330302082s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.3651079671s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(10) {
   opacity: 0;
-  animation: upAnime 0.873345536s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.9899369471s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(11) {
   opacity: 0;
-  animation: upAnime 1.8664571181s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.5373546151s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(12) {
   opacity: 0;
-  animation: upAnime 2.0725290319s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.4453450695s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2 .vidItem {
   opacity: 0;
@@ -6020,7 +6138,7 @@ footer .copy {
 .joinConts .const2 #form .form-table .customSelectWrap {
   display: flex;
   position: relative;
-  width: 36%;
+  width: 180px;
   align-content: center;
 }
 .joinConts .const2 #form .form-table .customSelectWrap select {
@@ -6296,9 +6414,12 @@ footer .copy {
     border-radius: 0.3rem;
   }
   .joinConts .const1 .info dt {
+    display: flex;
     width: 35%;
     height: 68px;
     border-radius: 0.3rem;
+    align-items: center;
+    justify-content: center;
   }
   .joinConts .privacyConts h2 {
     font-size: 17px;
