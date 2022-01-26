@@ -1,12 +1,31 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { HashLink } from 'react-router-hash-link';
 import { setMainvid, setYoutube } from '../../redux/actions';
 
 
-function MainConts4() {
+function MainConts4(props) {
+
+
+    let conts4 = useRef(null);
+    useEffect(
+        () => {
+            props.SetPos4(conts4.current.offsetTop)
+            window.addEventListener('resize', () => {
+                props.SetPos4(conts4.current.offsetTop)
+            })
+
+            return (
+                ()=>{
+                    window.removeEventListener('resize', () => {
+                        props.SetPos4(conts4.current.offsetTop)
+                    })
+                }
+            )
+        }, []
+    )
 
     const [iframeUrl, setIframeUrl] = useState('');
     const [isPop, setIsPop] = useState('');
@@ -29,7 +48,6 @@ function MainConts4() {
 
     }
 
-    console.log(fetchYoutubeDataMain, 'fetchYoutubeDataMain');
     useEffect(
         () => {
             fetchYoutube();
@@ -38,7 +56,7 @@ function MainConts4() {
 
 
     return (
-        <section className="mainConts4">
+        <section ref={conts4} className="mainConts4">
             <div className="inner">
                 <h1>Some of our creative videos</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis architecto amet ullam!</p>

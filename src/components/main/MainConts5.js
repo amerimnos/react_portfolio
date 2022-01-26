@@ -1,13 +1,31 @@
+import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { HashLink } from "react-router-hash-link";
 
-export function MainConts5() {
+export function MainConts5(props) {
 
     const data = useSelector(state => state.noticeReducer.notice)
-    console.log('data', data);
+
+    let conts5 = useRef(null);
+    useEffect(
+        () => {
+            props.SetPos5(conts5.current.offsetTop)
+            window.addEventListener('resize', () => {
+                props.SetPos5(conts5.current.offsetTop)
+            })
+
+            return (
+                ()=>{
+                    window.removeEventListener('resize', () => {
+                        props.SetPos5(conts5.current.offsetTop)
+                    })
+                }
+            )
+        }, []
+    )
 
     return (
-        <section className="mainConts5">
+        <section ref={conts5} className="mainConts5">
             <div className="inner">
                 <h1>Our Lastest Notice</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci saepe earum accusamus beatae blanditiis illo maiores libero.</p>

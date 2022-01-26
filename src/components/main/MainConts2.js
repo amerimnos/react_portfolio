@@ -1,8 +1,28 @@
 
+import { useEffect, useRef } from 'react';
 import { ReactComponent as BgIcon2 } from '../main_bg.svg';
-export function MainConts2() {
+export function MainConts2(props) {
+
+    let conts2 = useRef(null);
+    useEffect(
+        () => {
+            props.SetPos2(conts2.current.offsetTop)
+            window.addEventListener('resize', () => {
+                props.SetPos2(conts2.current.offsetTop)
+            })
+
+            return (
+                ()=>{
+                    window.removeEventListener('resize', () => {
+                        props.SetPos2(conts2.current.offsetTop)
+                    })
+                }
+            )
+        }, []
+    )
+
     return (
-        <section className="mainConts2">
+        <section ref={conts2} className="mainConts2">
             <div className="inner">
                 <h1 className="tit">We provide you the Best services</h1>
                 <ul className="conts">

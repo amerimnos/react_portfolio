@@ -717,7 +717,7 @@
 			display: flex;
 			margin-right: 45px;
 			padding: 24px;
-			
+
 			border: solid 1px #ccc;
 			flex-direction: column;
 			&:hover {
@@ -1027,6 +1027,29 @@
 		svg {
 			width: 100px;
 			height: 40px;
+		}
+	}
+}
+
+.scrollBtn {
+	display: flex;
+	position: fixed;
+	right: 20px;
+	top: 50%;
+	height: 250px;
+	transform: translateY(-50%);
+	flex-direction: column;
+	justify-content: space-around;
+    z-index: 2;
+	button {
+		width: 15px;
+		height: 15px;
+		border-radius: 100px;
+		border: none;
+		background: #3e5f71;
+		transition: all 0.3s;
+		&.on {
+			height: 35px;
 		}
 	}
 }
@@ -2419,4 +2442,6 @@
 			}
 		}
 	}
+
+    .scrollBtn {display: none;}
 }

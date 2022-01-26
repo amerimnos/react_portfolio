@@ -7,10 +7,30 @@ import { ReactComponent as EmartLogo } from '../EmartLogo.svg';
 import { ReactComponent as LgLogo } from '../LgLogo.svg';
 import { ReactComponent as MicrosoftLogo } from '../MicrosoftLogo.svg';
 import { ReactComponent as SamsungLogo } from '../SamsungLogo.svg';
+import { useEffect, useRef } from 'react';
 
-export function MainConts6() {
+export function MainConts6(props) {
+
+    let conts6 = useRef(null);
+    useEffect(
+        () => {
+            props.SetPos6(conts6.current.offsetTop)
+            window.addEventListener('resize', () => {
+                props.SetPos6(conts6.current.offsetTop)
+            })
+
+            return (
+                ()=>{
+                    window.removeEventListener('resize', () => {
+                        props.SetPos6(conts6.current.offsetTop)
+                    })
+                }
+            )
+        }, []
+    )
+
     return (
-        <section className="mainConts6">
+        <section ref={conts6} className="mainConts6">
             <div className="inner1">
                 <div className="cont">
                     <h1 className='tit'>Let's make something great!</h1>

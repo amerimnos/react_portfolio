@@ -1,10 +1,29 @@
+import { useEffect, useRef } from 'react';
 import { ReactComponent as BgIcon2 } from '../main_bg.svg';
 
-function MainConts3() {
+function MainConts3(props) {
+
+    let conts3 = useRef(null);
+    useEffect(
+        () => {
+            props.SetPos3(conts3.current.offsetTop)
+            window.addEventListener('resize', () => {
+                props.SetPos3(conts3.current.offsetTop)
+            })
+
+            return (
+                ()=>{
+                    window.removeEventListener('resize', () => {
+                        props.SetPos3(conts3.current.offsetTop)
+                    })
+                }
+            )
+        }, []
+    )
 
     const url = process.env.PUBLIC_URL;
     return (
-        <section className="mainConts3">
+        <section ref={conts3} className="mainConts3">
             <div className="inner">
                 <h1>Working process</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci saepe earum accusamus beatae blanditiis illo maiores libero.</p>
