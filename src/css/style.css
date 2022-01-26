@@ -27,6 +27,10 @@ caption {
   font-size: 0;
 }
 
+body.isScroll {
+  overflow: hidden;
+}
+
 header {
   position: relative;
   width: 100%;
@@ -34,7 +38,7 @@ header {
   z-index: 1;
 }
 header.sub .inner {
-  padding: 20px 0;
+  padding: 20px;
 }
 header .inner {
   display: flex;
@@ -152,7 +156,7 @@ header .totalMenuBtn {
   border-bottom: solid 2px #000;
   background-color: transparent;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.5s;
 }
 header .totalMenuBtn::before {
   content: "";
@@ -184,14 +188,13 @@ header .totalMenuBtn.on {
 header .totalMenuBtn.on::before {
   width: 140%;
   transform: rotateZ(45deg);
+  background: #fff;
 }
 header .totalMenuBtn.on::after {
   width: 140%;
   top: calc(100% - 1px);
   transform: rotateZ(-45deg);
-}
-header .totalMenuConts {
-  display: none;
+  background: #fff;
 }
 
 @media screen and (max-width: 1439px) {
@@ -221,6 +224,7 @@ header .totalMenuConts {
   }
   header .logo {
     width: initial;
+    margin-left: 0;
   }
   header .gnb {
     display: none;
@@ -229,23 +233,134 @@ header .totalMenuConts {
     display: none;
   }
   header .totalMenuBtn {
-    margin-right: 40px;
+    margin-right: 0px;
     display: block;
   }
-}
-@media screen and (max-width: 991px) {
-  header .inner {
-    justify-content: space-between;
-    padding: 20px;
+
+  header.mobile {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #1f2c20bf;
+    backdrop-filter: blur(3px);
+    z-index: 34;
+    align-items: center;
+    justify-content: center;
   }
-  header .logo {
-    margin-left: 0;
+  header.mobile .totalMenuBtn {
+    position: absolute;
+    right: 23px;
+    top: 30px;
   }
-  header .gnb {
+  header.mobile .totalMenuBtn::before {
+    color: #fff;
+  }
+  header.mobile .totalMenuBtn::after {
+    color: #fff;
+  }
+  header.mobile .inner {
+    display: flex;
+    width: 100%;
+    margin: 40px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  header.mobile .logo {
+    width: 100%;
+    margin-bottom: 40px;
+    font-size: 37px;
+    color: #fff;
+    text-align: center;
+  }
+  header.mobile .logo span {
+    padding-left: 5px;
+    color: #baf0b0;
+  }
+  header.mobile .gnb {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  header.mobile .gnb .line {
     display: none;
   }
-  header .totalMenuBtn {
-    margin-right: 0px;
+  header.mobile .gnb li {
+    width: 112px;
+    margin: 20px auto;
+    padding-bottom: 7px;
+    text-align: center;
+    color: #b1d2d3;
+    border-bottom: dotted 2px #7b7b7b;
+  }
+  header.mobile .gnb li a:hover {
+    color: #2bae29;
+  }
+  header.mobile .join {
+    display: flex;
+    justify-content: center;
+    width: initial;
+    overflow: hidden;
+    margin: 26px 0 0 0;
+    padding: 9px 20px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    border: solid 1px #e0e7e1;
+    border-radius: 100px;
+    color: #c2d9d9;
+    transition: all 0.5s;
+    align-items: center;
+  }
+  header.mobile .join span {
+    opacity: 0;
+    color: inherit;
+    transform: translate3d(0, -10px, 0);
+    transition: transform 0.3s, opacity 0.3s;
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  }
+  header.mobile .join::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 9px 0;
+    color: inherit;
+    transition: transform 0.3s, opacity 0.3s;
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  }
+  header.mobile .join:hover {
+    color: #bee78e;
+    border: solid 1px #bee78e;
+  }
+  header.mobile .join:hover::before {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  header.mobile .join:hover span {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  header.mobile .join:hover span:nth-child(1) {
+    transition-delay: 0.045s;
+  }
+  header.mobile .join:hover span:nth-child(2) {
+    transition-delay: 0.105s;
+  }
+  header.mobile .join:hover span:nth-child(3) {
+    transition-delay: 0.165s;
+  }
+  header.mobile .join:hover span:nth-child(4) {
+    transition-delay: 0.225s;
+  }
+  header.mobile .join:hover span:nth-child(5) {
+    transition-delay: 0.285s;
   }
 }
 footer {
@@ -5004,51 +5119,51 @@ footer .copy {
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(1) {
   opacity: 0;
-  animation: upAnime 0.3108094189s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.2992489498s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(2) {
   opacity: 0;
-  animation: upAnime 1.7129257262s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.4214814954s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(3) {
   opacity: 0;
-  animation: upAnime 0.7066580218s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.8463871395s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(4) {
   opacity: 0;
-  animation: upAnime 1.1929682528s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.1805501707s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(5) {
   opacity: 0;
-  animation: upAnime 0.508320715s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.246193966s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(6) {
   opacity: 0;
-  animation: upAnime 0.8680589189s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.5612868039s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(7) {
   opacity: 0;
-  animation: upAnime 1.0734791493s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 2.0277852839s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(8) {
   opacity: 0;
-  animation: upAnime 1.6681755469s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.5741097935s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(9) {
   opacity: 0;
-  animation: upAnime 2.1842672378s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.330302082s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(10) {
   opacity: 0;
-  animation: upAnime 1.8291060616s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.873345536s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(11) {
   opacity: 0;
-  animation: upAnime 1.2587755549s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.8664571181s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(12) {
   opacity: 0;
-  animation: upAnime 2.1789512595s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 2.0725290319s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2 .vidItem {
   opacity: 0;

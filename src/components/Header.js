@@ -1,15 +1,23 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 
 function Header(props) {
 
     const clickStyle = { color: "#2bae29" };
     const clickStyle1 = { color: "#2bae29", border: "solid 1px #2bae29" };
+    const header = useRef(null);
     const gnb = useRef(null);
+    const mobileBtn = useRef(null);
     const line = useRef(null);
 
-    function active (e) {
-        e.target.classList.toggle("on");
+    function mobileMenuActive() {
+        if (document.documentElement.clientWidth < 992) {
+            mobileBtn.current.classList.toggle("on");
+            document.querySelector('body').classList.toggle("isScroll");
+            if (props.menuMobile === 'mobile') return props.setMenuMobile('');
+            props.setMenuMobile('mobile');
+            console.log(111);
+        }
     }
 
     function lineMove(e) {
@@ -42,36 +50,27 @@ function Header(props) {
     function firstLoading() {
         props.setCommuFirstContsIsActive('on');
     }
-    
 
     return (
-        <header className={props.frame}>
+        <header ref={header} className={`${props.frame} ${props.menuMobile}`}>
             <div className="inner">
-                <h1 className="logo"><NavLink exact to="/">Amerimnos</NavLink><span>.</span></h1>
+                <h1 onClick={mobileMenuActive} className="logo"><NavLink exact to="/">Amerimnos</NavLink><span>.</span></h1>
                 <ul ref={gnb} onMouseLeave={() => { line.current.classList.remove('on') }} className="gnb">
                     <li ref={line} className="line"></li>
-                    <li><NavLink activeStyle={clickStyle} onMouseEnter={lineMove} to="/department">Department</NavLink></li>
-                    <li><NavLink activeStyle={clickStyle} onClick={firstLoading} onMouseEnter={lineMove} to="/community">Community</NavLink></li>
-                    <li><NavLink activeStyle={clickStyle} onMouseEnter={lineMove} to="/gallery">Gallery</NavLink></li>
-                    <li><NavLink activeStyle={clickStyle} onMouseEnter={lineMove} to="/youtube">Youtube</NavLink></li>
-                    <li><NavLink exact activeStyle={clickStyle} onMouseEnter={lineMove} to="/location">Location</NavLink></li>
+                    <li><NavLink activeStyle={clickStyle} onClick={mobileMenuActive} onMouseEnter={lineMove} to="/department">Department</NavLink></li>
+                    <li><NavLink activeStyle={clickStyle} onClick={() => { firstLoading(); mobileMenuActive() }} onMouseEnter={lineMove} to="/community">Community</NavLink></li>
+                    <li><NavLink activeStyle={clickStyle} onClick={mobileMenuActive} onMouseEnter={lineMove} to="/gallery">Gallery</NavLink></li>
+                    <li><NavLink activeStyle={clickStyle} onClick={mobileMenuActive} onMouseEnter={lineMove} to="/youtube">Youtube</NavLink></li>
+                    <li><NavLink exact activeStyle={clickStyle} onClick={mobileMenuActive} onMouseEnter={lineMove} to="/location">Location</NavLink></li>
                 </ul>
-                <NavLink className="join" exact activeStyle={clickStyle1} to="/Join" data-text="Join">
+                <NavLink className="join" exact activeStyle={clickStyle1} onClick={mobileMenuActive} to="/Join" data-text="Join">
                     <span>J</span>
                     <span>o</span>
                     <span>i</span>
                     <span>n</span>
                     <span className="material-icons-round">arrow_forward_ios</span>
                 </NavLink>
-                <button onClick={active} className="totalMenuBtn"></button>
-                <ul className="totalMenuConts">
-                    <li><NavLink activeStyle={clickStyle} to="/department">Department</NavLink></li>
-                    <li><NavLink activeStyle={clickStyle} onClick={firstLoading} to="/community">Community</NavLink></li>
-                    <li><NavLink activeStyle={clickStyle} to="/gallery">Gallery</NavLink></li>
-                    <li><NavLink activeStyle={clickStyle} to="/youtube">Youtube</NavLink></li>
-                    <li><NavLink activeStyle={clickStyle} to="/location">Location</NavLink></li>
-                    <li><NavLink activeStyle={clickStyle} to="/join">Join</NavLink></li>
-                </ul>
+                <button ref={mobileBtn} onClick={mobileMenuActive} className="totalMenuBtn"></button>
             </div>
         </header>
     )

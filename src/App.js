@@ -15,16 +15,17 @@ import Footer from './components/Footer';
 function App() {
 
     const [commuFirstContsIsActive, setCommuFirstContsIsActive] = useState(null);
+    const [menuMobile,setMenuMobile] = useState('');
 
     return (
         <div className="App">
             <Switch>
                 <Route exact path="/">
-                    <Header frame="main" setCommuFirstContsIsActive={setCommuFirstContsIsActive}></Header>
+                    <Header menuMobile={menuMobile} setMenuMobile={setMenuMobile} frame="main" setCommuFirstContsIsActive={setCommuFirstContsIsActive}></Header>
                     <Main></Main>
                 </Route>
                 <Route path="/">
-                    <Header frame="sub" setCommuFirstContsIsActive={setCommuFirstContsIsActive}></Header>
+                    <Header menuMobile={menuMobile} setMenuMobile={setMenuMobile} frame="sub" setCommuFirstContsIsActive={setCommuFirstContsIsActive}></Header>
                 </Route>
             </Switch>
             <Route path="/community" render={() => <Community setCommuFirstContsIsActive={setCommuFirstContsIsActive} commuFirstContsIsActive={commuFirstContsIsActive} />}></Route>

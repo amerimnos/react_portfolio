@@ -61,8 +61,6 @@ function Youtube() {
         }, 1000);
     }, []);
 
-    console.log('yourtubeData', yourtubeData);
-
     // 랜더링 후 실행 되는 꼼수
     /* setTimeout(() => {
         console.log('4.2 last!');

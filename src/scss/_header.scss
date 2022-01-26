@@ -1,13 +1,17 @@
+body.isScroll{
+    overflow: hidden;
+}
+
 header {
-    position: relative;
-    width: 100%;
-    background: #f6f8f6;
-    z-index: 1;
-    &.sub{
-    	.inner{
-    		padding:20px 0;
-    	}
-    }
+	position: relative;
+	width: 100%;
+	background: #f6f8f6;
+	z-index: 1;
+	&.sub {
+		.inner {
+			padding: 20px;
+		}
+	}
 	.inner {
 		display: flex;
 		width: 1328px;
@@ -48,10 +52,10 @@ header {
 			font-weight: 500;
 			overflow: hidden;
 			transition: all 0.5s;
-			a{
+			a {
 				transition: all 0.5s;
-				&:hover{
-					color:rgb(43, 174, 41);
+				&:hover {
+					color: rgb(43, 174, 41);
 				}
 			}
 		}
@@ -118,15 +122,15 @@ header {
 		}
 	}
 	.totalMenuBtn {
-    display: none;
-    border: none;
-    position: relative;
-    width: 35px;
-    height: 25px;
-    border-bottom: solid 2px #000;
-    background-color: transparent;
-    cursor:pointer;
-    transition:all 0.3s;
+		display: none;
+		border: none;
+		position: relative;
+		width: 35px;
+		height: 25px;
+		border-bottom: solid 2px #000;
+		background-color: transparent;
+		cursor: pointer;
+		transition: all 0.5s;
 		&::before {
 			content: "";
 			display: block;
@@ -157,16 +161,15 @@ header {
 			&::before {
 				width: 140%;
 				transform: rotateZ(45deg);
+				background: #fff;
 			}
 			&::after {
 				width: 140%;
 				top: calc(100% - 1px);
 				transform: rotateZ(-45deg);
+				background: #fff;
 			}
 		}
-	}
-	.totalMenuConts {
-		display: none;
 	}
 }
 
@@ -179,7 +182,7 @@ header {
 
 		.logo {
 			width: 20%;
-			margin-left:40px;
+			margin-left: 40px;
 			font-size: 28px;
 		}
 		.gnb {
@@ -189,7 +192,7 @@ header {
 		}
 		.join {
 			width: 10%;
-			margin-right:20px;
+			margin-right: 20px;
 			padding: 11px 0;
 			font-size: 18px;
 		}
@@ -205,6 +208,7 @@ header {
 
 		.logo {
 			width: initial;
+			margin-left: 0;
 		}
 		.gnb {
 			display: none;
@@ -214,32 +218,142 @@ header {
 		.join {
 			display: none;
 		}
-        .totalMenuBtn{
-        	margin-right:40px;
-            display: block;
-        }
+		.totalMenuBtn {
+			margin-right: 0px;
+			display: block;
+		}
 	}
-}
 
-@media screen and (max-width: $md) {
-	header {
+	header.mobile {
+		display: flex;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background: #1f2c20bf;
+		backdrop-filter: blur(3px);
+		z-index: 34;
+		align-items: center;
+		justify-content: center;
+		.totalMenuBtn {
+			position: absolute;
+			right: 23px;
+			top: 30px;
+			&::before {
+				color: #fff;
+			}
+			&::after {
+				color: #fff;
+			}
+		}
+
 		.inner {
-			justify-content: space-between;
-			padding: 20px;
+			display: flex;
+			width: 100%;
+			margin: 40px;
+			align-items: center;
+			justify-content: center;
+			flex-wrap: wrap;
 		}
 
 		.logo {
-			margin-left:0;
+			width: 100%;
+			margin-bottom: 40px;
+			font-size: 37px;
+			color: #fff;
+			text-align: center;
+			span {
+				padding-left: 5px;
+				color: rgb(186, 240, 176);
+			}
 		}
 		.gnb {
-			display: none;
+			position: relative;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			.line {
+				display: none;
+				&.on {
+				}
+			}
 			li {
+				width: 112px;
+				margin: 20px auto;
+				padding-bottom: 7px;
+				text-align: center;
+				color: #b1d2d3;
+				border-bottom: dotted 2px #7b7b7b;
+				a {
+					&:hover {
+						color: rgb(43, 174, 41);
+					}
+				}
 			}
 		}
 		.join {
+			display: flex;
+			justify-content: center;
+			width: initial;
+			overflow: hidden;
+			margin: 26px 0 0 0;
+			padding: 9px 20px;
+			text-align: center;
+			font-size: 22px;
+			font-weight: 500;
+			border: solid 1px #e0e7e1;
+			border-radius: 100px;
+			color: #c2d9d9;
+			transition: all 0.5s;
+			align-items: center;
+
+			& span {
+				opacity: 0;
+				color: inherit;
+				transform: translate3d(0, -10px, 0);
+				transition: transform 0.3s, opacity 0.3s;
+				transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+			}
+			&::before {
+				content: attr(data-text);
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				padding: 9px 0;
+				color: inherit;
+				transition: transform 0.3s, opacity 0.3s;
+				transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+			}
+			&:hover {
+				color: #bee78e;
+				border: solid 1px #bee78e;
+			}
+			&:hover::before {
+				opacity: 0;
+				transform: translate3d(0, 100%, 0);
+			}
+			&:hover span {
+				opacity: 1;
+				transform: translate3d(0, 0, 0);
+				&:nth-child(1) {
+					transition-delay: 0.045s;
+				}
+				&:nth-child(2) {
+					transition-delay: 0.105s;
+				}
+				&:nth-child(3) {
+					transition-delay: 0.165s;
+				}
+				&:nth-child(4) {
+					transition-delay: 0.225s;
+				}
+				&:nth-child(5) {
+					transition-delay: 0.285s;
+				}
+			}
 		}
-        .totalMenuBtn{
-        	margin-right:0px;
-        }
 	}
 }
