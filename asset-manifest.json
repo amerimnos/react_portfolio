@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react_portfolio/static/css/main.b59066db.css",
-    "main.js": "/react_portfolio/static/js/main.074d71fe.js",
+    "main.js": "/react_portfolio/static/js/main.3db1c3dc.js",
     "static/media/main_bg02.svg": "/react_portfolio/static/media/main_bg02.c10bdc8c0c4f9b0b8143990305ecdd04.svg",
     "static/media/main_bg.svg": "/react_portfolio/static/media/main_bg.73533b07336b8b0dc0e31b60d03f1a44.svg",
     "static/media/KoreaLogo.svg": "/react_portfolio/static/media/KoreaLogo.c7ac662fe6dbbc5df4ae25cfe587edc2.svg",
@@ -14,10 +14,10 @@
     "static/media/KakaoLogo.svg": "/react_portfolio/static/media/KakaoLogo.788e394df962c725518b67fc876d06a2.svg",
     "index.html": "/react_portfolio/index.html",
     "main.b59066db.css.map": "/react_portfolio/static/css/main.b59066db.css.map",
-    "main.074d71fe.js.map": "/react_portfolio/static/js/main.074d71fe.js.map"
+    "main.3db1c3dc.js.map": "/react_portfolio/static/js/main.3db1c3dc.js.map"
   },
   "entrypoints": [
     "static/css/main.b59066db.css",
-    "static/js/main.074d71fe.js"
+    "static/js/main.3db1c3dc.js"
   ]
 }
