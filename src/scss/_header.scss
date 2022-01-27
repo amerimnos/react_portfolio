@@ -252,7 +252,7 @@ header {
 @keyframes menuFadeIn {
 	0% {
 		opacity: 0;
-		transform: translateX(80px);
+		transform: translateX(120px);
 	}
 	100% {
 		transform: translateX(0px);
@@ -315,7 +315,7 @@ header {
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 100vh;
+		height: 100%;
 		z-index: 34;
 		align-items: center;
 		justify-content: center;
@@ -345,7 +345,7 @@ header {
 			position: absolute;
 			display: flex;
 			width: 0;
-			height: 100vh;
+			height: 100%;
 			left: 0;
 			top: 0;
 			padding: 0;
@@ -405,7 +405,7 @@ header {
 			}
 			@for $i from 1 through 6 {
 				li:nth-child(#{$i}) {
-					animation-delay: $i * 0.15s + 0.6s;
+					animation-delay: $i * 0.1s + 0.6s;
 				}
 			}
 		}
@@ -420,12 +420,12 @@ header {
 			text-align: center;
 			font-size: 22px;
 			font-weight: 500;
-			border: solid 1px #e0e7e1;
+			border: solid 1.5px #e0e7e1;
 			border-radius: 100px;
 			color: #c2d9d9;
 			transition: all 0.5s;
 			align-items: center;
-			animation: 0.8s cubic-bezier(0.33, 0, 0.51, 1) 1.7s 1 normal
+			animation: 0.7s cubic-bezier(0.33, 0, 0.51, 1) 1.5s 1 normal
 				forwards menuFadeIn;
 
 			& span {

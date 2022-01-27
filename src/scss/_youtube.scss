@@ -333,14 +333,14 @@
 				}
 			}
 			.vidItem {
-				opacity:0;
-				position: relative;
-				width: 25%;
-				padding-right:20px;
-				margin-bottom: 25px;
-				border-radius: 5px;
-				overflow: hidden;
-				cursor: pointer;
+    opacity: 0;
+    position: relative;
+    width: calc(25% - 25px);
+    margin-right: 25px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
 				&::after {
 					content: "";
 					display: flex;
