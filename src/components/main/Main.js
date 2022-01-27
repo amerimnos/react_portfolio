@@ -32,27 +32,21 @@ function Main() {
     }
 
     function buttonHandler() {
-        console.log(1111111111);
         let btns = scrollBtn.current.querySelectorAll('button');
 
         btns.forEach((element, index) => {
-            console.log(window.pageYOffset, 'window.pageYOffset ');
-
             element.classList.remove('on');
             if (window.pageYOffset >= posArray[index] && window.pageYOffset < posArray[index] + document.documentElement.clientHeight) {
-
                 btns[index].classList.add('on');
             }
         });
     }
-    console.log(window.pageYOffset, 'window.pageYOffset ');
 
     useEffect(
         () => {
             window.addEventListener('scroll', () => {
                 buttonHandler();
             })
-
             return (
                 () => {
                     window.addEventListener('scroll', () => {
