@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react_portfolio/static/css/main.abc1b31c.css",
-    "main.js": "/react_portfolio/static/js/main.abceedce.js",
+    "main.css": "/react_portfolio/static/css/main.7d35b1ec.css",
+    "main.js": "/react_portfolio/static/js/main.074d71fe.js",
     "static/media/main_bg02.svg": "/react_portfolio/static/media/main_bg02.c10bdc8c0c4f9b0b8143990305ecdd04.svg",
     "static/media/main_bg.svg": "/react_portfolio/static/media/main_bg.73533b07336b8b0dc0e31b60d03f1a44.svg",
     "static/media/KoreaLogo.svg": "/react_portfolio/static/media/KoreaLogo.c7ac662fe6dbbc5df4ae25cfe587edc2.svg",
@@ -13,11 +13,11 @@
     "static/media/NaverLogo.svg": "/react_portfolio/static/media/NaverLogo.ccf638206c02448795478aa732f19373.svg",
     "static/media/KakaoLogo.svg": "/react_portfolio/static/media/KakaoLogo.788e394df962c725518b67fc876d06a2.svg",
     "index.html": "/react_portfolio/index.html",
-    "main.abc1b31c.css.map": "/react_portfolio/static/css/main.abc1b31c.css.map",
-    "main.abceedce.js.map": "/react_portfolio/static/js/main.abceedce.js.map"
+    "main.7d35b1ec.css.map": "/react_portfolio/static/css/main.7d35b1ec.css.map",
+    "main.074d71fe.js.map": "/react_portfolio/static/js/main.074d71fe.js.map"
   },
   "entrypoints": [
-    "static/css/main.abc1b31c.css",
-    "static/js/main.abceedce.js"
+    "static/css/main.7d35b1ec.css",
+    "static/js/main.074d71fe.js"
   ]
 }
