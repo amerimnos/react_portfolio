@@ -10,7 +10,8 @@ function Main() {
 
     let scrollBtn = useRef(null)
 
-    const [pos1, SetPos1] = useState(0);
+    /* const [pos1, SetPos1] = useState(0); */
+    const pos1 = 0;
     const [pos2, SetPos2] = useState(0);
     const [pos3, SetPos3] = useState(0);
     const [pos4, SetPos4] = useState(0);
@@ -18,7 +19,6 @@ function Main() {
     const [pos6, SetPos6] = useState(0);
 
     const posArray = [pos1, pos2, pos3, pos4, pos5, pos6];
-    console.log(posArray, 'posArray');
     function scrollHandler(e, index) {
         window.scrollTo({
             top: posArray[index],
@@ -36,31 +36,123 @@ function Main() {
 
         btns.forEach((element, index) => {
             element.classList.remove('on');
-            if (window.pageYOffset >= posArray[index] && window.pageYOffset < posArray[index] + document.documentElement.clientHeight) {
+            if (window.pageYOffset >= posArray[index] && window.pageYOffset < posArray[index + 1]) {
                 btns[index].classList.add('on');
             }
         });
     }
 
+    function wheelHandle(e) {
+        e.preventDefault();
+        let currentPos = window.pageYOffset;
+        let whereWheelMove = e.deltaY;
+        if (whereWheelMove < 0) {
+
+            if (currentPos >= pos1 && currentPos < pos2) {
+
+                window.scrollTo({
+                    top: posArray[0],
+                    behavior: 'smooth',
+                })
+            }
+
+            if (currentPos >= pos2 && currentPos < pos3) {
+                window.scrollTo({
+                    top: posArray[0],
+                    behavior: 'smooth',
+                })
+            }
+            if (currentPos >= pos3 && currentPos < pos4) {
+                window.scrollTo({
+                    top: posArray[1],
+                    behavior: 'smooth',
+                })
+            }
+            if (currentPos >= pos4 && currentPos < pos5) {
+                window.scrollTo({
+                    top: posArray[2],
+                    behavior: 'smooth',
+                })
+            }
+            if (currentPos >= pos5 && currentPos < pos6) {
+                window.scrollTo({
+                    top: posArray[3],
+                    behavior: 'smooth',
+                })
+            }
+            if (currentPos >= pos6) {
+                window.scrollTo({
+                    top: posArray[4],
+                    behavior: 'smooth',
+                })
+            }
+        } else {
+            if (currentPos >= pos1 && currentPos < pos2) {
+                window.scrollTo({
+                    top: posArray[1],
+                    behavior: 'smooth',
+                })
+            }
+            if (currentPos >= pos2 && currentPos < pos3) {
+                window.scrollTo({
+                    top: posArray[2],
+                    behavior: 'smooth',
+                })
+            }
+            if (currentPos >= pos3 && currentPos < pos4) {
+                window.scrollTo({
+                    top: posArray[3],
+                    behavior: 'smooth',
+                })
+            }
+            if (currentPos >= pos4 && currentPos < pos5) {
+                window.scrollTo({
+                    top: posArray[4],
+                    behavior: 'smooth',
+                })
+            }
+            if (currentPos >= pos5 && currentPos < pos6) {
+                window.scrollTo({
+                    top: posArray[5],
+                    behavior: 'smooth',
+                })
+            }
+            if (currentPos >= pos6) {
+            }
+        }
+    }
+
+    function handlePointerDown(e) {
+        if (e.pointerType === 'touch') {
+            console.log(e, 'handlePointerDown');
+        }
+    }
+    function handlePointerUp(e) {
+        if (e.pointerType === 'touch') {
+            console.log(e, 'handlePointerUp');
+            alert(1111);
+        }
+    }
+
+
     useEffect(
         () => {
-            window.addEventListener('scroll', () => {
-                buttonHandler();
-            })
-            return (
-                () => {
-                    window.addEventListener('scroll', () => {
-                        buttonHandler();
-                    }
-                    )
-                }
-            )
+            window.addEventListener('scroll', buttonHandler);
+            window.addEventListener('pointerdown', handlePointerDown);
+            window.addEventListener('pointerup', handlePointerUp);
+            window.addEventListener('wheel', wheelHandle, { passive: false });
+
+            return () => {
+
+                window.removeEventListener('scroll', buttonHandler);
+                window.removeEventListener('wheel', wheelHandle, { passive: false });
+            }
         }
-    )
+    );
 
     return (
         <>
-            <MainConts1 SetPos1={SetPos1} />
+            <MainConts1 /* SetPos1={SetPos1} */ />
             <MainConts2 SetPos2={SetPos2} />
             <MainConts3 SetPos3={SetPos3} />
             <MainConts4 SetPos4={SetPos4} />
