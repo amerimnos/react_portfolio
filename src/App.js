@@ -1,7 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 import { useState } from 'react';
 
-import './css/style.css';
+import './scss/style.scss';
 import Header from './components/Header';
 import Main from './components/main/Main';
 import Community from './components/Community';
