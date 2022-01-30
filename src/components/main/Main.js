@@ -22,29 +22,32 @@ function Main() {
 
     const posArray = [pos0, pos1, pos2, pos3, pos4, pos5, pos6];
     function scrollHandler(e, index) {
+        scrollBtn.current.querySelectorAll('button').forEach(element => {
+            element.classList.remove('on');
+        });
         window.scrollTo({
             top: posArray[index],
             behavior: 'smooth',
         })
-
-        scrollBtn.current.querySelectorAll('button').forEach(element => {
-            element.classList.remove('on');
-        });
         e.target.classList.add('on');
     }
 
     function buttonHandler() {
         let btns = scrollBtn.current.querySelectorAll('button');
+        btns.forEach(element => {
+            element.classList.remove('on');
+        });
 
         console.log(window.pageYOffset, 'sdfsdf');
         console.log(document.querySelector('body').scrollHeight - document.documentElement.clientHeight);
 
         btns.forEach((element, index) => {
-            element.classList.remove('on');
+           
             if (window.pageYOffset >= posArray[index] && window.pageYOffset < posArray[index + 1]) {
                 btns[index].classList.add('on');
             }
             if (window.pageYOffset >= (document.querySelector('body').scrollHeight - document.documentElement.clientHeight)) {
+                btns[btns.length - 2].classList.remove('on');
                 btns[btns.length - 1].classList.add('on');
             }
         });
@@ -64,37 +67,38 @@ function Main() {
                 })
             }
 
-            if (currentPos >= pos1 && currentPos < pos2) {
+            // 마지막 단계에서 2단계 윗단계로 건너뛰는 현상 -100 줘서 수정
+            if (currentPos >= pos1 && currentPos < pos2-100) {
                 window.scrollTo({
                     top: posArray[0],
                     behavior: 'smooth',
                 })
             }
-            if (currentPos >= pos2 && currentPos < pos3) {
+            if (currentPos >= pos2 && currentPos < pos3-100) {
                 window.scrollTo({
                     top: posArray[1],
                     behavior: 'smooth',
                 })
             }
-            if (currentPos >= pos3 && currentPos < pos4) {
+            if (currentPos >= pos3 && currentPos < pos4-100) {
                 window.scrollTo({
                     top: posArray[2],
                     behavior: 'smooth',
                 })
             }
-            if (currentPos >= pos4 && currentPos < pos5) {
+            if (currentPos >= pos4 && currentPos < pos5-100) {
                 window.scrollTo({
                     top: posArray[3],
                     behavior: 'smooth',
                 })
             }
-            if (currentPos >= pos5 && currentPos < pos6) {
+            if (currentPos >= pos5 && currentPos < pos6-100) {
                 window.scrollTo({
                     top: posArray[4],
                     behavior: 'smooth',
                 })
             }
-            if (currentPos >= pos6) {
+            if (currentPos >= pos6-100) { 
                 window.scrollTo({
                     top: posArray[5],
                     behavior: 'smooth',
