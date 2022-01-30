@@ -1,17 +1,30 @@
+import { useState } from 'react';
 import { useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 
 function Header(props) {
 
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     const clickStyle = { color: "#2bae29" };
     const clickStyle1 = { color: "#2bae29", border: "solid 1px #2bae29" };
     const header = useRef(null);
+    const logo = useRef(null);
     const gnb = useRef(null);
     const mobileBtn = useRef(null);
     const line = useRef(null);
 
-    function mobileMenuActive() {
+    
+
+    function mobileMenuActive(e) {
         if (document.documentElement.clientWidth < 992) {
+            if(isMenuOpen) {
+                setIsMenuOpen(false);
+            } else {
+                setIsMenuOpen(true);
+            }
+
+            
             mobileBtn.current.classList.toggle("on");
             document.querySelector('body').classList.toggle("isScroll");
             if (props.menuMobile === 'mobile') return props.setMenuMobile('');
@@ -53,7 +66,13 @@ function Header(props) {
     return (
         <header ref={header} className={`${props.frame} ${props.menuMobile}`}>
             <div className="inner">
-                <h1 onClick={mobileMenuActive} className="logo"><NavLink exact to="/">Amerimnos</NavLink><span>.</span></h1>
+                <h1 ref={logo} onClick={
+                    isMenuOpen
+                    ?
+                    e => { mobileMenuActive(e) }
+                    :
+                    null
+                } className="logo"><NavLink exact to="/">Amerimnos</NavLink><span>.</span></h1>
                 <ul ref={gnb} onMouseLeave={() => { line.current.classList.remove('on') }} className="gnb">
                     <li ref={line} className="line"></li>
                     <li><NavLink activeStyle={clickStyle} onClick={mobileMenuActive} onMouseEnter={lineMove} to="/department">Department</NavLink></li>

@@ -1406,6 +1406,29 @@
 			}
 		}
 	}
+
+    .scrollBtn {
+    display: flex;
+    position: fixed;
+    right: 50%;
+    top: calc(100% - 40px);
+    height: auto;
+    width: 250px;
+    transform: translate(50%, 0px);
+    flex-direction: row;
+        button {
+            width: 15px;
+            height: 15px;
+            border-radius: 100px;
+            border: none;
+            background: #3e5f71;
+            transition: all 0.3s;
+            &.on {
+                height: initial;
+                width: 35px;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: $md) {
