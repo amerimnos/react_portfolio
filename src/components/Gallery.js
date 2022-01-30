@@ -137,7 +137,6 @@ function Gallery() {
                             onImagesLoaded={()=>{
                                 setTimeout(() => {
                                     if (left.current.classList.contains('on')) {
-                                        console.log(1111);
                                         const leftMasonryElem = leftMasonry.current.masonry.element;
                                         const rightMasonryElem = rightMasonry.current.masonry.element;
                                         let elemHeight = leftMasonryElem.getBoundingClientRect().height;

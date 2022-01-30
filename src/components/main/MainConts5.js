@@ -9,15 +9,15 @@ export function MainConts5(props) {
     let conts5 = useRef(null);
     useEffect(
         () => {
-            props.SetPos5(conts5.current.offsetTop)
+            props.SetPos4(conts5.current.offsetTop)
             window.addEventListener('resize', () => {
-                props.SetPos5(conts5.current.offsetTop)
+                props.SetPos4(conts5.current.offsetTop)
             })
 
             return (
                 ()=>{
                     window.removeEventListener('resize', () => {
-                        props.SetPos5(conts5.current.offsetTop)
+                        props.SetPos4(conts5.current.offsetTop)
                     })
                 }
             )

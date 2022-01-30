@@ -666,6 +666,7 @@ footer .copy {
   background: #f6f8f6;
   align-items: center;
   justify-content: center;
+  touch-action: none;
 }
 .mainConts1 .inner {
   position: relative;
@@ -795,6 +796,7 @@ footer .copy {
   background: #fbfbfc;
   align-items: center;
   justify-content: center;
+  touch-action: none;
 }
 .mainConts2 .inner {
   width: 1200px;
@@ -912,6 +914,7 @@ footer .copy {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  touch-action: none;
 }
 .mainConts3 .inner {
   width: 1200px;
@@ -1049,6 +1052,7 @@ footer .copy {
   background: #fff;
   align-items: center;
   justify-content: center;
+  touch-action: none;
 }
 .mainConts4 .inner {
   display: flex;
@@ -1274,7 +1278,7 @@ footer .copy {
   transition: all 0.5s;
 }
 .mainConts4 #popup {
-  display: flex;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -1288,6 +1292,7 @@ footer .copy {
   z-index: -1;
 }
 .mainConts4 #popup.on {
+  display: flex;
   animation: 0.5s fadeIn both;
 }
 .mainConts4 #popup.off {
@@ -1324,6 +1329,7 @@ footer .copy {
   background: #f6f8f6;
   align-items: center;
   justify-content: center;
+  touch-action: none;
 }
 .mainConts5 .inner {
   width: 1200px;
@@ -1514,6 +1520,7 @@ footer .copy {
   justify-content: center;
   flex-wrap: wrap;
   align-content: flex-start;
+  touch-action: none;
 }
 .mainConts6 .inner1 {
   position: relative;
@@ -5268,51 +5275,51 @@ footer .copy {
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(1) {
   opacity: 0;
-  animation: upAnime 1.745956179s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.9003538321s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(2) {
   opacity: 0;
-  animation: upAnime 0.163122559s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.9810895526s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(3) {
   opacity: 0;
-  animation: upAnime 0.7705995972s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.1148135382s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(4) {
   opacity: 0;
-  animation: upAnime 1.6951913915s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 2.137210243s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(5) {
   opacity: 0;
-  animation: upAnime 2.1665877002s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.9224768782s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(6) {
   opacity: 0;
-  animation: upAnime 0.1374860397s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 2.0566797733s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(7) {
   opacity: 0;
-  animation: upAnime 0.2630994245s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.7074369248s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(8) {
   opacity: 0;
-  animation: upAnime 2.0939767877s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.2133056912s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(9) {
   opacity: 0;
-  animation: upAnime 1.3538786324s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.8611673847s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(10) {
   opacity: 0;
-  animation: upAnime 1.0274201935s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 2.0668059356s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(11) {
   opacity: 0;
-  animation: upAnime 2.279710015s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.8661441001s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(12) {
   opacity: 0;
-  animation: upAnime 2.2437431204s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.3083314367s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2 .vidItem {
   opacity: 0;
@@ -5441,10 +5448,11 @@ footer .copy {
   }
   99% {
     z-index: 20;
+    opacity: 0;
   }
   100% {
     z-index: -1;
-    opacity: 0;
+    display: none;
   }
 }
 .locationConts {

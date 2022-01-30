@@ -14,15 +14,15 @@ export function MainConts6(props) {
     let conts6 = useRef(null);
     useEffect(
         () => {
-            props.SetPos6(conts6.current.offsetTop)
+            props.SetPos5(conts6.current.offsetTop)
             window.addEventListener('resize', () => {
-                props.SetPos6(conts6.current.offsetTop)
+                props.SetPos5(conts6.current.offsetTop)
             })
 
             return (
                 ()=>{
                     window.removeEventListener('resize', () => {
-                        props.SetPos6(conts6.current.offsetTop)
+                        props.SetPos5(conts6.current.offsetTop)
                     })
                 }
             )

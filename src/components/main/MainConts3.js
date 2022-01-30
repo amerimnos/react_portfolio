@@ -6,15 +6,15 @@ function MainConts3(props) {
     let conts3 = useRef(null);
     useEffect(
         () => {
-            props.SetPos3(conts3.current.offsetTop)
+            props.SetPos2(conts3.current.offsetTop)
             window.addEventListener('resize', () => {
-                props.SetPos3(conts3.current.offsetTop)
+                props.SetPos2(conts3.current.offsetTop)
             })
 
             return (
                 ()=>{
                     window.removeEventListener('resize', () => {
-                        props.SetPos3(conts3.current.offsetTop)
+                        props.SetPos2(conts3.current.offsetTop)
                     })
                 }
             )

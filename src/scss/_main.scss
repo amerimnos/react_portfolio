@@ -6,6 +6,7 @@
 	background: #f6f8f6;
 	align-items: center;
 	justify-content: center;
+	touch-action: none;
 	.inner {
 		position: relative;
 		display: flex;
@@ -136,6 +137,7 @@
 	background: #fbfbfc;
 	align-items: center;
 	justify-content: center;
+	touch-action: none;
 	.inner {
 		width: 1200px;
 	}
@@ -255,6 +257,7 @@
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
+	touch-action: none;
 	.inner {
 		width: 1200px;
 		> h1 {
@@ -403,6 +406,7 @@
 	background: #fff;
 	align-items: center;
 	justify-content: center;
+	touch-action: none;
 	.inner {
 		display: flex;
 		width: 1200px;
@@ -635,7 +639,7 @@
 	}
 
 	#popup {
-		display: flex;
+		display: none;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -649,6 +653,7 @@
 		z-index: -1;
 
 		&.on {
+			display: flex;
 			animation: 0.5s fadeIn both;
 		}
 		&.off {
@@ -688,6 +693,7 @@
 	background: #f6f8f6;
 	align-items: center;
 	justify-content: center;
+	touch-action: none;
 	.inner {
 		width: 1200px;
 		> h1 {
@@ -885,6 +891,7 @@
 	justify-content: center;
 	flex-wrap: wrap;
 	align-content: flex-start;
+	touch-action: none;
 	.inner1 {
 		position: relative;
 		display: flex;
@@ -1040,7 +1047,7 @@
 	transform: translateY(-50%);
 	flex-direction: column;
 	justify-content: space-around;
-    z-index: 2;
+	z-index: 2;
 	button {
 		width: 15px;
 		height: 15px;
@@ -2443,5 +2450,7 @@
 		}
 	}
 
-    .scrollBtn {display: none;}
+	.scrollBtn {
+		display: none;
+	}
 }
