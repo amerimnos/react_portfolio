@@ -14,17 +14,17 @@ function Header(props) {
     const mobileBtn = useRef(null);
     const line = useRef(null);
 
-    
+
 
     function mobileMenuActive(e) {
         if (document.documentElement.clientWidth < 992) {
-            if(isMenuOpen) {
+            if (isMenuOpen) {
                 setIsMenuOpen(false);
             } else {
                 setIsMenuOpen(true);
             }
 
-            
+
             mobileBtn.current.classList.toggle("on");
             document.querySelector('body').classList.toggle("isScroll");
             if (props.menuMobile === 'mobile') return props.setMenuMobile('');
@@ -68,10 +68,10 @@ function Header(props) {
             <div className="inner">
                 <h1 ref={logo} onClick={
                     isMenuOpen
-                    ?
-                    e => { mobileMenuActive(e) }
-                    :
-                    null
+                        ?
+                        e => { mobileMenuActive(e) }
+                        :
+                        null
                 } className="logo"><NavLink exact to="/">Amerimnos</NavLink><span>.</span></h1>
                 <ul ref={gnb} onMouseLeave={() => { line.current.classList.remove('on') }} className="gnb">
                     <li ref={line} className="line"></li>

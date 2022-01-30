@@ -43,7 +43,7 @@ header::before {
   position: absolute;
   top: 0;
   left: -100%;
-  width: 100%;
+  width: 50%;
   height: 0;
   background: linear-gradient(270deg, transparent, #009688, transparent);
 }
@@ -52,11 +52,10 @@ header::after {
   display: block;
   position: absolute;
   top: 0;
-  right: -100%;
-  width: 100%;
+  right: 0%;
+  width: 50%;
   height: 0;
   background: linear-gradient(270deg, transparent, #4caf50, transparent);
-  transition: all 1.2s;
 }
 header.sub .inner {
   padding: 20px;
@@ -239,7 +238,7 @@ header .totalMenuBtn.on::after {
   }
   99% {
     height: 100vh;
-    right: 200%;
+    right: 150%;
   }
   100% {
     height: 0;
@@ -362,7 +361,7 @@ header .totalMenuBtn.on::after {
     backdrop-filter: blur(3px);
     justify-content: center;
     overflow: hidden;
-    animation: 0.3s cubic-bezier(0.33, 0, 0.51, 1) 0.5s 1 normal both mobileMainBg;
+    animation: 1s cubic-bezier(0.33, 0, 0.51, 1) 0.5s 1 normal both mobileMainBg;
     flex-wrap: wrap;
     align-items: center;
     align-content: center;
@@ -374,7 +373,7 @@ header .totalMenuBtn.on::after {
     font-size: 37px;
     color: #fff;
     text-align: center;
-    animation: 0.8s cubic-bezier(0.33, 0, 0.51, 1) 0.7s 1 normal forwards menuFadeIn;
+    animation: 1s cubic-bezier(0.33, 0, 0.51, 1) 1.5s 1 normal forwards menuFadeIn;
   }
   header.mobile .logo span {
     padding-left: 5px;
@@ -392,7 +391,7 @@ header .totalMenuBtn.on::after {
   }
   header.mobile .gnb li {
     opacity: 0;
-    animation: 0.8s cubic-bezier(0.33, 0, 0.51, 1) normal forwards menuFadeIn;
+    animation: 1s cubic-bezier(0.33, 0, 0.51, 1) 1 normal forwards menuFadeIn;
     width: 112px;
     margin: 20px auto;
     padding-bottom: 7px;
@@ -404,22 +403,22 @@ header .totalMenuBtn.on::after {
     color: #2bae29;
   }
   header.mobile .gnb li:nth-child(1) {
-    animation-delay: 0.7s;
+    animation-delay: 1.6s;
   }
   header.mobile .gnb li:nth-child(2) {
-    animation-delay: 0.8s;
+    animation-delay: 1.7s;
   }
   header.mobile .gnb li:nth-child(3) {
-    animation-delay: 0.9s;
+    animation-delay: 1.8s;
   }
   header.mobile .gnb li:nth-child(4) {
-    animation-delay: 1s;
+    animation-delay: 1.9s;
   }
   header.mobile .gnb li:nth-child(5) {
-    animation-delay: 1.1s;
+    animation-delay: 2s;
   }
   header.mobile .gnb li:nth-child(6) {
-    animation-delay: 1.2s;
+    animation-delay: 2.1s;
   }
   header.mobile .join {
     opacity: 0;
@@ -437,7 +436,7 @@ header .totalMenuBtn.on::after {
     color: #c2d9d9;
     transition: all 0.5s;
     align-items: center;
-    animation: 0.7s cubic-bezier(0.33, 0, 0.51, 1) 1.5s 1 normal forwards menuFadeIn;
+    animation: 0.7s cubic-bezier(0.33, 0, 0.51, 1) 2.2s 1 normal forwards menuFadeIn;
   }
   header.mobile .join span {
     opacity: 0;
@@ -5306,51 +5305,51 @@ footer .copy {
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(1) {
   opacity: 0;
-  animation: upAnime 2.1658684607s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.7196029253s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(2) {
   opacity: 0;
-  animation: upAnime 1.1843491272s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.2403265415s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(3) {
   opacity: 0;
-  animation: upAnime 0.6653384964s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.6893192342s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(4) {
   opacity: 0;
-  animation: upAnime 1.7838395041s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.4485644082s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(5) {
   opacity: 0;
-  animation: upAnime 1.3820235469s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.7458332029s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(6) {
   opacity: 0;
-  animation: upAnime 1.2150329255s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.7568987561s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(7) {
   opacity: 0;
-  animation: upAnime 1.7490953709s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.9131182665s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(8) {
   opacity: 0;
-  animation: upAnime 2.0536265664s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.3460357085s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(9) {
   opacity: 0;
-  animation: upAnime 0.6808279804s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.4661238663s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(10) {
   opacity: 0;
-  animation: upAnime 1.9376579896s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.2843172241s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(11) {
   opacity: 0;
-  animation: upAnime 0.2187886377s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 0.8488982099s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2.on .vidItem:nth-child(12) {
   opacity: 0;
-  animation: upAnime 2.0240851877s ease-in-out 0.8s 1 forwards;
+  animation: upAnime 1.76573397s ease-in-out 0.8s 1 forwards;
 }
 .youtubeConts main .videosConts2 .vidItem {
   opacity: 0;
