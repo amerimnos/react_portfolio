@@ -248,16 +248,18 @@ function Main() {
     }
 
     useEffect(() => {
-        handleTouch();
+        if (document.documentElement.clientWidth > 575) handleTouch();
     }, [touchUpPos]);
 
 
     useEffect(
         () => {
-            window.addEventListener('scroll', buttonHandler);
-            window.addEventListener('pointerdown', handlePointerDown);
-            window.addEventListener('pointerup', handlePointerUp);
-            window.addEventListener('wheel', wheelHandle, { passive: false });
+            if (document.documentElement.clientWidth > 575) {
+                window.addEventListener('scroll', buttonHandler);
+                window.addEventListener('pointerdown', handlePointerDown);
+                window.addEventListener('pointerup', handlePointerUp);
+                window.addEventListener('wheel', wheelHandle, { passive: false });
+            }
 
             return () => {
                 window.addEventListener('pointerdown', handlePointerDown);

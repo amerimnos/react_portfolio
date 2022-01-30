@@ -2076,6 +2076,7 @@
 		overflow: hidden;
 		height: 100%;
 		padding: 0;
+		touch-action: initial;
 		.inner {
 			padding: 50px 20px;
 		}
@@ -2127,6 +2128,7 @@
 	.mainConts2 {
 		height: 100%;
 		padding: 0;
+		touch-action: initial;
 		.inner {
 			padding: 40px 20px;
 		}
@@ -2178,6 +2180,7 @@
 
 	.mainConts3 {
 		height: 100%;
+		touch-action: initial;
 		.inner {
 			padding: 40px 20px;
 			> h1 {
@@ -2248,6 +2251,7 @@
 	.mainConts4 {
 		height: 100%;
 		padding: 0;
+		touch-action: initial;
 		.inner {
 			padding: 40px 20px;
 			> p {
@@ -2320,6 +2324,7 @@
 
 	.mainConts5 {
 		height: 100%;
+		touch-action: initial;
 		.inner {
 			margin: 40px 0;
 			> h1 {
@@ -2396,6 +2401,7 @@
 
 	.mainConts6 {
 		height: 100%;
+		touch-action: initial;
 		.inner1 {
 			height: 300px;
 			padding: 0 20px;

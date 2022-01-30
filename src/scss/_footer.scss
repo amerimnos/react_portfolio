@@ -2,6 +2,7 @@ footer {
     width: 100%;
     padding: 126px 0;
     border-top: solid 1px #4a6869;
+	touch-action: none;
 	.inner {
 		display: flex;
 		flex-wrap: wrap;
@@ -227,6 +228,7 @@ footer {
 @media screen and (max-width: $xs) {
 	footer {
 		padding: 45px 20px;
+		touch-action: initial;
 		.inner {
 		}
 		.info {
