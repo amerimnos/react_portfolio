@@ -107,8 +107,6 @@ function FreeBoard() {
                 <li class="first"><i class="fas fa-angle-double-left" aria-hidden="true"></i></li>
                 <li class="prev"><i class="fas fa-angle-left" aria-hidden="true"></i></li>
                 <li class="num">1</li>
-                <li class="num">2</li>
-                <li class="num">3</li>
                 <li class="next"><i class="fas fa-angle-right" aria-hidden="true"></i></li>
                 <li class="last"><i class="fas fa-angle-double-right" aria-hidden="true"></i></li>
             </ul>

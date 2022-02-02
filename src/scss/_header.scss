@@ -13,9 +13,9 @@ header {
 		position: absolute;
 		top: 0;
 		left: -100%;
-		width: 50%;
+		width: 100%;
 		height: 0;
-		background: linear-gradient(270deg, transparent, #009688, transparent);
+		background: linear-gradient(270deg, transparent, #cddc39, transparent);
 	}
 	&::after {
 		content: "";
@@ -23,7 +23,7 @@ header {
 		position: absolute;
 		top: 0;
 		right: 0%;
-		width: 50%;
+		width: 100%;
 		height: 0;
 		background: linear-gradient(270deg, transparent, #4caf50, transparent);
 	}
@@ -198,13 +198,9 @@ header {
 		height: 100vh;
 		left: -100%;
 	}
-	99% {
+	100% {
 		height: 100vh;
 		left: 100%;
-	}
-	100% {
-		height: 0;
-		left: -100%;
 	}
 }
 
@@ -213,13 +209,9 @@ header {
 		height: 100vh;
 		right: -100%;
 	}
-	99% {
-		height: 100vh;
-		right: 150%;
-	}
 	100% {
-		height: 0;
-		left: -100%;
+		height: 100vh;
+		right: 200%;
 	}
 }
 
@@ -321,11 +313,11 @@ header {
 		background-color: transparent;
 
 		&::before {
-			animation: 1.5s cubic-bezier(0.33, 0, 0.51, 1) 0s 1 normal forwards
+			animation: 1.5312s cubic-bezier(0.33, 0, 0.51, 1) 0s 1 normal forwards
 				mobileLeftBg;
 		}
 		&::after {
-			animation: 1.5s cubic-bezier(0.33, 0, 0.51, 1) 0s 1 normal forwards
+			animation: 2.32s cubic-bezier(0.33, 0, 0.51, 1) 0s 1 normal forwards
 				mobileRightBg;
 		}
 		.totalMenuBtn {
@@ -424,7 +416,7 @@ header {
 			color: #c2d9d9;
 			transition: all 0.5s;
 			align-items: center;
-			animation: 0.7s cubic-bezier(0.33, 0, 0.51, 1) 2.2s 1 normal
+			animation: 1s cubic-bezier(0.33, 0, 0.51, 1) 2.2s 1 normal
 				forwards menuFadeIn;
 
 			& span {

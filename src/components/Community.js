@@ -1,8 +1,4 @@
 
-/* 
-/react_portfolio#/community 에서 새로고침시 스테이트 값 유지를 못하므로, 추후에 로콜스토리지나 리덕스 라이브러리 배우면 그때 적용 하자!
-*/
-
 import { Route, NavLink } from 'react-router-dom';
 import Faq from './Faq';
 import NoticeBoard from './NoticeBoard';
@@ -19,6 +15,9 @@ function Community(props) {
         backgroundColor: "#234c22",
         color: "#fff",
     }
+
+    let firstContsParams = new URLSearchParams(document.location.search);
+    props.setCommuFirstContsIsActive(firstContsParams.get("firstConst"));
 
     useEffect(() => {
         if (props.commuFirstContsIsActive === 'on') {
