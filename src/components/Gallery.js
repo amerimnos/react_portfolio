@@ -134,16 +134,18 @@ function Gallery() {
                             options={masonryOptions1} // default {}
                             disableImagesLoaded={false} // default false
                             updateOnEachImageLoad={true} // default false and works only if disableImagesLoaded is false
-                            onImagesLoaded={()=>{
-                                setTimeout(() => {
-                                    if (left.current.classList.contains('on')) {
-                                        const leftMasonryElem = leftMasonry.current.masonry.element;
-                                        const rightMasonryElem = rightMasonry.current.masonry.element;
-                                        let elemHeight = leftMasonryElem.getBoundingClientRect().height;
-                                        right.current.style.height = `${elemHeight}px`;
-                                        rightMasonryElem.style.height = `${elemHeight}px`;
-                                    }
-                                }, 800)
+                            onImagesLoaded={() => {
+                                if (document.documentElement.clientWidth > 767) {
+                                    setTimeout(() => {
+                                        if (left.current.classList.contains('on')) {
+                                            const leftMasonryElem = leftMasonry.current.masonry.element;
+                                            const rightMasonryElem = rightMasonry.current.masonry.element;
+                                            let elemHeight = leftMasonryElem.getBoundingClientRect().height;
+                                            right.current.style.height = `${elemHeight}px`;
+                                            rightMasonryElem.style.height = `${elemHeight}px`;
+                                        }
+                                    }, 800)
+                                }
                             }}
                             enableResizableChildren={masonryResize} //부모 가로 사이즈에 반응함.
                         >
@@ -256,14 +258,17 @@ function Gallery() {
                     setItem1(json.data.photos.photo);
                 })
             .then(
-
-
                 setTimeout(() => {
-                    if (document.documentElement.clientWidth > 575) {
+                    if (document.documentElement.clientWidth > 767) {
                         const leftMasonryElem = leftMasonry.current.masonry.element;
                         const rightMasonryElem = rightMasonry.current.masonry.element;
                         let elemHeight = leftMasonryElem.getBoundingClientRect().height;
                         rightMasonryElem.style.height = `${elemHeight}px`;
+                    } else {
+                        right.current.classList.add('on');
+                        left.current.classList.add('on');
+                        right.current.classList.remove('off');
+                        left.current.classList.remove('off');
                     }
                 }, 2500)
             );
@@ -284,74 +289,88 @@ function Gallery() {
             .then(
                 //첫 페이지 로딩시 Masonry 높이값 맞추기
                 setTimeout(() => {
-                    if (document.documentElement.clientWidth > 575) {
+                    if (document.documentElement.clientWidth > 767) {
                         const leftMasonryElem = leftMasonry.current.masonry.element;
                         const rightMasonryElem = rightMasonry.current.masonry.element;
                         let elemHeight = leftMasonryElem.getBoundingClientRect().height;
                         right.current.style.height = `${elemHeight}px`;
                         rightMasonryElem.style.height = `${elemHeight}px`;
+                    } else {
+                        right.current.classList.add('on');
+                        left.current.classList.add('on');
+                        right.current.classList.remove('off');
+                        left.current.classList.remove('off');
                     }
                 }, 1000)
             );
     }
 
     async function mouseInRight() {
-        if (document.documentElement.clientWidth < 575) {
+        if (document.documentElement.clientWidth > 767) {
+
+            setMasonryResize(false);
+
+            galleryConts2.current.classList.add('dark');
+            right.current.classList.add('on');
+            right.current.classList.remove('off');
+            left.current.classList.remove('on');
+            left.current.classList.add('off');
+
+            await new Promise((resolve) => {
+                setTimeout(() => resolve(setMasonryResize(true)), 500)
+            });
+            await new Promise((resolve) => {
+                setTimeout(() => resolve(), 1100)
+            });
+            const leftMasonryElem = leftMasonry.current.masonry.element;
+            const rightMasonryElem = rightMasonry.current.masonry.element;
+            let rightTitHeight = rightTit.current.getBoundingClientRect().height;
+            let leftTitHeight = leftTit.current.getBoundingClientRect().height;
+            let elemHeight = rightMasonryElem.getBoundingClientRect().height;
+
+            left.current.closest('.inner').style.height = `auto`;
+            left.current.style.height = (elemHeight + leftTitHeight) + "px";
+            right.current.style.height = (elemHeight + rightTitHeight) + "px";
+            leftMasonryElem.style.height = `${elemHeight}px`;
+        } else {
             galleryConts2.current.classList.add('dark');
             return;
         }
-        setMasonryResize(false);
-
-        galleryConts2.current.classList.add('dark');
-        right.current.classList.add('on');
-        right.current.classList.remove('off');
-        left.current.classList.remove('on');
-        left.current.classList.add('off');
-
-        await new Promise((resolve) => {
-            setTimeout(() => resolve(setMasonryResize(true)), 500)
-        });
-        await new Promise((resolve) => {
-            setTimeout(() => resolve(), 1100)
-        });
-        const leftMasonryElem = leftMasonry.current.masonry.element;
-        const rightMasonryElem = rightMasonry.current.masonry.element;
-        let rightTitHeight = rightTit.current.getBoundingClientRect().height;
-        let leftTitHeight = leftTit.current.getBoundingClientRect().height;
-        let elemHeight = rightMasonryElem.getBoundingClientRect().height;
-
-        left.current.closest('.inner').style.height = `auto`;
-        left.current.style.height = (elemHeight + leftTitHeight) + "px";
-        right.current.style.height = (elemHeight + rightTitHeight) + "px";
-        leftMasonryElem.style.height = `${elemHeight}px`;
     }
+
     async function mouseInLeft() {
-        if (document.documentElement.clientWidth < 575) return;
-        setMasonryResize(false);
+        if (document.documentElement.clientWidth > 767) {
+            setMasonryResize(false);
+            galleryConts2.current.classList.remove('dark');
 
-        galleryConts2.current.classList.remove('dark');
-        left.current.classList.add('on');
-        left.current.classList.remove('off');
-        right.current.classList.remove('on');
-        right.current.classList.add('off');
+            left.current.classList.add('on');
+            left.current.classList.remove('off');
+            right.current.classList.remove('on');
+            right.current.classList.add('off');
 
-        await new Promise((resolve) => {
-            setTimeout(() => resolve(setMasonryResize(true)), 500)
-        });
-        await new Promise((resolve) => {
-            setTimeout(() => resolve(), 1100)
-        });
+            await new Promise((resolve) => {
+                setTimeout(() => resolve(setMasonryResize(true)), 500)
+            });
+            await new Promise((resolve) => {
+                setTimeout(() => resolve(), 1100)
+            });
 
-        const leftMasonryElem = leftMasonry.current.masonry.element;
-        const rightMasonryElem = rightMasonry.current.masonry.element;
-        let rightTitHeight = rightTit.current.getBoundingClientRect().height
-        let leftTitHeight = leftTit.current.getBoundingClientRect().height
-        let elemHeight = leftMasonryElem.getBoundingClientRect().height;
+            const leftMasonryElem = leftMasonry.current.masonry.element;
+            const rightMasonryElem = rightMasonry.current.masonry.element;
+            let rightTitHeight = rightTit.current.getBoundingClientRect().height
+            let leftTitHeight = leftTit.current.getBoundingClientRect().height
+            let elemHeight = leftMasonryElem.getBoundingClientRect().height;
 
-        left.current.closest('.inner').style.height = `auto`;
-        left.current.style.height = (elemHeight + leftTitHeight) + "px"; /* `(${elemHeight}+${leftTitHeight})px`; 왜 이거는 안돼??*/
-        right.current.style.height = (elemHeight + rightTitHeight) + "px";
-        rightMasonryElem.style.height = `${elemHeight}px`;
+            left.current.closest('.inner').style.height = `auto`;
+            left.current.style.height = (elemHeight + leftTitHeight) + "px"; /* `(${elemHeight}+${leftTitHeight})px`; 왜 이거는 안돼??*/
+            right.current.style.height = (elemHeight + rightTitHeight) + "px";
+            rightMasonryElem.style.height = `${elemHeight}px`;
+
+        } else {
+            galleryConts2.current.classList.remove('dark');
+            left.current.classList.remove('off');
+            return;
+        }
 
     }
 
@@ -362,7 +381,6 @@ function Gallery() {
             if (e.code === 'Enter') {
                 tag1 = e.currentTarget.value;
                 leftMasonryTit.current.innerText = tag1;
-
                 let flickrUrl1 = `https://www.flickr.com/services/rest/?&method=${method}&format=json&api_key=${key}&per_page=${per_page}&tags=${tag1}&nojsoncallback=1&privacy_filter=1`;
                 getFlickr1(flickrUrl1);
             }
@@ -401,10 +419,12 @@ function Gallery() {
         let popSrc = e.currentTarget.firstElementChild.firstElementChild.getAttribute('src');
         popSrc = popSrc.replace('z.jpg', 'b.jpg');
         setPopSrc(popSrc);
+        document.querySelector('body').style.overflow = 'hidden';
     }
 
     function popClose(e) {
         setPopOpen(false);
+        document.querySelector('body').style.overflow = 'initial';
     }
 
 }
