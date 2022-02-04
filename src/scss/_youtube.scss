@@ -327,7 +327,7 @@
 					animation: upAnime
 						#{2.3 * math.random($limit: null)}s
 						ease-in-out
-						0.8s
+						0.5s
 						1
 						forwards;
 				}

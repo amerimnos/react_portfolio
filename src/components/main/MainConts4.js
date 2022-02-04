@@ -8,8 +8,9 @@ import { setMainvid, setYoutube } from '../../redux/actions';
 
 function MainConts4(props) {
 
-
     let conts4 = useRef(null);
+    let loadingWrap = useRef(null);
+
     useEffect(
         () => {
             props.SetPos3(conts4.current.offsetTop)
@@ -18,7 +19,7 @@ function MainConts4(props) {
             })
 
             return (
-                ()=>{
+                () => {
                     window.removeEventListener('resize', () => {
                         props.SetPos3(conts4.current.offsetTop)
                     })
@@ -35,6 +36,7 @@ function MainConts4(props) {
     const fetchYoutubeDataMain = useSelector(state => state.mainvidReducer.youtube)
 
     const fetchYoutube = async () => {
+        loadingWrap.current.classList.add('on');
 
         const response1 = await axios
             .get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDYryAlh_1CQbDxO0qTjpOkUrOnX9m12lY&playlistId=PLZ1bji2Kya5NAWrSjX0zKEI_DdF3ndZr3&maxResults=5')
@@ -42,9 +44,16 @@ function MainConts4(props) {
         dispatch(setMainvid(response1.data.items));
         const response = await axios
             .get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDYryAlh_1CQbDxO0qTjpOkUrOnX9m12lY&playlistId=PLZ1bji2Kya5N0QGDU9TL2_L7mrKoDJE7d&maxResults=12')
+            .then(
+                () => {
+                    setTimeout(() => {
+                        loadingWrap.current.classList.remove('on');
+                        loadingWrap.current.classList.add('off');
+                    }, 600);
+                }
+            )
             .catch(err => console.error(err));
         dispatch(setYoutube(response.data.items));
-
 
     }
 
@@ -100,6 +109,10 @@ function MainConts4(props) {
             </div>
 
             <Pop></Pop>
+
+            <div ref={loadingWrap} className="loadingWrap">
+                <div className="loading"></div>
+            </div>
         </section>
     )
 

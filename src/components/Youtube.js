@@ -36,7 +36,6 @@ function Youtube() {
     }
 
     useEffect(() => {
-        loadingWrap.current.classList.add('on');
         videosConts2.current.classList.remove('on');
 
         if (mode === 'dark') {
@@ -53,12 +52,13 @@ function Youtube() {
             }, 100);
         }
 
-        setTimeout(() => {
-            loadingWrap.current.classList.remove('on');
-            setYoutubeDate(yourtubeData);
-            setYoutubeDate2(yourtubeData2);
-            videosConts2.current.classList.add('on');
-        }, 1000);
+        setYoutubeDate(yourtubeData);
+        setYoutubeDate2(yourtubeData2);
+        videosConts2.current.classList.add('on');
+
+        //이미 메인페이지에서 리덕스로 데이터 저장해놨기 때문에 로딩 필요없어 주석처리
+        /* setTimeout(() => {
+        }, 500); */
     }, []);
 
     // 랜더링 후 실행 되는 꼼수
@@ -97,7 +97,7 @@ function Youtube() {
                     // The request was made but no response was received
                     // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
                     // http.ClientRequest in node.js
-                    alert('점검중 입니다. 다른 카테고리를 이용해주세요.');
+                    alert('점검중 입니다. 다른 메뉴를 이용해주세요.');
                     console.log(error.request);
                 } else {
                     // Something happened in setting up the request that triggered an Error
@@ -107,7 +107,6 @@ function Youtube() {
             });
         setTimeout(() => {
             loadingWrap.current.classList.remove('on');
-
         }, 1000);
     }
 
@@ -160,7 +159,7 @@ function Youtube() {
                             Youtube Search button
 
                             {/* 검색 기능 구현 예정 : https://thisisspear.tistory.com/40 */}
-                            <input onClick={() => { alert('get ready') }} type="text" name="youtubeSearch" id="youtubeSearch" placeholder="Search" />
+                            <input onClick={() => { alert('작업중 입니다.') }} type="text" name="youtubeSearch" id="youtubeSearch" placeholder="Search" />
                             <input type="button" value="youtube search button" />
                         </label>
                         <div className="theme">
