@@ -367,6 +367,9 @@ function Location() {
         markerTracker3.run();
         markerTracker4.run();
 
+        //왼쪽 상단 버튼 초기 설정
+        commonMapBtn.current.click();
+
         return () => {
             markerTracker1.stop();
             markerTracker2.stop();
@@ -385,14 +388,14 @@ function Location() {
         //부모의 left 좌표 구함.
         let parentLeft = e.target.closest('.mapSelectBtn').getBoundingClientRect().left;
 
-        //line의 css상의 위치 구함.
+        //heightlight 요소의 위치 구함.
         let moveLeft = elLeft - parentLeft;
 
         //타겟 요소의 넓이 구함.
         let elWidth = e.target.getBoundingClientRect().width;
         let elHeight = e.target.getBoundingClientRect().height;
 
-        //line에 타겟요소 얻은 값 대입.
+        //heightlight 요소에 타겟요소 얻은 값 대입.
         line.current.style.left = moveLeft + 'px';
         line.current.style.width = elWidth + 'px';
         line.current.style.height = elHeight + 'px';
