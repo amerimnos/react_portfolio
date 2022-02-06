@@ -44,16 +44,13 @@ function MainConts4(props) {
         dispatch(setMainvid(response1.data.items));
         const response = await axios
             .get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyDYryAlh_1CQbDxO0qTjpOkUrOnX9m12lY&playlistId=PLZ1bji2Kya5N0QGDU9TL2_L7mrKoDJE7d&maxResults=12')
-            .then(
-                () => {
-                    setTimeout(() => {
-                        loadingWrap.current.classList.remove('on');
-                        loadingWrap.current.classList.add('off');
-                    }, 600);
-                }
-            )
             .catch(err => console.error(err));
-        dispatch(setYoutube(response.data.items));
+
+        setTimeout(() => {
+            loadingWrap.current.classList.remove('on');
+            loadingWrap.current.classList.add('off');
+            dispatch(setYoutube(response.data.items));
+        }, 600);
 
     }
 

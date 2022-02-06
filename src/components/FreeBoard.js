@@ -16,8 +16,8 @@ function FreeBoard() {
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque error quo!</p>
                         </li>
                         <li className="status">
-                            <span class="material-icons">perm_identity</span> Albert
-                            <span class="material-icons-outlined">textsms</span> 3 Comments
+                            <span className="material-icons">perm_identity</span> Albert
+                            <span className="material-icons-outlined">textsms</span> 3 Comments
                         </li>
                         <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                     </ul>
@@ -32,8 +32,8 @@ function FreeBoard() {
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque error quo!</p>
                         </li>
                         <li className="status">
-                            <span class="material-icons">perm_identity</span> Albert
-                            <span class="material-icons-outlined">textsms</span> 3 Comments
+                            <span className="material-icons">perm_identity</span> Albert
+                            <span className="material-icons-outlined">textsms</span> 3 Comments
                         </li>
                         <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                     </ul>
@@ -48,8 +48,8 @@ function FreeBoard() {
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque error quo!</p>
                         </li>
                         <li className="status">
-                            <span class="material-icons">perm_identity</span> Albert
-                            <span class="material-icons-outlined">textsms</span> 3 Comments
+                            <span className="material-icons">perm_identity</span> Albert
+                            <span className="material-icons-outlined">textsms</span> 3 Comments
                         </li>
                         <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                     </ul>
@@ -64,8 +64,8 @@ function FreeBoard() {
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque error quo!</p>
                         </li>
                         <li className="status">
-                            <span class="material-icons">perm_identity</span> Albert
-                            <span class="material-icons-outlined">textsms</span> 3 Comments
+                            <span className="material-icons">perm_identity</span> Albert
+                            <span className="material-icons-outlined">textsms</span> 3 Comments
                         </li>
                         <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                     </ul>
@@ -80,8 +80,8 @@ function FreeBoard() {
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque error quo!</p>
                         </li>
                         <li className="status">
-                            <span class="material-icons">perm_identity</span> Albert
-                            <span class="material-icons-outlined">textsms</span> 3 Comments
+                            <span className="material-icons">perm_identity</span> Albert
+                            <span className="material-icons-outlined">textsms</span> 3 Comments
                         </li>
                         <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                     </ul>
@@ -96,19 +96,19 @@ function FreeBoard() {
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque error quo!</p>
                         </li>
                         <li className="status">
-                            <span class="material-icons">perm_identity</span> Albert
-                            <span class="material-icons-outlined">textsms</span> 3 Comments
+                            <span className="material-icons">perm_identity</span> Albert
+                            <span className="material-icons-outlined">textsms</span> 3 Comments
                         </li>
                         <a href="#n" onClick={() => { alert('to be announced') }} className="viewBtn">view details</a>
                     </ul>
                 </li>
             </ul>
-            <ul class="freeBoardPagiNation">
-                <li class="first"><i class="fas fa-angle-double-left" aria-hidden="true"></i></li>
-                <li class="prev"><i class="fas fa-angle-left" aria-hidden="true"></i></li>
-                <li class="num">1</li>
-                <li class="next"><i class="fas fa-angle-right" aria-hidden="true"></i></li>
-                <li class="last"><i class="fas fa-angle-double-right" aria-hidden="true"></i></li>
+            <ul className="freeBoardPagiNation">
+                <li className="first"><i className="fas fa-angle-double-left" aria-hidden="true"></i></li>
+                <li className="prev"><i className="fas fa-angle-left" aria-hidden="true"></i></li>
+                <li className="num">1</li>
+                <li className="next"><i className="fas fa-angle-right" aria-hidden="true"></i></li>
+                <li className="last"><i className="fas fa-angle-double-right" aria-hidden="true"></i></li>
             </ul>
         </section>
     )

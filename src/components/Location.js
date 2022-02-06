@@ -367,8 +367,11 @@ function Location() {
         markerTracker3.run();
         markerTracker4.run();
 
-        //왼쪽 상단 버튼 초기 설정
-        commonMapBtn.current.click();
+        //왼쪽 상단 버튼 초기 설정. 랜더링시 map을 읽지 못해서 꼼수씀.
+        setTimeout(() => {
+            commonMapBtn.current.click();
+        }, 0);
+
 
         return () => {
             markerTracker1.stop();
@@ -399,8 +402,6 @@ function Location() {
         line.current.style.left = moveLeft + 'px';
         line.current.style.width = elWidth + 'px';
         line.current.style.height = elHeight + 'px';
-
-        map.setCenter(map.getCenter());
 
         const roadmapControl = commonMapBtn.current;
         const skyviewControl = skynMapBtn.current;

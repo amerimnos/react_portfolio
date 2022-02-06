@@ -3,7 +3,7 @@ import { Route, NavLink } from 'react-router-dom';
 import Faq from './Faq';
 import NoticeBoard from './NoticeBoard';
 import FreeBoard from './FreeBoard';
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 function Community(props) {
 
@@ -16,10 +16,11 @@ function Community(props) {
         color: "#fff",
     }
 
-    let firstContsParams = new URLSearchParams(document.location.search);
-    props.setCommuFirstContsIsActive(firstContsParams.get("firstConst"));
+    const firstContsParams = new URLSearchParams(document.location.search);
 
     useEffect(() => {
+        props.setCommuFirstContsIsActive(firstContsParams.get("firstConst"));
+
         if (props.commuFirstContsIsActive === 'on') {
             topConts.current.classList.remove("on");
             commuFirstConts.current.classList.add('on');

@@ -1,0 +1,93 @@
+.popWrap {
+	position: fixed;
+	display: flex;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.7);
+	transition: all 0.7s;
+	opacity: 0;
+	z-index: -1;
+
+	&.on {
+		z-index: 7;
+		opacity: 1;
+	}
+	&.off {
+		animation: 0.7s ease-in 0s 1 normal both running popupFadeOut;
+	}
+}
+
+.popup {
+	width: 600px;
+	margin:20px;
+	padding: 20px;
+	background: #fff;
+	border-radius: 8px;
+	color: rgb(63, 63, 63);
+	.conts {
+		line-height: 1.6;
+		p {
+			margin-bottom: 20px;
+		}
+		.btn {
+			display: flex;
+			width: max-content;
+			align-items: center;
+            margin-top: 3px;
+			padding: 2px 2px 2px 10px;
+			background: #2e956e;
+			color: #fff;
+			transition: all 0.5s;
+			border-radius: 4px;
+			font-size: 15px;
+			font-weight: 300;
+			&:hover {
+				background: #2a85c2;
+			}
+		}
+	}
+	.btnWrap {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 10px;
+		padding-top: 10px;
+		border-top: 1px solid rgb(122, 122, 122);
+		input[type="checkbox"] {
+			margin-left: 10px;
+			width: 20px;
+			height: 20px;
+		}
+	}
+	label {
+		display: flex;
+		align-items: center;
+	}
+	.close {
+		padding: 3px 10px;
+		background: #898989;
+		color: #fff;
+		transition: all 0.5s;
+		border-radius: 4px;
+		&:hover {
+			background: green;
+		}
+	}
+}
+
+@keyframes popupFadeOut {
+	0% {
+		z-index: 7;
+		opacity: 1;
+	}
+	91% {
+		opacity: 0;
+	}
+	100% {
+		display: none;
+	}
+}

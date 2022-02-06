@@ -11,6 +11,7 @@ import Gallery from './components/Gallery';
 import Location from './components/Location';
 import Join from './components/Join';
 import Footer from './components/Footer';
+import Pop from './components/Pop';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
             <Route path="/join" component={Join}></Route>
 
             <Footer></Footer>
+            <Pop></Pop>
         </div>
     );
 }
