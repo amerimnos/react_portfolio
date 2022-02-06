@@ -23,8 +23,8 @@ function Pop() {
     }
 
     return (
-        <div ref={pop} className="popWrap">
-            <div className="popup">
+        <div ref={pop} className="mainPopWrap">
+            <div className="mainPop">
                 <div className="conts">
                     <p> React.js를 활용한 웹 포트폴리오 사이트에 오신 것을 환영합니다!</p>
 
