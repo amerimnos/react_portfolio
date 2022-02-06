@@ -24,6 +24,7 @@ function App() {
                 <Route exact path="/">
                     <Header menuMobile={menuMobile} setMenuMobile={setMenuMobile} frame="main" setCommuFirstContsIsActive={setCommuFirstContsIsActive}></Header>
                     <Main></Main>
+                    <Pop></Pop>
                 </Route>
                 <Route path="/">
                     <Header menuMobile={menuMobile} setMenuMobile={setMenuMobile} frame="sub" setCommuFirstContsIsActive={setCommuFirstContsIsActive}></Header>
@@ -35,9 +36,7 @@ function App() {
             <Route path="/gallery" component={Gallery}></Route>
             <Route path="/location" component={Location}></Route>
             <Route path="/join" component={Join}></Route>
-
             <Footer></Footer>
-            <Pop></Pop>
         </div>
     );
 }
