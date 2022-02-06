@@ -47,9 +47,12 @@ function Pop() {
                 </div>
                 <div className="btnWrap">
                     <label htmlFor="popupCheck">하루 동안 안 보기
-                        <input ref={popupCheck} type="checkbox" id="popupCheck" />
+                        <input ref={popupCheck} type="checkbox" id="popupCheck" tabIndex="0" onKeyDown={
+                            e => { if (e.key === "Enter") e.target.click(); }
+                        } />
                     </label>
-                    <span onClick={closePop} className="close">닫기</span>
+
+                    <button onClick={closePop} className="close">닫기</button>
                 </div>
             </div>
         </div>

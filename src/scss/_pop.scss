@@ -23,7 +23,7 @@
 
 .mainPop {
 	width: 600px;
-	margin:20px;
+	margin: 20px;
 	padding: 20px;
 	background: #fff;
 	border-radius: 8px;
@@ -37,7 +37,7 @@
 			display: flex;
 			width: max-content;
 			align-items: center;
-            margin-top: 3px;
+			margin-top: 3px;
 			padding: 2px 2px 2px 10px;
 			background: #2e956e;
 			color: #fff;
@@ -68,12 +68,13 @@
 		align-items: center;
 	}
 	.close {
-		padding: 3px 10px;
+        border:none;
+		padding: 5px 10px;
 		background: #898989;
 		color: #fff;
 		transition: all 0.5s;
 		border-radius: 4px;
-        cursor: pointer;
+		cursor: pointer;
 		&:hover {
 			background: green;
 		}
