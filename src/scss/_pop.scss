@@ -30,16 +30,31 @@
 	color: rgb(63, 63, 63);
 	.conts {
 		line-height: 1.6;
-		p {
+		.mb20 {
 			margin-bottom: 20px;
+		}
+		.mb5 {
+			margin-bottom: 5px;
+		}
+		strong {
+			display: flex;
+			width: 100%;
+			justify-content: center;
+			margin-bottom: 20px;
+			font-size: 17px;
+			color: #207b58;
+		}
+		.btnConts {
+			display: flex;
+			margin-bottom: 30px;
 		}
 		.btn {
 			display: flex;
-			width: max-content;
 			align-items: center;
 			margin-top: 3px;
-			padding: 2px 2px 2px 10px;
-			background: #2e956e;
+			margin-right: 20px;
+			padding: 4px 4px 4px 10px;
+			background: #429b7a;
 			color: #fff;
 			transition: all 0.5s;
 			border-radius: 4px;
@@ -48,6 +63,12 @@
 			&:hover {
 				background: #2a85c2;
 			}
+		}
+		svg {
+			width: 20px;
+			margin: 0 8px;
+			fill: #fff;
+			transition: all 0.5s;
 		}
 	}
 	.btnWrap {
@@ -62,21 +83,21 @@
 			width: 20px;
 			height: 20px;
 		}
-	}
-	label {
-		display: flex;
-		align-items: center;
-	}
-	.close {
-        border:none;
-		padding: 5px 10px;
-		background: #898989;
-		color: #fff;
-		transition: all 0.5s;
-		border-radius: 4px;
-		cursor: pointer;
-		&:hover {
-			background: green;
+		label {
+			display: flex;
+			align-items: center;
+		}
+		.close {
+			border: none;
+			padding: 5px 10px;
+			background: #898989;
+			color: #fff;
+			transition: all 0.5s;
+			border-radius: 4px;
+			cursor: pointer;
+			&:hover {
+				background: green;
+			}
 		}
 	}
 }

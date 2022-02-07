@@ -26,24 +26,36 @@ function Pop() {
         <div ref={pop} className="mainPopWrap">
             <div className="mainPop">
                 <div className="conts">
-                    <p> React.js를 활용한 웹 포트폴리오 사이트에 오신 것을 환영합니다!</p>
-
-                    <p>
-                        홈페이지의 구성과 기능에 대한 자세한 안내 페이지를 만들었습니다. 아래 버튼을 클릭하신 후 'ctrl + 0'을 눌러 100% 화면으로 보시기 바랍니다.
-                        <a target="_blank" rel="noreferrer" className="btn" href="https://www.figma.com/file/bi26XF7a9UVRbkESgPIfIK/React%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%9B%B9-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%BD%94%EB%94%A9-%EA%B0%80%EC%9D%B4%EB%93%9C?node-id=45%3A20" title="React.js를 활용한 웹 포트폴리오 사이트 안내 페이지 바로가기">바로가기
+                    <p className="mb20">
+                        <strong>React.js를 활용한 웹 포트폴리오 사이트에 오신 것을 환영합니다!</strong>
+                        Chrome, Whale, Microsoft Edge 브라우저에 최적화 되어있습니다.
+                    </p>
+                    <p className="mb5">
+                        홈페이지의 구성과 기능에 대한 자세한 안내 페이지는 아래 버튼을 클릭하신 후 'ctrl + 0'을 눌러 100% 화면으로 보시기 바랍니다.
+                    </p>
+                    <div className="btnConts">
+                        <a target="_blank" rel="noreferrer" className="btn" href="https://www.figma.com/file/bi26XF7a9UVRbkESgPIfIK" title="React.js를 활용한 웹 포트폴리오 사이트 안내 페이지 바로가기">코딩 가이드
                             <span class="material-icons-outlined">
                                 navigate_next
                             </span>
                         </a>
+                        <a className="btn" href="https://github.com/amerimnos/react_portfolio" target="_black">
+                            깃허브
+                            <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
+                                <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <p className="mb5">
+                        아울러, Javascript를 활용한 일반적인 웹 포트폴리오도 있사오니 아래 참고 부탁드립니다.
                     </p>
-                    <p>
-                        아울러, Javascript를 활용한 웹 포트폴리오도 있사오니 참고 부탁드립니다.
+                    <div className="btnConts">
                         <a target="_blank" rel="noreferrer" className="btn" href="https://amerimnos.github.io/Portfolio/" title="Javascript를 활용한 웹 포트폴리오 바로가기">바로가기
                             <span class="material-icons-outlined">
                                 navigate_next
                             </span>
                         </a>
-                    </p>
+                    </div>
                 </div>
                 <div className="btnWrap">
                     <label htmlFor="popupCheck">하루 동안 안 보기
@@ -55,7 +67,7 @@ function Pop() {
                     <button onClick={closePop} className="close">닫기</button>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
