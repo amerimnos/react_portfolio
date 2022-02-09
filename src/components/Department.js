@@ -5,6 +5,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import SwiperCore, { Autoplay, Navigation, Pagination, A11y, Keyboard } from 'swiper';
+import { HashLink } from "react-router-hash-link";
 SwiperCore.use([Autoplay, Keyboard, Navigation, Pagination, A11y]);
 
 function Department() {
@@ -14,9 +15,11 @@ function Department() {
     const [swipwerItem, setSwipwerItem] = useState([]);
     const [isPop, setIsPop] = useState('on');
 
+    let departmentConts = useRef(null);
     let departSwiper = useRef(null);
     let swiperImg = useRef(null);
     let loadingWrap = useRef(null);
+    let conts = useRef(null);
 
     useEffect(() => {
 
@@ -36,9 +39,18 @@ function Department() {
     }, [])
 
 
+    function handleConts(e) {
+        let isActive = e.currentTarget.closest('.swiper-slide-active');
+        if (isActive) {
+            departmentConts.current.classList.add('active');
+            e.target.style.animationPlayState = "paused";
+        }
+    }
+
+
     return (
 
-        <section className="departmentConts">
+        <section ref={departmentConts} className="departmentConts" id="departmentTop">
             <Swiper
                 ref={departSwiper}
                 className="departSwiper"
@@ -60,13 +72,6 @@ function Department() {
                     type: 'progressbar',
                 }}
                 scrollbar={{ draggable: true }}
-
-                /* breakpoints={{
-                    "769": {
-                        "slidesPerView": auto,
-                        "slidesPerGroup": 2
-                    }
-                }} */
                 onSwiper={
                     (swiper) => {
                         const slideItemWrap = document.createElement('div');
@@ -77,16 +82,46 @@ function Department() {
                     }
                 }
                 onSlideChange={() => console.log('slides change')}
-                onClick={e => alert('상세페이지 추가 예정입니다!')}
+                onClick={
+                    (swiper) => {
+                        swiper.autoplay.stop();
+                    }
+                }
             >
                 {
                     swipwerItem.map((el, index) => {
-
                         return (
                             <SwiperSlide ref={swiperImg} key={index} className="swiperImg">
-                                <div className="creator">{el.creator}</div>
-                                <img src={`${url}${el.src}`} alt={el.name} />
+                                <div className="creator">{el.creator}
+                                </div>
+                                <img onClick={e => { handleConts(e) }} src={`${url}${el.src}`} alt={el.name} />
                                 <span>{el.name}</span>
+                                <div className="contsWrap">
+                                    <div ref={conts} className="conts">
+                                        {
+                                            el.subConts.split('\n').map((line, index) => {
+                                                return (
+                                                    <div className="mb20" key={index}>
+                                                        {line}
+                                                    </div>
+                                                )
+                                            })
+
+                                        }
+                                    </div>
+
+
+                                    <HashLink smooth to="#departmentTop" onClick={
+                                        e => {
+                                            departmentConts.current.classList.remove('active');
+                                            e.target.closest('.swiper-slide-active').querySelector('img').style.animationPlayState = "paused";
+                                            setTimeout(() => {
+                                                e.target.closest('.swiper-slide-active').querySelector('img').style.animationPlayState = "running";
+                                            }, 2500);
+                                        }
+                                    } className="backBtn">Go to back</HashLink>
+                                </div>
+
                             </SwiperSlide>
                         )
                     })
