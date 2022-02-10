@@ -70,9 +70,9 @@
 			fill: #fff;
 			transition: all 0.5s;
 		}
-        .yt-icon{
-            width: 70px;
-        }
+		.yt-icon {
+			width: 70px;
+		}
 	}
 	.btnWrap {
 		display: flex;
@@ -115,5 +115,14 @@
 	}
 	100% {
 		display: none;
+	}
+}
+
+@media screen and (max-width: $xs) {
+	.mainPop {
+		margin: 10px;
+		.conts {
+			font-size: 14.5px;
+		}
 	}
 }
