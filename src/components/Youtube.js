@@ -17,6 +17,7 @@ function Youtube() {
     let youtubeConts = useRef(null);
     let modeBtn = useRef(null);
     let modeText = useRef(null);
+    let aside = useRef(null);
     let category = useRef(null);
     let loadingWrap = useRef(null);
     let videosConts2 = useRef(null);
@@ -71,6 +72,7 @@ function Youtube() {
     function handelUrl(e, playList) {
         loadingWrap.current.classList.add('on');
         videosConts2.current.classList.remove('on');
+        aside.current.classList.remove('on');
 
         let lists = category.current.children;
         for (const iterator of lists) {
@@ -88,19 +90,13 @@ function Youtube() {
                 }
             ).catch(function (error) {
                 if (error.response) {
-                    // The request was made and the server responded with a status code
-                    // that falls out of the range of 2xx
                     console.log(error.response.data);
                     console.log(error.response.status);
                     console.log(error.response.headers);
                 } else if (error.request) {
-                    // The request was made but no response was received
-                    // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-                    // http.ClientRequest in node.js
                     alert('점검중 입니다. 다른 메뉴를 이용해주세요.');
                     console.log(error.request);
                 } else {
-                    // Something happened in setting up the request that triggered an Error
                     console.log('Error', error.message);
                 }
                 console.log(error.config);
@@ -120,7 +116,8 @@ function Youtube() {
             } */}
 
             <div className="inner">
-                <aside>
+                <aside ref={aside}>
+                    <button onClick={()=>{aside.current.classList.toggle('on')}} className="menuBtn"></button>
                     <h1 id="page_start">Viedo board</h1>
                     {/* <ul className="menu">
                         <li className="tit">MENU</li>

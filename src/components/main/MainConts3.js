@@ -4,18 +4,17 @@ import { ReactComponent as BgIcon2 } from '../main_bg.svg';
 function MainConts3(props) {
 
     let conts3 = useRef(null);
+    function handleResize() {
+        props.SetPos2(conts3.current.offsetTop)
+    }
+
     useEffect(
         () => {
             props.SetPos2(conts3.current.offsetTop)
-            window.addEventListener('resize', () => {
-                props.SetPos2(conts3.current.offsetTop)
-            })
-
+            window.addEventListener('resize', handleResize)
             return (
                 ()=>{
-                    window.removeEventListener('resize', () => {
-                        props.SetPos2(conts3.current.offsetTop)
-                    })
+                    window.removeEventListener('resize', handleResize)
                 }
             )
         }, []

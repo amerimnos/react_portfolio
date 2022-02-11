@@ -11,18 +11,17 @@ function MainConts4(props) {
     let conts4 = useRef(null);
     let loadingWrap = useRef(null);
 
+    function handleResize() {
+        props.SetPos3(conts4.current.offsetTop)
+    }
+
     useEffect(
         () => {
             props.SetPos3(conts4.current.offsetTop)
-            window.addEventListener('resize', () => {
-                props.SetPos3(conts4.current.offsetTop)
-            })
-
+            window.addEventListener('resize', handleResize)
             return (
-                () => {
-                    window.removeEventListener('resize', () => {
-                        props.SetPos3(conts4.current.offsetTop)
-                    })
+                ()=>{
+                    window.removeEventListener('resize', handleResize)
                 }
             )
         }, []

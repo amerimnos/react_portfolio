@@ -7,18 +7,17 @@ export function MainConts5(props) {
     const data = useSelector(state => state.noticeReducer.notice)
 
     let conts5 = useRef(null);
+    function handleResize() {
+        props.SetPos4(conts5.current.offsetTop)
+    }
+
     useEffect(
         () => {
             props.SetPos4(conts5.current.offsetTop)
-            window.addEventListener('resize', () => {
-                props.SetPos4(conts5.current.offsetTop)
-            })
-
+            window.addEventListener('resize', handleResize)
             return (
                 ()=>{
-                    window.removeEventListener('resize', () => {
-                        props.SetPos4(conts5.current.offsetTop)
-                    })
+                    window.removeEventListener('resize', handleResize)
                 }
             )
         }, []

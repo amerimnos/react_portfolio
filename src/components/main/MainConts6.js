@@ -12,23 +12,20 @@ import { useEffect, useRef } from 'react';
 export function MainConts6(props) {
 
     let conts6 = useRef(null);
+    function handleResize() {
+        props.SetPos5(conts6.current.offsetTop)
+    }
     useEffect(
         () => {
             props.SetPos5(conts6.current.offsetTop)
-            window.addEventListener('resize', () => {
-                props.SetPos5(conts6.current.offsetTop)
-            })
-
+            window.addEventListener('resize', handleResize)
             return (
                 ()=>{
-                    window.removeEventListener('resize', () => {
-                        props.SetPos5(conts6.current.offsetTop)
-                    })
+                    window.removeEventListener('resize', handleResize)
                 }
             )
         }, []
     )
-
     return (
         <section ref={conts6} className="mainConts6">
             <div className="inner1">
