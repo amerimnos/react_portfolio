@@ -8,7 +8,7 @@ function Pop() {
     const popupCheck = useRef(null);
 
     useEffect(() => {
-        if (document.cookie !== 'pop=ondDay') {
+        if (!document.cookie.includes('pop=ondDay')) {
             pop.current.classList.add('on');
         }
     }, []);
