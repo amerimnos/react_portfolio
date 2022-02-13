@@ -11,6 +11,7 @@ function MainConts1() {
         new Typing(typedTxt, [
             "YOU Dream, We Display",
             "Carpe diem, quam minimum credula postero.",
+            "Memento mori.",
             "Do as you would be done by.",
         ]);
 
