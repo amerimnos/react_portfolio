@@ -38,6 +38,26 @@
 		font-weight: 500;
 		line-height: 1.2;
 		z-index: 1;
+		&::after{
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: 0px;
+    margin-left: 10px;
+    height: 47px;
+    width: 4px;
+    background-color: #9a9a9a;
+    animation: 1s txtbling 1s infinite;
+
+			@keyframes txtbling {
+				25%{
+					opacity:0
+				}
+				100%{
+					opacity:1
+				}
+			}
+		}
 	}
 	.bottomTxt {
 		width: 58%;
