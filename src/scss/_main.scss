@@ -28,35 +28,42 @@
 			display: block;
 			height: 1px;
 			width: 30px;
+			margin-right: 10px;
 			background: #4a6869;
 		}
 	}
 	h2 {
 		width: 58%;
+		padding-right: 20px;
 		margin-bottom: 40px;
 		font-size: 66px;
 		font-weight: 500;
 		line-height: 1.2;
 		z-index: 1;
-		&::after{
-    content: "";
-    display: inline-block;
-    position: relative;
-    top: 0px;
-    margin-left: 10px;
-    height: 47px;
-    width: 4px;
-    background-color: #9a9a9a;
-    animation: 1s txtbling 1s infinite;
+		&::after {
+			content: "|";
+			display: inline-block;
+			position: relative;
+			top: 0px;
+			margin-left: 10px;
+            color: #9a9a9a;
+			/* height: 100%;
+			width: 3px;
+			background-color: #9a9a9a; */
+			animation: 1s txtbling 1s infinite;
 
 			@keyframes txtbling {
-				25%{
-					opacity:0
+				25% {
+					opacity: 0;
 				}
-				100%{
-					opacity:1
+				100% {
+					opacity: 1;
 				}
 			}
+		}
+
+		&.cursorOff::after {
+			display: none;
 		}
 	}
 	.bottomTxt {
@@ -1075,7 +1082,7 @@
 		border: none;
 		background: #3e5f71;
 		transition: all 0.3s;
-		cursor:pointer;
+		cursor: pointer;
 		&.on {
 			height: 35px;
 		}
@@ -1428,28 +1435,28 @@
 		}
 	}
 
-    .scrollBtn {
-    display: flex;
-    position: fixed;
-    right: 50%;
-    top: calc(100% - 40px);
-    height: auto;
-    width: 250px;
-    transform: translate(50%, 0px);
-    flex-direction: row;
-        button {
-            width: 15px;
-            height: 15px;
-            border-radius: 100px;
-            border: none;
-            background: #3e5f71;
-            transition: all 0.3s;
-            &.on {
-                height: initial;
-                width: 35px;
-            }
-        }
-    }
+	.scrollBtn {
+		display: flex;
+		position: fixed;
+		right: 50%;
+		top: calc(100% - 40px);
+		height: auto;
+		width: 250px;
+		transform: translate(50%, 0px);
+		flex-direction: row;
+		button {
+			width: 15px;
+			height: 15px;
+			border-radius: 100px;
+			border: none;
+			background: #3e5f71;
+			transition: all 0.3s;
+			&.on {
+				height: initial;
+				width: 35px;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: $md) {

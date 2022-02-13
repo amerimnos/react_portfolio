@@ -678,6 +678,7 @@
 
 		&.active {
 			height: 100%;
+			transition-delay:0s;
 			.departSwiper {
 				position: relative;
 				.swiper-wrapper-wrapper {

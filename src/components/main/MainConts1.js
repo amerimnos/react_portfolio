@@ -7,10 +7,11 @@ function MainConts1() {
     let typedTxt = useRef(null);
 
     useEffect(() => {
+        // 사용법: typedTxt를 useRef 활용, 다음 배열은 넣고 싶은 문구
         new Typing(typedTxt, [
-            "We build digital products for creative peoples",
-            "Love yourself",
-            "Golden rule",
+            "YOU Dream, We Display",
+            "Carpe diem, quam minimum credula postero.",
+            "Do as you would be done by.",
         ]);
 
     }, [])

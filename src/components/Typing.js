@@ -14,6 +14,16 @@ class Typing {
     async typing() {
         for (let arrayIndex = 0; arrayIndex < this.newObj.length; arrayIndex++) {
 
+            //초반 딜레이 줌.
+            if (arrayIndex === 0) {
+                await new Promise(
+                    resolve => {
+                        setTimeout(() => {
+                            resolve();
+                        }, 2000);
+                    }
+                )
+            }
             await new Promise(
                 resolve => {
                     for (let index = 0; index < this.newObj[arrayIndex].length; index++) {
@@ -24,7 +34,7 @@ class Typing {
                     }
                     setTimeout(() => {
                         resolve();
-                    }, 50 * this.newObj[arrayIndex].length + 2000);
+                    }, 50 * this.newObj[arrayIndex].length + 3500);
                 }
             )
             if (arrayIndex !== this.newObj.length - 1) {
@@ -34,14 +44,16 @@ class Typing {
                             setTimeout(() => {
                                 this.newObj[arrayIndex].splice(index - 1, 1 + i);
                                 this.ref.textContent = this.newObj[arrayIndex].join('');
-                            }, 100 * i);
+                            }, 35 * i);
                             i++
                         }
                         setTimeout(() => {
                             resolve();
-                        }, 100 * this.newObj[arrayIndex].length + 1000);
+                        }, 35 * this.newObj[arrayIndex].length + 1000);
                     }
                 )
+            } else {
+                this.ref.classList.add('cursorOff');
             }
 
         }
