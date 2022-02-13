@@ -6,8 +6,6 @@ function MainConts1() {
     const url = process.env.PUBLIC_URL;
     let typedTxt = useRef(null);
 
-
-
     useEffect(() => {
         new Typing(typedTxt, [
             "We build digital products for creative peoples",
@@ -16,7 +14,6 @@ function MainConts1() {
         ]);
 
     }, [])
-
 
     return (
         <section /* ref={conts1} */ className="mainConts1">

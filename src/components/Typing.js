@@ -1,7 +1,6 @@
 
 
 class Typing {
-    
     constructor(ref, array) {
 
         this.ref = ref.current;
