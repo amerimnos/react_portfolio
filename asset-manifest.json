@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react_portfolio/static/css/main.cd7a4c54.css",
+    "main.css": "/react_portfolio/static/css/main.cbf75ea4.css",
     "main.js": "/react_portfolio/static/js/main.5cf7c876.js",
     "static/media/main_bg02.svg": "/react_portfolio/static/media/main_bg02.c10bdc8c0c4f9b0b8143990305ecdd04.svg",
     "static/media/main_bg.svg": "/react_portfolio/static/media/main_bg.73533b07336b8b0dc0e31b60d03f1a44.svg",
@@ -14,11 +14,11 @@
     "static/media/NaverLogo.svg": "/react_portfolio/static/media/NaverLogo.ccf638206c02448795478aa732f19373.svg",
     "static/media/KakaoLogo.svg": "/react_portfolio/static/media/KakaoLogo.788e394df962c725518b67fc876d06a2.svg",
     "index.html": "/react_portfolio/index.html",
-    "main.cd7a4c54.css.map": "/react_portfolio/static/css/main.cd7a4c54.css.map",
+    "main.cbf75ea4.css.map": "/react_portfolio/static/css/main.cbf75ea4.css.map",
     "main.5cf7c876.js.map": "/react_portfolio/static/js/main.5cf7c876.js.map"
   },
   "entrypoints": [
-    "static/css/main.cd7a4c54.css",
+    "static/css/main.cbf75ea4.css",
     "static/js/main.5cf7c876.js"
   ]
 }
