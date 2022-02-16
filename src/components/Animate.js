@@ -1,32 +1,45 @@
 /* 
-//간략히 요약//
+//모듈 간략한 설명//
 이 모듈은 performance.now() 값과 requestAnimationFrame을 통해 
-얻게되는 진행률 값을 활용하여 구현한 애니메이션 기법이다. 
-해당 모듈는 %와 px 단위만으로 모션 처리가 가능하다. em, vw, vh 등등의 단위는 적용이 안된다.
+얻게되는 진행률 값을 활용하여 구현한 애니메이션 기법이다.
 
+//사용법 및 주의 사항//
+1. % 와 px 단위만으로 모션 처리 가능하며, em, vw, vh 등등의 단위는 적용이 안된다.
+2. prop에 transform을 추가후 value에 숫자를 입력하면 translateY 값이 처리된다.
 
-//사용법 예시//
+//사용 예시//
 new Animate('div',
     {
         prop: 'width',
         duration: 500,
         value: '5%',
-        callback:
+        callback: () => {
             new Animate('div',
                 {
-                    prop: 'width',
+                    prop: 'opacity',
                     duration: 500,
-                    value: '50',
-                    callback:
+                    value: 0,
+                    callback: () => {
                         new Animate('div',
                             {
                                 prop: 'scroll',
                                 duration: 500,
-                                value: '100',
+                                value: 30,
+                                callback: () => {
+                                    new Animate('div',
+                                        {
+                                            prop: 'transform',
+                                            duration: 800,
+                                            value: 100,
+                                        }
+                                    )
+                                }
                             }
                         )
+                    }
                 }
             )
+        }
     }
 ) */
 
@@ -45,6 +58,15 @@ class Animate {
         if (this.option.prop === 'scroll') {
             //srollY 속성을 통해서 해당 스크롤된 값을 저장하는데, srollY 속성이 없는 IE낮은 버전의 경우 동일한 속성인 pageYOffset 속성을 대신 적용함.
             this.currentValue = this.selector.srollY || this.selector.pageYOffset;
+
+            //css 속성 중 transform:transformY 얻는 로직 추가. 예를들어, transform:transformY(-100px)인 값을 얻으려면 속성이 'transform'인 경우에서 찾아야 하고 결과 값은 matrix(1, 0, 0, 1, 0, 0) 같은 형식을 뛰므로 끝에 있는 값을 취함.
+        } else if (this.option.prop === 'transform') {
+
+            let transformYPosStart = getComputedStyle(this.selector)[this.option.prop].lastIndexOf(',');
+            let transformYPosEnd = getComputedStyle(this.selector)[this.option.prop].lastIndexOf(')');
+            let tranformYValue = getComputedStyle(this.selector)[this.option.prop].slice(transformYPosStart + 1, transformYPosEnd);
+            this.currentValue = Number(tranformYValue);
+
         } else {
             //scroll속성 이외에는 모두 아래 구문으로 처리하는데, getComputedStyle 속성을 활용하여 해당 요소의 css 속성값 즉, 이미 브라우저상에서 처리된 값이 currentValue에 저장됨. 주의 할 것은 css의 값이 아닌 랜더링 된 값(px)을 의미함.
             this.currentValue = parseFloat(getComputedStyle(this.selector)[this.option.prop]);
@@ -92,6 +114,7 @@ class Animate {
                 if (this.option.callback) this.option.callback();
             }, 0);
         }
+
         let result = this.currentValue + ((this.option.value - this.currentValue) * progress);
 
         //opacity, scroll이 아닌 나머지 모든 속성들을 % 단위로 이동되도록 요청했다면 실행
@@ -107,6 +130,8 @@ class Animate {
             window.scroll(0, result);
 
             // opacity, scroll이 아닌 나머지 모든 속성들을 %가 아닌 px 단위로 이동되도록 요청했다면 실행
+        } else if (this.option.prop === 'transform') {
+            this.selector.style[this.option.prop] = `matrix(1, 0, 0, 1, 0, ${result})`;
         } else {
             this.selector.style[this.option.prop] = `${result}px`;
         }
