@@ -97,6 +97,7 @@ class Animate {
 
         /* setTimeout으로 처리하는 방식쓰면 컴퓨터의 성능 때문에 시간이 씹혀서 애니메이션이 끊기는 현상을 발생하고 모니터 주사율에 맞게 알아서 키프레임이 자동으로 조절되기 않기 때문에 requestAnimationFrame 함수를 사용한다.
         requestAnimationFrame 인자로 콜백햄수를 받는데 콜백함수의 인자엔 performance.now()와 거의 흡사한 시간이 저장된다. 즉, 호출 될때의 시간이긴 한대, 처음 호출되고 부터 계속 호출 될때마다 그 시간은 누적이 되는 개념이다. */
+
         requestAnimationFrame(time => this.run(time));
     }
 

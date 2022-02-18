@@ -16,7 +16,7 @@ export function MainConts2(props) {
         props.SetPos1(conts2.current.offsetTop)
     }
 
-    function handleScroll(e) {
+    function handleScroll() {
         let isActive = true;
         if (isActive) {
             if (window.scrollY >= conts2.current.offsetTop && window.scrollY < conts2.current.offsetTop + 50) {
@@ -37,22 +37,26 @@ export function MainConts2(props) {
                 )
 
                 let items = conts2.current.querySelectorAll('.item')
-                items.forEach(element => {
+                items.forEach((element, index) => {
 
-                    new Animate(element,
-                        {
-                            prop: 'transform',
-                            duration: 1700,
-                            value: 0,
-                        }
-                    )
-                    new Animate(element,
-                        {
-                            prop: 'opacity',
-                            duration: 1700,
-                            value: 1,
-                        }
-                    )
+                    setTimeout(() => {
+                        new Animate(element,
+                            {
+                                prop: 'transform',
+                                duration: 1000,
+                                value: 0,
+                                delay: index * 150
+                            }
+                        )
+                        new Animate(element,
+                            {
+                                prop: 'opacity',
+                                duration: 1000,
+                                value: 1,
+                                delay: index * 150
+                            }
+                        )
+                    }, index * 300);
                 });
             }
         }
