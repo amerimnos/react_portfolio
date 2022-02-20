@@ -20,7 +20,7 @@ function MainConts4(props) {
             props.SetPos3(conts4.current.offsetTop)
             window.addEventListener('resize', handleResize)
             return (
-                ()=>{
+                () => {
                     window.removeEventListener('resize', handleResize)
                 }
             )
@@ -60,57 +60,59 @@ function MainConts4(props) {
     )
 
 
-    return (
-        <section ref={conts4} className="mainConts4">
-            <div className="inner">
-                <h1>Some of our creative videos</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis architecto amet ullam!</p>
-                <ul className="conts">
+    return <section ref={conts4} className="mainConts4">
+        <div className="inner">
+            <h1>Some of our creative videos</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis architecto amet ullam!</p>
+            <ul className="conts">
 
-                    {
-                        fetchYoutubeDataMain.map(
-                            (el, index) => {
-                                if (index < 2) {
-                                    return (
-                                        <li className="item" key={index} onClick={
-                                            () => {
-                                                setIsPop('on');
-                                                setIframeUrl(`https://www.youtube.com/embed/${fetchYoutubeDataMain[index].snippet.resourceId.videoId}`)
-                                            }}>
-                                            <div className="imgWrap">
-                                                <img src={el.snippet.thumbnails.standard.url} alt="lorem" />
-                                            </div>
-                                            <div className='tit'>
-                                                <h2>{el.snippet.title}</h2>
-                                                <span>_VID DESIGN</span>
-                                            </div>
-                                            <div className="btn">FULL Case Study
-                                                <span className="arrow"></span>
-                                            </div>
-                                        </li>
-                                    )
-                                }
-                            }
-                        )
+                {/* 
+                화살표 함수의 유일한 문장이 'return'일 때 'return'과 중괄호({})를 생략할 수 있다.
+                */}
 
-                    }
+                {
+                    fetchYoutubeDataMain.map(
+                        (el, index) =>
+                            (index < 2)
+                                ?
+                                <li className="item" key={index} onClick={
+                                    () => {
+                                        setIsPop('on');
+                                        setIframeUrl(`https://www.youtube.com/embed/${fetchYoutubeDataMain[index].snippet.resourceId.videoId}`)
+                                    }}>
+                                    <div className="imgWrap">
+                                        <img src={el.snippet.thumbnails.standard.url} alt="lorem" />
+                                    </div>
+                                    <div className='tit'>
+                                        <h2>{el.snippet.title}</h2>
+                                        <span>_VID DESIGN</span>
+                                    </div>
+                                    <div className="btn">FULL Case Study
+                                        <span className="arrow"></span>
+                                    </div>
+                                </li>
+                                :
+                                null
+                    )
 
-                </ul>
-                <div className="moreBtn">
-                    <HashLink smooth to="/youtube#page_start">
-                        SEE MORE WORKS
-                    </HashLink>
-                    <span className="arrow"></span>
-                </div>
+                }
+
+            </ul>
+            <div className="moreBtn">
+                <HashLink smooth to="/youtube#page_start">
+                    SEE MORE WORKS
+                </HashLink>
+                <span className="arrow"></span>
             </div>
+        </div>
 
-            <Pop></Pop>
+        <Pop></Pop>
 
-            <div ref={loadingWrap} className="loadingWrap">
-                <div className="loading"></div>
-            </div>
-        </section>
-    )
+        <div ref={loadingWrap} className="loadingWrap">
+            <div className="loading"></div>
+        </div>
+    </section>
+
 
 
 
