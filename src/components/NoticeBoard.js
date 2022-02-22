@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {setNotice} from "../redux/actions";
+import { setNotice } from "../redux/actions";
 
 function NoticeBoard() {
 
@@ -52,7 +52,7 @@ function NoticeBoard() {
             ]
         );
         setIsPop(false);
-        
+
     }
 
     async function handleSync(index) {

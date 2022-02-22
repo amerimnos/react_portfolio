@@ -43,7 +43,7 @@ function Community(props) {
 
                     <div className="searchWrap">
                         <input onClick={() => { alert('준비중 입니다.') }} className="search" type="text" placeholder="Start typing your search..." />
-                        <label htmlFor="searchBtnLabel"><i className="fas fa-search"></i></label>
+                        <label htmlFor="searchBtnLabel"><i className="fa-solid fa-magnifying-glass"></i></label>
                         <input className="searchBtn" id="searchBtn" type="button" value="" name="commuTotalSearch" />
                     </div>
 
